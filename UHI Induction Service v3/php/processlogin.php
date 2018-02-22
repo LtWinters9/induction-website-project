@@ -1,9 +1,4 @@
 
-Author: David Ferguson
-Page Name: processlogin.php
-Description: Processes the login using the username and password provided on login.
-Version 1
-!-->
 
 
 
@@ -57,7 +52,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
         $lgnstmt->close();
         if($cyphertext==$hash) {
             //Update user's record with session data
-            $sessionsql="update users set session_id=? where studentid=?";
+            $sessionsql="update users set sessionid=? where userid=?";
             $sessionstmt=$db->prepare($sessionsql);
             $sessionstmt->bind_param("si",session_id(),$studentid);
             $sessionstmt->execute();
