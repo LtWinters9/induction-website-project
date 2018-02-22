@@ -9,7 +9,7 @@ if(!is_null($userid)) {
 	//To prevent hack attempts from logging people out with
 	//legitimate logins both userid and session id must match
 	//before it clears the sessionid
-	$clearquery="update customers set sessionid='' where userid=? and sessionid=?";
+	$clearquery="update users set sessionid='' where userid=? and sessionid=?";
 	$db=createConnection();
 	$doclear=$db->prepare($clearquery);
 	$doclear->bind_param("is",$userid,$sessionid);
@@ -21,11 +21,11 @@ if(!is_null($userid)) {
 session_unset();
 session_destroy();
 
-//header("location: ../index.php");
+header("location: ../index.php");
 //header is left so student can return to home by clicking button on screen
 // Change the return to home location to an URL. For example comp=server.uhi.ac.uk/~yournumber this stops geneal attacks and ensures correct landing page
 ?>
-
+<!--
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,3 +118,4 @@ session_destroy();
 	</body>
 
 	</html>
+-->
