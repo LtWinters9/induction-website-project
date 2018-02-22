@@ -1,5 +1,5 @@
 <?php
-setCookie("userintent","",(time+86400),"/~pe15011406");
+setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
 session_regenerate_id();
 include('php/functions.php');
@@ -8,6 +8,7 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
+
 
 //$firstname=$_SESSION['firstname'];
 //$surname=$_SESSION['surname'];
