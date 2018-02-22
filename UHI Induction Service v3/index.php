@@ -1,7 +1,6 @@
 <?php
 setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
 session_start();
-session_regenerate_id();
 include('php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
@@ -38,25 +37,57 @@ $collegeid=$_SESSION['collegeid'];
 <body>
     <div id=index>
       <!-- Navbar Start-->
-    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-        <div class="container"><a class="navbar-brand" href="index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
-                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav nav-right">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                        <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
-                          <a class="dropdown-item" role="presentation" href="contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student services</a>
-                        </div>
-                    </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#Alumni" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#Gàidhlig" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
-                </ul>
-                <p class="ml-auto navbar-text actions"> </p>
+<h1>HELLO <?php echo $currentuser['userlevel'] ?> </h1>
+
+   <?php if($currentuser['userlevel'] == 0) { ?>
+
+       <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style = "background-color:#7e3ca6;" >
+        <div class="container" ><a class="navbar-brand" href = "index.php" > <span style = "color:#9da9ae;font-size:20px;" ><img class="img-fluid" src = "assets/img/UHI_Logo_RGB_transparent_orig.png" alt = "uhi-main-logo" style = "color:#ffffff;width:140px;" > </span ></a ><button class="navbar-toggler" data - toggle = "collapse"
+                data - target = "#navcol-1" ><span class="sr-only" > Toggle navigation </span ><span class="navbar-toggler-icon" ></span ></button >
+            <div class="collapse navbar-collapse" id = "navcol-1" >
+                <ul class="nav navbar-nav nav-right" >
+                    <li class="nav-item" role = "presentation" ><a class="nav-link" href = "https://www.uhi.ac.uk/en/" style = "font-family:'Source Sans Pro', sans-serif;color:#ffffff;" > Current Students </a ></li >
+                    <li class="dropdown" ><a class="dropdown-toggle nav-link" data - toggle = "dropdown" aria - expanded = "false" href = "#" style = "font-family:'Source Sans Pro', sans-serif;color:#ffffff;" > My Account </a >
+                    <li class="nav-item" role = "presentation" ><a class="nav-link" href = "account/login.php" style = "font-family:'Source Sans Pro', sans-serif;color:#ffffff;" > Login </a> </li >
+                    <li class="nav-item" role = "presentation" ><a class="nav-link" href = "account/login.php" style = "font-family:'Source Sans Pro', sans-serif;color:#ffffff;" > Staff </a ></li >
+                    <li class="nav-item" role = "presentation" ><a class="nav-link" href = "#Alumni" style = "font-family:'Source Sans Pro', sans-serif;color:#ffffff;" > Alumni </a ></li >
+                    <li class="nav-item" role = "presentation" ><a class="nav-link" href = "#Gàidhlig" data - bs - hover - animate = "pulse" style = "font-family:'Source Sans Pro', sans-serif;color:#ffffff;" > Gàidhlig </a ></li >
+                </ul >
+                <p class="ml-auto navbar-text actions" > </p >
+            </div >
+        </div >
+    </nav >
+
+        <?php
+    }
+    ?>
+
+        <?php if($currentuser['userlevel'] > 1) { ?>
+
+        <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
+            <div class="container"><a class="navbar-brand" href="index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+                                                                                                                                                                                                                                                                              data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav nav-right">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
+                            <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout </a>
+                                <a class="dropdown-item" role="presentation" href="contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student services</a>
+                            </div>
+                        </li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#Alumni" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#Gàidhlig" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
+                    </ul>
+                    <p class="ml-auto navbar-text actions"> </p>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+
+            <?php
+        }
+        ?>
+
    <!-- Navbar End-->
    <!-- Image Slider Start-->
     <div class="carousel slide" data-ride="carousel" id="carousel-1">
@@ -142,7 +173,7 @@ $collegeid=$_SESSION['collegeid'];
             <div class="intro">
                 <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;">Questions about your student funding?</h2>
             </div>
-            <div class="buttons"><a class="btn btn-light" role="button" href="account/login.php" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
+            <div class="buttons"><a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
         </div>
     </div>
     <div class="testimonials-clean"></div>
