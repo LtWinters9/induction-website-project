@@ -95,7 +95,7 @@ $userid=$_SESSION['userid'];
             <div class="row">
                 <div class="col">
                     <h1>Upload a student file.</h1>
-                    <p>Upload a new file for the student and other staff to access</p><a class="btn btn-primary" role="button" href="#" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
+                    <p>Upload a new file for the student and other staff to access</p><a class="btn btn-primary" role="button" href="../php/fileupload.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
             </div>
             <?php}?>
         </div>
