@@ -1,9 +1,15 @@
 <?php
-setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
+setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
+session_regenerate_id();
 include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
+
+
 //$firstname=$_SESSION['firstname'];
 //$surname=$_SESSION['surname'];
 //$postcode=$_SESSION['postcode'];
@@ -95,8 +101,12 @@ $userid=$_SESSION['userid'];
             <div class="row">
                 <div class="col">
                     <h1>Upload a student file.</h1>
+<<<<<<< HEAD
                     <p>Upload a new file for the student and other staff to access</p>
                     <a class="btn btn-primary" role="button" href="fileupload.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
+=======
+                    <p>Upload a new file for the student and other staff to access</p><a class="btn btn-primary" role="button" href="../php/fileupload.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
+>>>>>>> 6e0d2cd269e5fefa6ffcf91988f7879204dd4559
             </div>
             <?php}?>
         </div>
