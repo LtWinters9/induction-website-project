@@ -3,7 +3,7 @@ session_start();
 include("functions.php");
 //The ampersand is used to assign a 'null' value if
 //there is currently no userid session variable set
-$userid=$_SESSION['userid'];
+$userid=&$_SESSION['userid'];
 $sessionid=session_id();
 if(!is_null($userid)) {
 	//To prevent hack attempts from logging people out with
@@ -21,11 +21,11 @@ if(!is_null($userid)) {
 session_unset();
 session_destroy();
 
-header("location: ../index.php");
+//header("location: ../index.php");
 //header is left so student can return to home by clicking button on screen
 // Change the return to home location to an URL. For example comp=server.uhi.ac.uk/~yournumber this stops geneal attacks and ensures correct landing page
 ?>
-<!--
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,4 +118,3 @@ header("location: ../index.php");
 	</body>
 
 	</html>
--->
