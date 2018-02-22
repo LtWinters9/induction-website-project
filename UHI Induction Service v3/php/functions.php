@@ -28,7 +28,7 @@ function makeHash($plainText,$salt,$n) {
 //$ptype = level of access required for current page 1,2 or 3
 function checkUser($usersessionid,$sessionid,$ptype) {
 	$dbchk = createConnection();
-	$lookupsql="select usertype,sessionid,username from customers where userid=?";
+	$lookupsql="select usertype,sessionid,userid from users where userid=?";
 	$lookup=$dbchk->prepare($lookupsql);
 	$lookup->bind_param("i",$usersessionid);
 	$lookup->execute();
@@ -56,12 +56,12 @@ function getUserLevel() {
 		$sessionid=session_id();
 		$usersessionid=$_SESSION['userid'];
 		$dbchk = createConnection();
-		$lookupsql="select usertype,sessionid,username from customers where userid=?";
+		$lookupsql="select usertype,sessionid from users where userid=?";
 		$lookup=$dbchk->prepare($lookupsql);
 		$lookup->bind_param("i",$usersessionid);
 		$lookup->execute();
 		$lookup->store_result();
-		$lookup->bind_result($utype,$storedsession,$uname);
+		$lookup->bind_result($utype,$storedsession);
 		$lookup->fetch();
 		// Whilst no valid user should find themselves here these checks just
 		// ensure that levels higher than what should be allowed are not passed
