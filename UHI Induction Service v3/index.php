@@ -4,6 +4,8 @@ session_start();
 include('php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$collegeid=$SESSION['collegeid'];
+echo $collegeid;
 ?>
 
 <!DOCTYPE html>

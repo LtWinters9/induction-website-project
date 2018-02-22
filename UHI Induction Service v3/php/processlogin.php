@@ -28,7 +28,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
 
 
     //Create query, note that parameters being passed in are represented by question marks
-    $loginsql="select userpass, salt, forename, surname, usertype from users,userpass where users.userid=? and userpass.userid=?";
+    $loginsql="select userpass, salt, forename, surname, usertype, collegeid from users,userpass where users.userid=? and userpass.userid=?";
     $lgnstmt = $db->prepare($loginsql);
     //Bound parameters are defined by type, s = string, i = integer, d = double and b = blob
     $lgnstmt->bind_param("ii",$studentid,$studentid);
@@ -38,7 +38,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
     $lgnstmt->store_result();
 
     //Bind returned row parameters in same order as they appear in query
-    $lgnstmt->bind_result($hash,$salt,$forename,$surname,$usertype);
+    $lgnstmt->bind_result($hash,$salt,$forename,$surname,$usertype,$collegeid);
 //	if($lgnstmt->num_rows()==1) {
 //		$lgnstmt->fetch();
 //	}
@@ -58,8 +58,9 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
             $sessionstmt->execute();
             $sessionstmt->close();
             // Store logged in userid as session variable
-            $_SESSION['studentid']=$studentid;
+            $_SESSION['userid']=$studentid;
             $_SESSION['forename']=$forename;
+            $_SESSION['collegeid']=$collegeid;
             if($usertype>0) {
                 header("location: ../index.php");
                 exit();
