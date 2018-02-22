@@ -21,11 +21,11 @@ if(!is_null($userid)) {
 session_unset();
 session_destroy();
 
-header("location: ../index.php");
+//header("location: ../index.php");
 //header is left so student can return to home by clicking button on screen
 // Change the return to home location to an URL. For example comp=server.uhi.ac.uk/~yournumber this stops geneal attacks and ensures correct landing page
 ?>
-<!--
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -113,9 +113,8 @@ header("location: ../index.php");
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-		<script src="assets/js/script.min.js"></script>
+		<script src="../assets/js/script.min.js"></script>
 
 	</body>
 
 	</html>
--->
