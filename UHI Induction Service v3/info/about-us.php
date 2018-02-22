@@ -1,9 +1,13 @@
 <?php
-setCookie("userintent","",(time+86400),"/~09012233");
+setCookie("userintent","",(time+86400),"/~pe15011406");
 session_start();
-include('../php/functions.php');
+session_regenerate_id();
+include('php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
 ?>
 
 
