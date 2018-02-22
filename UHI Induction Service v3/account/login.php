@@ -1,9 +1,13 @@
 <?php
-setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
+setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
+session_regenerate_id();
 include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
 ?>
 
 <!DOCTYPE html>
@@ -49,10 +53,10 @@ $userid=$_SESSION['userid'];
   <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <form class="form-signin"  data-toggle="validator" role="form" method="post" autocomplete="off">
+        <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/processlogin.php" autocomplete="off">
           <span class="reauth-email"> </span>
-          <input class="form-control" type="email" required="" placeholder="Email address" autofocus="" id="inputEmail"  data-error="This email address is invalid">
-          <input class="form-control" type="password" required="" placeholder="Password" id="inputPassword">
+          <input class="form-control" type="text" required="" placeholder="Student ID" autofocus="" name="studentID" id="studentID"  data-error="This student ID is invalid">
+          <input class="form-control" type="password" required="" placeholder="Password" name="inputPassword" id="inputPassword">
 
             <div class="checkbox">
                 <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me</label></div>
