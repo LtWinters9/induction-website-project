@@ -3,7 +3,7 @@ session_start();
 include("functions.php");
 //The ampersand is used to assign a 'null' value if
 //there is currently no userid session variable set
-$userid=&$_SESSION['userid'];
+$userid=$_SESSION['userid'];
 $sessionid=session_id();
 if(!is_null($userid)) {
 	//To prevent hack attempts from logging people out with
