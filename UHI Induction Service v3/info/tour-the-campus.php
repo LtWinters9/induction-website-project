@@ -1,9 +1,13 @@
 <?php
-setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
+setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
+session_regenerate_id();
 include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
 ?>
 
 <!DOCTYPE html>
