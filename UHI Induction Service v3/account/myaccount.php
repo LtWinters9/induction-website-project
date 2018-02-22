@@ -90,6 +90,14 @@ $userid=$_SESSION['userid'];
                         <p class="description">Descriptive text within box, that them leads to an informational area. Icon subject to change..&nbsp; </p><a href="#" class="learn-more">Learn more »</a></div>
                 </div>
             </div>
+          <?php if($currentuser['userlevel']==3) { ?>
+            //used for staff
+            <div class="row">
+                <div class="col">
+                    <h1>Upload a student file.</h1>
+                    <p>Upload a new file for the student and other staff to access</p><a class="btn btn-primary" role="button" href="#" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
+            </div>
+            <?php}?>
         </div>
     </div>
     <div class="highlight-clean" style="background-color:#dfe8ee;">
