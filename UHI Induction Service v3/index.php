@@ -20,7 +20,7 @@ $collegeid=$_SESSION['collegeid'];
     <?php if($currentuser['userlevel']<1) { ?>
     <title>UHI Induction Services</title>
     <?php } ?>
-    
+
     <?php if($currentuser['userlevel']>1) { ?>
     <title>UHI Induction Services <?php echo $forename; ?> </title>
     <?php } ?>
