@@ -22,7 +22,7 @@ $collegeid=$_SESSION['collegeid'];
     <?php } ?>
 
     <?php if($currentuser['userlevel']>1) { ?>
-    <title>UHI Induction Services <?php echo $forename; ?> </title>
+    <title>Welcome, <?php echo $forename; ?> | UHI Induction Services</title>
     <?php } ?>
 
     <!-- bootstrap css libary -->
