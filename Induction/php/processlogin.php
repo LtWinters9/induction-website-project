@@ -5,7 +5,7 @@ session_regenerate_id();
 
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
-<head> <?php echo $var return ?>Return</head>
+<head> <?php echo $return ?>Return</head>
 <body>
 
 
