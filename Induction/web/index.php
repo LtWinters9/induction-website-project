@@ -36,7 +36,7 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="../../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
 </head>
 
 <body>
@@ -44,7 +44,7 @@ $collegeid=$_SESSION['collegeid'];
       <!-- Navbar Start-->
       <?php if($currentuser['userlevel']<1) { ?>
       <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-          <div class="container"><a class="navbar-brand" href="#"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+          <div class="container"><a class="navbar-brand" href="index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
                   data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navcol-1">
                   <ul class="nav navbar-nav nav-right">
