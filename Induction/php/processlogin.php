@@ -5,9 +5,12 @@ session_regenerate_id();
 
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
-<head> <?php echo $return ?>Return</head>
+<head>>Return</head>
 <body>
 
+<?php
+void echo ( string $return [, string $... ] )
+?>
 
 <?php
 include('functions.php');
