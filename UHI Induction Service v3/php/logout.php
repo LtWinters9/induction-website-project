@@ -44,7 +44,7 @@ session_destroy();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
-		<link rel="stylesheet" href="../dist/css/css/styles.min.css">
+		<link rel="stylesheet" href="../dist/css/styles.min.css">
 </head>
 
 <body>
