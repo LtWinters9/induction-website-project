@@ -52,11 +52,11 @@ $collegeid=$_SESSION['collegeid'];
   <!-- update Start --> <!--Email needs to be read only and changed to students email address -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $collegeid; ?> ">
+        <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $userid; ?> ">
         <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatepassword.php" autocomplete="off">
           <span class="reauth-email"> </span>
-          <input class="form-control" type="password" required="" autofocus"" placeholder="Password" maxlength="20" id="inputPassword">
-          <input class="form-control" type="password" required="" placeholder="Confirm Password" maxlength="20" id="inputSecondPassword">
+          <input class="form-control" type="password" required="" autofocus"" placeholder="New Password" maxlength="20" id="inputPassword">
+          <input class="form-control" type="password" required="" placeholder="Confirm New Password" maxlength="20" id="inputSecondPassword">
           <div class="checkbox">
 
           </div>
