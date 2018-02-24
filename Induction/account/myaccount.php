@@ -140,7 +140,9 @@ $collegeid=$_SESSION['collegeid'];
                 <p class="text-center">Need to change your password, or get in touch with our automated bot? </p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../php/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
-            <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#465765;color:#ffffff;">CHAT NOW</a></div>
+            <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#465765;color:#ffffff;">CHAT NOW</a>
+              <a class="btn btn-light" role="button" href="../php/editdetails.php"   data-bs-hover-animate="pulse" style="background-color:#810ac2;color:#ffffff;">UPDATE DETAILS</a>
+            </div>
         </div>
     </div>
     <div class="footer-dark" style="background-color:#7e3ca6;">
