@@ -21,7 +21,7 @@ if(!is_null($userid)) {
 session_unset();
 session_destroy();
 
-//header("location: ../index.php");
+//header("location: ../web/index.php");
 //header is left so student can return to home by clicking button on screen
 // Change the return to home location to an URL. For example comp=server.uhi.ac.uk/~yournumber this stops geneal attacks and ensures correct landing page
 ?>
@@ -49,7 +49,7 @@ session_destroy();
 
 <body>
 	<nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-      <div class="container"><a class="navbar-brand" href="../index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+      <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
               data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navcol-1">
               <ul class="nav navbar-nav nav-right">
@@ -66,14 +66,14 @@ session_destroy();
           </div>
       </div>
   </nav>
-	
+
 <div class="highlight-blue">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Logout </h2>
                 <p class="text-center">You have been successfully logged out </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../index.php">Return to home</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../web/index.php">Return to home</a></div>
         </div>
     </div>
 

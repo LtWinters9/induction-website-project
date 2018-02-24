@@ -61,7 +61,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
 
 
             if($usertype>0) {
-                header("location: ../index.php");
+                header("location: ../web/index.php");
                 exit();
             }
 
