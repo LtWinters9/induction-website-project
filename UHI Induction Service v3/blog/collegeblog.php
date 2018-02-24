@@ -167,7 +167,7 @@ $collegeid=$_SESSION['collegeid'];
           $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid order by blogtime desc limit 2";
 
           $stmt = $db->prepare($sql);
-          $stmt->execute();
+      // Error here    $stmt->execute();
           $stmt->store_result();
           $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
 
