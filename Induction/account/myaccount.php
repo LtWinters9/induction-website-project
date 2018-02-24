@@ -72,7 +72,7 @@ $collegeid=$_SESSION['collegeid'];
                 } else if ( $Hour >= 19 || $Hour <= 4 ) {
                     echo "Good Evening";
                 }
-                ?>,<?php echo $userid; ?>. Welcome to your account. </h2>
+                ?> Welcome to your account, <?php echo $userid; ?></h2>
                 <p class="lead text-center">Access the key areas quickly below.</p>
             </div>
             <div class="row justify-content-center features">
