@@ -5,10 +5,10 @@ session_regenerate_id();
 
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
-<head>Return</head>
+<head> <?php echo $var ?>Return</head>
 <body>
 
-  
+
 <?php
 include('functions.php');
 
