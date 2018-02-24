@@ -58,7 +58,7 @@ $collegeid=$_SESSION['collegeid'];
     <div class="features-boxed">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Hello, Welcome to your account, <?php echo $StudentID; ?></h2>
+                <h2 class="text-center">Hello. Welcome to your account, <?php echo $userid; ?></h2>
                 <p class="lead text-center">Access the key areas quickly below.</p>
             </div>
             <div class="row justify-content-center features">
