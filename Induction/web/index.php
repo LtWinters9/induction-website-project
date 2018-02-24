@@ -77,7 +77,7 @@ $collegeid=$_SESSION['collegeid'];
       "content": {
         "message": "This website uses cookies to ensure you get the best experience on our website, learn more ",
         "link": "HERE",
-        "href": "https://cookiesandyou.com/"
+        "href": "../web/cookies-policy.php"
       }
     })});
     </script>
