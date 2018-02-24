@@ -67,9 +67,9 @@ $collegeid=$_SESSION['collegeid'];
 
 
               <?php } else { ?>
-              <h1>Welcome back <?php echo $currentuser['forename']; ?>!</h1>
+              <h1>Welcome back <?php echo $forename['forename']; ?>!</h1>
               <?php } ?>
-              
+
   <!-- Login End -->
   <div class="footer-dark" style="background-color:#7e3ca6;">
       <footer>
