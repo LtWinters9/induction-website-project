@@ -59,7 +59,20 @@ $collegeid=$_SESSION['collegeid'];
     <div class="features-boxed">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Hello. Welcome to your account, <?php echo $userid; ?></h2>
+
+                <h2 class="text-center"><?php
+
+                  // 24-hour format of an hour without leading zeros (0 through 23)
+                $Hour = date('G');
+
+                if ( $Hour >= 5 && $Hour <= 11 ) {
+                    echo "Good Morning";
+                } else if ( $Hour >= 12 && $Hour <= 18 ) {
+                    echo "Good Afternoon";
+                } else if ( $Hour >= 19 || $Hour <= 4 ) {
+                    echo "Good Evening";
+                }
+                ?> Welcome to your account, <?php echo $userid; ?></h2>
                 <p class="lead text-center">Access the key areas quickly below.</p>
             </div>
             <div class="row justify-content-center features">
