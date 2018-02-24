@@ -1,18 +1,14 @@
-
-
-
-
-
 <?php
-
 session_start();
 session_regenerate_id();
 ?>
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
-<head>
-</head>
+<head>Return</head>
 <body>
+
+  
 <?php
 include('functions.php');
 
