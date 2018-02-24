@@ -63,6 +63,9 @@ $collegeid=$_SESSION['collegeid'];
                 </div>
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
               </form>
+            <?php } else { ?>
+            <h1>Welcome back <?php echo $currentuser['forename']; ?>!</h1>
+            <?php } ?>
                 <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a></div>
 
   <!-- Login End -->
