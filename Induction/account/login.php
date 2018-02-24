@@ -1,4 +1,4 @@
-../web/index.php<?php
+<?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
 session_regenerate_id();
