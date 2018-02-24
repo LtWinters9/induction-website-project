@@ -10,6 +10,7 @@ session_regenerate_id();
 
 <?php
 void echo ( string $return [, string $... ] )
+echo "return...";
 ?>
 
 <?php
