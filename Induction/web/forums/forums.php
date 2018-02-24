@@ -1,7 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
 session_start();
-include('../../php/functions.php');
+include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 ?>
@@ -28,15 +28,15 @@ $userid=$_SESSION['userid'];
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-        <div class="container"><a class="navbar-brand" href="../../index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="rounded img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+        <div class="container"><a class="navbar-brand" href="../index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="rounded img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
                 data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav nav-right">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
+                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
                         <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a><a class="dropdown-item" role="presentation" href="contact/contact.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
                     </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
                 </ul>
@@ -145,9 +145,9 @@ $userid=$_SESSION['userid'];
                           <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
                           <ul>
                               <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
-                              <li><a href="../../info/opening-times.php">Opening Times</a></li>
-                              <li><a href="../../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
-                              <li><a href="../../info/sitemap.php">Sitemap</a></li>
+                              <li><a href="../info/opening-times.php">Opening Times</a></li>
+                              <li><a href="../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
+                              <li><a href="../info/sitemap.php">Sitemap</a></li>
                           </ul>
                       </div>
                       <div class="col-sm-4 col-md-12 col-xl-12 offset-xl-0 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
@@ -159,8 +159,8 @@ $userid=$_SESSION['userid'];
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-      <script src="../../assets/js/script.min.js"></script>
-      <script src="../../dist/js/jqBootstrapValidation.js"></script>
+      <script src="../assets/js/script.min.js"></script>
+      <script src="../dist/js/jqBootstrapValidation.js"></script>
       <!-- <script src="../dist/js/login.js"></script> -->
       <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 
