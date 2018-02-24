@@ -53,7 +53,7 @@ session_destroy();
                 <h2 class="text-center">Logout </h2>
                 <p class="text-center">You have been successfully logged out </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="https://computechprojects.net/en-uk/home/projects/UHI/index.php">Return to home</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../index.php">Return to home</a></div>
         </div>
     </div>
 
