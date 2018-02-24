@@ -8,9 +8,7 @@ session_regenerate_id();
 <head>>Return</head>
 <body>
 
-<?php
-void echo ( string $return [, string $... ] )
-?>
+
 
 <?php
 include('functions.php');
