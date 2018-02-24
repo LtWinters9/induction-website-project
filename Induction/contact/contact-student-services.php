@@ -1,7 +1,6 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-session_regenerate_id();
 include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
@@ -33,12 +32,12 @@ $collegeid=$_SESSION['collegeid'];
 <body>
 
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-      <div class="container"><a class="navbar-brand" href="../index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+      <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
               data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navcol-1">
               <ul class="nav navbar-nav nav-right">
                   <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                  <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
+                  <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
                       <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
                         <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student services</a></div>
                   </li>
@@ -50,46 +49,55 @@ $collegeid=$_SESSION['collegeid'];
           </div>
       </div>
   </nav>
+<!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="text-center">Contact Perth UHI Student Services</h2>
+        <hr class="star-primary">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
 
-  <h2 class="text-uppercase text-center" style="color:#37434d;">Perth UHI Campus </h2>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row clearmargin clearpadding row-image-txt">
-                        <div data-aos="fade-left" data-aos-duration="300" data-aos-delay="450" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);background-size:cover;height:400px;background-position:center;background-color:#37434d;color:#37434d;">
-                            <div></div>
-                        </div>
-                        <div data-aos="fade-left" data-aos-duration="400" data-aos-delay="500" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding:20px;background-color:#7e3ca6;">
-                            <h1 style="color:#ffffff;">The Academy of Sport and Wellbeing</h1>
-                            <hr>
-                            <p style="color:#ffffff;">Academy of Sport and Wellbeing / ... Our gym equipment includes a variety of the latest cardiovascular and strength resistance equipment to help you with achieving your fitness goals and to inspire you to move your body, de-stress and improve or maintain your fitness levels</p>
-                            <div style="text-align:center"><a class="btn btn-light btn-lg" role="button" href="https://www.perth.uhi.ac.uk/academy-of-sport-and-wellbeing/" target="_blank" >Learn more </a></div>
-                        </div>
-                    </div>
+            <form name="sentMessage" id="contactForm" novalidate>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Name</label>
+                  <input class="form-control" id="name" type="text" placeholder="Name" required data-validation-required-message="Please enter your name.">
+                  <p class="help-block text-danger"></p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row clearmargin clearpadding row-image-txt">
-                        <div data-aos="fade-left" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image:url(&quot;../assets/img/banner.png&quot;);background-size:cover;height:400px;background-position:center;background-color:#37434d;color:#37434d;">
-                            <div></div>
-                        </div>
-                        <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="650" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding:20px;background-color:#7e3ca6;">
-                            <h1 style="color:#ffffff;">Brahan Building </h1>
-                            <hr>
-                            <p style="color:#ffffff;">We're delighted that you have chosen to come to Perth College UHI, one of Scotland's leading colleges of further and higher education and part of the University of the Highlands and Islands</p>
-                            <div style="text-align:center"><a class="btn btn-light btn-lg" role="button" href="https://www.perth.uhi.ac.uk/" target="_blank" >Learn more </a></div>
-                        </div>
-                    </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Email Address</label>
+                  <input class="form-control" id="email" type="email" placeholder="Email Address" required data-validation-required-message="Please enter your email address.">
+                  <p class="help-block text-danger"></p>
                 </div>
-            </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Phone Number</label>
+                  <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required data-validation-required-message="Please enter your phone number.">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  <label>Message</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Message" required data-validation-required-message="Please enter a message."></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+              <br>
+              <div id="success"></div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Send</button>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+    <!-- End Contact Section -->
+
     <div class="testimonials-clean"></div>
     <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
         <div class="container">
@@ -146,6 +154,8 @@ $collegeid=$_SESSION['collegeid'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="../dist/js/contact_me.js"></script>
+    <script src="../dist/js/jqBootstrapValidation.js"></script>
     <script src="../assets/js/script.min.js"></script>
 
 </body>

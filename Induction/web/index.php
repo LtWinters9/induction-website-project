@@ -1,7 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('php/functions.php');
+include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -36,7 +36,7 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
 </head>
 
 <body>
@@ -44,14 +44,14 @@ $collegeid=$_SESSION['collegeid'];
       <!-- Navbar Start-->
       <?php if($currentuser['userlevel']<1) { ?>
       <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-          <div class="container"><a class="navbar-brand" href="#"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+          <div class="container"><a class="navbar-brand" href="index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
                   data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
               <div class="collapse navbar-collapse" id="navcol-1">
                   <ul class="nav navbar-nav nav-right">
                       <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
                       <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="javascript:location.reload()" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
-                            <a class="dropdown-item" role="presentation" href="contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
+                          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
+                            <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
                       </li>
                       <li class="nav-item" role="presentation"><a class="nav-link" href="../account/logout.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
                       <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
@@ -67,14 +67,14 @@ $collegeid=$_SESSION['collegeid'];
 <!-- Navbar Start-->
 <?php if($currentuser['userlevel']>1) { ?>
 <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-    <div class="container"><a class="navbar-brand" href="#"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
+    <div class="container"><a class="navbar-brand" href="#"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
             data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav nav-right">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="javascript:location.reload()" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                    <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout </a>
-                      <a class="dropdown-item" role="presentation" href="contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
+                    <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout </a>
+                      <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
                 </li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="../account/admin.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
@@ -93,21 +93,21 @@ $collegeid=$_SESSION['collegeid'];
     <div class="carousel slide" data-ride="carousel" id="carousel-1">
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-                <div class="jumbotron hero-nature carousel-hero" style="background-image:url(&quot;assets/img/union.png&quot;);">
+                <div class="jumbotron hero-nature carousel-hero" style="background-image:url(&quot;../assets/img/union.png&quot;);">
                     <h1 class="hero-title">Welcome </h1>
                     <p class="hero-subtitle">To University of the Highlands</p>
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href="info/about-us.php" style="color:#ffffff;background-color:#7e3ca6;">About us</a></p>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="jumbotron hero-photography carousel-hero" style="background-image:url(&quot;assets/img/banner2.png&quot;);">
+                <div class="jumbotron hero-photography carousel-hero" style="background-image:url(&quot;../assets/img/banner2.png&quot;);">
                     <h1 class="hero-title">Contact Us </h1>
                     <p class="hero-subtitle">Today </p>
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href=contact/contact-student-services.php style="background-color:#7e3ca6;">Contact Student Services</a></p>
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="jumbotron hero-technology carousel-hero" style="background-image:url(&quot;assets/img/banner.jpg&quot;);">
+                <div class="jumbotron hero-technology carousel-hero" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);">
                     <h1 class="hero-title">Academy of Sport and Wellbeing </h1>
                     <p class="hero-subtitle"> Perth College UHI </p>
                     <p><a class="btn btn-primary btn-lg hero-button" role="button" href="info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">Tour the campus </a></p>
@@ -227,8 +227,8 @@ $collegeid=$_SESSION['collegeid'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <script src="assets/js/script.min.js"></script>
-    <script src="dist/js/functions.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../dist/js/functions.js"></script>
 
 </body>
 
