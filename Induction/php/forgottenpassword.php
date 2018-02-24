@@ -1,7 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('php/functions.php');
+include('functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -27,10 +27,36 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../dist/favicons.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../dist/favicons.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../dist/favicons.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../dist/favicons.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../dist/favicons.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../dist/favicons.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../dist/favicons.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../dist/favicons.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../dist/favicons.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../dist/favicons.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../dist/favicons.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../dist/favicons.ico/favicon-16x16.png">
+    <link rel="manifest" href="../dist/favicons.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Cookies -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
 </head>
 
 <body>
 <div class id=update>
+
+<?php if($currentuser['userlevel']>1) { ?>
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
       <div class="container"><a class="navbar-brand" href="../index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
               data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -38,8 +64,10 @@ $collegeid=$_SESSION['collegeid'];
               <ul class="nav navbar-nav nav-right">
                   <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
                   <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                      <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
-                        <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student services</a></div>
+                    <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/myaccount.php" style="color:#ffffff;background-color:#7e3ca6;">Account Overview </a>
+                      <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a>
+                      <a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Log Out</a>
+
                   </li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
@@ -49,14 +77,15 @@ $collegeid=$_SESSION['collegeid'];
           </div>
       </div>
   </nav>
+  <?php } ?>
   <!-- update Start --> <!--Email needs to be read only and changed to students email address -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <input class="form-control" readonly="" type="email"  placeholder="Email address">
+        <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $userid; ?> ">
         <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatepassword.php" autocomplete="off">
           <span class="reauth-email"> </span>
-          <input class="form-control" type="password" required="" autofocus"" placeholder="Password" maxlength="20" id="inputPassword">
-          <input class="form-control" type="password" required="" placeholder="Confirm Password" maxlength="20" id="inputSecondPassword">
+          <input class="form-control" type="password" required="" autofocus"" placeholder="New Password" maxlength="20" id="inputPassword">
+          <input class="form-control" type="password" required="" placeholder="Confirm New Password" maxlength="20" id="inputSecondPassword">
           <div class="checkbox">
 
           </div>
@@ -119,6 +148,7 @@ $collegeid=$_SESSION['collegeid'];
   <script src="../dist/js/jqBootstrapValidation.js"></script>
   <!-- <script src="../dist/js/login.js"></script> -->
   <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+  <script src="../dist/js/cookies.js"></script>
 
 
 

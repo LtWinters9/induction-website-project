@@ -1,6 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
+date_default_timezone_set('London/GMT');
 include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
@@ -9,12 +10,7 @@ $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 
 
-//$firstname=$_SESSION['firstname'];
-//$surname=$_SESSION['surname'];
-//$postcode=$_SESSION['postcode'];
-//$emailadd=$_SESSION['emailadd'];
-//$title=$_SESSION['title'];
-//$mobile=$_SESSION['mobile'];
+
 //$username=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
@@ -36,9 +32,34 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../dist/favicons.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../dist/favicons.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../dist/favicons.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../dist/favicons.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../dist/favicons.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../dist/favicons.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../dist/favicons.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../dist/favicons.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../dist/favicons.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../dist/favicons.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../dist/favicons.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../dist/favicons.ico/favicon-16x16.png">
+    <link rel="manifest" href="../dist/favicons.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Cookies -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
 </head>
 
 <body>
+  <?php if($currentuser['userlevel']>1) { ?>
     <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
         <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
                 data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -47,7 +68,7 @@ $collegeid=$_SESSION['collegeid'];
                     <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
                     <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="javascript:location.reload()" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
                         <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout </a>
-                          <a class="dropdown-item" role="presentation" href="../contact/contact.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
+                          <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a></div>
                     </li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="../account/logout.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
@@ -57,10 +78,25 @@ $collegeid=$_SESSION['collegeid'];
             </div>
         </div>
     </nav>
+<?php } ?>
+
     <div class="features-boxed">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Hello, Welcome to your account, <?php echo $StudentID; ?></h2>
+
+                <h2 class="text-center">
+                <?php
+                // 24-hour format of an hour without leading zeros (0 through 23)
+                $Hour = date('G');
+
+                if ( $Hour >= 5 && $Hour <= 11 ) {
+                    echo "Good Morning";
+                } else if ( $Hour >= 12 && $Hour <= 18 ) {
+                    echo "Good Afternoon";
+                } else if ( $Hour >= 19 || $Hour <= 4 ) {
+                    echo "Good Evening";
+                }
+                ?>. Welcome to your account, <?php echo $userid; ?></h2>
                 <p class="lead text-center">Access the key areas quickly below.</p>
             </div>
             <div class="row justify-content-center features">
@@ -103,8 +139,8 @@ $collegeid=$_SESSION['collegeid'];
                 <h2 class="text-center"><?php echo $StudentID; ?> Account Overview</h2>
                 <p class="text-center">Need to change your password, or get in touch with our automated bot? </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../web/account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
-            <a class="btn btn-light" role="button" href="../web/chatbot.php" data-bs-hover-animate="pulse" style="background-color:#465765;color:#ffffff;">CHAT NOW</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../php/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
+            <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#465765;color:#ffffff;">CHAT NOW</a></div>
         </div>
     </div>
     <div class="footer-dark" style="background-color:#7e3ca6;">
@@ -154,6 +190,7 @@ $collegeid=$_SESSION['collegeid'];
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="../assets/js/script.min.js"></script>
+    <script src="../dist/js/cookies.js"></script>
 
 
 
