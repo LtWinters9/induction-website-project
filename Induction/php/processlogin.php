@@ -5,10 +5,11 @@ session_regenerate_id();
 
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
-<head>Return</head>
+<head>>Return</head>
 <body>
 
-  
+
+
 <?php
 include('functions.php');
 
