@@ -9,12 +9,7 @@ $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 
 
-//$firstname=$_SESSION['firstname'];
-//$surname=$_SESSION['surname'];
-//$postcode=$_SESSION['postcode'];
-//$emailadd=$_SESSION['emailadd'];
-//$title=$_SESSION['title'];
-//$mobile=$_SESSION['mobile'];
+
 //$username=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
@@ -39,6 +34,7 @@ $collegeid=$_SESSION['collegeid'];
 </head>
 
 <body>
+  <?php if($currentuser['userlevel']>1) { ?>
     <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
         <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
                 data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
@@ -57,6 +53,8 @@ $collegeid=$_SESSION['collegeid'];
             </div>
         </div>
     </nav>
+<?php } ?>
+
     <div class="features-boxed">
         <div class="container">
             <div class="intro">
