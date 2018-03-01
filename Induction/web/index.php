@@ -123,21 +123,21 @@ $collegeid=$_SESSION['collegeid'];
           <div class="jumbotron hero-nature carousel-hero" style="background-image:url(&quot;../assets/img/union.png&quot;);">
             <h1 class="hero-title">Welcome </h1>
             <p class="hero-subtitle">To University of the Highlands</p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="info/about-us.php" style="color:#ffffff;background-color:#7e3ca6;">About us</a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href=../"info/about-us.php" style="color:#ffffff;background-color:#7e3ca6;">About us</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="jumbotron hero-photography carousel-hero" style="background-image:url(&quot;../assets/img/banner2.png&quot;);">
             <h1 class="hero-title">Contact Us </h1>
             <p class="hero-subtitle">Today </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href=contact/contact-student-services.php style="background-color:#7e3ca6;">Contact Student Services</a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href=../contact/contact-student-services.php style="background-color:#7e3ca6;">Contact Student Services</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="jumbotron hero-technology carousel-hero" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);">
             <h1 class="hero-title">Academy of Sport and Wellbeing </h1>
             <p class="hero-subtitle"> Perth College UHI </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">Tour the campus </a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">Tour the campus </a></p>
           </div>
         </div>
       </div>
