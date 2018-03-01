@@ -39,12 +39,12 @@ function checkUser($usersessionid,$sessionid,$ptype) {
 		$lookup->close();
 		$dbchk->close();
 		if($sessionid!=$storedsession || $storedsession=="" || $utype<$ptype) {
-			header("location: php/logout.php");
+			header("location: logout.php");
 		}
 	} else {
 		$lookup->close();
 		$dbchk->close();
-		header("location: php/logout.php");
+		header("location: logout.php");
 	}
 	return $uname;
 }
