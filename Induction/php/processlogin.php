@@ -20,8 +20,8 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
     $studentid=$_POST['studentID'];
     $userpass=$_POST['inputPassword'];
 
-	echo $studentid;
-	echo $userpass;
+	//echo $studentid;
+	//echo $userpass;
 
 
     //Create query, note that parameters being passed in are represented by question marks
