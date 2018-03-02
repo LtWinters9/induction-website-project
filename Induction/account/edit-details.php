@@ -85,7 +85,7 @@ $collegeid=$_SESSION['collegeid'];
         <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
       </div>
     </div>
-    <form>
+    <form class="form-edit-details"  data-toggle="validator" role="form" method="post" action="../php/updatedetails.php" autocomplete="off">
       <div class="form-row profile-row">
         <div class="col-md-4 relative">
           <div class="avatar">
