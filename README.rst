@@ -5,7 +5,7 @@ This file is used to update on current project.
 comment below to log changes.
 
 Scope of Project:
-This project has been created to assit new students during the induction process
+This project has been created to assist new students during the induction process
 by providing students a way to find out more about the college/university they are going too by having access
 to all the contact information for the place of study the student is going to.
 
