@@ -1,7 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('functions.php');
+include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -15,7 +15,7 @@ $collegeid=$_SESSION['collegeid'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Password | UHI Induction Services</title>
+    <title>Hello, <?php echo $forename; ?>| Update Details | UHI Induction Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -78,23 +78,60 @@ $collegeid=$_SESSION['collegeid'];
       </div>
   </nav>
   <?php } ?>
-  <!-- update Start --> <!--Email needs to be read only and changed to students email address -->
-    <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
-        <p class="profile-name-card"> </p>
-        <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $userid; ?> ">
-        <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatepassword.php" autocomplete="off">
-          <span class="reauth-email"> </span>
-          <input class="form-control" type="password" required="" autofocus"" placeholder="New Password" maxlength="20" id="inputPassword">
-          <input class="form-control" type="password" required="" placeholder="Confirm New Password" maxlength="20" id="inputSecondPassword">
-          <div class="checkbox">
 
-          </div>
-          <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit" style="background-color:#7e3ca6;">Update Now</button>
-          <a href="../account/myaccount.php" class="forgot-password">Return to My Account</a>
-        </form>
-     </div>
-<!-- update End -->
+  <!-- Start Create an account-->
+    <div class="register-photo">  <!-- Image may strech on desktop ,  removed on mobile -->
+        <div class="form-container">
+            <!-- <div class="image-holder"></div> Image was removed due to far to much strech  CSS is still good -->
+            <form id="registeruser" name="registeruser" method="post" action="../php/updatedetails.php">  <!-- POST form to update details -->
+                <h2 class="text-center"><strong>Update</strong>Your Details.</h2>
 
+         <h2 class="text-left">Contact Details</h2>
+                <div class="form-group">
+
+
+
+        <!-- NAME AND CONTACT DETAILS -->
+        <div class="form-group">
+                   <input class="form-control" type="email" name="emailadd" id="emailadd" placeholder="Email Address" required  /><span id="emailFb"></span><br />   <!-- Enter valid email address -->
+                </div>
+        <div class="fourm-group">
+                    <label for="title">Title:</label> <!-- User must select a title-->
+                    <select class="title" name="title" id="title" data-bind="value:title"  required autofocus=""> <!-- Required = User input needed-->
+                    <option value="">Choose Title</option>                                                        <!-- autofocus = focuses on this area when landing on webpage-->
+                          <option value="Mr">Mr</option>
+                          <option value="Mrs">Mrs</option>
+                          <option value="Miss">Miss</option>
+                          <option value="Ms">Ms</option>
+                          <option value="Dr">Dr</option>
+                          <option value="Mx">Mx</option>
+                    </select>
+        </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="firstname" id="forename" placeholder="Firstname" required  /><span id="firstnameFb"></span><br />  <!-- Enter firstname -->
+                </div>
+        <div class="form-group">
+                   <input class="form-control" type="text" name="surname" id="surname" placeholder="Surname" required  /><span id="surnameFb"></span><br /> <!-- Enter surname -->
+                </div>
+        <div class="form-group">
+                   <input class="form-control" type="tel" name="mobile" id="mobile" placeholder=" Mobile Number e.g +44 (7900) 000000" required maxlength="15" onkeypress="return isNumberKey(event)" /> <!-- Enter mobile number -->
+                </div>
+         <div class="form-group">
+                   <input class="form-control" type="text" name="postcode" id="postcode" placeholder="Postcode" required maxlength="10" onkeydown="upperCaseF(this)"  />   <!-- Enter postcode -->
+                </div>
+                
+
+        <!-- USER SECURITY DETAILS -->
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit" id="submitb" data-bs-hover-animate="pulse" style="background-color:#2980ef;">UPDATE NOW</button> <!-- Submit form button -->
+                </div><a href="login.php" class="already">You already have an account? Login here.</a> <!-- Return user back to login -->
+
+
+    </form>
+    </div>
+
+    <!-- End Create an account -->
 
 
 
