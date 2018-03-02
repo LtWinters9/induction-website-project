@@ -80,60 +80,97 @@ $collegeid=$_SESSION['collegeid'];
   <?php } ?>
 
 
-<!-- This section will be re-designed -->
-  <!-- Start Create an account-->
-    <div class="register-photo">  <!-- Image may strech on desktop ,  removed on mobile -->
-        <div class="form-container">
-            <!-- <div class="image-holder"></div> Image was removed due to far to much strech  CSS is still good -->
-            <form id="registeruser" name="registeruser" method="post" action="../php/updatedetails.php">  <!-- POST form to update details -->
-                <h2 class="text-center"><strong>Update</strong>Your Details.</h2>
-
-         <h2 class="text-left">Contact Details</h2>
-                <div class="form-group">
 
 
+  <form>
 
-        <!-- NAME AND CONTACT DETAILS -->
-        <div class="form-group">
-                   <input class="form-control" type="email" name="emailadd" id="emailadd" placeholder="Email Address" required  /><span id="emailFb"></span><br />   <!-- Enter valid email address -->
-                </div>
-        <div class="fourm-group">
-                    <label for="title">Title:</label> <!-- User must select a title-->
-                    <select class="title" name="title" id="title" data-bind="value:title"  required autofocus=""> <!-- Required = User input needed-->
-                    <option value="">Choose Title</option>                                                        <!-- autofocus = focuses on this area when landing on webpage-->
-                          <option value="Mr">Mr</option>
-                          <option value="Mrs">Mrs</option>
-                          <option value="Miss">Miss</option>
-                          <option value="Ms">Ms</option>
-                          <option value="Dr">Dr</option>
-                          <option value="Mx">Mx</option>
-                    </select>
-        </div>
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="firstname" id="forename" placeholder="Firstname" required  /><span id="firstnameFb"></span><br />  <!-- Enter firstname -->
-                </div>
-        <div class="form-group">
-                   <input class="form-control" type="text" name="surname" id="surname" placeholder="Surname" required  /><span id="surnameFb"></span><br /> <!-- Enter surname -->
-                </div>
-        <div class="form-group">
-                   <input class="form-control" type="tel" name="mobile" id="mobile" placeholder=" Mobile Number e.g +44 (7900) 000000" required maxlength="15" onkeypress="return isNumberKey(event)" /> <!-- Enter mobile number -->
-                </div>
-         <div class="form-group">
-                   <input class="form-control" type="text" name="postcode" id="postcode" placeholder="Postcode" required maxlength="10" onkeydown="upperCaseF(this)"  />   <!-- Enter postcode -->
-                </div>
+	<div class="form-group"> <!-- Full Name -->
+		<label for="full_name_id" class="control-label">Full Name</label>
+		<input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="John Deer">
+	</div>
 
+	<div class="form-group"> <!-- Street 1 -->
+		<label for="street1_id" class="control-label">Street Address 1</label>
+		<input type="text" class="form-control" id="street1_id" name="street1" placeholder="Street address, P.O. box, company name, c/o">
+	</div>
 
-        <!-- USER SECURITY DETAILS -->
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit" id="submitb" data-bs-hover-animate="pulse" style="background-color:#2980ef;">UPDATE NOW</button> <!-- Submit form button -->
-                </div><a href="login.php" class="already">You already have an account? Login here.</a> <!-- Return user back to login -->
+	<div class="form-group"> <!-- Street 2 -->
+		<label for="street2_id" class="control-label">Street Address 2</label>
+		<input type="text" class="form-control" id="street2_id" name="street2" placeholder="Apartment, suite, unit, building, floor, etc.">
+	</div>
 
+	<div class="form-group"> <!-- City-->
+		<label for="city_id" class="control-label">City</label>
+		<input type="text" class="form-control" id="city_id" name="city" placeholder="Smallville">
+	</div>
 
-    </form>
-    </div>
+	<div class="form-group"> <!-- State Button -->
+		<label for="state_id" class="control-label">State</label>
+		<select class="form-control" id="state_id">
+			<option value="AL">Alabama</option>
+			<option value="AK">Alaska</option>
+			<option value="AZ">Arizona</option>
+			<option value="AR">Arkansas</option>
+			<option value="CA">California</option>
+			<option value="CO">Colorado</option>
+			<option value="CT">Connecticut</option>
+			<option value="DE">Delaware</option>
+			<option value="DC">District Of Columbia</option>
+			<option value="FL">Florida</option>
+			<option value="GA">Georgia</option>
+			<option value="HI">Hawaii</option>
+			<option value="ID">Idaho</option>
+			<option value="IL">Illinois</option>
+			<option value="IN">Indiana</option>
+			<option value="IA">Iowa</option>
+			<option value="KS">Kansas</option>
+			<option value="KY">Kentucky</option>
+			<option value="LA">Louisiana</option>
+			<option value="ME">Maine</option>
+			<option value="MD">Maryland</option>
+			<option value="MA">Massachusetts</option>
+			<option value="MI">Michigan</option>
+			<option value="MN">Minnesota</option>
+			<option value="MS">Mississippi</option>
+			<option value="MO">Missouri</option>
+			<option value="MT">Montana</option>
+			<option value="NE">Nebraska</option>
+			<option value="NV">Nevada</option>
+			<option value="NH">New Hampshire</option>
+			<option value="NJ">New Jersey</option>
+			<option value="NM">New Mexico</option>
+			<option value="NY">New York</option>
+			<option value="NC">North Carolina</option>
+			<option value="ND">North Dakota</option>
+			<option value="OH">Ohio</option>
+			<option value="OK">Oklahoma</option>
+			<option value="OR">Oregon</option>
+			<option value="PA">Pennsylvania</option>
+			<option value="RI">Rhode Island</option>
+			<option value="SC">South Carolina</option>
+			<option value="SD">South Dakota</option>
+			<option value="TN">Tennessee</option>
+			<option value="TX">Texas</option>
+			<option value="UT">Utah</option>
+			<option value="VT">Vermont</option>
+			<option value="VA">Virginia</option>
+			<option value="WA">Washington</option>
+			<option value="WV">West Virginia</option>
+			<option value="WI">Wisconsin</option>
+			<option value="WY">Wyoming</option>
+		</select>
+	</div>
 
-    <!-- End Create an account -->
+	<div class="form-group"> <!-- Zip Code-->
+		<label for="zip_id" class="control-label">Zip Code</label>
+		<input type="text" class="form-control" id="zip_id" name="zip" placeholder="#####">
+	</div>
+
+	<div class="form-group"> <!-- Submit Button -->
+		<button type="submit" class="btn btn-primary">Buy!</button>
+	</div>
+
+</form>
 
 
 
