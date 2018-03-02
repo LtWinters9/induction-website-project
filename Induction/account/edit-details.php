@@ -26,7 +26,6 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 
     <!-- Favicons -->
@@ -55,7 +54,7 @@ $collegeid=$_SESSION['collegeid'];
 </head>
 
 <body>
-<div class id=update>
+<div class id=update-details>
 
 <?php if($currentuser['userlevel']>1) { ?>
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
@@ -80,6 +79,8 @@ $collegeid=$_SESSION['collegeid'];
   </nav>
   <?php } ?>
 
+
+<!-- This section will be re-designed -->
   <!-- Start Create an account-->
     <div class="register-photo">  <!-- Image may strech on desktop ,  removed on mobile -->
         <div class="form-container">

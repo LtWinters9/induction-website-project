@@ -54,7 +54,7 @@ $collegeid=$_SESSION['collegeid'];
 </head>
 
 <body>
-<div class id=update>
+<div class id=update-pass>
 
 <?php if($currentuser['userlevel']>1) { ?>
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
