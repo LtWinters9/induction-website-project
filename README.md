@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+instructions at a later date
 ```
 
 ### Installing
@@ -38,7 +38,7 @@ A step by step series of examples that tell you have to get a development env ru
 Stay what the step will be
 
 ```
-Give the example
+instructions at a later date
 ```
 
 And repeat
