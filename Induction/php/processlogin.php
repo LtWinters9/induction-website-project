@@ -35,7 +35,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
     $lgnstmt->store_result();
 
     //Bind returned row parameters in same order as they appear in query
-    $lgnstmt->bind_result($hash,$salt,$forename,$surname,$usertype,$collegeid);
+    $lgnstmt->bind_result($hash,$salt,$forename,$surname, $telephone,$usertype,$collegeid);
 
     //Valid login only if exactly one row returned, otherwise something iffy is going on
     if($lgnstmt->num_rows()==1) {
