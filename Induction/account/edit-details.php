@@ -96,19 +96,28 @@ $collegeid=$_SESSION['collegeid'];
           <hr>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname"></div>
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname" id="forename" data-bind="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Lastname </label><input class="form-control" type="text" name="lastname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" id="surname" data-bind="surname"></div>
             </div>
           </div>
           <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Password </label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required=""></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Confirm Password</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required=""></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="address2" autocomplete="off" required=""></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="address2" autocomplete="off" required=""></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Telephone</label><input class="form-control" type="text" name="address2" autocomplete="off" required=""></div>
             </div>
           </div>
           <hr>
