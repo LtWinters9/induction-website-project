@@ -91,9 +91,9 @@ $collegeid=$_SESSION['collegeid'];
 
                 if ( $Hour >= 5 && $Hour <= 11 ) {
                     echo "Good Morning";
-                } else if ( $Hour >= 12 && $Hour <= 18 ) {
+                } else if ( $Hour >= 12 && $Hour <= 17 ) {
                     echo "Good Afternoon";
-                } else if ( $Hour >= 19 || $Hour <= 4 ) {
+                } else if ( $Hour >= 18 || $Hour <= 4 ) {
                     echo "Good Evening";
                 }
                 ?>. Welcome to your account, <?php echo $userid; ?></h2>
