@@ -26,7 +26,7 @@ if(isset($_POST['userid']) && isset($_POST['username']) && isset($_POST['firstna
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();
-	if($currentuser['userlevel']==3) {
+	if($currentuser['userlevel']==2) {
 			header("location: php/detailsUpdated.php ");
 			exit();
 	} else {

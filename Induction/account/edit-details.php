@@ -73,7 +73,7 @@ $email=$_SESSION['email'];
 </head>
 
 <body>
-<div class id=update-details>
+<div class id=updateDetails>
 
 <?php if($currentuser['userlevel']>1) { ?>
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
@@ -104,7 +104,7 @@ $email=$_SESSION['email'];
         <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
       </div>
     </div>
-    <form class="form-edit-details"  data-toggle="validator" role="form" method="post" action="../php/updatedetails.php" autocomplete="off">
+    <form class="form-edit-details"  data-toggle="validator" role="form" id="editDetails" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
       <div class="form-row profile-row">
         <div class="col-md-4 relative">
           <div class="avatar">
