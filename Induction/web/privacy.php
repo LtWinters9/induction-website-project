@@ -157,7 +157,7 @@ $collegeid=$_SESSION['collegeid'];
             <div class="intro">
                 <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Terms and Conditions </h2>
                 <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Please also visit our Terms and Conditions section establishing the use, disclaimers, and limitations of liability governing the use of our website (link here)</p>
-            </div>Please also visit our Terms and Conditions section establishing the use, disclaimers, and limitations of liability governing the use of our website (link here)
+            </div>
         </div>
         <div class="container">
             <div class="intro">
@@ -175,7 +175,7 @@ $collegeid=$_SESSION['collegeid'];
             <div class="intro">
                 <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Contacting Us </h2>
                 <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">If there are any questions regarding this privacy policy you may contact us using the information below. </p>
-            
+
 
 
                 <ul>
