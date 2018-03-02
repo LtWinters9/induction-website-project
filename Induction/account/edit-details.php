@@ -15,7 +15,7 @@ $collegeid=$_SESSION['collegeid'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, <?php echo $forename; ?>| Update Details | UHI Induction Services</title>
+    <title>Hello, <?php echo $forename; ?> | Update Details | UHI Induction Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -113,7 +113,7 @@ $collegeid=$_SESSION['collegeid'];
           </div>
           <hr>
           <div class="form-row">
-            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><button class="btn btn-danger form-btn" type="reset">CANCEL </button></div>
+            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><a class="btn btn-danger form-btn" role="button" href="../account/myaccount.php" type="reset">CANCEL</a></div>
           </div>
         </div>
       </div>
