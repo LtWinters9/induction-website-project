@@ -7,6 +7,11 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
+$telephone=$_SESSION['telephone'];
+$addressline1=$_SESSION['addressline1'];
+$town=$_SESSION['town'];
+$postcode=$_SESSION['postcode'];
+$email=$_SESSION['email'];
 ?>
 
 <!DOCTYPE html>
@@ -96,28 +101,31 @@ $collegeid=$_SESSION['collegeid'];
           <hr>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" autocomplete="off" required=""  placeholder="<?php echo $forename; ?>" name="firstname" id="forename"></div>
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  placeholder="<?php echo $forename; ?>"  id="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Surname </label><input class="form-control" type="text" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="surname" id="surname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" placeholder="<?php echo $forename; ?>"  id="surname"></div>
             </div>
           </div>
-          <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="email"></div>
+          <div class="form-group"><label>Email </label><input class="form-control" type="email" name="email" autocomplete="off" required="" placeholder="<?php echo $email; ?>"  id="emailadd"></div>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="surname" id="surname"></div>
+              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" placeholder="<?php echo $addressline1; ?>" id="address1"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="surname" id="surname"></div>
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $addressline1; ?>"  id="address2"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="surname" id="surname"></div>
+              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" required="" placeholder="<?php echo $town; ?>"  id="town"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="surname" id="surname"></div>
+              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" required="" placeholder="<?php echo $postcode; ?>" id="postcode"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Telephone</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $forename; ?>" name="surname" id="surname"></div>
+              <div class="form-group"><label>Telephone</label><input class="form-control" type="text" name="telephone" autocomplete="off" required="" placeholder="<?php echo $telephone; ?>" id="telephone"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="text" name="mobile" autocomplete="off" required="" placeholder="<?php echo $mobile; ?>"  id="mobile"></div>
             </div>
           </div>
           <hr>
