@@ -175,8 +175,8 @@ $collegeid=$_SESSION['collegeid'];
             <div class="intro">
                 <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Contacting Us </h2>
                 <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">If there are any questions regarding this privacy policy you may contact us using the information below. </p>
-            </div>
-        </div>
+            
+
 
                 <ul>
                     <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">UHI induction</li>
