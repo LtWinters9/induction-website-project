@@ -27,8 +27,6 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -81,101 +79,46 @@ $collegeid=$_SESSION['collegeid'];
   </nav>
   <?php } ?>
 
-
-
-
-  <form>
-
-	<div class="form-group"> <!-- Full Name -->
-		<label for="full_name_id" class="control-label">Full Name</label>
-		<input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="John Deer">
-	</div>
-
-	<div class="form-group"> <!-- Street 1 -->
-		<label for="street1_id" class="control-label">Street Address 1</label>
-		<input type="text" class="form-control" id="street1_id" name="street1" placeholder="Street address, P.O. box, company name, c/o">
-	</div>
-
-	<div class="form-group"> <!-- Street 2 -->
-		<label for="street2_id" class="control-label">Street Address 2</label>
-		<input type="text" class="form-control" id="street2_id" name="street2" placeholder="Apartment, suite, unit, building, floor, etc.">
-	</div>
-
-	<div class="form-group"> <!-- City-->
-		<label for="city_id" class="control-label">City</label>
-		<input type="text" class="form-control" id="city_id" name="city" placeholder="Smallville">
-	</div>
-
-	<div class="form-group"> <!-- State Button -->
-		<label for="state_id" class="control-label">State</label>
-		<select class="form-control" id="state_id">
-			<option value="AL">Alabama</option>
-			<option value="AK">Alaska</option>
-			<option value="AZ">Arizona</option>
-			<option value="AR">Arkansas</option>
-			<option value="CA">California</option>
-			<option value="CO">Colorado</option>
-			<option value="CT">Connecticut</option>
-			<option value="DE">Delaware</option>
-			<option value="DC">District Of Columbia</option>
-			<option value="FL">Florida</option>
-			<option value="GA">Georgia</option>
-			<option value="HI">Hawaii</option>
-			<option value="ID">Idaho</option>
-			<option value="IL">Illinois</option>
-			<option value="IN">Indiana</option>
-			<option value="IA">Iowa</option>
-			<option value="KS">Kansas</option>
-			<option value="KY">Kentucky</option>
-			<option value="LA">Louisiana</option>
-			<option value="ME">Maine</option>
-			<option value="MD">Maryland</option>
-			<option value="MA">Massachusetts</option>
-			<option value="MI">Michigan</option>
-			<option value="MN">Minnesota</option>
-			<option value="MS">Mississippi</option>
-			<option value="MO">Missouri</option>
-			<option value="MT">Montana</option>
-			<option value="NE">Nebraska</option>
-			<option value="NV">Nevada</option>
-			<option value="NH">New Hampshire</option>
-			<option value="NJ">New Jersey</option>
-			<option value="NM">New Mexico</option>
-			<option value="NY">New York</option>
-			<option value="NC">North Carolina</option>
-			<option value="ND">North Dakota</option>
-			<option value="OH">Ohio</option>
-			<option value="OK">Oklahoma</option>
-			<option value="OR">Oregon</option>
-			<option value="PA">Pennsylvania</option>
-			<option value="RI">Rhode Island</option>
-			<option value="SC">South Carolina</option>
-			<option value="SD">South Dakota</option>
-			<option value="TN">Tennessee</option>
-			<option value="TX">Texas</option>
-			<option value="UT">Utah</option>
-			<option value="VT">Vermont</option>
-			<option value="VA">Virginia</option>
-			<option value="WA">Washington</option>
-			<option value="WV">West Virginia</option>
-			<option value="WI">Wisconsin</option>
-			<option value="WY">Wyoming</option>
-		</select>
-	</div>
-
-	<div class="form-group"> <!-- Zip Code-->
-		<label for="zip_id" class="control-label">Zip Code</label>
-		<input type="text" class="form-control" id="zip_id" name="zip" placeholder="#####">
-	</div>
-
-	<div class="form-group"> <!-- Submit Button -->
-		<button type="submit" class="btn btn-primary">Buy!</button>
-	</div>
-
-</form>
-
-
-
+  <div class="container profile profile-view" id="profile">
+    <div class="row">
+      <div class="col-md-12 alert-col relative">
+        <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+      </div>
+    </div>
+    <form>
+      <div class="form-row profile-row">
+        <div class="col-md-4 relative">
+          <div class="avatar">
+            <div class="avatar-bg center"></div>
+          </div><input type="file" class="form-control" name="avatar-file"></div>
+        <div class="col-md-8">
+          <h1>Edit Details</h1>
+          <hr>
+          <div class="form-row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Lastname </label><input class="form-control" type="text" name="lastname"></div>
+            </div>
+          </div>
+          <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
+          <div class="form-row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Password </label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Confirm Password</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+            </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><button class="btn btn-danger form-btn" type="reset">CANCEL </button></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
   <div class="footer-dark" style="background-color:#7e3ca6;">
       <footer>
           <div class="container">
@@ -227,12 +170,6 @@ $collegeid=$_SESSION['collegeid'];
   <!-- <script src="../dist/js/login.js"></script> -->
   <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
   <script src="../dist/js/cookies.js"></script>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
 
   </body>
   </html>
