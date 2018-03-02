@@ -55,7 +55,11 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
             $_SESSION['forename']=$forename;
             $_SESSION['surname']=$surname;
             $_SESSION['collegeid']=$collegeid;
-
+            $_SESSION['telephone']=$telephone;
+            $_SESSION['addressline1']=$addressline1;
+            $_SESSION['town']=$town;
+            $_SESSION['postcode']=$postcode;
+            $_SESSION['email']=$email;
 
             if($usertype>0) {
                 header("location: ../web/index.php");
