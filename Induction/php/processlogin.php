@@ -25,7 +25,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
 
 
     //Create query, note that parameters being passed in are represented by question marks
-    $loginsql="select userpass, salt, forename, surname, usertype, collegeid from users,userpass where users.userid=? and userpass.userid=?";
+    $loginsql="select userpass, salt, forename, surname, telephone, usertype, collegeid from users,userpass where users.userid=? and userpass.userid=?";
     $lgnstmt = $db->prepare($loginsql);
     //Bound parameters are defined by type, s = string, i = integer, d = double and b = blob
     $lgnstmt->bind_param("ii",$studentid,$studentid);
