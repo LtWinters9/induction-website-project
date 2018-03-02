@@ -12,6 +12,20 @@ $addressline1=$_SESSION['addressline1'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
+
+
+/*if(isset($_GET['uID'])) {
+	$userid=$_GET['uID'];
+	$db=createConnection();
+	$userdetailssql="select forename, surname, telephone, addressline1, town, postcode, email, usertype, collegeid from users,userpass where users.userid=?;";
+	$userdetails = $db->prepare($userdetailssql);
+	$userdetails->bind_param("i",$userid);
+	$userdetails->execute();
+	$userdetails->store_result();
+	$userdetails->bind_result($username, $firstname, $surname);
+	if($userdetails->num_rows==1) {
+	$userdetails->fetch();
+*/
 ?>
 
 <!DOCTYPE html>
