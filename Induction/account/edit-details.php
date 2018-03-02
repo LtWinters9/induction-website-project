@@ -96,10 +96,10 @@ $collegeid=$_SESSION['collegeid'];
           <hr>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="firstname" id="forename" data-bind="forename"></div>
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" autocomplete="off" required=""  placeholder="<?php echo $forename; ?>" name="firstname" id="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" id="surname" data-bind="surname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" autocomplete="off" required="" name="surname" id="surname"></div>
             </div>
           </div>
           <div class="form-group"><label>Email </label><input class="form-control" type="email" autocomplete="off" required="" name="email"></div>
