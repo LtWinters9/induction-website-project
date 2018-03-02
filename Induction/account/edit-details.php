@@ -104,7 +104,7 @@ $email=$_SESSION['email'];
               <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  placeholder="<?php echo $forename; ?>"  id="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" placeholder="<?php echo $forename; ?>"  id="surname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" placeholder="<?php echo $surname; ?>"  id="surname"></div>
             </div>
           </div>
           <div class="form-group"><label>Email </label><input class="form-control" type="email" name="email" autocomplete="off" required="" placeholder="<?php echo $email; ?>"  id="emailadd"></div>
