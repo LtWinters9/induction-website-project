@@ -3,7 +3,7 @@ function createConnection() {
 	$host="localhost";
 	$user="msiDB";
 	$userpass='dn9Qr3_C4Swgsyms';
-	$schema="msiDB";
+	$schema="inductionDB";
 	$conn = new mysqli($host,$user,$userpass,$schema);
 	if(mysqli_connect_errno()) {
 		echo "Could not connect to database: ".mysqli_connect_errno();
