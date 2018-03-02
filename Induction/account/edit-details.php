@@ -136,10 +136,10 @@ $email=$_SESSION['email'];
               <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" required=""  maxlength="10" onkeydown="upperCaseF(this)" placeholder="<?php echo $postcode; ?>" id="postcode"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Telephone</label><input class="form-control" type="text" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" placeholder="<?php echo $telephone; ?>"  id="telephone"></div>
+              <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" placeholder="<?php echo $telephone; ?>"  id="telephone"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Mobile</label><input class="form-control" type="text" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  placeholder="<?php echo $mobile; ?>"  id="mobile"></div>
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  placeholder="<?php echo $mobile; ?>"  id="mobile"></div>
             </div>
           </div>
           <hr>
