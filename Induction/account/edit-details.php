@@ -12,6 +12,20 @@ $addressline1=$_SESSION['addressline1'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
+
+
+/*if(isset($_GET['uID'])) {
+	$userid=$_GET['uID'];
+	$db=createConnection();
+	$userdetailssql="select forename, surname, telephone, addressline1, town, postcode, email, usertype, collegeid from users,userpass where users.userid=?;";
+	$userdetails = $db->prepare($userdetailssql);
+	$userdetails->bind_param("i",$userid);
+	$userdetails->execute();
+	$userdetails->store_result();
+	$userdetails->bind_result($username, $firstname, $surname);
+	if($userdetails->num_rows==1) {
+	$userdetails->fetch();
+*/
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +34,7 @@ $email=$_SESSION['email'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | UHI Induction Services</title>
+    <title>Hello, <?php echo $forename; ?> | Update Details | UHI Induction Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -59,17 +73,20 @@ $email=$_SESSION['email'];
 </head>
 
 <body>
-<!-- Nav Bar -->
-<?php if($currentuser['userlevel']<1) { ?>
+<div class id=updateDetails>
+
+<?php if($currentuser['userlevel']>1) { ?>
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
       <div class="container"><a class="navbar-brand" href="../index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
               data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navcol-1">
               <ul class="nav navbar-nav nav-right">
                   <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                  <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                      <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
-                        <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student services</a></div>
+                  <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
+                    <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/myaccount.php" style="color:#ffffff;background-color:#7e3ca6;">Account Overview </a>
+                      <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a>
+                      <a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Log Out</a>
+
                   </li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
@@ -79,49 +96,60 @@ $email=$_SESSION['email'];
           </div>
       </div>
   </nav>
-    <?php } ?>
+  <?php } ?>
 
-    <?php if($currentuser['userlevel']>1) { ?>
-      <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-          <div class="container"><a class="navbar-brand" href="index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
-                  data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse" id="navcol-1">
-                  <ul class="nav navbar-nav nav-right">
-                      <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                      <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="javascript:location.reload()" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/myaccount.php" style="color:#ffffff;background-color:#7e3ca6;">Account Overview </a>
-                            <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a>
-
-                          </div>
-                      </li>
-                      <li class="nav-item" role="presentation"><a class="nav-link" href="../account/logout.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                      <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                      <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
-                  </ul>
-                  <p class="ml-auto navbar-text actions"> </p>
-              </div>
+  <div class="container profile profile-view" id="profile">
+    <div class="row">
+      <div class="col-md-12 alert-col relative">
+        <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+      </div>
+    </div>
+    <form class="form-edit-details"  data-toggle="validator" role="form" id="editDetails" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
+      <div class="form-row profile-row">
+        <div class="col-md-4 relative">
+          <div class="avatar">
+            <div class="avatar-bg center"></div>
+          </div><input type="file" class="form-control" name="avatar-file"></div>
+        <div class="col-md-8">
+          <h1>Edit Details</h1>
+          <hr>
+          <div class="form-row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  placeholder="<?php echo $forename; ?>"  id="forename"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" placeholder="<?php echo $surname; ?>"  id="surname"></div>
+            </div>
           </div>
-      </nav>
-    <?php } ?>
-
-  <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
-    <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
-        <p class="profile-name-card"> </p>
-        <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/processlogin.php" autocomplete="off">
-          <span class="reauth-email"> </span>
-          <input class="form-control" type="text" required="" placeholder="Student ID" autofocus="" name="studentID" id="studentID"  data-error="This student ID is invalid">
-          <input class="form-control" type="password" required="" placeholder="Password" name="inputPassword" id="inputPassword">
-
-            <div class="checkbox">
-                <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me</label></div>
-                </div>
-                <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
-              </form>
-                <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a></div>
-<!-- Implement Welcome back -->
-
-
-  <!-- Login End -->
+          <div class="form-group"><label>Email </label><input class="form-control" readonly="" type="email" name="email" autocomplete="off" required="" placeholder="<?php echo $email; ?>"  id="emailadd"></div>
+          <div class="form-row">
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" placeholder="<?php echo $addressline1; ?>" id="address1"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $addressline1; ?>"  id="address2"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" required="" placeholder="<?php echo $town; ?>"  id="town"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" required=""  maxlength="10" onkeydown="upperCaseF(this)" placeholder="<?php echo $postcode; ?>" id="postcode"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" placeholder="<?php echo $telephone; ?>"  id="telephone"></div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  placeholder="<?php echo $mobile; ?>"  id="mobile"></div>
+            </div>
+          </div>
+          <hr>
+          <div class="form-row">
+            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><a class="btn btn-danger form-btn" role="button" href="../account/myaccount.php" type="reset">CANCEL</a></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
   <div class="footer-dark" style="background-color:#7e3ca6;">
       <footer>
           <div class="container">
@@ -170,12 +198,10 @@ $email=$_SESSION['email'];
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
   <script src="../assets/js/script.min.js"></script>
   <script src="../dist/js/jqBootstrapValidation.js"></script>
-  <script src="../dist/js/sign_in.js"></script>
   <!-- <script src="../dist/js/login.js"></script> -->
   <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
   <script src="../dist/js/cookies.js"></script>
+  <script src="../dist/js/functions.js"></script>
 
-
-
-</body>
-</html>
+  </body>
+  </html>

@@ -1,7 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('functions.php');
+include('../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -54,7 +54,7 @@ $collegeid=$_SESSION['collegeid'];
 </head>
 
 <body>
-<div class id=update>
+<div class id=updatePassword>
 
 <?php if($currentuser['userlevel']>1) { ?>
   <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
@@ -82,7 +82,7 @@ $collegeid=$_SESSION['collegeid'];
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
         <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $userid; ?> ">
-        <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatepassword.php" autocomplete="off">
+        <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatePassword.php" autocomplete="off">
           <span class="reauth-email"> </span>
           <input class="form-control" type="password" required="" autofocus"" placeholder="New Password" maxlength="20" id="inputPassword">
           <input class="form-control" type="password" required="" placeholder="Confirm New Password" maxlength="20" id="inputSecondPassword">

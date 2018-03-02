@@ -91,9 +91,9 @@ $collegeid=$_SESSION['collegeid'];
 
                 if ( $Hour >= 5 && $Hour <= 11 ) {
                     echo "Good Morning";
-                } else if ( $Hour >= 12 && $Hour <= 18 ) {
+                } else if ( $Hour >= 12 && $Hour <= 17 ) {
                     echo "Good Afternoon";
-                } else if ( $Hour >= 19 || $Hour <= 4 ) {
+                } else if ( $Hour >= 18 || $Hour <= 4 ) {
                     echo "Good Evening";
                 }
                 ?>. Welcome to your account, <?php echo $userid; ?></h2>
@@ -137,10 +137,13 @@ $collegeid=$_SESSION['collegeid'];
         <div class="container" data-aos="slide-right" data-aos-duration="800" data-aos-delay="500" data-aos-once="true">
             <div class="intro">
                 <h2 class="text-center"><?php echo $StudentID; ?> Account Overview</h2>
-                <p class="text-center">Need to change your password, or get in touch with our automated bot? </p>
+                <p class="text-center">Need to change your password, edit your details or get in touch with our automated bot? </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../php/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
-            <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#465765;color:#ffffff;">CHAT NOW</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
+              <a class="btn btn-light" role="button" href="../account/edit-details.php"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">UPDATE DETAILS</a>
+              <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a>
+              <a class="btn btn-light" role="button" href="../php/logout.php"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">LOGOUT</a>
+            </div>
         </div>
     </div>
     <div class="footer-dark" style="background-color:#7e3ca6;">

@@ -12,9 +12,9 @@ window.addEventListener("load", function() {
     },
     "theme": "classic",
     "content": {
-      "message": "This website uses cookies to ensure you get the best experience on our website, learn more ",
+      "message": "We use cookies to give you the best Induction experience on our website. By continuing to use our service, you agree with our use of cookies. You can read more about our cookie policy  ",
       "link": "HERE",
-      "href": "../web/cookies-policy.php"
+      "href": "../info/privacy.php"
     }
   })
 });

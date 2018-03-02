@@ -16,7 +16,14 @@ $collegeid=$_SESSION['collegeid'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us | UHI Induction Services</title>
+    <?php if($currentuser['userlevel']<1) { ?>
+    <title>Privacy Policy | UHI Induction Services</title>
+    <?php } ?>
+
+    <?php if($currentuser['userlevel']>1) { ?>
+    <title>Welcome,
+      <?php echo $forename; ?> | Privacy Policy | UHI Induction Services</title>
+    <?php } ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -102,8 +109,9 @@ $collegeid=$_SESSION['collegeid'];
     <div class="highlight-clean">
         <div class="container">
             <div class="intro">
-                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">About The University of the Highlands and Islands</h2>
-                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">We're delighted that you have chosen to come to Perth College UHI, one of Scotland's leading colleges of further and higher education and part of the University of the Highlands and Islands</p>
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">What information do we collect?</h2>
+                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">We collect information from you when you fill out a form. </p>
+                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">When signing in on our website, as appropriate, you may be asked to enter your: student number or e-mail address. You may, however, visit our site anonymously. </p>
             </div>
             <div class="buttons"></div>
         </div>
@@ -111,34 +119,76 @@ $collegeid=$_SESSION['collegeid'];
     <div class="highlight-clean">
         <div class="container">
             <div class="intro">
-                <h2 class="text-left"style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Perth UHI </h2>
-                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;"> As one of our students, you can now use the many resources that we provide to make your time with us as enjoyable and productive as possible. There's lots of information for you to take in, but we are here to help you to get the most out of your course and give you guidance and support whenever you need it. </p>
-                  <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;"> There are lots of useful links on our site so you can get an idea about all the things you need to know. As well as links to people who can help you, to more detailed information and documents, you'll also find maps of our main campus and information about our learning centres. </p>
-                    <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;"> We hope you'll find your visit to this web site useful, but if you have any comments or questions, please contact your Personal Academic Tutor (if you have already enrolled with us). </p>
-            </div>
+                <h2 class="text-left"style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">What do we use your information for? </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Any of the information we collect from you may be used in one of the following ways:  </p>
+                  <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">To personalize your experience (your information helps us to better respond to your individual needs) </p>
+                    <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">To improve our website (we continually strive to improve our website offerings based on the information and feedback we receive from you)  </p>
+                    <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">To improve student service (your information helps us to more effectively respond to your students service requests and support needs)  </p>
+                    <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">To administer a contest, promotion, survey or other site feature  </p>
+             </div>
             <!-- <div class="buttons"></div> -->
         </div>
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Union Building </h2>
-                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">The Union – within the Webster Building on the main College Campus – is the student social space on campus. </p>
-                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">It is open Monday to Thursday 8:30am to 9pm and on Friday from 8.30am–4.30pm </p>
-                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">All of our students are welcome to come along, meet their friends and spend their free time on campus away from classrooms and study areas. We have a Costa Coffee bar that serves drinks, sandwiches, snacks and great coffee between 8.30am and 3pm, but if you prefer to bring your own lunch to College, you can still use our comfy seating areas.</p>
-                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">If you are a parent, and you have your breaks with your children, we have a designated children’s area in another room that includes vinyl flooring, toys and a high-chair. You are welcome to use this area at lunchtime. </p>
-                <p class="text-left"  style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">We continuously work to improve the facilities at The Union in line with the student feedback we receive. If you have a comment or suggestion to make, please tell us in person </p>
-            </div>
+          <div class="container">
+              <div class="intro">
+                  <h2 class="text-left"style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">How do we protect your information </h2>
+                  <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information.</p>
+               </div>
             <div class="buttons"></div>
         </div>
         <div class="container">
             <div class="intro">
-                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">2018 </h2>
-                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">So far 2018 has included the following</p>
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Do we use cookies? </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Yes (Cookies are small files that a site or its service provider transfers to your computers hard drive through your Web browser (if you allow) that enables the sites or service providers systems to recognize your browser and capture and remember certain information</p>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">We use cookies to understand and save your preferences for future visits</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Do we disclose any information to outside parties? </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Third party links </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Occasionally, at our discretion, we may include or offer third party products or services on our website. These third party sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these sites.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Online Privacy Policy Only </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">This online privacy policy applies only to information collected through our website and not to information collected offline.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Terms and Conditions </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Please also visit our Terms and Conditions section establishing the use, disclaimers, and limitations of liability governing the use of our website (link here)</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Your Consent  </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">By using our site, you consent to our privacy policy.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Changes to our Privacy Policy </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">If we decide to change our privacy policy, we will post those changes on this page. </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Contacting Us </h2>
+                <p class="text-left" style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">If there are any questions regarding this privacy policy you may contact us using the information below. </p>
+
+
+
                 <ul>
-                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Induction Service for new student</li>
-                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Fourm system to chat to students</li>
-                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Chatbot to ask any student related questions</li>
-                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Extended the Academy of Sport and Wellbeing centre</li>
-                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">Page last edited on 06/02/2018</li>
+                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">UHI induction</li>
+                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">email@email.net</li>
+                    <li <style="color:#37434d;font-family:'Source Sans Pro', sans-serif;">This policy was last modified on 02/03/2018</li>
                 </ul>
             </div>
             <div class="buttons"></div>

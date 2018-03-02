@@ -127,6 +127,21 @@ function showOne(str) {
   }
 }
 
+//Only uppercase for postcode
+function upperCaseF(a){
+    setTimeout(function(){
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
+
+
+// js validation for only numbers on mobile & tel
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
 
 function prepareMenu() {
   if (!window.getComputedStyle) {
