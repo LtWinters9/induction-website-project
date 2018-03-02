@@ -26,6 +26,7 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 
     <!-- Favicons -->
@@ -120,7 +121,7 @@ $collegeid=$_SESSION['collegeid'];
          <div class="form-group">
                    <input class="form-control" type="text" name="postcode" id="postcode" placeholder="Postcode" required maxlength="10" onkeydown="upperCaseF(this)"  />   <!-- Enter postcode -->
                 </div>
-                
+
 
         <!-- USER SECURITY DETAILS -->
                 <div class="form-group">
