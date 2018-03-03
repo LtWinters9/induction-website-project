@@ -39,5 +39,6 @@ if(isset($_POST['userid']) && isset($_POST['username']) && isset($_POST['firstna
 	echo "<p>Some parameters are missing, cannot update database</p>";
 }
 ?>
+
 </body>
 </html>
