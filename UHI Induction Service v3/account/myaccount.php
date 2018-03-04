@@ -25,7 +25,7 @@ $collegeid=$_SESSION['collegeid'];
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to your account, <?php echo $firstname; ?>  | UHI Induction Services</title>
+    <title>Welcome to your account, <?php echo $forename; ?>  | UHI Induction Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -96,19 +96,6 @@ $collegeid=$_SESSION['collegeid'];
                         <p class="description">Descriptive text within box, that them leads to an informational area. Icon subject to change..&nbsp; </p><a href="#" class="learn-more">Learn more »</a></div>
                 </div>
             </div>
-          <?php if($currentuser['userlevel']==3) { ?>
-            //used for staff
-            <div class="row">
-                <div class="col">
-                    <h1>Upload a student file.</h1>
-<<<<<<< HEAD
-                    <p>Upload a new file for the student and other staff to access</p>
-                    <a class="btn btn-primary" role="button" href="fileupload.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
-=======
-                    <p>Upload a new file for the student and other staff to access</p><a class="btn btn-primary" role="button" href="../php/fileupload.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">Search for a file</a></div>
->>>>>>> 6e0d2cd269e5fefa6ffcf91988f7879204dd4559
-            </div>
-            <?php}?>
         </div>
     </div>
     <div class="highlight-clean" style="background-color:#dfe8ee;">

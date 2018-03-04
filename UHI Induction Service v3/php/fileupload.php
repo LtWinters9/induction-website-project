@@ -1,45 +1,94 @@
 <?php
-/*
-We are starting a session here to get the user id and the posted file information.
-Sessions do NOT work on HTML pages, just php pages.
-*/
-session_start();
-?>
+POST https://www.googleapis.com/upload/drive/v3/files?uploadType=resumable
 
 
-<?php
-include('functions.php');
-$db=createConnection();
+require_once '../google/google-api-php-client/vendor/autoload.php';
 
-// checks for file upload, and uploads to google drive.
-if(isset($_POST['filename']){ 
-	POST https://www.googleapis.com/upload/drive/v2/files
-  
-  $fileMetadata = new Google_Service_Drive_DriveFile(array(
-    'title' => 'photo.jpg'));
-$content = file_get_contents('files/photo.jpg');
-$file = $driveService->files->insert($fileMetadata, array(
-    'data' => $content,
-    'mimeType' => 'image/jpeg',
-    'uploadType' => 'multipart',
-    'fields' => 'id'));
-printf("File ID: %s\n", $file->id);
-  
-  //this get is used to retrieve a list of all the files held within the google drive folder.
-  GET https://www.googleapis.com/drive/v3/files
-  
-  
-  
-  
-  
-  
-  
-  
-  //closes the connection to the sql database.
-	$db->close();
-  //if no file is found or php breaks send user back to the index.php page.
-}else {
-	header("location: ../index.php");
-	exit();
+define('APPLICATION_NAME', 'Drive API PHP Quickstart');
+define('CREDENTIALS_PATH', '~/.credentials/drive-php-quickstart.json');
+define('CLIENT_SECRET_PATH', __DIR__ . '/client_secret.json');
+// If modifying these scopes, delete your previously saved credentials
+// at ~/.credentials/drive-php-quickstart.json
+define('SCOPES', implode(' ', array(
+  Google_Service_Drive::DRIVE_METADATA_READONLY)
+));
+
+if (php_sapi_name() != 'cli') {
+  throw new Exception('This application must be run on the command line.');
+}
+
+/**
+ * Returns an authorized API client.
+ * @return Google_Client the authorized client object
+ */
+function getClient() {
+  $client = new Google_Client();
+  $client->setApplicationName(APPLICATION_NAME);
+  $client->setScopes(SCOPES);
+  $client->setAuthConfig(CLIENT_SECRET_PATH);
+  $client->setAccessType('offline');
+
+  // Load previously authorized credentials from a file.
+  $credentialsPath = expandHomeDirectory(CREDENTIALS_PATH);
+  if (file_exists($credentialsPath)) {
+    $accessToken = json_decode(file_get_contents($credentialsPath), true);
+  } else {
+    // Request authorization from the user.
+    $authUrl = $client->createAuthUrl();
+    printf("Open the following link in your browser:\n%s\n", $authUrl);
+    print 'Enter verification code: ';
+    $authCode = trim(fgets(STDIN));
+
+    // Exchange authorization code for an access token.
+    $accessToken = $client->fetchAccessTokenWithAuthCode($authCode);
+
+    // Store the credentials to disk.
+    if(!file_exists(dirname($credentialsPath))) {
+      mkdir(dirname($credentialsPath), 0700, true);
+    }
+    file_put_contents($credentialsPath, json_encode($accessToken));
+    printf("Credentials saved to %s\n", $credentialsPath);
+  }
+  $client->setAccessToken($accessToken);
+
+  // Refresh the token if it's expired.
+  if ($client->isAccessTokenExpired()) {
+    $client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
+    file_put_contents($credentialsPath, json_encode($client->getAccessToken()));
+  }
+  return $client;
+}
+
+/**
+ * Expands the home directory alias '~' to the full path.
+ * @param string $path the path to expand.
+ * @return string the expanded path.
+ */
+function expandHomeDirectory($path) {
+  $homeDirectory = getenv('HOME');
+  if (empty($homeDirectory)) {
+    $homeDirectory = getenv('HOMEDRIVE') . getenv('HOMEPATH');
+  }
+  return str_replace('~', realpath($homeDirectory), $path);
+}
+
+// Get the API client and construct the service object.
+$client = getClient();
+$service = new Google_Service_Drive($client);
+
+// Print the names and IDs for up to 10 files.
+$optParams = array(
+  'pageSize' => 10,
+  'fields' => 'nextPageToken, files(id, name)'
+);
+$results = $service->files->listFiles($optParams);
+
+if (count($results->getFiles()) == 0) {
+  print "No files found.\n";
+} else {
+  print "Files:\n";
+  foreach ($results->getFiles() as $file) {
+    printf("%s (%s)\n", $file->getName(), $file->getId());
+  }
 }
 ?>
