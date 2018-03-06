@@ -12,7 +12,7 @@ $addressline1=$_SESSION['addressline1'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
-$userid=checkUser($_SESSION['userid'],session_id(),1);
+
 
 ?>
 
