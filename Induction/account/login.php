@@ -21,6 +21,10 @@ $email=$_SESSION['email'];
 <!DOCTYPE html>
 <html lang="en">
 
+<?php if($currentuser['userlevel']>0) {
+ include "../includes/banner.php";
+  } ?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
