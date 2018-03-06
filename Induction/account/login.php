@@ -12,7 +12,7 @@ $addressline1=$_SESSION['addressline1'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
-$userid=checkUser($_SESSION['userid'],session_id(),0);
+$userid=checkUser($_SESSION['userid'],session_id(),1);
 
 ?>
 
@@ -66,8 +66,10 @@ $userid=checkUser($_SESSION['userid'],session_id(),0);
   include "../includes/navLevel1.php";
    } ?>
 
-   <?php if($currentuser['userlevel']>1) {
+   <?php if($currentuser['userlevel']>0) {
      include "../includes/navLevel2.php";
+     header("location: ../web/index.php");
+
       } ?>
   <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
