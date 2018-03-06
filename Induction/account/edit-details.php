@@ -115,31 +115,31 @@ $email=$_SESSION['email'];
           <hr>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  placeholder="<?php echo $forename; ?>"  id="forename"></div>
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  value="<?php echo $forename; ?>"  id="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" placeholder="<?php echo $surname; ?>"  id="surname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" value="<?php echo $surname; ?>"  id="surname"></div>
             </div>
           </div>
-          <div class="form-group"><label>Email </label><input class="form-control" readonly="" type="email" name="email" autocomplete="off" required="" placeholder="<?php echo $email; ?>"  id="emailadd"></div>
+          <div class="form-group"><label>Email </label><input class="form-control" readonly="" type="email" name="email" autocomplete="off" required="" value="<?php echo $email; ?>"  id="emailadd"></div>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" placeholder="<?php echo $addressline1; ?>" id="address1"></div>
+              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" value="<?php echo $addressline1; ?>" id="address1"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" placeholder="<?php echo $addressline1; ?>"  id="address2"></div>
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" value="<?php echo $addressline1; ?>"  id="address2"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" required="" placeholder="<?php echo $town; ?>"  id="town"></div>
+              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" required="" value="<?php echo $town; ?>"  id="town"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" required=""  maxlength="10" onkeydown="upperCaseF(this)" placeholder="<?php echo $postcode; ?>" id="postcode"></div>
+              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" required=""  maxlength="10" onkeydown="upperCaseF(this)" value="<?php echo $postcode; ?>" id="postcode"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" placeholder="<?php echo $telephone; ?>"  id="telephone"></div>
+              <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $telephone; ?>"  id="telephone"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  placeholder="<?php echo $mobile; ?>"  id="mobile"></div>
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobile; ?>"  id="mobile"></div>
             </div>
           </div>
           <hr>
