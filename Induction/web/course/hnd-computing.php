@@ -1,13 +1,28 @@
 <?php
-setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
+setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('../../php/functions.php');
+date_default_timezone_set('London/GMT');
+require_once('../../php/functions.php');
+require_once('../../db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$modulename=$_SESSION['modulename'];
+$collegeid=$_SESSION['collegeid'];
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
+<?php if($currentuser['userlevel']<1) {
+ include "../includes/banner.html";
+  } ?>
+
+  <?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
 
 <head>
     <meta charset="utf-8">
@@ -51,27 +66,13 @@ $userid=$_SESSION['userid'];
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-        <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
-                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav nav-right">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                        <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a><a class="dropdown-item" role="presentation" href="../../contact/contact.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
-                    </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
-                </ul>
-                <p class="ml-auto navbar-text actions"> </p>
-            </div>
-        </div>
-    </nav>
+  <?php if($currentuser['userlevel']>1) {
+    include "../includes/navLevel2.php";
+     } ?>
     <div class="card">
         <div class="card-header">
             <header></header>
-            <h3 class="text-center">Weclome to your Course,<?php echo $courseName; ?> <?php echo $studentId; ?>.</h3>
+            <h3 class="text-center">Welcome to your Course,<?php echo $modulename; ?> <?php echo $forename." ".$surname; ?>.</h3>
             <ul class="nav nav-tabs card-header-tabs" role="tablist">
                 <li class="nav-item"><a class="nav-link active" href="#item-1-1" id="item-1-1-tab" data-toggle="tab" role="tab" aria-controls="item-1-1" aria-selected="true" style="color:#7e3ca6;">Staff Information</a></li>
                 <li class="nav-item"><a class="nav-link" href="#item-1-2" id="item-1-2-tab" data-toggle="tab" role="tab" aria-controls="item-1-2" aria-selected="false" style="color:#7e3ca6;">Module Information</a></li>

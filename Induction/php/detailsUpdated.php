@@ -1,7 +1,9 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('functions.php');
+date_default_timezone_set('London/GMT');
+require_once('functions.php');
+require_once('db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -12,10 +14,19 @@ $addressline1=$_SESSION['addressline1'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
+<?php if($currentuser['userlevel']<1) {
+ include "../includes/banner.html";
+  } ?>
+
+  <?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
 
 <head>
     <meta charset="utf-8">
@@ -60,24 +71,15 @@ $email=$_SESSION['email'];
 </head>
 
 <body>
-	<nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-      <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
-              data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-          <div class="collapse navbar-collapse" id="navcol-1">
-              <ul class="nav navbar-nav nav-right">
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                  <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                      <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
-                        <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student services</a></div>
-                  </li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
-              </ul>
-              <p class="ml-auto navbar-text actions"> </p>
-          </div>
-      </div>
-  </nav>
+  <?php if($currentuser['userlevel']>1) {
+    include "../includes/navLevel2.php";
+     } ?>
+
+     <?php if($currentuser['userlevel']>0) {
+      // include "../includes/navLevel2.php";
+       header("location: ../web/index.php");
+
+        } ?>
 
 <div class="highlight-blue">
         <div class="container">
@@ -99,49 +101,13 @@ $email=$_SESSION['email'];
 				</div>
 		</div>
 		<div class="testimonials-clean"></div>
-		<div class="footer-dark" style="background-color:#7e3ca6;">
-				<footer>
-						<div class="container">
-								<div class="row">
-										<div class="col-md-6 item text">
-												<h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">The University of the Highlands and Islands</h3>
-												<p><a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"   target="_blank" style="color:#ffffff;">About</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">News and Events</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Business and employers</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Vacancies</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Give to UHI</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">FOI</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Cookies</a>
-													• <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
-										</div>
-										<div class="col-sm-4 col-md-3 item">
-												<h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">About UHI</h3>
-												<ul>
-														<li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
-														<li><a href="#">Highland Theological College UHI </a></li>
-														<li><a href="#">Inverness College UHI </a></li>
-														<li><a href="https://www.lews.uhi.ac.uk/" target="_blank">Lews Castle College UHI</a> </li>
-														<li><a href="https://www.moray.uhi.ac.uk/" target="_blank">Moray College UHI</a> </li>
-														<li><a href="https://www.nafc.uhi.ac.uk/" target="_blank">NAFC Marine Centre UHI</a> </li>
-														<li><a href="https://www.northhighland.uhi.ac.uk/" target="_blank">North Highland College UHI</a> </li>
-														<li><a href="https://www.orkney.uhi.ac.uk/" target="_blank">Orkney College UHI</a> </li>
-												</ul>
-										</div>
-										<div class="col-sm-4 col-md-3 item">
-												<h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
-												<ul>
-														<li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
-														<li><a href="info/opening-times.php">Opening Times</a></li>
-														<li><a href="info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
-														<li><a href="info/sitemap.php">Sitemap</a></li>
-												</ul>
-										</div>
-										<div class="col-sm-4 col-md-12 col-xl-12 offset-xl-0 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
-								</div>
-								<p class="copyright" style="color:#ffffff;">© University of the Highlands and IslandsRegistered office: 12b Ness Walk, Inverness, Scotland, IV3 5SQ&nbsp; </p>
-						</div>
-				</footer>
-		</div>
+
+
+    <?php if($currentuser['userlevel']>1) {
+     include "../includes/footer.php";
+      } ?>
+
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>

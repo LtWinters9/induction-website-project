@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('London/GMT');
 session_regenerate_id();
 ?>
 
@@ -11,7 +12,8 @@ session_regenerate_id();
 
 
 <?php
-include('functions.php');
+require_once('functions.php');
+require_once('db_config.php');
 
 //Check that both a user name and user password have been set
 if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){

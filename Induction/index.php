@@ -1,3 +1,16 @@
+<?php
+setCookie("userintent","",(time+86400),"/~15011406");
+session_start();
+date_default_timezone_set('London/GMT');
+require_once('php/functions.php');
+require_once('php/db_config.php');
+$currentuser=getUserLevel();
+$userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +19,14 @@
 <script language="javascript">
     window.location.href = "account/login.php"
 </script>
+
+<?php if($currentuser['userlevel']<1) {
+ include "../includes/banner.html";
+  } ?>
+
+  <?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">

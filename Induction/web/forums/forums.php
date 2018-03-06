@@ -1,13 +1,26 @@
 <?php
-setCookie("userintent","",(time+86400),"/en-uk/home/projects/UHI/");
+setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('../php/functions.php');
+date_default_timezone_set('London/GMT');
+require_once('../../php/functions.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
+<?php if($currentuser['userlevel']<1) {
+ include "../includes/banner.html";
+  } ?>
+
+  <?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forums | UHI Induction Services/title>

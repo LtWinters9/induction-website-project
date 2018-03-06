@@ -1,7 +1,8 @@
 <?php
 // identifies whether or not the username or email have previously been
 // used and returns the result
-include("functions.php");
+require_once("functions.php");
+require_once('db_config.php');
 $username=$_POST["username"];
 $email=$_POST['email'];
 $userexists=0;

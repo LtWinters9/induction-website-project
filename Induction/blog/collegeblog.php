@@ -1,7 +1,9 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('../php/functions.php');
+date_default_timezone_set('London/GMT');
+require_once('../php/functions.php');
+require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -11,6 +13,14 @@ $collegeid=$_SESSION['collegeid'];
 
 <!DOCTYPE html>
 <html lang="en">
+
+<?php if($currentuser['userlevel']<1) {
+ include "../includes/banner.html";
+  } ?>
+
+  <?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forums | UHI Induction Services/title>
@@ -54,23 +64,9 @@ $collegeid=$_SESSION['collegeid'];
 <!-- Code is not displaying -- >
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-        <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="rounded img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
-                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav nav-right">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                        <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a><a class="dropdown-item" role="presentation" href="contact/contact.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
-                    </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
-                </ul>
-                <p class="ml-auto navbar-text actions"> </p>
-            </div>
-        </div>
-    </nav>
+  <?php if($currentuser['userlevel']>1) {
+    include "../includes/navLevel2.php";
+     } ?>
 
 
     <div></div>

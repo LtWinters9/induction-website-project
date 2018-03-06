@@ -5,7 +5,9 @@
 
 <?php
 session_start();
-include("functions.php");
+date_default_timezone_set('London/GMT');
+require_once("functions.php");
+require_once('db_config.php');
 $currentuser=getUserLevel();
 $staffid=$_SESSION['staffid'];
 $staffname=checkUser($_SESSION['staffid'],session_id(),2);
@@ -39,5 +41,6 @@ if(isset($_POST['userid']) && isset($_POST['username']) && isset($_POST['firstna
 	echo "<p>Some parameters are missing, cannot update database</p>";
 }
 ?>
+
 </body>
 </html>

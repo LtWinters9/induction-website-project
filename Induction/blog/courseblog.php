@@ -1,7 +1,9 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('../php/functions.php');
+date_default_timezone_set('London/GMT');
+require_once('../php/functions.php');
+require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -11,6 +13,14 @@ $collegeid=$_SESSION['collegeid'];
 
 <!DOCTYPE html>
 <html lang="en">
+
+<?php if($currentuser['userlevel']<1) {
+ include "../includes/banner.html";
+  } ?>
+
+  <?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forums | UHI Induction Services/title>
@@ -50,6 +60,9 @@ $collegeid=$_SESSION['collegeid'];
     <script src="../dist/js/cookies.js"></script>
 </head>
 <body>
+  <?php if($currentuser['userlevel']>1) {
+    include "../includes/navLevel2.php";
+     } ?>
 </body>
     <html>
   </html>

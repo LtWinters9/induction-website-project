@@ -1,16 +1,6 @@
 <?php
-function createConnection() {
-	$host="localhost";
-	$user="msiDB";
-	$userpass='dn9Qr3_C4Swgsyms';
-	$schema="inductionDB";
-	$conn = new mysqli($host,$user,$userpass,$schema);
-	if(mysqli_connect_errno()) {
-		echo "Could not connect to database: ".mysqli_connect_errno();
-		exit;
-	}
-	return $conn;
-}
+
+
 function getSalt($saltLength) {
 	$randomString= bin2hex(mcrypt_create_iv($saltLength, MCRYPT_DEV_URANDOM));
 return $randomString;
