@@ -7,6 +7,8 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
+$userid=checkUser($_SESSION['userid'],session_id(),2);
+
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +83,7 @@ $collegeid=$_SESSION['collegeid'];
  include "../includes/footer.php";
   } ?>
 
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
