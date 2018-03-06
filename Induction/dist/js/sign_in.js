@@ -9,16 +9,16 @@ $(function() {
       event.preventDefault(); // prevent default submit behaviour
       // get values from FORM
 
-      var emailadd = $("#inputEmail").val();
-      var userpassword = $("#inputPassword").val();
+      var studentID = $("#studentID").val();
+      var userpass = $("#inputPassword").val();
       var thing = $("#signUp");
       thing.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
         url: "../php/processlogin.php",
         type: "POST",
         data: {
-          emailadd: emailadd,
-          userpass: userpassword
+          studentID: studentID,
+          userpass: inputPassword
 
         }
       });
