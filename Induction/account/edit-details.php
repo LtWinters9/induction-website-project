@@ -78,7 +78,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
 
 
 <?php if($currentuser['userlevel']>1) {
-  include "includes/nav.php";
+  include "../includes/nav.php";
    } ?>
 
   <div class="container profile profile-view" id="profile">
