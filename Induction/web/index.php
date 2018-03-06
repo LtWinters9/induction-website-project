@@ -162,10 +162,13 @@ $collegeid=$_SESSION['collegeid'];
     </div>
     <div class="testimonials-clean"></div>
     <!-- Questions container End -->
-    <!-- Nav Bar -->
+
+
         <?php if($currentuser['userlevel']>1) {
          include "../includes/footer.php";
           } ?>
+
+          
     <!-- bootstrap Js libary -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
