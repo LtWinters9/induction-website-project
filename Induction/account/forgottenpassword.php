@@ -57,7 +57,7 @@ $collegeid=$_SESSION['collegeid'];
 <div class id=updatePassword>
 
   <?php if($currentuser['userlevel']>1) {
-    include "../includes/nav.php";
+    include "../includes/navLevel2.php";
      } ?>
 
   <!-- update Start --> <!--Email needs to be read only and changed to students email address -->
