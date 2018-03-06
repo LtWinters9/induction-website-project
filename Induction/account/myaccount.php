@@ -11,7 +11,7 @@ $collegeid=$_SESSION['collegeid'];
 
 
 
-//$username=checkUser($_SESSION['userid'],session_id(),2);
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
 <!DOCTYPE html>
