@@ -61,15 +61,12 @@ $email=$_SESSION['email'];
 <body>
 <!-- Nav Bar -->
 <?php if($currentuser['userlevel']<1) {
-      include "../includes/navLevel1.php";
-    } ?>
-<?php } ?>
+  include "../includes/navLevel1.php";
+   } ?>
 
-<?php if($currentuser['userlevel']>1) {
-      include "../includes/navLevel2.php";
-       } ?>
-        <?php } ?>
-
+   <?php if($currentuser['userlevel']>1) {
+     include "../includes/navLevel2.php";
+      } ?>
   <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
