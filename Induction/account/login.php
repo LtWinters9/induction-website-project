@@ -117,7 +117,13 @@ $email=$_SESSION['email'];
                 </div>
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
               </form>
-                <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a></div>
+
+                <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
+    <?php } else { ?>
+    <h1>Welcome back <?php echo $currentuser['userid']; ?>!</h1>
+    <?php } ?>
+
+    </div>
 <!-- Implement Welcome back -->
 
 
