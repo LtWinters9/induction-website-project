@@ -25,9 +25,7 @@ $email=$_SESSION['email'];
  include "../includes/banner.html";
   } ?>
 
-  <?php if($currentuser['userlevel']>1) {
-   include "../includes/banner.html";
-    } ?>
+
 
 <head>
     <meta charset="utf-8">
