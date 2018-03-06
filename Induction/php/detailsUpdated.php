@@ -1,7 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-include('functions.php');
+require_once('functions.php');
 require_once('db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];

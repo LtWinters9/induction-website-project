@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("functions.php");
+require_once("functions.php");
 require_once('db_config.php');
 //The ampersand is used to assign a 'null' value if
 //there is currently no userid session variable set

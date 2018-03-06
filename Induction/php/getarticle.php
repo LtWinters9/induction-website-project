@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("functions.php");
+require_once("functions.php");
 require_once('db_config.php');
 $db = createConnection();
 $currentuser=getUserLevel();
