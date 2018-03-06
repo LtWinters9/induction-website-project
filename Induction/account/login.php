@@ -114,15 +114,10 @@ $email=$_SESSION['email'];
 
             <div class="checkbox">
                 <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me</label></div>
-                </div>
+            </div>
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
-              </form>
-
-                <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
-
-              <?php } else { ?>
-            			<h1>Welcome back <?php echo $currentuser['userid']; ?>!</h1>
-            			<?php } ?>
+          </form>
+              <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
 
     </div>
 <!-- Implement Welcome back -->
