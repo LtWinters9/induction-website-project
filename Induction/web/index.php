@@ -15,6 +15,10 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <!DOCTYPE html>
 <html lang="en">
 
+<?php if($currentuser['userlevel']>0) {
+ include "../includes/banner.php";
+  } ?>
+
 <head>
   <!-- Site Information -->
   <meta charset="utf-8">
