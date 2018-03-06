@@ -15,7 +15,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']>0) {
+<?php if($currentuser['userlevel']<1) {
  include "../includes/banner.php";
   } ?>
 
