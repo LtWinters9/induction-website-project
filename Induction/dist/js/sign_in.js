@@ -18,7 +18,7 @@ $(function() {
         type: "POST",
         data: {
           studentID: studentID,
-          userpass: inputPassword
+          userpass: userpass
 
         }
       });
