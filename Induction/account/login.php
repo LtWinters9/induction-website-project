@@ -103,7 +103,6 @@ $email=$_SESSION['email'];
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
   <script src="../assets/js/script.min.js"></script>
   <script src="../dist/js/jqBootstrapValidation.js"></script>
-  <script src="../dist/js/sign_in.js"></script>
   <!-- <script src="../dist/js/login.js"></script> -->
   <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
   <script src="../dist/js/cookies.js"></script>
