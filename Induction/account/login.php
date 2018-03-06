@@ -67,7 +67,7 @@ $email=$_SESSION['email'];
    } ?>
 
    <?php if($currentuser['userlevel']>0) {
-     include "../includes/navLevel2.php";
+    // include "../includes/navLevel2.php";
      header("location: ../web/index.php");
 
       } ?>
