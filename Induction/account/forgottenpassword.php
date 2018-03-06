@@ -72,11 +72,11 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   <!-- update Start --> <!--Email needs to be read only and changed to students email address -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $userid; ?> ">
+        <input class="form-control" readonly="" type="text"  value=" <?php echo $userid; ?> ">
         <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatePassword.php" autocomplete="off">
           <span class="reauth-email"> </span>
-          <input class="form-control" type="password" required="" autofocus"" placeholder="New Password" maxlength="20" id="inputPassword">
-          <input class="form-control" type="password" required="" placeholder="Confirm New Password" maxlength="20" id="inputSecondPassword">
+          <input class="form-control" type="password" required="" autofocus"" value=""="New Password" maxlength="20" id="inputPassword">
+          <input class="form-control" type="password" required="" value=""="Confirm New Password" maxlength="20" id="inputSecondPassword">
           <div class="checkbox">
 
           </div>
