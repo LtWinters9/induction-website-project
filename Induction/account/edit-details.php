@@ -2,6 +2,7 @@
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
 include('../php/functions.php');
+require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -133,7 +134,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
       </div>
     </form>
   </div>
-  
+
   <?php if($currentuser['userlevel']>1) {
    include "../includes/footer.php";
     } ?>

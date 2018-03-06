@@ -6,6 +6,7 @@
 <?php
 session_start();
 include("functions.php");
+require_once('db_config.php');
 $currentuser=getUserLevel();
 $staffid=$_SESSION['staffid'];
 $staffname=checkUser($_SESSION['staffid'],session_id(),2);
