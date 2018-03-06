@@ -119,9 +119,10 @@ $email=$_SESSION['email'];
               </form>
 
                 <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
-    <?php } else { ?>
-    <h1>Welcome back <?php echo $currentuser['userid']; ?>!</h1>
-    <?php } ?>
+
+              <?php } else { ?>
+            			<h1>Welcome back <?php echo $currentuser['userid']; ?>!</h1>
+            			<?php } ?>
 
     </div>
 <!-- Implement Welcome back -->
