@@ -22,7 +22,7 @@ $email=$_SESSION['email'];
 <html lang="en">
 
 <?php if($currentuser['userlevel']<1) {
- include "../includes/banner.php";
+ include "../includes/banner.html";
   } ?>
 
 <head>
