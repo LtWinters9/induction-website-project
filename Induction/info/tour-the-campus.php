@@ -14,9 +14,7 @@ $collegeid=$_SESSION['collegeid'];
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
+
 
   <?php if($currentuser['userlevel']>1) {
    include "../includes/banner.html";

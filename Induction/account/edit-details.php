@@ -34,9 +34,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
+
 
   <?php if($currentuser['userlevel']>1) {
    include "../includes/banner.html";
