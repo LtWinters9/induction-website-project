@@ -1,6 +1,7 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
+date_default_timezone_set('London/GMT');
 require_once('functions.php');
 require_once('db_config.php');
 $currentuser=getUserLevel();
