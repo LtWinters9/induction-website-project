@@ -7,6 +7,7 @@ $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
+$modulename=$_SESSION['modulename'];
 $collegeid=$_SESSION['collegeid'];
 $userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
@@ -62,7 +63,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <div class="card">
         <div class="card-header">
             <header></header>
-            <h3 class="text-center">Weclome to your Course,<?php echo $courseName; ?> <?php echo $studentId; ?>.</h3>
+            <h3 class="text-center">Welcome to your Course,<?php echo $modulename; ?> <?php echo $userid; ?>.</h3>
             <ul class="nav nav-tabs card-header-tabs" role="tablist">
                 <li class="nav-item"><a class="nav-link active" href="#item-1-1" id="item-1-1-tab" data-toggle="tab" role="tab" aria-controls="item-1-1" aria-selected="true" style="color:#7e3ca6;">Staff Information</a></li>
                 <li class="nav-item"><a class="nav-link" href="#item-1-2" id="item-1-2-tab" data-toggle="tab" role="tab" aria-controls="item-1-2" aria-selected="false" style="color:#7e3ca6;">Module Information</a></li>
