@@ -12,12 +12,12 @@ session_regenerate_id();
 
 <?php
 include('functions.php');
-include('db_config.php');
+
 
 
 //Check that both a user name and user password have been set
 if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
-    $db=createConnection();
+    require_once 'db_config.php';
     //Assign POSTed values to variables
     $studentid=$_POST['studentID'];
     $userpass=$_POST['inputPassword'];
