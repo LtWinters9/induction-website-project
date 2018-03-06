@@ -50,6 +50,9 @@ $collegeid=$_SESSION['collegeid'];
     <script src="../dist/js/cookies.js"></script>
 </head>
 <body>
+  <?php if($currentuser['userlevel']>1) {
+    include "../includes/navLevel2.php";
+     } ?>
 </body>
     <html>
   </html>
