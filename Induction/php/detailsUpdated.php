@@ -12,6 +12,7 @@ $addressline1=$_SESSION['addressline1'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
 <!DOCTYPE html>
@@ -64,6 +65,12 @@ $email=$_SESSION['email'];
     include "../includes/navLevel2.php";
      } ?>
 
+     <?php if($currentuser['userlevel']>0) {
+      // include "../includes/navLevel2.php";
+       header("location: ../web/index.php");
+
+        } ?>
+
 <div class="highlight-blue">
         <div class="container">
             <div class="intro">
@@ -90,7 +97,7 @@ $email=$_SESSION['email'];
      include "../includes/footer.php";
       } ?>
 
-      
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
