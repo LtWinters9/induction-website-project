@@ -9,9 +9,9 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
-$userid=checkUser($_SESSION['userid'],session_id(),2,3);
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <?php if($currentuser['userlevel']>1) {
@@ -83,11 +83,11 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
                   } else if ( $Hour >= 18 || $Hour <= 4 ) {
                       echo "Good Evening";
                   }
-                  ?>. Welcome to your account, <?php echo $userid; ?></h2>
+                  ?>. Welcome to your account, <?php echo $forename; ?></h2>
                   <p class="lead text-center">Access the key areas quickly below.</p>
               </div>
 
-              
+
               <?php if($currentuser['userlevel']=2) {
                 include "../includes/div-section2.php";
               } else if ($currentuser['userlevel']=3) {

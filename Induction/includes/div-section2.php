@@ -17,7 +17,7 @@
     <div class="col-sm-6 col-md-5 col-lg-4 item">
         <div data-aos="zoom-in-down" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="box"><i class="icon ion-android-chat icon" style="color:#7e3ca6;"></i>
             <h3 class="name">Chat to other Students </h3>
-            <p class="description">Descriptive text within box, that them leads to an informational area. Icon subject to change..&nbsp;.</p><a href="#" class="learn-more">Learn more »</a></div>
+            <p class="description">Descriptive text within box, that them leads to an informational area. Icon subject to change..&nbsp;.</p><a href="../blog/collegeblog.php" class="learn-more">Learn more »</a></div>
     </div>
     <div class="col-sm-6 col-md-5 col-lg-4 item">
         <div data-aos="zoom-in-down" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="box"><i class="material-icons icon" style="color:#7e3ca6;">contact_mail</i>
