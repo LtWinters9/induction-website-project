@@ -105,10 +105,10 @@ if(isset($_GET['uID'])) {
           <hr>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  value="<?php echo $forename; ?>"  id="forename"></div>
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off"   value="<?php echo $forename; ?>"  id="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" value="<?php echo $surname; ?>"  id="surname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off"  value="<?php echo $surname; ?>"  id="surname"></div>
             </div>
           </div>
           <div class="form-group"><label>Email </label><input class="form-control" readonly="" type="email" name="email" autocomplete="off" required="" value="<?php echo $email; ?>"  id="emailadd"></div>
