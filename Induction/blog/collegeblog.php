@@ -57,19 +57,17 @@ $collegeid=$_SESSION['collegeid'];
 
 </head>
 
-<!-- Code is not displaying -- >
-
 <body>
-  <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2.php";
-     } ?>
+<?php     include "../includes/navLevel1.php";
+ ?>
+<h3>Hello</h3>
 
 
   <section id="main">
       <?php
           $db=createConnection();
           // get the first two articles
-          $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid order by blogtime desc limit 2";
+          $sql = "select mainblogid,title,blogtext,blogtime,userposter,forename,userid from mainblog join users on userposter = userid order by blogtime desc limit 2";
 
           $stmt = $db->prepare($sql);
       $stmt->execute();
