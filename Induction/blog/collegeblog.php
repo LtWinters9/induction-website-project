@@ -6,6 +6,8 @@ require_once('../php/functions.php');
 require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 $userid=checkUser($_SESSION['userid'],session_id(),2,3);
 ?>
