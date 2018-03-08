@@ -1,26 +1,22 @@
 <?php
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
-session_regenerate_id();
-include('../php/functions.php');
+date_default_timezone_set('London/GMT');
+require_once('../php/functions.php');
+require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
-
-
-//$firstname=$_SESSION['firstname'];
-//$surname=$_SESSION['surname'];
-//$postcode=$_SESSION['postcode'];
-//$emailadd=$_SESSION['emailadd'];
-//$title=$_SESSION['title'];
-//$mobile=$_SESSION['mobile'];
-//$username=checkUser($_SESSION['userid'],session_id(),2);
+$userid=checkUser($_SESSION['userid'],session_id(),2,3);
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
+
+<?php if($currentuser['userlevel']>1) {
+   include "../includes/banner.html";
+    } ?>
 
 <head>
     <meta charset="utf-8">
@@ -37,33 +33,62 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../dist/favicons.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../dist/favicons.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../dist/favicons.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../dist/favicons.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../dist/favicons.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../dist/favicons.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../dist/favicons.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../dist/favicons.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../dist/favicons.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../dist/favicons.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../dist/favicons.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../dist/favicons.ico/favicon-16x16.png">
+    <link rel="manifest" href="../dist/favicons.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Cookies -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-md navbar-fixed-top navigation-clean-button" style="background-color:#7e3ca6;">
-        <div class="container"><a class="navbar-brand" href="#"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
-                data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav nav-right">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="javascript:location.reload()" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
-                        <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout </a>
-                          <a class="dropdown-item" role="presentation" href="../contact/contact.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
-                    </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../account/logout.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
-                </ul>
-                <p class="ml-auto navbar-text actions"> </p>
-            </div>
-        </div>
-    </nav>
+  <?php if($currentuser['userlevel']>1) {
+    include "../includes/navLevel2.php";
+  } else if ($currentuser['userlevel']=1) {
+    include "../includes/navLevel1.php";
+  } ?>
+
     <div class="features-boxed">
         <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Hello, Welcome to your account, <?php echo $StudentID; ?></h2>
-                <p class="lead text-center">Access the key areas quickly below.</p>
-            </div>
+
+              <div class="intro">
+
+                  <h2 class="text-center">
+                  <?php
+                  // 24-hour format of an hour without leading zeros (0 through 23)
+                  $Hour = date('G');
+
+                  if ( $Hour >= 5 && $Hour <= 11 ) {
+                      echo "Good Morning";
+                  } else if ( $Hour >= 12 && $Hour <= 17 ) {
+                      echo "Good Afternoon";
+                  } else if ( $Hour >= 18 || $Hour <= 4 ) {
+                      echo "Good Evening";
+                  }
+                  ?>. Welcome to your account, <?php echo $userid; ?></h2>
+                  <p class="lead text-center">Access the key areas quickly below.</p>
+              </div>
+
+
+            <?php if($currentuser['userlevel']=2) {
             <div class="row justify-content-center features">
                 <div class="col-sm-6 col-md-5 col-lg-4 item" data-aos="zoom-in-down" data-aos-duration="200" data-aos-delay="200" data-aos-once="true">
                     <div class="box"><i class="icon ion-chatbubbles icon" style="color:#7e3ca6;"></i>
@@ -96,65 +121,32 @@ $collegeid=$_SESSION['collegeid'];
                         <p class="description">Descriptive text within box, that them leads to an informational area. Icon subject to change..&nbsp; </p><a href="#" class="learn-more">Learn more »</a></div>
                 </div>
             </div>
+          }?>
         </div>
     </div>
     <div class="highlight-clean" style="background-color:#dfe8ee;">
         <div class="container" data-aos="slide-right" data-aos-duration="800" data-aos-delay="500" data-aos-once="true">
             <div class="intro">
                 <h2 class="text-center"><?php echo $StudentID; ?> Account Overview</h2>
-                <p class="text-center">Need to change your password, or get in touch with our automated bot? </p>
+                <p class="text-center">Need to change your password, edit your details or get in touch with our automated bot? </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../web/account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
-            <a class="btn btn-light" role="button" href="../web/chatbot.php" data-bs-hover-animate="pulse" style="background-color:#465765;color:#ffffff;">CHAT NOW</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
+              <a class="btn btn-light" role="button" href="../account/edit-details.php"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">UPDATE DETAILS</a>
+              <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a>
+              <a class="btn btn-light" role="button" href="../php/logout.php"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">LOGOUT</a>
+            </div>
         </div>
     </div>
-    <div class="footer-dark" style="background-color:#7e3ca6;">
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 item text">
-                      <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">The University of the Highlands and Islands</h3>
-                      <p><a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"   target="_blank" style="color:#ffffff;">About</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">News and Events</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Business and employers</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Vacancies</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Give to UHI</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">FOI</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Cookies</a>
-                        • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
-                    </div>
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">About UHI</h3>
-                        <ul>
-                            <li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
-                            <li><a href="#">Highland Theological College UHI </a></li>
-                            <li><a href="#">Inverness College UHI </a></li>
-                            <li><a href="https://www.lews.uhi.ac.uk/" target="_blank">Lews Castle College UHI</a> </li>
-                            <li><a href="https://www.moray.uhi.ac.uk/" target="_blank">Moray College UHI</a> </li>
-                            <li><a href="https://www.nafc.uhi.ac.uk/" target="_blank">NAFC Marine Centre UHI</a> </li>
-                            <li><a href="https://www.northhighland.uhi.ac.uk/" target="_blank">North Highland College UHI</a> </li>
-                            <li><a href="https://www.orkney.uhi.ac.uk/" target="_blank">Orkney College UHI</a> </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
-                        <ul>
-                            <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
-                            <li><a href="../info/opening-times.php">Opening Times</a></li>
-                            <li><a href="../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
-                            <li><a href="../info/sitemap.php">Sitemap</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4 col-md-12 col-xl-12 offset-xl-0 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
-                </div>
-                <p class="copyright" style="color:#ffffff;">© University of the Highlands and IslandsRegistered office: 12b Ness Walk, Inverness, Scotland, IV3 5SQ&nbsp; </p>
-            </div>
-        </footer>
-    </div>
+
+    <?php if($currentuser['userlevel']>1) {
+     include "../includes/footer.php";
+      } ?>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="../assets/js/script.min.js"></script>
+    <script src="../dist/js/cookies.js"></script>
 
 
 
