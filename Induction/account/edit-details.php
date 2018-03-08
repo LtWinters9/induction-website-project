@@ -93,7 +93,7 @@ if(isset($_GET['uID'])) {
   <div class="container profile profile-view" id="profile">
     <div class="row">
       <div class="col-md-12 alert-col relative">
-        <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+        <!-- Not needed <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div> -->
       </div>
     </div>
     <form class="form-edit-details"  data-toggle="validator" role="form" id="editDetails" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
