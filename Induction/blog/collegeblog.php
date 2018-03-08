@@ -7,6 +7,7 @@ require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $collegeid=$_SESSION['collegeid'];
+$userid=checkUser($_SESSION['userid'],session_id(),2,3);
 ?>
 
 <!DOCTYPE html>
