@@ -60,10 +60,12 @@ $collegeid=$_SESSION['collegeid'];
 <!-- Code is not displaying -- >
 
 <body>
+<nav>
   <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
      } ?>
-
+</nav>
+<!--
 
     <div></div>
     <ol class="breadcrumb">
@@ -175,6 +177,7 @@ $collegeid=$_SESSION['collegeid'];
               </div>
           </footer>
       </div>
+-->
 
       <section id="main">
           <?php
@@ -183,7 +186,7 @@ $collegeid=$_SESSION['collegeid'];
           $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid order by blogtime desc limit 2";
 
           $stmt = $db->prepare($sql);
-      // Error here    $stmt->execute();
+          $stmt->execute();
           $stmt->store_result();
           $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
 
