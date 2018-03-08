@@ -65,6 +65,40 @@ $collegeid=$_SESSION['collegeid'];
      } ?>
 
 
+  <section id="main">
+      <?php
+          $db=createConnection();
+          // get the first two articles
+          $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid order by blogtime desc limit 2";
+
+          $stmt = $db->prepare($sql);
+      $stmt->execute();
+      $stmt->store_result();
+      $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
+
+      //build article html
+      while($stmt->fetch()) {
+      echo "<article id='a$articleid'>
+      <h1>$articletitle</h1>
+      <p>".nl2br($articletext)."</p>
+      <footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$username</em></p></footer>";
+
+      // if user is logged in and not suspended add comment button
+      if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
+      echo "<p><a href='deletearticle.php?aID=$articleid' id='db$articleid'>Delete Post</a></p>";
+      }
+      echo "</article>
+      ";
+      }
+      $stmt->close();
+      $db->close();
+
+      ?>
+  </section>
+
+
+<!--
+
     <div></div>
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a><span>Forums </span></a></li>
@@ -175,37 +209,9 @@ $collegeid=$_SESSION['collegeid'];
               </div>
           </footer>
       </div>
+-->
 
-      <section id="main">
-          <?php
-          $db=createConnection();
-          // get the first two articles
-          $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid order by blogtime desc limit 2";
 
-          $stmt = $db->prepare($sql);
-      // Error here    $stmt->execute();
-          $stmt->store_result();
-          $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
-
-          //build article html
-          while($stmt->fetch()) {
-              echo "<article id='a$articleid'>
-      			<h1>$articletitle</h1>
-      			<p>".nl2br($articletext)."</p>
-      			<footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$username</em></p></footer>";
-
-              // if user is logged in and not suspended add comment button
-              if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
-                  echo "<p><a href='deletearticle.php?aID=$articleid' id='db$articleid'>Delete Post</a></p>";
-              }
-              echo "</article>
-      			";
-          }
-          $stmt->close();
-          $db->close();
-
-          ?>
-      </section>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
