@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
 <head>>Return</head>
 <body>

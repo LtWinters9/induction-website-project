@@ -4,7 +4,6 @@ date_default_timezone_set('London/GMT');
 session_regenerate_id();
 ?>
 
-<!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
 <head>>Return</head>
 <body>
