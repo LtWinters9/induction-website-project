@@ -9,10 +9,9 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
-$userid=checkUser($_SESSION['userid'],session_id(),2);
+$userid=checkUser($_SESSION['userid'],session_id(),2,3);
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 
 <?php if($currentuser['userlevel']>1) {
@@ -63,7 +62,9 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <body>
   <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
-     } ?>
+  } else if ($currentuser['userlevel']=1) {
+    include "../includes/navLevel1.php";
+  } ?>
 
     <div class="features-boxed">
         <div class="container">
