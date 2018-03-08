@@ -87,7 +87,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
                   <p class="lead text-center">Access the key areas quickly below.</p>
               </div>
 
-              //this section is to display the 6 display boxes avalible to either the student or staff
+              
               <?php if($currentuser['userlevel']=2) {
                 include "../includes/div-section2.php";
               } else if ($currentuser['userlevel']=3) {
