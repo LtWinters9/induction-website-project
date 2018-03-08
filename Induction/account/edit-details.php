@@ -31,7 +31,7 @@ if(isset($_GET['uID'])) {
 	if($userdetails->num_rows==1) {
 	$userdetails->fetch();
 
-}
+}}
 ?>
 
 <html lang="en">
