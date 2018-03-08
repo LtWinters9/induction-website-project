@@ -57,155 +57,45 @@ $collegeid=$_SESSION['collegeid'];
 
 </head>
 
-<!-- Code is not displaying -- >
-
 <body>
-  <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2.php";
-     } ?>
+<?php     include "../includes/navLevel1.php";
+ ?>
+<h3>Hello</h3>
+
+<?php echo $userid ?>
 
 
-    <div></div>
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a><span>Forums </span></a></li>
-        <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
-        <li class="breadcrumb-item"><a><span> </span></a></li>
-    </ol>
-
-    <div class="highlight-phone" style="background-color:#9da9ae;">
-        <h3 class="text-left" style="background-position:center;font-family:'Source Sans Pro', sans-serif;">Main Category</h3>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="intro">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"> <i class="fa fa-question"></i> Frequently asked questions</h2>
-                        <p style="font-family:'Source Sans Pro', sans-serif;">Category information </p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
-                </div>
-                <div class="col-sm-4" style="background-image:url(&quot;../assets/img/logo.jpg&quot;);background-repeat:no-repeat;">
-                    <div class="d-none d-md-block iphone-mockup"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="highlight-phone" style="background-color:#9da9ae;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="intro">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"><i class="icon ion-alert"></i> Important Changes</h2>
-                        <p style="font-family:'Source Sans Pro', sans-serif;">Category information</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
-                </div>
-                <div class="col-sm-4" style="background-repeat:no-repeat;background-image:url(&quot;../assets/img/logo.jpg&quot;);">
-                    <div class="d-none d-md-block iphone-mockup"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="highlight-phone" style="background-color:#7d8285;">
-        <h1 style="font-family:'Source Sans Pro', sans-serif;">Open Discussion</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="intro" style="font-family:'Source Sans Pro', sans-serif;">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"><i class="fa fa-star"></i> Blog system</h2>
-                        <p>Message here</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
-                </div>
-                <div class="col-sm-4" style="background-image:url(&quot;../assets/img/logo.jpg&quot;);background-repeat:no-repeat;">
-                    <div class="d-none d-md-block iphone-mockup"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="highlight-phone" style="background-color:#7d8285;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="intro">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"><i class="fa fa-star"></i> Blog system</h2>
-                        <p>Message here</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
-                </div>
-                <div class="col-sm-4" style="background-image:url(&quot;../assets/img/logo.jpg&quot;);background-repeat:no-repeat;">
-                    <div class="d-none d-md-block iphone-mockup"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-dark" style="background-color:#7e3ca6;">
-
-      <div class="footer-dark" style="background-color:#7e3ca6;">
-          <footer>
-              <div class="container">
-                  <div class="row">
-                      <div class="col-md-6 item text">
-                        <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">The University of the Highlands and Islands</h3>
-                        <p><a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"   target="_blank" style="color:#ffffff;">About</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">News and Events</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Business and employers</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Vacancies</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Give to UHI</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">FOI</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Cookies</a>
-                          • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
-                      </div>
-                      <div class="col-sm-4 col-md-3 item">
-                          <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">About UHI</h3>
-                          <ul>
-                              <li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
-                              <li><a href="#">Highland Theological College UHI </a></li>
-                              <li><a href="#">Inverness College UHI </a></li>
-                              <li><a href="https://www.lews.uhi.ac.uk/" target="_blank">Lews Castle College UHI</a> </li>
-                              <li><a href="https://www.moray.uhi.ac.uk/" target="_blank">Moray College UHI</a> </li>
-                              <li><a href="https://www.nafc.uhi.ac.uk/" target="_blank">NAFC Marine Centre UHI</a> </li>
-                              <li><a href="https://www.northhighland.uhi.ac.uk/" target="_blank">North Highland College UHI</a> </li>
-                              <li><a href="https://www.orkney.uhi.ac.uk/" target="_blank">Orkney College UHI</a> </li>
-                          </ul>
-                      </div>
-                      <div class="col-sm-4 col-md-3 item">
-                          <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
-                          <ul>
-                              <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
-                              <li><a href="../info/opening-times.php">Opening Times</a></li>
-                              <li><a href="../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
-                              <li><a href="../info/sitemap.php">Sitemap</a></li>
-                          </ul>
-                      </div>
-                      <div class="col-sm-4 col-md-12 col-xl-12 offset-xl-0 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
-                  </div>
-                  <p class="copyright" style="color:#ffffff;">© University of the Highlands and IslandsRegistered office: 12b Ness Walk, Inverness, Scotland, IV3 5SQ&nbsp; </p>
-              </div>
-          </footer>
-      </div>
-
-      <section id="main">
-          <?php
+  <section id="main">
+      <?php
           $db=createConnection();
           // get the first two articles
-          $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid order by blogtime desc limit 2";
+          $sql = "select mainblogid,mainblog.title,blogtext,blogtime,userposter,forename,userid from mainblog join users on userposter = userid order by blogtime desc limit 2";
 
           $stmt = $db->prepare($sql);
-      // Error here    $stmt->execute();
-          $stmt->store_result();
-          $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
+      $stmt->execute();
+      $stmt->store_result();
+      $stmt->bind_result($mainblogid,$title,$blogtext,$blogtime,$userposter,$forename,$userid);
+      //build article html
+      while($stmt->fetch()) {
+      echo "<article id='a$mainblogid'>
+      <h1>$title</h1>
+      <p>".nl2br($blogtext)."</p>
+      <footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
 
-          //build article html
-          while($stmt->fetch()) {
-              echo "<article id='a$articleid'>
-      			<h1>$articletitle</h1>
-      			<p>".nl2br($articletext)."</p>
-      			<footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$username</em></p></footer>";
+      // if user is logged in and not suspended add comment button
+      if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
+      echo "<p><a href='deletearticle.php?aID=$articleid' id='db$articleid'>Delete Post</a></p>";
+      }
+      echo "</article>
+      ";
+      }
+      $stmt->close();
+      $db->close();
 
-              // if user is logged in and not suspended add comment button
-              if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
-                  echo "<p><a href='deletearticle.php?aID=$articleid' id='db$articleid'>Delete Post</a></p>";
-              }
-              echo "</article>
-      			";
-          }
-          $stmt->close();
-          $db->close();
+      ?>
+  </section>
 
-          ?>
-      </section>
+
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
@@ -217,18 +107,19 @@ $collegeid=$_SESSION['collegeid'];
       <!-- <script src="../dist/js/login.js"></script> -->
       <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
       <script src="../dist/js/cookies.js"></script>
-
-      <script>
-          document.onreadystatechange=function() {
-              if(document.readyState=="complete") {
-                  prepareMenu();
-                  prepareArticle();
-              }
-          }
-      </script>
-
+    <script>
+    document.onreadystatechange=function() {
+        if(document.readyState=="complete") {
+            prepareMenu();
+            prepareArticle();
+        }
+    }
+</script>
 
 
 
 </body>
+
+
+
 </html>
