@@ -82,7 +82,7 @@ $collegeid=$_SESSION['collegeid'];
 $conn = createConnection();
 $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked, userid, from booking where booked != true");
 
-echo '<b>Ferries:</b>';
+echo '<b>Available Appointments:</b>';
 echo "<select name = 'optionselected'>";
 while($row = mysqli_fetch_array($result)) {
     echo "<option value = ",$row[bookingid],">", " Date: ", $row[bookdate], " Time: ", $row[bookdate]," Arrival: ", $row[advisor],"</option>";
