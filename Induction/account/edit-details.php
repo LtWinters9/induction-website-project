@@ -28,8 +28,8 @@ if(isset($_GET['uID'])) {
 	$userdetails->bind_param("i",$userid);
 	$userdetails->execute();
 	$userdetails->store_result();
-	$userdetails->bind_result($forename, $surname, $telephone, $mobilephone, $addressline1, $addressline2, $town, $postcode);
-	if($userdetails->num_rows==1) {
+	$userdetails->bind_result($forename,$surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
+	if($userdetails->num_rows==1) {1
 	$userdetails->fetch();
 
 ?>
