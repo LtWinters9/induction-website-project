@@ -99,9 +99,9 @@ if(isset($_GET['uID'])) {
     <form class="form-edit-details"  data-toggle="validator" role="form" id="editDetails" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
       <div class="form-row profile-row">
         <div class="col-md-4 relative">
-          <!-- <div class="avatar">
+           <div class="avatar">
             <div class="avatar-bg center"></div>
-          </div>--><input type="file" class="form-control" name="avatar-file"></div> 
+          </div><input type="file" class="form-control" name="avatar-file"></div>
         <div class="col-md-8">
           <h1>Edit Details</h1>
           <hr>
