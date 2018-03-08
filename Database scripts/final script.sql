@@ -140,7 +140,7 @@ create table booking (
     bookdate	date,
     booktime	time,
     advisor		varchar(20),
-    booked		boolean,
+    booked		varchar(1),
     userid		int(8),
     primary key (bookingid),
     foreign key (userid) references users (userid)

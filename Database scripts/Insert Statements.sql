@@ -84,6 +84,6 @@ insert into courseblogcom (commenttext,blogtime,userid,courseblogid) values ('Lo
 insert into courseblogcom (commenttext,blogtime,userid,courseblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,3);
 
 
-insert into booking (bookdate,booktime,advisor,booked,userid) values ('2018-03-08','12:00:00','Derek',1,15011406);
-insert into booking (bookdate,booktime,advisor,booked,userid) values ('2018-03-08','13:00:00','Derek',1,083321);
-insert into booking (bookdate,booktime,advisor,booked,userid) values ('2018-03-08','14:00:00','Derek',1,09012233);
+insert into booking (bookdate,booktime,advisor,booked) values ('2018-03-08','12:00:00','Derek','N');
+insert into booking (bookdate,booktime,advisor,booked) values ('2018-03-08','13:00:00','Derek','N');
+insert into booking (bookdate,booktime,advisor,booked) values ('2018-03-08','14:00:00','Derek','N');
