@@ -9,6 +9,18 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
+$bookingid=$_POST['optionselected'];
+$booked='Y';
+
+$db=createConnection();
+
+//Inserts data in to the booking table
+$insertsql="update booking set booked = ?, userid = ? where bookingid = ?;";
+$insertorder=$db->prepare($insertsql);
+$insertorder->bind_param("sii", $booked, $userid, $bookingid);
+$insertorder->execute();
+$insertorder->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -75,29 +87,7 @@ $collegeid=$_SESSION['collegeid'];
 
 <!-- Book Section -->
 <body>
-<form action="confirmation.php" method="post">
-<?php
 
-
-$conn = createConnection();
-$result = $conn->query("select bookingid, bookdate, booktime, advisor, booked from booking where booked = 'N'");
-
-echo '<b>Please select an appointment from the drop down below:</b>';
-echo '<b>Available Appointments:</b>';
-echo '</br></br>';
-echo "<select name = 'optionselected'>";
-while($row = mysqli_fetch_array($result)) {
-    echo "<option value = ",$row[bookingid],">", " Date: ", $row[bookdate], " Time: ", $row[booktime]," Advisor: ", $row[advisor],"</option>";
-}
-echo "</select>";
-
-$conn->close();
-?>
-
-
-
-<input type="submit" value="Continue and confirm appointment">
-</form>
 </body>
 
 
