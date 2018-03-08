@@ -1,12 +1,16 @@
 <?php
 session_start();
 date_default_timezone_set('London/GMT');
-require_once("functions.php");
-require_once('db_config.php');
+include("functions.php");
+include('db_config.php');
 $db = createConnection();
+echo "hello";
 $currentuser=getUserLevel();
+echo "hello again";
+//$blogpostdate=$_POST['blogpostdate'];
+$blogpostdate="2015-04-14 23:11:11";
 
-$blogpostdate=$_POST['blogpostdate'];
+echo $blogpostdate;
 // Get next blog article
 $sql = "select mainblogid,mainblog.title,blogtext,blogtime,userposter,forename from mainblog join users on userposter=userid where blogtime<? order by blogtime desc limit 1";
 $stmt = $db->prepare($sql);
@@ -15,7 +19,7 @@ $stmt->execute();
 $stmt->store_result();
 $stmt->bind_result($mainblogid,$title,$blogtext,$blogtime,$userposter,$forename);
 $stmt->fetch();
-
+echo "main blog id is "+ $mainblogid;
 //construct article associative array, includes user array data
 $json[]=array (
     'mainblogid' => $mainblogid,
