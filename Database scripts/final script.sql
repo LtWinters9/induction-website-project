@@ -90,10 +90,10 @@ create table mainblog (
 	title				varchar(40),
 	blogtext		text,
 	blogtime		timestamp default current_timestamp,
-	userposter	int(8),
+	blogposter	int(8),
   collegeid		varchar(6),
 	primary key(mainblogid),
-	foreign key(userposter) references users (userid),
+	foreign key(blogposter) references users (userid),
   foreign key(collegeid) references college (collegeid)
 ) engine=innodb default character set=utf8;
 
@@ -114,11 +114,11 @@ create table courseblog (
 	title					varchar(40),
 	blogtext			text,
 	blogtime			timestamp default current_timestamp,
-	userposter		int(8),
+	blogposter		int(8),
   courseid			varchar(8),
   collegeid			varchar(6),
 	primary key (courseblogid),
-	foreign key (userposter) references users (userid),
+	foreign key (blogposter) references users (userid),
   foreign key (courseid) references course (courseid),
   foreign key (collegeid) references college (collegeid)
 ) engine=innodb default character set=utf8;
