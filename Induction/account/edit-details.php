@@ -84,7 +84,7 @@ if(isset($_GET['uID'])) {
 </head>
 
 <body>
-<div class id=updateDetails>
+<div class id=edituser>
 
 
 <?php if($currentuser['userlevel']>1) {
@@ -97,7 +97,7 @@ if(isset($_GET['uID'])) {
         <!-- Not needed <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div> -->
       </div>
     </div>
-    <form class="form-edit-details"  data-toggle="validator" role="form" id="editDetails" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
+    <form class="form-edit-details"  data-toggle="validator" role="form" id="edituser" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
       <div class="form-row profile-row">
         <div class="col-md-4 relative">
            </div>
