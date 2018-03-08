@@ -42,16 +42,16 @@ create table course (
 
 create table users (
 	userid				int(8) unique not null,
-    title 				varchar(6),
+  title 				varchar(6),
 	forename			varchar(30),
 	surname				varchar(30),
 	dob					date,
 	addressline1		varchar(50),
-    addressline2		varchar(50),
+  addressline2		varchar(50),
 	town				varchar(30),
 	postcode			varchar(8),
 	telephone			varchar(12),
-    mobilephone			varchar(13),
+  mobilephone			varchar(13),
 	email				varchar(40),
 	bio					varchar(1000),
   usertype			int(1) not null default 2,
@@ -145,4 +145,3 @@ create table booking (
     primary key (bookingid),
     foreign key (userid) references users (userid)
     )engine=innodb default character set=utf8;
-

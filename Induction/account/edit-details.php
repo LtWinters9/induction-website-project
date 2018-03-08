@@ -11,8 +11,11 @@ $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 $telephone=$_SESSION['telephone'];
 $addressline1=$_SESSION['addressline1'];
+$addressline2=$_SESSION['addressline2'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
+$telephone=$_SESSION['telephone'];
+$mobilephone=$_SESSION['mobilephone'];
 $email=$_SESSION['email'];
 $username=checkUser($_SESSION['userid'],session_id(),2);
 
@@ -118,7 +121,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
               <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" value="<?php echo $addressline1; ?>" id="address1"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" value="<?php echo $addressline1; ?>"  id="address2"></div>
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" value="<?php echo $addressline2; ?>"  id="address2"></div>
             </div>
             <div class="col-sm-12 col-md-6">
               <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" required="" value="<?php echo $town; ?>"  id="town"></div>
@@ -130,7 +133,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
               <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $telephone; ?>"  id="telephone"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobile; ?>"  id="mobile"></div>
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobilephone; ?>"  id="mobile"></div>
             </div>
           </div>
           <hr>
