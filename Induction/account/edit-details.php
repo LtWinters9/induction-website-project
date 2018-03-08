@@ -112,7 +112,7 @@ if(isset($_GET['uID'])) {
               <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off"  value="<?php echo $surname; ?>"  id="surname"></div>
             </div>
           </div>
-          <div class="form-group"><label>Email </label><input class="form-control" readonly="" type="email" name="email" autocomplete="off" required="" value="<?php echo $email; ?>"  id="emailadd"></div>
+
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
               <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" value="<?php echo $addressline1; ?>" id="address1"></div>
