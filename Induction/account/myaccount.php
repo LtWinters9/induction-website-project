@@ -83,7 +83,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
                   } else if ( $Hour >= 18 || $Hour <= 4 ) {
                       echo "Good Evening";
                   }
-                  ?>. Welcome to your account, <?php echo $userid; ?></h2>
+                  ?>. Welcome to your account, <?php echo $forename; ?></h2>
                   <p class="lead text-center">Access the key areas quickly below.</p>
               </div>
 
@@ -99,7 +99,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
     <div class="highlight-clean" style="background-color:#dfe8ee;">
         <div class="container" data-aos="slide-right" data-aos-duration="800" data-aos-delay="500" data-aos-once="true">
             <div class="intro">
-                <h2 class="text-center"><?php echo $forename; ?> Account Overview</h2>
+                <h2 class="text-center"><?php echo $StudentID; ?> Account Overview</h2>
                 <p class="text-center">Need to change your password, edit your details or get in touch with our automated bot? </p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
