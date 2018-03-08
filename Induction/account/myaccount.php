@@ -68,23 +68,27 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
 
     <div class="features-boxed">
         <div class="container">
-            <div class="intro">
 
-                <h2 class="text-center">
-                <?php
-                // 24-hour format of an hour without leading zeros (0 through 23)
-                $Hour = date('G');
+              <div class="intro">
 
-                if ( $Hour >= 5 && $Hour <= 11 ) {
-                    echo "Good Morning";
-                } else if ( $Hour >= 12 && $Hour <= 17 ) {
-                    echo "Good Afternoon";
-                } else if ( $Hour >= 18 || $Hour <= 4 ) {
-                    echo "Good Evening";
-                }
-                ?>. Welcome to your account, <?php echo $userid; ?></h2>
-                <p class="lead text-center">Access the key areas quickly below.</p>
-            </div>
+                  <h2 class="text-center">
+                  <?php
+                  // 24-hour format of an hour without leading zeros (0 through 23)
+                  $Hour = date('G');
+
+                  if ( $Hour >= 5 && $Hour <= 11 ) {
+                      echo "Good Morning";
+                  } else if ( $Hour >= 12 && $Hour <= 17 ) {
+                      echo "Good Afternoon";
+                  } else if ( $Hour >= 18 || $Hour <= 4 ) {
+                      echo "Good Evening";
+                  }
+                  ?>. Welcome to your account, <?php echo $userid; ?></h2>
+                  <p class="lead text-center">Access the key areas quickly below.</p>
+              </div>
+
+
+            <?php if($currentuser['userlevel']=2) {
             <div class="row justify-content-center features">
                 <div class="col-sm-6 col-md-5 col-lg-4 item" data-aos="zoom-in-down" data-aos-duration="200" data-aos-delay="200" data-aos-once="true">
                     <div class="box"><i class="icon ion-chatbubbles icon" style="color:#7e3ca6;"></i>
@@ -117,6 +121,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
                         <p class="description">Descriptive text within box, that them leads to an informational area. Icon subject to change..&nbsp; </p><a href="#" class="learn-more">Learn more »</a></div>
                 </div>
             </div>
+          }?>
         </div>
     </div>
     <div class="highlight-clean" style="background-color:#dfe8ee;">
