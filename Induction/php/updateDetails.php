@@ -20,7 +20,7 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 	$surname=$_POST['surname'];
 	$updatesql="update users set userid=?,forename=?,surname=? where userid=?";
 	$doupdate=$db->prepare($updatesql);
-	$doupdate->bind_param("sssi",$username,$firstname,$surname,$userid);
+	$doupdate->bind_param("sssi",$userid,$firstname,$surname,$userid);
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();

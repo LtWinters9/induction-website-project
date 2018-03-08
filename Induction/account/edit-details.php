@@ -4,35 +4,26 @@ session_start();
 date_default_timezone_set('London/GMT');
 require_once('../php/functions.php');
 require_once('../php/db_config.php');
-$currentuser=getUserLevel();
-$userid=$_SESSION['userid'];
-$forename=$_SESSION['forename'];
-$surname=$_SESSION['surname'];
-$collegeid=$_SESSION['collegeid'];
-$telephone=$_SESSION['telephone'];
-$addressline1=$_SESSION['addressline1'];
-$addressline2=$_SESSION['addressline2'];
-$town=$_SESSION['town'];
-$postcode=$_SESSION['postcode'];
-$telephone=$_SESSION['telephone'];
-$mobilephone=$_SESSION['mobilephone'];
-$email=$_SESSION['email'];
+session_start();
+include('php/functions.php');
 $username=checkUser($_SESSION['userid'],session_id(),2);
+$currentuser=getUserLevel();
+
 
 if(isset($_GET['uID'])) {
 	$userid=$_GET['uID'];
 	$db=createConnection();
-	$userdetailssql="select forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode from users where userid=?;";
+	$userdetailssql="select userid, forename, surname from users where userid=?;";
 	$userdetails = $db->prepare($userdetailssql);
 	$userdetails->bind_param("i",$userid);
 	$userdetails->execute();
 	$userdetails->store_result();
-	$userdetails->bind_result($forename,$surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
+	$userdetails->bind_result($userid, $firstname, $surname);
 	if($userdetails->num_rows==1) {
-	$userdetails->fetch();
+		$userdetails->fetch();
+	?>
 
-}}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -140,6 +131,15 @@ if(isset($_GET['uID'])) {
         </div>
       </div>
     </form>
+		<?php
+		} else {
+			echo "<p>No user found!</p>";
+		}
+	} else {
+		echo "<p>No user submitted to edit</p>";
+	}
+	?>
+
   </div>
 
   <?php if($currentuser['userlevel']>1) {
