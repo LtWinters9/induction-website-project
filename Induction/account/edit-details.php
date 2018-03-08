@@ -21,12 +21,12 @@ $email=$_SESSION['email'];
 if(isset($_GET['uID'])) {
 	$userid=$_GET['uID'];
 	$db=createConnection();
-	$userdetailssql="select userid, forename, surname from users where userid=?;";
+	$userdetailssql="select userid, forename, surname,telephone,mobilephone,addressline1,addressline2,town,postcode from users where userid=?;";
 	$userdetails = $db->prepare($userdetailssql);
 	$userdetails->bind_param("i",$userid);
 	$userdetails->execute();
 	$userdetails->store_result();
-	$userdetails->bind_result($userid, $firstname, $surname);
+	$userdetails->bind_result($userid, $forename, $surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
 	if($userdetails->num_rows==1) {
 		$userdetails->fetch();
 	?>
