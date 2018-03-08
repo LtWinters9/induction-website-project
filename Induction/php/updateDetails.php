@@ -6,8 +6,18 @@
 session_start();
 include("functions.php");
 include("db_config.php");
-$username=checkUser($_SESSION['userid'],session_id(),2);
 $currentuser=getUserLevel();
+$userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
+$telephone=$_SESSION['telephone'];
+$addressline1=$_SESSION['addressline1'];
+$town=$_SESSION['town'];
+$postcode=$_SESSION['postcode'];
+$email=$_SESSION['email'];
+
+$username=checkUser($_SESSION['userid'],session_id(),2);
 if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])) {
 	if($currentuser['userlevel']<3 && $currentuser['userid'] != $_POST['userid']) {
 		header("location: php/logout.php");

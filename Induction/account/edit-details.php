@@ -4,10 +4,17 @@ session_start();
 date_default_timezone_set('London/GMT');
 require_once('../php/functions.php');
 require_once('../php/db_config.php');
-session_start();
-include('php/functions.php');
-$username=checkUser($_SESSION['userid'],session_id(),2);
 $currentuser=getUserLevel();
+$userid=$_SESSION['userid'];
+$forename=$_SESSION['forename'];
+$surname=$_SESSION['surname'];
+$collegeid=$_SESSION['collegeid'];
+$telephone=$_SESSION['telephone'];
+$addressline1=$_SESSION['addressline1'];
+$town=$_SESSION['town'];
+$postcode=$_SESSION['postcode'];
+$email=$_SESSION['email'];
+$username=checkUser($_SESSION['userid'],session_id(),2);
 
 
 if(isset($_GET['uID'])) {
