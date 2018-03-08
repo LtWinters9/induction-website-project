@@ -20,21 +20,20 @@ $email=$_SESSION['email'];
 $username=checkUser($_SESSION['userid'],session_id(),2);
 
 
-/*if(isset($_GET['uID'])) {
+if(isset($_GET['uID'])) {
 	$userid=$_GET['uID'];
 	$db=createConnection();
-	$userdetailssql="select forename, surname, telephone, addressline1, town, postcode, email, usertype, collegeid from users,userpass where users.userid=?;";
+	$userdetailssql="select forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode from users where users.userid=?;";
 	$userdetails = $db->prepare($userdetailssql);
 	$userdetails->bind_param("i",$userid);
 	$userdetails->execute();
 	$userdetails->store_result();
-	$userdetails->bind_result($username, $firstname, $surname);
+	$userdetails->bind_result($forename, $surname, $telephone, $mobilephone, $addressline1, $addressline2, $town, $postcode);
 	if($userdetails->num_rows==1) {
 	$userdetails->fetch();
-*/
+
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 
 

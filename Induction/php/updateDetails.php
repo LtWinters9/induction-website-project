@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
 <head>>Return</head>
 <body>
@@ -21,9 +22,9 @@ if(isset($_POST['userid']) && isset($_POST['username']) && isset($_POST['firstna
 	$username=$_POST['username'];
 	$firstname=$_POST['firstname'];
 	$surname=$_POST['surname'];
-	$updatesql="update customers set username=?,firstname=?,surname=? where userid=?";
+	$updatesql="update users set forename=?,surname=?,telphone=?,mobilephone=?,addressline1=?,addressline2=?,town=?,postcode=? where userid=?";
 	$doupdate=$db->prepare($updatesql);
-	$doupdate->bind_param("sssi",$username,$firstname,$surname,$userid);
+	$doupdate->bind_param("ssssssssi",$forename,$surname, $telephone, $mobilephone, $addressline1, $addressline2, $town, $postcode,$userid);
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();

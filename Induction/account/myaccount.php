@@ -11,7 +11,7 @@ $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 $userid=checkUser($_SESSION['userid'],session_id(),2,3);
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 
 <?php if($currentuser['userlevel']>1) {
@@ -87,7 +87,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
                   <p class="lead text-center">Access the key areas quickly below.</p>
               </div>
 
-              
+
               <?php if($currentuser['userlevel']=2) {
                 include "../includes/div-section2.php";
               } else if ($currentuser['userlevel']=3) {
