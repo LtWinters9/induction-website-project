@@ -29,9 +29,9 @@ if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname
 	$postcode=$_POST['postcode'];
 	$telephone=$_POST['telephone'];
 	$mobilephone=$_POST['mobilephone'];
-	$updatesql="update users set forename=?,surname=?,telephone=?,mobilephone=?,addressline1=?,addressline2=?,town=?,postcode=? where userid=?";
+	$updatesql="update users set forename=?,surname=?,addressline1=?,addressline2=?,town=?,postcode=?,telephone=?,mobilephone=? where userid=?";
 	$doupdate=$db->prepare($updatesql);
-	$doupdate->bind_param("ssssssssi",$forename,$surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode,$userid);
+	$doupdate->bind_param("ssssssssi",$forename,$surname,$addressline1,$addressline2,$town,$postcode,$telephone,$mobilephone,$userid);
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();
