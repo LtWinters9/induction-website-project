@@ -20,7 +20,7 @@ $email=$_SESSION['email'];
 $username=checkUser($_SESSION['userid'],session_id(),2);
 
 echo "Hello world before";
-/*if(isset($_GET['uID'])) {
+if(isset($_GET['uID'])) {
 	$userid=$_GET['uID'];
 	$db=createConnection();
 	$userdetailssql="select forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode from users where users.userid=?;";
@@ -29,9 +29,10 @@ echo "Hello world before";
 	$userdetails->execute();
 	$userdetails->store_result();
 	$userdetails->bind_result($forename,$surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
-	if($userdetails->num_rows==1) {1
-	$userdetails->fetch();*/
+	if($userdetails->num_rows==1) {
+	$userdetails->fetch();
 echo "Hello world after";
+}
 ?>
 
 <html lang="en">
