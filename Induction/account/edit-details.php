@@ -10,11 +10,12 @@ $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 $telephone=$_SESSION['telephone'];
+$mobilephone=$_SESSION['mobilephone'];
 $addressline1=$_SESSION['addressline1'];
+$addressline2=$_SESSION['addressline2'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
-$username=checkUser($_SESSION['userid'],session_id(),2);
 
 
 if(isset($_GET['uID'])) {
