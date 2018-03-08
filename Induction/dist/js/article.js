@@ -11,6 +11,7 @@ function getArticle() {
 
 		// create an XMLHTTPRequest
 		var XHR=createXHR();
+        console.log(XHR);
 
 		XHR.open("POST","/~15011406/Induction/php/getarticle.php",true);
 
