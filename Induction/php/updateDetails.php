@@ -11,8 +11,8 @@ require_once('db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $username=checkUser($_SESSION['userid'],session_id(),2);
-if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname']) && isset($_POST['telephone'])
- && isset($_POST['mobilephone'])&& isset($_POST['addressline1']) && isset($_POST['addressline2']) && isset($_POST['town']) && isset($_POST['postcode'])) {
+if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname']) && isset($_POST['addressline1']) && isset($_POST['addressline2'])
+&& isset($_POST['town']) && isset($_POST['postcode'])  && isset($_POST['telephone']) && isset($_POST['mobilephone']) ) {
 	if($currentuser['userlevel']<2 && $currentuser['userid'] != $_POST['userid']) {
 		header("location: php/logout.php");
 		exit();
