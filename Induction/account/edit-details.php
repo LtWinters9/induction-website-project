@@ -34,6 +34,7 @@ if(isset($_GET['uID'])) {
 }}
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 
   <?php if($currentuser['userlevel']>1) {
