@@ -36,6 +36,8 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 	$telephone=$_POST['telephone'];
 	$mobilephone=$_POST['mobilephone'];
 
+echo "connection created";
+
 	$updatesql="UPDATE `users` SET `forename` = '?', `surname` = '?', `addressline1` = '?', `addressline2` = '?', `town` = '?', `postcode` = '?', `telephone` = '?', `mobilephone` = '?' WHERE `users`.`userid` = ? ";
 	$doupdate=$db->prepare($updatesql);
 	$doupdate->bind_param("ssssssisi",$userid,$forename,$surname,$addressline1,$addressline2,$town,$postcode,$town,$mobilephone);
