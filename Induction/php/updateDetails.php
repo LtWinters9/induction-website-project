@@ -39,7 +39,7 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 
 	$updatesql="update users set userid=?,forename=?,surname=?,telephone=?,mobilephone=?,addressline1=?,addressline2=?,town=?,postcode=? where userid=?";
 	$doupdate=$db->prepare($updatesql);
-	$doupdate->bind_param("sssiissss",$userid, $forename, $surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
+	$doupdate->bind_param("sssiissss",$userid,$forename,$surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();
