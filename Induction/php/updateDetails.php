@@ -52,7 +52,7 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 	}
 
 } else {
-	echo "<p>Some parameters are missing, cannot update database</p>";
+	echo "<p>Can not connect to the server. Please try again later, or contact the webmaster.</p>";
 }
 ?>
 </body>
