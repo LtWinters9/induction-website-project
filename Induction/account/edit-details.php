@@ -21,7 +21,7 @@ $email=$_SESSION['email'];
 if(isset($_GET['uID'])) {
 	$userid=$_GET['uID'];
 	$db=createConnection();
-	$userdetailssql="select userid, forename, surname,telephone,mobilephone,addressline1,addressline2,town,postcode from users where userid=?;";
+	$userdetailssql="SELECT userid, forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode FROM users WHERE userid=?;";
 	$userdetails = $db->prepare($userdetailssql);
 	$userdetails->bind_param("i",$userid);
 	$userdetails->execute();
@@ -114,10 +114,10 @@ if(isset($_GET['uID'])) {
 
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off"  value="<?php echo $addressline1; ?>" id="address1"></div>
+              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="addressline1" autocomplete="off"  value="<?php echo $addressline1; ?>" id="addressline1"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" value="<?php echo $addressline2; ?>"  id="address2"></div>
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="addressline2" autocomplete="off" value="<?php echo $addressline2; ?>"  id="addressline2"></div>
             </div>
             <div class="col-sm-12 col-md-6">
               <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" value="<?php echo $town; ?>"  id="town"></div>
@@ -129,7 +129,7 @@ if(isset($_GET['uID'])) {
               <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off"   maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $telephone; ?>"  id="telephone"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off"  maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobilephone; ?>"  id="mobile"></div>
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobilephone" autocomplete="off"  maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobilephone; ?>"  id="mobilephone"></div>
             </div>
           </div>
           <hr>
