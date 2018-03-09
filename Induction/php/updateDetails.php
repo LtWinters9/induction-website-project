@@ -17,9 +17,9 @@ $addressline1=$_SESSION['addressline1'];
 $addressline2=$_SESSION['addressline2'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
-$email=$_SESSION['email'];
 
-$username=checkUser($_SESSION['userid'],session_id(),2);
+
+$userid=checkUser($_SESSION['userid'],session_id(),2);
 if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])) {
 	if($currentuser['userlevel']<3 && $currentuser['userid'] != $_POST['userid']) {
 		header("location: php/logout.php");
