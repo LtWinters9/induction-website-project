@@ -30,6 +30,13 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 	$userid=$_POST['userid'];
 	$forename=$_POST['forename'];
 	$surname=$_POST['surname'];
+	$telephone=$_POST['telephone'];
+	$mobilephone=$_POST['mobilephone'];
+	$addressline1=$_POST['addressline1'];
+	$addressline2=$_POST['addressline2'];
+	$town=$_POST['town'];
+	$postcode=$_POST['postcode'];
+
 	$updatesql="update users set userid=?,forename=?,surname=?,telephone=?,mobilephone=?,addressline1=?,addressline2=?,town=?,postcode=? where userid=?";
 	$doupdate=$db->prepare($updatesql);
 	$doupdate->bind_param("sssiissss",$userid, $forename, $surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
