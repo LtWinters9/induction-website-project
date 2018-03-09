@@ -38,7 +38,7 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 
 	$updatesql="UPDATE `users` SET `forename` = '?', `surname` = '?', `addressline1` = '?', `addressline2` = '?', `town` = '?', `postcode` = '?', `telephone` = '?', `mobilephone` = '?' WHERE `users`.`userid` = ? ";
 	$doupdate=$db->prepare($updatesql);
-	$doupdate->bind_param("ssssssisi",$userid,$forename,$surname,$addressline1,$addressline2,$town,$postcode,$town,$mobilephone;
+	$doupdate->bind_param("ssssssisi",$userid,$forename,$surname,$addressline1,$addressline2,$town,$postcode,$town,$mobilephone);
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();
