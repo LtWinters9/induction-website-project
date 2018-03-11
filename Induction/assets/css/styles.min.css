@@ -6,6 +6,26 @@ article, nav {
   font-family: Raleway
 }
 
+.jumbotron-contact {
+  background: #358CCE;
+  color: #FFF;
+  border-radius: 0;
+  margin-bottom: 30px
+}
+
+.jumbotron-contact-sm {
+  padding-top: 24px;
+  padding-bottom: 24px
+}
+
+.jumbotron-contact small {
+  color: #FFF
+}
+
+.h1 small {
+  font-size: 16px
+}
+
 div.jumbotron.carousel-hero {
   color: #fff;
   text-align: center;
