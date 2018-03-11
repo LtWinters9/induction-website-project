@@ -61,7 +61,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
-  <?php if($currentuser['userlevel']=2) {
+  <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
     ?>
 
@@ -87,8 +87,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
               </div>
 
 
-              <?php if($currentuser['userlevel']=2) {
-                include "../includes/div-section2.php";
+              <?php if($currentuser['userlevel']>1) {
+                include "../includes/main-account.php";
               }  ?>
 
         </div>
