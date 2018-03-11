@@ -125,7 +125,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           <div class="container" data-aos="slide-right" data-aos-duration="800" data-aos-delay="500" data-aos-once="true">
               <div class="intro">
                   <h2 class="text-center" style="font-family:'Roboto Condensed', sans-serif;">Account Overview</h2>
-                  <p class="text-center" style="font-family:'Roboto Condensed', sans-serif;">Need to change your password, or get in touch with our automated bot? </p>
+                  <p class="text-center" style="font-family:'Roboto Condensed', sans-serif;">Need to change your password, edit your details or get in touch with our automated bot? </p>
               </div>
               <div class="buttons"><a class="btn btn-primary" role="button" href="../account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">UPDATE PASSWORD</a><a class="btn btn-light" role="button"
                       href="../account/personaldetails.php?uID=<?php echo $_SESSION['userid']; ?>" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;font-family:'Roboto Condensed', sans-serif;">UPDATE DETAILS</a><a class="btn btn-light" role="button"
