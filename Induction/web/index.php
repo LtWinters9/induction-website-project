@@ -121,7 +121,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
       <div class="container">
         <div class="intro">
           <h2 class="text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Welcome to the UHI Induction Service</h2>
-          <p class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;"><strong>Nervous about your first day? Have questions about your first day? stress no more. With the UHI induction service, you can ask our chatbot about anything student related to help you with your first day at Perth UHI.&nbsp;</strong> </p>
+          <p class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;"><strong>Nervous and have questions about your first day? Stress no more. With the UHI induction service, you can ask our chatbot about anything student related to help you with your first day at Perth UHI.&nbsp;</strong> </p>
           <h2 class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250" data-aos-once="true" style="color:#37434d;">The Induction Service Includes</h2>
         </div>
         <div class="row justify-content-center features">
