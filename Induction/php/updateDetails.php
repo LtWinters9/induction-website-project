@@ -43,7 +43,7 @@ echo "connection created";
 	}
 
 } else {
-	echo "<p>Can not connect to the server. Please try again later, or contact the webmaster.</p>";
+	echo "<p>Can not update details, Please return.</p>";
 }
 ?>
 </body>
