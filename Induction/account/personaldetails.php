@@ -40,11 +40,6 @@ if(isset($_GET['uID'])) {
    include "../includes/banner.html";
     } ?>
 
-		<?php if($currentuser['userlevel']>0) {
-		 header("location: ../web/index.php");
-		 } ?>
-		 
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
