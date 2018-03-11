@@ -12,7 +12,7 @@
                         <a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout</a>
                     </div>
                 </li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="account/login.php" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-lock"></i>&nbsp; Staff </a></li>
+                
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-globe"></i>&nbsp;Alumni </a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-globe"></i>&nbsp;Gàidhlig </a></li>
             </ul>

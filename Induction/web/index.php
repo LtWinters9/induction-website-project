@@ -104,7 +104,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           <div class="jumbotron hero-technology carousel-hero" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);">
             <h1 class="hero-title">Academy of Sport and Wellbeing </h1>
             <p class="hero-subtitle"> Perth College UHI </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">Tour the campus </a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">Tour the campus </a></p>
           </div>
         </div>
       </div>
@@ -120,40 +120,40 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <div class="features-boxed">
       <div class="container">
         <div class="intro">
-          <h2 class="text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;">Welcome to the UHI Induction Service</h2>
-          <p class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;"><strong>Nervous about your first day? Have questions about your first day? stress no more. With the UHI induction service, you can ask our chatbot about anything student related to help you with your first day at Perth UHI.&nbsp;</strong> </p>
+          <h2 class="text-center" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Welcome to the UHI Induction Service</h2>
+          <p class="text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;"><strong>Nervous about your first day? Have questions about your first day? stress no more. With the UHI induction service, you can ask our chatbot about anything student related to help you with your first day at Perth UHI.&nbsp;</strong> </p>
           <h2 class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="250" data-aos-once="true" style="color:#37434d;">The Induction Service Includes</h2>
         </div>
         <div class="row features">
           <div class="col-sm-6 col-md-4 item">
             <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="100" data-aos-once="true" class="box"><i class="icon ion-chatbubbles icon" style="color:#37434d;"></i>
-              <h3 class="name" style="font-family:'Source Sans Pro', sans-serif;">Chatbot </h3>
-              <p class="description" style="font-family:'Source Sans Pro', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change.. </p><a href="account/login.php" class="learn-more" style="font-family:'Source Sans Pro', sans-serif;">Learn more »</a></div>
+              <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Chatbot </h3>
+              <p class="description" style="font-family:'Roboto Condensed', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change.. </p><a href="account/login.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
           </div>
           <div class="col-sm-6 col-md-4 item">
             <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="200" data-aos-once="true" class="box"><i class="fa fa-file-zip-o icon" style="color:#37434d;"></i>
-              <h3 class="name" style="font-family:'Source Sans Pro', sans-serif;">Fourms and Guidance</h3>
-              <p class="description" style="font-family:'Source Sans Pro', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Source Sans Pro', sans-serif;">Learn more »</a></div>
+              <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Fourms and Guidance</h3>
+              <p class="description" style="font-family:'Roboto Condensed', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
           </div>
           <div class="col-sm-6 col-md-4 item">
             <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="300" data-aos-once="true" class="box"><i class="icon ion-images icon" style="color:#37434d;"></i>
-              <h3 class="name" style="font-family:'Source Sans Pro', sans-serif;">Tour the Campus</h3>
-              <p class="description" style="font-family:'Source Sans Pro', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change.. </p><a href="account/login.php" class="learn-more" style="font-family:'Source Sans Pro', sans-serif;">Learn more »</a></div>
+              <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Tour the Campus</h3>
+              <p class="description" style="font-family:'Roboto Condensed', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change.. </p><a href="account/login.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
           </div>
           <div class="col-sm-6 col-md-4 item">
             <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" data-aos-once="true" class="box"><i class="icon ion-android-chat icon" style="color:#37434d;"></i>
-              <h3 class="name" style="font-family:'Source Sans Pro', sans-serif;">Chat to other Students</h3>
-              <p class="description" style="font-family:'Source Sans Pro', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Source Sans Pro', sans-serif;">Learn more »</a></div>
+              <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Chat to other Students</h3>
+              <p class="description" style="font-family:'Roboto Condensed', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
           </div>
           <div class="col-sm-6 col-md-4 item">
             <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="500" data-aos-once="true" class="box"><i class="material-icons icon" style="color:#37434d;">contact_phone</i>
-              <h3 class="name" style="font-family:'Source Sans Pro', sans-serif;">Contact us now</h3>
-              <p class="description" style="font-family:'Source Sans Pro', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Source Sans Pro', sans-serif;">Learn more »</a></div>
+              <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Contact us now</h3>
+              <p class="description" style="font-family:'Roboto Condensed', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
           </div>
           <div class="col-sm-6 col-md-4 item">
             <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true" class="box"><i class="fa fa-users icon" style="color:#37434d;"></i>
-              <h3 class="name" style="font-family:'Source Sans Pro', sans-serif;">Meet our Lectuers</h3>
-              <p class="description" style="font-family:'Source Sans Pro', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Source Sans Pro', sans-serif;">Learn more »</a></div>
+              <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Meet our Lectuers</h3>
+              <p class="description" style="font-family:'Roboto Condensed', sans-serif;">Descriptive text within box, that them leads to an informational area. Icon subject to change..</p><a href="account/login.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
           </div>
         </div>
       </div>
@@ -164,9 +164,9 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
       <div class="container">
         <div class="intro">
-          <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;">Questions about your student funding?</h2>
+          <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Questions about your student funding?</h2>
         </div>
-        <div class="buttons"><a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
+        <div class="buttons"><a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
       </div>
     </div>
     <div class="testimonials-clean"></div>

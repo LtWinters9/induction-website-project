@@ -96,9 +96,9 @@ $insertorder->close();
 <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
     <div class="container">
         <div class="intro">
-            <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;">Questions about your student experience?</h2>
+            <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Questions about your student experience?</h2>
         </div>
-        <div class="buttons"><a class="btn btn-light" role="button" href="../account/login.php" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Source Sans Pro', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
+        <div class="buttons"><a class="btn btn-light" role="button" href="../account/login.php" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
     </div>
 </div>
 <div class="testimonials-clean"></div>
@@ -107,7 +107,7 @@ $insertorder->close();
         <div class="container">
             <div class="row">
                 <div class="col-md-6 item text">
-                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">The University of the Highlands and Islands</h3>
+                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">The University of the Highlands and Islands</h3>
                     <p><a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"   target="_blank" style="color:#ffffff;">About</a>
                         • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">News and Events</a>
                         • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Business and employers</a>
@@ -118,7 +118,7 @@ $insertorder->close();
                         • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
-                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">About UHI</h3>
+                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">About UHI</h3>
                     <ul>
                         <li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
                         <li><a href="#">Highland Theological College UHI </a></li>
@@ -131,7 +131,7 @@ $insertorder->close();
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
-                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
+                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">Information </h3>
                     <ul>
                         <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
                         <li><a href="../info/opening-times.php">Opening Times</a></li>

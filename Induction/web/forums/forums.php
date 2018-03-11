@@ -67,13 +67,13 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                 data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav nav-right">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Current Students</a></li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">My Account</a>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.uhi.ac.uk/en/" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;">Current Students</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="../account/myaccount.php" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;">My Account</a>
                         <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a><a class="dropdown-item" role="presentation" href="contact/contact.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
                     </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Staff </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Alumni </a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Source Sans Pro', sans-serif;color:#ffffff;">Gàidhlig </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login.php" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;">Staff </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;">Alumni </a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;">Gàidhlig </a></li>
                 </ul>
                 <p class="ml-auto navbar-text actions"> </p>
             </div>
@@ -89,13 +89,13 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     </ol>
 
     <div class="highlight-phone" style="background-color:#9da9ae;">
-        <h3 class="text-left" style="background-position:center;font-family:'Source Sans Pro', sans-serif;">Main Category</h3>
+        <h3 class="text-left" style="background-position:center;font-family:'Roboto Condensed', sans-serif;">Main Category</h3>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     <div class="intro">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"> <i class="fa fa-question"></i> Frequently asked questions</h2>
-                        <p style="font-family:'Source Sans Pro', sans-serif;">Category information </p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
+                        <h2 style="font-family:'Roboto Condensed', sans-serif;"> <i class="fa fa-question"></i> Frequently asked questions</h2>
+                        <p style="font-family:'Roboto Condensed', sans-serif;">Category information </p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">View </a></div>
                 </div>
                 <div class="col-sm-4" style="background-image:url(&quot;../assets/img/logo.jpg&quot;);background-repeat:no-repeat;">
                     <div class="d-none d-md-block iphone-mockup"></div>
@@ -108,8 +108,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
             <div class="row">
                 <div class="col-md-8">
                     <div class="intro">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"><i class="icon ion-alert"></i> Important Changes</h2>
-                        <p style="font-family:'Source Sans Pro', sans-serif;">Category information</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
+                        <h2 style="font-family:'Roboto Condensed', sans-serif;"><i class="icon ion-alert"></i> Important Changes</h2>
+                        <p style="font-family:'Roboto Condensed', sans-serif;">Category information</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">View </a></div>
                 </div>
                 <div class="col-sm-4" style="background-repeat:no-repeat;background-image:url(&quot;../assets/img/logo.jpg&quot;);">
                     <div class="d-none d-md-block iphone-mockup"></div>
@@ -118,13 +118,13 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
         </div>
     </div>
     <div class="highlight-phone" style="background-color:#7d8285;">
-        <h1 style="font-family:'Source Sans Pro', sans-serif;">Open Discussion</h1>
+        <h1 style="font-family:'Roboto Condensed', sans-serif;">Open Discussion</h1>
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="intro" style="font-family:'Source Sans Pro', sans-serif;">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"><i class="fa fa-star"></i> Blog system</h2>
-                        <p>Message here</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
+                    <div class="intro" style="font-family:'Roboto Condensed', sans-serif;">
+                        <h2 style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-star"></i> Blog system</h2>
+                        <p>Message here</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">View </a></div>
                 </div>
                 <div class="col-sm-4" style="background-image:url(&quot;../assets/img/logo.jpg&quot;);background-repeat:no-repeat;">
                     <div class="d-none d-md-block iphone-mockup"></div>
@@ -137,8 +137,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
             <div class="row">
                 <div class="col-md-8">
                     <div class="intro">
-                        <h2 style="font-family:'Source Sans Pro', sans-serif;"><i class="fa fa-star"></i> Blog system</h2>
-                        <p>Message here</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Source Sans Pro', sans-serif;">View </a></div>
+                        <h2 style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-star"></i> Blog system</h2>
+                        <p>Message here</p><a class="btn btn-primary" role="button" href="#" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">View </a></div>
                 </div>
                 <div class="col-sm-4" style="background-image:url(&quot;../assets/img/logo.jpg&quot;);background-repeat:no-repeat;">
                     <div class="d-none d-md-block iphone-mockup"></div>
@@ -153,7 +153,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
               <div class="container">
                   <div class="row">
                       <div class="col-md-6 item text">
-                        <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">The University of the Highlands and Islands</h3>
+                        <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">The University of the Highlands and Islands</h3>
                         <p><a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"   target="_blank" style="color:#ffffff;">About</a>
                           • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">News and Events</a>
                           • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Business and employers</a>
@@ -164,7 +164,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                           • <a href="https://www.uhi.ac.uk/en/cookies-terms-conditions/"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
                       </div>
                       <div class="col-sm-4 col-md-3 item">
-                          <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">About UHI</h3>
+                          <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">About UHI</h3>
                           <ul>
                               <li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
                               <li><a href="#">Highland Theological College UHI </a></li>
@@ -177,7 +177,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                           </ul>
                       </div>
                       <div class="col-sm-4 col-md-3 item">
-                          <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
+                          <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">Information </h3>
                           <ul>
                               <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
                               <li><a href="../info/opening-times.php">Opening Times</a></li>
