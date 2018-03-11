@@ -61,9 +61,10 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
+
   <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
-    ?>
+     } ?>
 
     <div class="features-boxed">
         <div class="container">
