@@ -129,7 +129,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
               </div>
               <div class="buttons"><a class="btn btn-primary" role="button" href="../account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">UPDATE PASSWORD</a><a class="btn btn-light" role="button"
                       href="../account/personaldetails.php?uID=<?php echo $_SESSION['userid']; ?>" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;font-family:'Roboto Condensed', sans-serif;">UPDATE DETAILS</a><a class="btn btn-light" role="button"
-                      href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;font-family:'Roboto Condensed', sans-serif;">CHAT NOW</a><a class="btn btn-light" role="button"
+                      href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;font-family:'Roboto Condensed', sans-serif;">CHAT NOW</a><a class="btn btn-light" role="button"
                       href="../php/logout.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;font-family:'Roboto Condensed', sans-serif;">LOGOUT</a></div>
           </div>
       </div>
