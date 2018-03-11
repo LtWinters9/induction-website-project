@@ -65,9 +65,6 @@ $collegeid=$_SESSION['collegeid'];
 
 <body>
 <!-- Nav Bar -->
-<?php if($currentuser['userlevel']<1) {
-    include "../includes/navLevel1.php";
-} ?>
 
 <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
