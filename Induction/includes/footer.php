@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 item text">
-                  <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">The University of the Highlands and Islands</h3>
+                  <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">The University of the Highlands and Islands</h3>
                   <p><a href="../info/privacy.php"   target="_blank" style="color:#ffffff;">About</a>
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">News and Events</a>
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Business and employers</a>
@@ -14,7 +14,7 @@
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
-                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">About UHI</h3>
+                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">About UHI</h3>
                     <ul>
                         <li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
                         <li><a href="#">Highland Theological College UHI </a></li>
@@ -27,7 +27,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
-                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Source Sans Pro', sans-serif;">Information </h3>
+                    <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">Information </h3>
                     <ul>
                         <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
                         <li><a href="../info/opening-times.php">Opening Times</a></li>
