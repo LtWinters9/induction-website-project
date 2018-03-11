@@ -7,7 +7,7 @@
                 <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-user"></i>&nbsp;My Account</a>
                     <div class="dropdown-menu" role="menu"
                         style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/myaccount.php" style="color:#ffffff;background-color:#7e3ca6;">Account Overview </a>
-                        <a class="dropdown-item" role="presentation" href="../contact/book-appointment.php" style="color:#ffffff;background-color:#7e3ca6;">Book appointment</a>
+                        <a class="dropdown-item" role="presentation" href="../contact/booking.php" style="color:#ffffff;background-color:#7e3ca6;">Book appointment</a>
                         <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a>
                         <a class="dropdown-item" role="presentation" href="../php/logout.php" style="color:#ffffff;background-color:#7e3ca6;">Logout</a>
                     </div>

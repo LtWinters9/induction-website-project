@@ -97,7 +97,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   <label for="Name">Lectuer</label>
                   <select id="Advisor" name="Advisor" class="form-control" required="required">
                                 <option value="na" selected="">Choose One:</option>
-                                <option value=">" $row[bookingid], ></option>
+                                <option value=">" $row[bookingid],></option>
                                 <option value="Advisor" $row[Advisor], ></option>
                                 <option value="Date" $row[Date], ></option>
                                 <option value="bookdate" $row[bookdate], ></option>
