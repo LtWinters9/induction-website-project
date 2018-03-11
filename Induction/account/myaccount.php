@@ -116,7 +116,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="700" data-aos-once="true" class="box"><i class="fa fa-users icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Meet your Lectuers </h3>
-                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're beofre you start? Click now below to find out more information.</p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
+                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're before you start? Click now below to find out more information.</p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
                   </div>
               </div>
           </div>
