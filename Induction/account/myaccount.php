@@ -61,11 +61,9 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
-  <?php if($currentuser['userlevel']>1) {
+  <?php if($currentuser['userlevel']=2) {
     include "../includes/navLevel2.php";
-  } else if ($currentuser['userlevel']=1) {
-    include "../includes/navLevel1.php";
-  } ?>
+    ?>
 
     <div class="features-boxed">
         <div class="container">
@@ -91,9 +89,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
               <?php if($currentuser['userlevel']=2) {
                 include "../includes/div-section2.php";
-              } else if ($currentuser['userlevel']=3) {
-                include "../includes/div-section3.php";
-              } ?>
+              }  ?>
 
         </div>
     </div>
@@ -104,7 +100,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                 <p class="text-center">Need to change your password, edit your details or get in touch with our automated bot? </p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../account/forgottenpassword.php" data-bs-hover-animate="pulse" style="background-color:#7e3ca6;">UPDATE PASSWORD</a>
-              <a class="btn btn-light" role="button" href="../account/edit-details.php?uID=<?php echo $_SESSION['userid']; ?>"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">UPDATE DETAILS</a>
+              <a class="btn btn-light" role="button" href="../account/personaldetails.php?uID=<?php echo $_SESSION['userid']; ?>"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">UPDATE DETAILS</a>
               <a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank"  data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a>
               <a class="btn btn-light" role="button" href="../php/logout.php"   data-bs-hover-animate="pulse" style="background-color:#7e3ca6;color:#ffffff;">LOGOUT</a>
             </div>
