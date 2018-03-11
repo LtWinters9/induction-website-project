@@ -71,55 +71,74 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     include "../includes/navLevel2.php";
      } ?>
 
+     <!-- Book Section -->
+     <body>
+       <div><div class="jumbotron-contact jumbotron-contact-sm">
+       <div class="container">
+           <div class="row">
+               <div class="col-sm-12 col-lg-12">
+                   <h1 class="h1">
+                       Contact us <small>Feel free to contact us</small></h1>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="container">
+       <div class="row">
+           <div class="col-md-8">
+               <div class="well well-sm">
+                   <form>
+                   <div class="row">
+                       <div class="col-md-6">
+                           <div class="form-group">
+                               <label for="subject">
+                                   Subject</label>
+                               <select id="subject" name="subject" class="form-control" required="required">
+                                   <option value="na" selected="">Choose One:</option>
+                                   <option value="service">General Customer Service</option>
+                                   <option value="suggestions">Suggestions</option>
+                                   <option value="product">Product Support</option>
+                               </select>
+                           </div>
+                       </div>
+                       </form>
 
-  <form action="confirmation.php" method="post">
-    <div>
-      <div class="jumbotron-contact jumbotron-contact-sm">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-lg-12">
-              <h1 class="h1">
-              Please select an appointment from the drop down below <small>Available Appointments</small></h1>
-            </div>
+
+
+                   </div>
+
+               </div>
+           </div>
           </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="well well-sm">
-              <?php
-              $conn = createConnection();
-              $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked from booking where booked = 'N'");
-              while($row = mysqli_fetch_array($result)) {
-
-                <div class="form-group">
-                  <label for="Name">Lectuer</label>
-                  <select id="Advisor" name="Advisor" class="form-control" required="required">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value=">" $row[bookingid],></option>
-                                <option value="Advisor" $row[Advisor], ></option>
-                                <option value="Date" $row[Date], ></option>
-                                <option value="bookdate" $row[bookdate], ></option>
-                    }           <option value="booktime" $row[booktime], ></option>
-                    $conn->close();
-                    ?>
-                  </select>
+   </div></div>
+     <?php
 
 
-                </div>
-            </div>
+     $conn = createConnection();
+     $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked from booking where booked = 'N'");
 
-            <div class="col-md-12">
-              <button type="submit" class="btn btn-primary pull-right" id="btnContactUs" value="Book Appointment"></button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>
+     echo '<b>Please select an appointment from the drop down below:</b>';
+     echo '<b>Available Appointments:</b>';
+     echo '</br></br>';
+     echo "<select name = 'optionselected'>";
+     while($row = mysqli_fetch_array($result)) {
+         echo "<option value = ",$row[bookingid],">", " Date: ", $row[bookdate], " Time: ", $row[booktime]," Advisor: ", $row[advisor],"</option>";
+     }
+     echo "</select>";
+
+     $conn->close();
+     ?>
+
+
+
+     <div class="col-md-12">
+         <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+             Send Message</button>
+     </div>
+     </form>
+
+
+
     <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
       <div class="container">
         <div class="intro">
