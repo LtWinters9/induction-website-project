@@ -83,7 +83,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   } else if ( $Hour >= 18 || $Hour <= 4 ) {
                       echo "Good Evening";
                   }
-                  ?>.Welcome to your account, <?php echo $forename; ?></h2>
+                  ?>. Welcome to your account, <?php echo $forename; ?></h2>
                   <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Access the key areas of your account quickly below.</p>
               </div>
               <div class="row justify-content-center features">
