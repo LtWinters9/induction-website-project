@@ -77,10 +77,9 @@ $email=$_SESSION['email'];
    } ?>
 
    <?php if($currentuser['userlevel']>0) {
-    // include "../includes/navLevel2.php";
-     header("location: ../web/index.php");
-
-      } ?>
+    header("location: ../web/index.php");
+    } ?>
+    
   <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
