@@ -90,21 +90,21 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           <div class="jumbotron hero-nature carousel-hero" style="background-image:url(&quot;../assets/img/union.png&quot;);">
             <h1 class="hero-title">Welcome </h1>
             <p class="hero-subtitle">To University of the Highlands</p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/about-us.php" style="color:#ffffff;background-color:##37434d;">About us</a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/about-us.php" style="color:#ffffff;background-color:#7e3ca6;">About us</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="jumbotron hero-photography carousel-hero" style="background-image:url(&quot;../assets/img/banner2.png&quot;);">
             <h1 class="hero-title">Contact Us </h1>
             <p class="hero-subtitle">Today </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../contact/contact-student-services.php" style="background-color:##37434d;">Contact Student Services</a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../contact/contact-student-services.php" style="background-color:#7e3ca6;">Contact Student Services</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="jumbotron hero-technology carousel-hero" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);">
             <h1 class="hero-title">Academy of Sport and Wellbeing </h1>
             <p class="hero-subtitle"> Perth College UHI </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus.php" style="background-color:##37434d;font-family:'Roboto Condensed', sans-serif;">Tour the campus </a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">Tour the campus </a></p>
           </div>
         </div>
       </div>
@@ -126,33 +126,33 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
         </div>
         <div class="row justify-content-center features">
             <div class="col-sm-6 col-md-5 col-lg-4 item" data-aos="zoom-in-down" data-aos-duration="200" data-aos-delay="200" data-aos-once="true">
-                <div class="box"><i class="icon ion-chatbubbles icon" style="color:##37434d;"></i>
+                <div class="box"><i class="icon ion-chatbubbles icon" style="color:#37434d;"></i>
                     <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Chatbot </h3>
                     <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Chat with our bot now for any student releated questions. &nbsp;This may include payment dates, libary location,<br><strong>campus details and&nbsp;</strong>where to get that much needed coffee.</p><a href="#" class="learn-more"
                         style="font-family:'Roboto Condensed', sans-serif;">Ask a question»</a></div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div data-aos="zoom-in-down" data-aos-duration="300" data-aos-delay="300" data-aos-once="true" class="box"><i class="fa fa-file-zip-o icon" style="color:##37434d;"></i>
+                <div data-aos="zoom-in-down" data-aos-duration="300" data-aos-delay="300" data-aos-once="true" class="box"><i class="fa fa-file-zip-o icon" style="color:#37434d;"></i>
                     <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Fourms and Guidance </h3>
                     <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Browse though the files that are related to your current course. &nbsp;This will ensure you're ready for your first day, or stay ontop of your current course work with updates.</p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Browse now »</a></div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div data-aos="zoom-in-down" data-aos-duration="400" data-aos-delay="400" data-aos-once="true" class="box"><i class="icon ion-images icon" style="color:##37434d;"></i>
+                <div data-aos="zoom-in-down" data-aos-duration="400" data-aos-delay="400" data-aos-once="true" class="box"><i class="icon ion-images icon" style="color:#37434d;"></i>
                     <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Tour the Campus </h3>
                     <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to get a birds eye view of Perth UHI, or get to know your surroundings before you start? Click the link below to view our 360° of Perth UHI.&nbsp;</strong><br><br></p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">View now »</a></div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div data-aos="zoom-in-down" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="box"><i class="icon ion-android-chat icon" style="color:##37434d;"></i>
+                <div data-aos="zoom-in-down" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="box"><i class="icon ion-android-chat icon" style="color:#37434d;"></i>
                     <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Chat to other Students </h3>
                     <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</strong><br><br></p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat now »</a></div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div data-aos="zoom-in-down" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="box"><i class="material-icons icon" style="color:##37434d;">contact_mail</i>
+                <div data-aos="zoom-in-down" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="box"><i class="material-icons icon" style="color:#37434d;">contact_mail</i>
                     <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Contact us now </h3>
                     <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Contact now »</a></div>
             </div>
             <div class="col-sm-6 col-md-5 col-lg-4 item">
-                <div data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="700" data-aos-once="true" class="box"><i class="fa fa-users icon" style="color:##37434d;"></i>
+                <div data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="700" data-aos-once="true" class="box"><i class="fa fa-users icon" style="color:#37434d;"></i>
                     <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Meet your Lectuers </h3>
                     <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're beofre you start? Click now below to find out more information.</p><a href="#" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
             </div>
@@ -167,7 +167,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
         <div class="intro">
           <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Questions about your student funding?</h2>
         </div>
-        <div class="buttons"><a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:##37434d;color:#ffffff;">CHAT NOW</a></div>
+        <div class="buttons"><a class="btn btn-light" role="button" href="https://landbot.io/u/H-26103-U8N9IIM4FGVTSVVP/index.html" target="_blank" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#37434d;color:#ffffff;">CHAT NOW</a></div>
       </div>
     </div>
     <div class="testimonials-clean"></div>
