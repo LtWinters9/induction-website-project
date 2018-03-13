@@ -105,11 +105,16 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                             Subject</label>
 
                             <?php
-                            echo "<select class="form-control" required="required">";
+                            echo "<select id="book" name="book" class="form-control" required="required">";
                             while($row = mysqli_fetch_array($result)) {
-                                echo "<option value = ",$row[bookingid],">", " Date: ", $row[bookdate], " Time: ", $row[booktime]," Advisor: ", $row[advisor],"</option>";
+                              <option value="na" selected="">Choose One:</option>
+                              <option value=">" $row[bookingid],></option>
+                              <option value="Date"$row[bookdate],></option>
+                              <option value="Time"$row[booktime],></option>
+                              <option value="Advisor"$row[advisor],></option>
+
                             }
-                    echo "</select>";
+                  
                         ?>
                     </div>
                 </div>
