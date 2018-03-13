@@ -108,7 +108,10 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                         <?php
                         echo "<select name = 'optionselected'>";
                         while($row = mysqli_fetch_array($result)) {
-                            echo "<option value = ",$row[bookingid],">", " Date: ", $row[bookdate], " Time: ", $row[booktime]," Advisor: ", $row[advisor],"</option>";
+                            echo "<option value = ",$row[bookingid],">",
+                            " Date: ", $row[bookdate], "</option>"
+                            " Time: ", $row[booktime],"</option>"
+                            " Advisor: ", $row[advisor],"</option>";
                         }
                         echo "</select>";
 
