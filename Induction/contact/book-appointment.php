@@ -72,7 +72,7 @@ $collegeid=$_SESSION['collegeid'];
 
 <!-- Book Section -->
 <body>
-<form action="confirmation.php" method="post">
+<form action="../php/confirmBooking.php" method="post">
 <?php
 
 
