@@ -2,8 +2,8 @@
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
 date_default_timezone_set('London/GMT');
-require_once('../../php/functions.php');
-require_once('../../db_config.php');
+require_once('../php/functions.php');
+require_once('../db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -35,7 +35,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="../../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -155,9 +155,9 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                         <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">Information </h3>
                         <ul>
                             <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
-                            <li><a href="../../info/opening-times.php">Opening Times</a></li>
-                            <li><a href="../../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
-                            <li><a href="../../info/sitemap.php">Sitemap</a></li>
+                            <li><a href="../info/opening-times.php">Opening Times</a></li>
+                            <li><a href="../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
+                            <li><a href="../info/sitemap.php">Sitemap</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-12 col-xl-12 offset-xl-0 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
@@ -169,8 +169,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <script src="../../assets/js/script.min.js"></script>
-    <script src="../../dist/js/jqBootstrapValidation.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../dist/js/jqBootstrapValidation.js"></script>
     <!-- <script src="../dist/js/login.js"></script> -->
     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
     <script src="../dist/js/cookies.js"></script>
