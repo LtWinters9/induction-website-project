@@ -116,6 +116,12 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                         ?>
                       </div>
                     </div>
+                      </div>
+                        </div>
+                          </div>
+                            </div>
+                              </div>
+
 
 
                     <?php
