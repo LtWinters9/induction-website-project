@@ -98,12 +98,12 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
           <div class="row">
             <div class="col-md-8">
               <div class="well well-sm">
-                <form action="confirmation.php" method="post">
+                <form action="../php/confirmBooking.php" method="post">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="subject">
-                            Subject</label>
+                            Select appointment</label>
 
                         <?php
                         echo "<select name = 'optionselected'>";
