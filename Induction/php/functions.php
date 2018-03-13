@@ -34,7 +34,7 @@ function checkUser($usersessionid,$sessionid,$ptype) {
 	} else {
 		$lookup->close();
 		$dbchk->close();
-		header("location: ../php/logout.php" sleep(3); );
+		header("location: ../php/logout.php" sleep(3) );
 	}
 	return $uname;
 }
