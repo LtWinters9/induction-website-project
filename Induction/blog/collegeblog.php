@@ -77,12 +77,12 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
     <?php
           $db=createConnection();
           // get the first two articles
-          $sql = "select mainblogid,mainblog.title,blogtext,blogtime,userposter,forename,userid from mainblog join users on userposter = userid order by blogtime desc limit 2";
+          $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid order by blogtime desc limit 2";
 
           $stmt = $db->prepare($sql);
       $stmt->execute();
       $stmt->store_result();
-      $stmt->bind_result($mainblogid,$title,$blogtext,$blogtime,$userposter,$forename,$userid);
+      $stmt->bind_result($mainblogid,$title,$blogtext,$blogtime,$blogposter,$forename,$userid);
       //build article html
       while($stmt->fetch()) {
       echo "<article id='a$mainblogid'>
@@ -92,7 +92,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
 
       // if user is logged in and not suspended add comment button
       if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
-      echo "<p><a href='deletearticle.php?aID=$articleid' id='db$articleid'>Delete Post</a></p>";
+      echo "<p><a href='deletearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
       }
       echo "</article>
       ";

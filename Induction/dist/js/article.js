@@ -71,17 +71,17 @@ function getArticle() {
                     // Get json array returned
                     var responsedata=JSON.parse(XHR.responseText)[0];
                     // Will be 0 if there are no more articles
-                    if(parseInt(responsedata.articleid)!=0 && responsedata.articleid) {
+                    if(parseInt(responsedata.mainblogid)!=0 && responsedata.mainblogid) {
                         // create new article
                         var newarticle=document.createElement("article");
-                        newarticle.setAttribute("id","a"+responsedata.articleid);
+                        newarticle.setAttribute("id","a"+responsedata.mainblogid);
                         main.appendChild(newarticle);
                         // populate new article with content
-                        newarticlestr="<h1>"+responsedata.articletitle+"</h1><p>"+responsedata.articletext+"</p><footer><p>Posted on <time datetime='"+responsedata.blogtime+"'>"+responsedata.blogtime+" by <em>"+responsedata.username+"</em></p></footer>";
+                        newarticlestr="<h1>"+responsedata.title+"</h1><p>"+responsedata.blogtext+"</p><footer><p>Posted on <time datetime='"+responsedata.blogtime+"'>"+responsedata.blogtime+" by <em>"+responsedata.forename+"</em></p></footer>";
                         newarticle.innerHTML=newarticlestr;
                         if((responsedata.currentuser.userid==responsedata.blogposter && responsedata.currentuser.userlevel>1)|| responsedata.currentuser.userlevel>2) {
                             var deletelink=document.createElement("p");
-                            deletelink.innerHTML="<a href='deletearticle.php?aID="+responsedata.articleid+"' id='db"+responsedata.articleid+"'>Delete Post</a>";
+                            deletelink.innerHTML="<a href='deletearticle.php?aID="+responsedata.mainblogid+"' id='db"+responsedata.mainblogid+"'>Delete Post</a>";
                             newarticle.appendChild(deletelink);
                         }
 
