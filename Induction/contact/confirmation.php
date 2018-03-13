@@ -49,6 +49,7 @@ $insertorder->close();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../dist/css/logout.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -90,7 +91,7 @@ $insertorder->close();
                 <h2 class="text-center"> Hello, <?php echo $forename; ?> </h2>
                 <p class="text-center">You have been successfully made a booking</p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/login.php">Return to Login</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount.php">Return to my account</a></div>
         </div>
     </div>
 
