@@ -77,18 +77,26 @@ $insertorder->close();
 
 <body>
 <!-- Nav Bar -->
-<?php if($currentuser['userlevel']<1) {
-    include "../includes/navLevel1.php";
-} ?>
+
 
 <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
 } ?>
 
 <!-- Book Section -->
-<body>
+<div class="highlight-blue">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center"> Hello, <?php echo $forename; ?> </h2>
+                <p class="text-center">You have been successfully made a booking</p>
+            </div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/login.php">Return to Login</a></div>
+        </div>
+    </div>
 
-</body>
+
+
+
 
 
 
