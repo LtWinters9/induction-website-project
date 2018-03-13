@@ -83,7 +83,7 @@ $email=$_SESSION['email'];
   <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <form class="form-signin"  data-toggle="validator" role="form" method="post" sleep="5" action="../php/processlogin.php" autocomplete="on">
+        <form class="form-signin"  data-toggle="validator" role="form" method="post"  autocomplete="on">
           <span class="reauth-email"> </span>
           <input class="form-control" type="text" required="" placeholder="Student ID" autofocus="" name="studentID" id="studentID"  data-error="This student ID is invalid">
           <input class="form-control" type="password" required="" placeholder="Password" name="inputPassword" id="inputPassword">
@@ -94,6 +94,9 @@ $email=$_SESSION['email'];
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
           </form>
               <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
+
+              <?php header( "refresh:5; url=../php/processlogin.php" );?>
+
 
     </div>
 
