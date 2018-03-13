@@ -120,12 +120,14 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                         </div>
                           </div>
                             </div>
-                              </div>
+
 
                               <div class="col-md-12">
                                 <button type="submit" class="btn btn-primary pull-right" id="btnBookNow" value="Confirm bookking" </button>
                               </div>
                             </form>
+
+                          </div>
 
 <?php
 
