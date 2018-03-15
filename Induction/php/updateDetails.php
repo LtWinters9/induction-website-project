@@ -8,6 +8,17 @@ include("functions.php");
 include("db_config.php");
 
 $userid=checkUser($_SESSION['userid'],session_id(),2);
+$db=createConnection();
+$userid=$_POST['userid'];
+$forename=$_POST['forename'];
+$surname=$_POST['surname'];
+$addressline1=$_POST['addressline1'];
+$addressline2=$_POST['addressline2'];
+$town=$_POST['town'];
+$postcode=$_POST['postcode'];
+$telephone=$_POST['telephone'];
+$mobilephone=$_POST['mobilephone'];
+
 
 if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])) {
 	if($currentuser['userlevel']<2 && $currentuser['userid'] != $_POST['userid']) {
@@ -15,16 +26,7 @@ if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname
 		exit();
 
 	}
-	$db=createConnection();
-	$userid=$_POST['userid'];
-	$forename=$_POST['forename'];
-	$surname=$_POST['surname'];
-	$addressline1=$_POST['addressline1'];
-	$addressline2=$_POST['addressline2'];
-	$town=$_POST['town'];
-	$postcode=$_POST['postcode'];
-	$telephone=$_POST['telephone'];
-	$mobilephone=$_POST['mobilephone'];
+
 
 echo "connection created";
 
