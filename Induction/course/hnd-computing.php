@@ -140,6 +140,12 @@ $modulename=$_POST['modulename'];
               <?php echo $modulename; ?> </p>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> Databases (1MB)
               <?php echo $modulename; ?> </p>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> Developing Web Based Applications (5MB)
+              <?php echo $modulename; ?> </p>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> Security Concepts (2MB)
+              <?php echo $modulename; ?> </p>
+              <p style="color:#000000;"><i class="ion-android-cloud"></i> Graded Unit - 1 (8MB)
+              <?php echo $modulename; ?> </p>
           </div>
         </div>
       </div>
