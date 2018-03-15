@@ -15,6 +15,7 @@ $collegeid=$_SESSION['collegeid'];
 $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 // Staff
+$modulename=$_POST['modulename'];
 ?>
 
   <!DOCTYPE html>
@@ -135,10 +136,10 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
             <!-- File Downloads -->
             <h4><i class="icon ion-android-chat icon"></i> File Downloads</h4>
-            <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Contact Number
-              <?php echo $departmentTelNo; ?> </p>
-            <p style="color:#000000;"><i class="icon ion-email"></i> Email
-              <?php echo $departmentEmailAddd; ?> </p>
+            <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Cloud Computing (1MB)
+              <?php echo $modulename; ?> </p>
+            <p style="color:#000000;"><i class="icon ion-email"></i> Databases (1MB)
+              <?php echo $modulename; ?> </p>
           </div>
         </div>
       </div>
