@@ -18,9 +18,9 @@ echo "connection created";
 $loginsql="select userpass, salt from userpass where userid=?";
 $cyphertext=makeHash($userpass,$salt,50);
 if(isset($userid)) {
-	$updatesql="update userpass set userpass=?, salt=?, hash=? where userid=?";
+	$updatesql="update userpass set userpass=?, salt=? where userid=?";
     $doupdate=$db->prepare($updatesql);
-    $doupdate->bind_param("sssi", $userpass,$salt,$hash,$userid);
+    $doupdate->bind_param("ssi", $userpass,$salt,$userid);
     $doupdate->execute();
     $doupdate->close();
     $db->close();
