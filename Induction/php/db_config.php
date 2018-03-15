@@ -2,8 +2,8 @@
 
 function createConnection() {
 	$host="localhost";
-	$user="msiDB";
-	$userpass='dn9Qr3_C4Swgsyms';
+	$user="induction_Conn";
+	$userpass='ivtB35?CE7wcpwxm';
 	$schema="inductionDB";
 	$conn = new mysqli($host,$user,$userpass,$schema);
 	if(mysqli_connect_errno()) {
