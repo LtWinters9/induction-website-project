@@ -5,16 +5,18 @@ session_start();
 date_default_timezone_set('London/GMT');
 require_once("functions.php");
 require_once('db_config.php');
-$userid=$_SESSION['userid'];
-
 
 if(isset($userid)) {
 $db=createConnection();
 $userpass=$_POST['inputPassword'];
+$secondpass=$_POST['inputSecondPassword'];
 
-	$updatesql="update userpass set userpass=? where userid=?";
+$salt=getSalt(16);
+$cyphertext=makeHash($userpass,$salt,50);
+
+	$updatesql="update userpass set userpass=?, salt=? where userpass.userid=?";
     $doupdate=$db->prepare($updatesql);
-    $doupdate->bind_param("si", $userpass,$userid);
+    $doupdate->bind_param("ssi", $userpass,$cyphertext,$userid);
     $doupdate->execute();
     $doupdate->close();
 
