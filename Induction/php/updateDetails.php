@@ -8,7 +8,7 @@ include("functions.php");
 include("db_config.php");
 $userid=$_SESSION['userid'];
 
-if(isset($userid)) {
+
 
 	if(isset($userid)) {
 	$db=createConnection();
