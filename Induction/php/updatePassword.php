@@ -5,6 +5,7 @@ session_start();
 date_default_timezone_set('London/GMT');
 require_once("functions.php");
 require_once('db_config.php');
+$userid = $_SESSION['userid'];
 
 if(isset($userid)) {
 $db=createConnection();
@@ -13,13 +14,13 @@ $secondpass=$_POST['inputSecondPassword'];
 
 $salt=getSalt(16);
 $cyphertext=makeHash($userpass,$salt,50);
-echo"allgood";
-	$updatesql="update userpass set userpass=?, salt=? where userpass.userid=?";
+
+	$updatesql="update users,userpass set userpass=?, salt=? where userpass.userid=?";
     $doupdate=$db->prepare($updatesql);
     $doupdate->bind_param("ssi",$userpass,$cyphertext,$userid);
     $doupdate->execute();
     $doupdate->close();
-
+		$db->close();
     echo "<script>
 alert('The changes have been made to your account');
 window.location.href='../account/myaccount.php';
