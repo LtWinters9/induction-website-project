@@ -23,14 +23,12 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forums | UHI Induction Services</title>
-<<<<<<< HEAD
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-=======
+
 
 <!-- bootstrap css libary -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
->>>>>>> origin/master
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet"
@@ -85,7 +83,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     <?php
     $db = createConnection();
     // get the first two articles
-    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid order by blogtime desc limit 6";
+    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 2";
 
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -120,7 +118,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
             echo "<aside id='c$mbcid'>
                 <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on <time datetime='$commenttime'>$commenttime</time> by <em>$comforename</em><p></footer>
+                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>
             </aside>";
 
         }
