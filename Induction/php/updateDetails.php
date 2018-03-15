@@ -8,6 +8,7 @@ include("functions.php");
 include("db_config.php");
 
 $userid=checkUser($_SESSION['userid'],session_id(),2);
+
 if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])) {
 	if($currentuser['userlevel']<2 && $currentuser['userid'] != $_POST['userid']) {
 		header("location: php/logout.php");
