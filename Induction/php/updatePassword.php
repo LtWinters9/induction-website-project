@@ -24,17 +24,16 @@ if(isset($userid)) {
     $doupdate->execute();
     $doupdate->close();
     $db->close();
-	if($currentuser['userlevel']>=2) {
-			header("location: ../account/myaccount.php");
-			exit();
-	} else {
-		header("location: php/logout.php");
-			exit();
 
-	}
+    echo "<script>
+alert('The changes have been made to your account');
+window.location.href='../account/myaccount.php';
+</script>";
 
 } else {
-	echo "<p>Can not update details, Please return.</p>";
+
+echo "<p>Some parameters are missing, cannot update database</p>";
+
 }
 
  ?>
