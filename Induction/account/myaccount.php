@@ -96,7 +96,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="300" data-aos-delay="300" data-aos-once="true" class="box"><i class="fa fa-file-zip-o icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Fourms and Guidance </h3>
-                          <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Browse though the files that are related to your current course. &nbsp;This will ensure you're ready for your first day, or stay ontop of your current course work with updates.</p><a href="../course/hnd-computing.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Browse now »</a></div>
+                          <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Browse though the files that are related to your current course. &nbsp;This will ensure you're ready for your first day, or stay ontop of your current course work with updates.</p><a href="../course/student-course.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Browse now »</a></div>
                   </div>
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="400" data-aos-delay="400" data-aos-once="true" class="box"><i class="icon ion-images icon" style="color:#7e3ca6;"></i>
@@ -116,7 +116,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="700" data-aos-once="true" class="box"><i class="fa fa-users icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Meet your Lectuers </h3>
-                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're before you start? Click now below to find out more information.</p><a href="../course/hnd-computing.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
+                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're before you start? Click now below to find out more information.</p><a href="../course/student-course.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
                   </div>
               </div>
           </div>
