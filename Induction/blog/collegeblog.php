@@ -77,12 +77,21 @@ $userid=checkUser($_SESSION['userid'],session_id(),2,3);
     <?php
           $db=createConnection();
           // get the first two articles
-          $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid order by blogtime desc limit 2";
+     $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid order by blogtime desc limit 2";
 
-          $stmt = $db->prepare($sql);
-      $stmt->execute();
-      $stmt->store_result();
-      $stmt->bind_result($mainblogid,$title,$blogtext,$blogtime,$blogposter,$forename,$userid);
+     $stmt = $db->prepare($sql);
+     $stmt->execute();
+     $stmt->store_result();
+     $stmt->bind_result($mainblogid,$title,$blogtext,$blogtime,$blogposter,$forename,$userid);
+
+
+    $cmntsql="select mbcid,commenttext,mainblogcom.blogtime,mainblogcom.userid, forename from mainblogcom, users where mainblogcom.mainblogid=?;";
+    $cmnt = $db->prepare($cmntsql);
+    $cmnt->bind_param("i",$articleid);
+    $cmnt->bind_result($mbcid,$commenttext,$commenttime,$userid,$forename);
+
+
+
       //build article html
       while($stmt->fetch()) {
       echo "<article id='a$mainblogid'>
