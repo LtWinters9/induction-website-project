@@ -14,7 +14,7 @@ if (isset($userid)) {
     $addressline1 = $_POST['addressline1'];
     $addressline2 = $_POST['addressline2'];
     $town = $_POST['town'];
-    $postcode = $_POST['postcpde'];
+    $postcode = $_POST['postcode'];
     $telephone = $_POST['telephone'];
     $mobilephone = $_POST['mobilephone'];
 
