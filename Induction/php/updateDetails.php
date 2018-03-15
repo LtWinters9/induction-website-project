@@ -9,7 +9,7 @@ include("db_config.php");
 
 $userid=checkUser($_SESSION['userid'],session_id(),2);
 
-if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])) {
+if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])) {
 	if($currentuser['userlevel']<2 && $currentuser['userid'] != $_POST['userid']) {
 		header("location: php/logout.php");
 		exit();
@@ -27,14 +27,14 @@ if(isset($_POST['userid']) && isset($_POST['userid']) && isset($_POST['forename'
 	$mobilephone=$_POST['mobilephone'];
 
 echo "connection created";
-/*
+
 	$updatesql= 'UPDATE `users` SET `forename` = \'?\', `surname` = \'?\', `addressline1` = \'?\', `addressline2` = \'?\', `town` = \'?\', `postcode` = \'?\', `telephone` = \'?\', `mobilephone` = \'?\' WHERE `users`.`userid` = \'?\'';
 	$doupdate=$db->prepare($updatesql);
 	$doupdate->bind_param("issssssss",$userid,$forename,$surname,$addressline1,$addressline2,$town,$postcode,$telephone,$mobilephone);
 	$doupdate->execute();
 	$doupdate->close();
 	$db->close();
-	*/
+
 	if($currentuser['userlevel']>1) {
 			header("location: ../account/myaccount.php");
 			exit();
