@@ -135,7 +135,7 @@ $modulename=$_POST['modulename'];
           </div>
           <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
             <!-- File Downloads -->
-            <h4><i class="icon ion-android-chat icon"></i> File Downloads</h4>
+            <h4><i class="ion-android-cloud icon"></i> File Downloads</h4>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> Cloud Computing (1MB)
               <?php echo $modulename; ?> </p>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> Databases (1MB)
