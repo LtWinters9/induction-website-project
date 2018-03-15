@@ -17,7 +17,7 @@ $cyphertext=makeHash($userpass,$salt,50);
 
 	$updatesql="UPDATE `userpass` SET `userpass` = '?', `salt` = '?' WHERE `userpass`.`passwordid` = ?;"
     $doupdate=$db->prepare($updatesql);
-    $doupdate->bind_param("ssi",$userpass,$cyphertext,$userid);
+    $doupdate->bind_param("ssi",$userpass,$cyphertext,$passwordid);
     $doupdate->execute();
     $doupdate->close();
 		$db->close();
