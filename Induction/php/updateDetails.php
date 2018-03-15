@@ -35,7 +35,7 @@ echo "connection created";
 	$doupdate->close();
 	$db->close();
 	*/
-	if($currentuser['userlevel']==2) {
+	if($currentuser['userlevel']>1) {
 			header("location: ../account/myaccount.php");
 			exit();
 	} else {
