@@ -18,8 +18,8 @@ $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
 
 
-if(isset($_GET['uID'])) {
-	$userid=$_GET['uID'];
+if(isset($userid)) {
+
 	$db=createConnection();
 	$userdetailssql="SELECT userid, forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode FROM users WHERE userid=?;";
 	$userdetails = $db->prepare($userdetailssql);
