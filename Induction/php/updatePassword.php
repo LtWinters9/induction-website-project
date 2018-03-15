@@ -5,25 +5,18 @@ session_start();
 date_default_timezone_set('London/GMT');
 require_once("functions.php");
 require_once('db_config.php');
+$userid=$_SESSION['userid'];
 
+
+if(isset($userid)) {
 $db=createConnection();
-$userid=$_POST['userid'];
 $userpass=$_POST['inputPassword'];
 
-	if($currentuser['userlevel']<2 && $currentuser['userid'] != $_POST['userid']) {
-		header("location: php/logout.php");
-		exit();
-	}
-echo "connection created";
-$loginsql="select userpass, salt from userpass where userid=?";
-$cyphertext=makeHash($userpass,$salt,50);
-if(isset($userid)) {
-	$updatesql="update userpass set userpass=?, salt=? where userid=?";
+	$updatesql="update userpass set userpass=? where userid=?";
     $doupdate=$db->prepare($updatesql);
-    $doupdate->bind_param("ssi", $userpass,$salt,$userid);
+    $doupdate->bind_param("si", $userpass,$userid);
     $doupdate->execute();
     $doupdate->close();
-    $db->close();
 
     echo "<script>
 alert('The changes have been made to your account');
