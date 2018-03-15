@@ -24,7 +24,7 @@ if (isset($userid)) {
     $doupdate->execute();
     $doupdate->close();
 
-    header('Location: detailsUpdated');
+    header('Location: detailsUpdated.php');
 
 } else {
 
