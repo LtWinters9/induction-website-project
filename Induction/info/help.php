@@ -59,22 +59,22 @@ $collegeid=$_SESSION['collegeid'];
                 <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
                     <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-cog icon"></i>
                         <h3 class="name">Technical Help</h3>
-                        <p class="description"></p><a href="#" class="learn-more">Learn more »</a></div>
+                        <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item">
                     <div class="box"><i class="material-icons icon">headset_mic</i>
                         <h3 class="name">Student Services</h3>
-                        <p class="description"></p><a href="#" class="learn-more">Learn more »</a></div>
+                        <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
                 </div>
                 <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
                     <div class="box"><i class="fa fa-user icon"></i>
                         <h3 class="name">Staff Information</h3>
-                        <p class="description"></p><a href="#" class="learn-more">Learn more »</a></div>
+                        <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
                 </div>
             </div>
         </div>
     </div>
-    
+
         <div>
             <div class="container" style="font-family:'Roboto Condensed', sans-serif;">
                 <h1 style="font-family:'Roboto Condensed', sans-serif;font-size:28px;">How to Find Us<br><br></h1>
