@@ -1,11 +1,3 @@
- <div></div>
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a><span>Forum </span></a></li>
-  <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
-  <li class="breadcrumb-item"><a><span> </span></a></li>
-</ol>
-
-
 <div></div>
 <div class="highlight-phone" style="background-color:#9da9ae;">
   <h3 class="text-left" style="background-position:center;font-family:'Source Sans Pro', sans-serif;">Main Category</h3>
