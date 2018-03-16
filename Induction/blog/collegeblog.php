@@ -71,7 +71,21 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <body>
   <div id=blog>
 
-<h3>Welcome, <?php echo $forename; ?></h3>
+    <div class="intro">
+        <h2 class="text-center" style="font-family:'Roboto Condensed', sans-serif;"><?php
+
+        $Hour = date('G');
+
+        if ( $Hour >= 5 && $Hour <= 11 ) {
+            echo "Good Morning";
+        } else if ( $Hour >= 12 && $Hour <= 17 ) {
+            echo "Good Afternoon";
+        } else if ( $Hour >= 18 || $Hour <= 4 ) {
+            echo "Good Evening";
+        }
+        ?>. Welcome to the student blog, <?php echo $forename; ?></h2>
+        <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions. You should gett involved!</p>
+
 
 <?php if ($currentuser['userlevel'] > 1) {
     include "../includes/navLevel2.php";
