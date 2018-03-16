@@ -69,14 +69,21 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 </head>
 
 <body>
+  <div id=blog>
 
+<h3>Welcome, <?php echo $forename; ?></h3>
 
 <?php if ($currentuser['userlevel'] > 1) {
     include "../includes/navLevel2.php";
 } ?>
 
+<div></div>
+<ol class="breadcrumb">
+ <li class="breadcrumb-item"><a><span>Forum </span></a></li>
+ <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
+ <li class="breadcrumb-item"><a><span> </span></a></li>
+</ol>
 
-<h3>Welcome, <?php echo $forename; ?></h3>
 
 
 <section id="main">
@@ -158,4 +165,3 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
 
 </html>
-
