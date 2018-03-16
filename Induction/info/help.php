@@ -96,6 +96,7 @@ $collegeid=$_SESSION['collegeid'];
                             <div id="successfail"></div>
                         </div>
                     </div>
+             </div>
                     <div class="form-row">
                         <div class="col-12 col-md-6" id="message">
                             <h2 class="h4"><i class="fa fa-envelope"></i> Contact Us<small><small class="required-input">&nbsp;(*required)</small></small>
@@ -237,7 +238,7 @@ $collegeid=$_SESSION['collegeid'];
                 </div>
             </div>
         </div>
-    </div>
+
     <?php if($currentuser['userlevel']>1) {
      include "../includes/footer.php";
       } ?>
