@@ -48,10 +48,7 @@ $collegeid=$_SESSION['collegeid'];
             <div style="background-image:url(&quot;../assets/img/studentserv.png&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;">
                 <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgba(0,0,0,0.1);font-family:'Roboto Condensed', sans-serif;">
                     <div class="d-flex align-items-center order-12" style="height:200px;">
-                        <div class="container">
-                            <h1 class="text-center" style="color:rgb(242,245,248);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Ask us a question</h1>
-                            <h3 class="text-center" style="color:rgb(242,245,248);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;"><br>Or choose one of the options below<br></h3>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -74,7 +71,10 @@ $collegeid=$_SESSION['collegeid'];
             </div>
         </div>
     </div>
-
+    <div class="container">
+        <h1 class="text-center" style="color:rgb(242,245,248);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Ask us a question</h1>
+        <h3 class="text-center" style="color:rgb(242,245,248);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;"><br>Or choose one of the options below<br></h3>
+    </div>
         <div>
             <div class="container" style="font-family:'Roboto Condensed', sans-serif;">
                 <h1 style="font-family:'Roboto Condensed', sans-serif;font-size:28px;">How to Find Us<br><br></h1>
