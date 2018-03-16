@@ -45,7 +45,7 @@ $collegeid=$_SESSION['collegeid'];
     <div class="features-boxed">
         <div class="container">
             <div class="intro"></div>
-            <div style="background-image:url(&quot;../assets/img/studentserv.png&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;" class="pull-left img-responsive">
+            <div style="background-image:url(&quot;../assets/img/studentserv.png&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;" 
                 <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgba(0,0,0,0.1);font-family:'Roboto Condensed', sans-serif;">
                     <div class="d-flex align-items-center order-12" style="height:200px;">
 
