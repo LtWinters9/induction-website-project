@@ -42,39 +42,38 @@ $collegeid=$_SESSION['collegeid'];
     include "../includes/navLevel2.php";
      } ?>
 
-     <div class="features-boxed">
-         <div class="container">
-             <div class="intro"></div>
-             <div style="background-image:url(&quot;../assets/img/studentserv.png&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;">
-                 <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgb(238,244,247);font-family:'Roboto Condensed', sans-serif;">
-                     <div class="d-flex align-items-center order-12" style="height:200px;">
-
-                     </div>
-                 </div>
-             </div>
-             <div class="container">
-                 <h1 class="text-center" style="color:rgb(0, 0, 0);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Ask us a question</h1>
-                 <h3 class="text-center" style="color:rgb(0, 0, 0);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;"><br>Or choose one of the options below<br></h3>
-             </div>
-             <div class="row justify-content-center features">
-                 <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
-                     <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-cog icon"></i>
-                         <h3 class="name">Technical Help</h3>
-                         <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
-                 </div>
-                 <div class="col-sm-6 col-md-5 col-lg-4 item">
-                     <div class="box"><i class="material-icons icon">headset_mic</i>
-                         <h3 class="name">Student Services</h3>
-                         <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
-                 </div>
-                 <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
-                     <div class="box"><i class="fa fa-user icon"></i>
-                         <h3 class="name">Staff Information</h3>
-                         <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
-                 </div>
-             </div>
-         </div>
-     </div>
+    <div class="features-boxed">
+        <div class="container">
+            <div class="intro"></div>
+            <div style="background-image:url(&quot;../assets/img/studentserv.png&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;">
+                <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgba(0,0,0,0.1;font-family:'Roboto Condensed', sans-serif;">
+                    <div class="d-flex align-items-center order-12" style="height:200px;">
+                        <div class="container">
+                            <h1 class="text-center" style="color:rgb(0, 0, 0);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Ask us a question</h1>
+                            <h3 class="text-center" style="color:rgb(0, 0, 0);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;"><br>Or choose one of the options below<br></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center features">
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
+                    <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-cog icon"></i>
+                        <h3 class="name">Technical Help</h3>
+                        <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item">
+                    <div class="box"><i class="material-icons icon">headset_mic</i>
+                        <h3 class="name">Student Services</h3>
+                        <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
+                    <div class="box"><i class="fa fa-user icon"></i>
+                        <h3 class="name">Staff Information</h3>
+                        <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Learn more »</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- Contact Section -->
     <section id="contact">
