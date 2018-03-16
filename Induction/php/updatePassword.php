@@ -1,3 +1,6 @@
+<html lang="en-gb" dir="ltr">
+<body>
+	
 <?php
 // page to update students password from forgottenpassword form
 
@@ -21,15 +24,13 @@ $cyphertext=makeHash($userpass,$salt,50);
     $doupdate->execute();
     $doupdate->close();
 		$db->close();
-    echo "<script>
-alert('The changes have been made to your account');
-window.location.href='../account/myaccount.php';
-</script>";
+		header('Location: detailsUpdated.php');
 
 } else {
 
-echo "<p>Some parameters are missing, cannot update database</p>";
+    echo "<p>Some parameters are missing, cannot update database</p>";
 
 }
-
- ?>
+?>
+</body>
+</html>
