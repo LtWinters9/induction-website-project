@@ -69,7 +69,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 </head>
 
 <body>
-  <div id=blog>
+  <div id=header>
 
 
 
@@ -98,6 +98,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     }
     ?>. Welcome to the student blog, <?php echo $forename; ?></h2>
     <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions for <?php echo $blogtitle; ?> You should get involved!</p>
+</div>
 </div>
 
 
