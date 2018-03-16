@@ -11,7 +11,7 @@
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Give to UHI</a>
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">FOI</a>
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Cookies</a>
-                    • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
+                    • <a href="../info/help.php"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
                     <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">About UHI</h3>

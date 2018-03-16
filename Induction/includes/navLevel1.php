@@ -7,7 +7,7 @@
                 <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-user"></i>&nbsp;My Account</a>
                     <div class="dropdown-menu" role="menu"
                         style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login.php" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
-                        <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Contact Us</a></div>
+                        <a class="dropdown-item" role="presentation" href="../contact/contact-student-services.php" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a></div>
                 </li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="account/login.php" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-lock"></i>&nbsp; Staff </a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-globe"></i>&nbsp;Alumni </a></li>
