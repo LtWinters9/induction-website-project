@@ -127,8 +127,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                             <h2 class="h4"><i class="fa fa-location-arrow"></i> Locate Us</h2>
                             <div class="form-row">
                                 <div class="col-12">
-                                    <div class="static-map"><a href="https://www.google.com/maps/place/Daytona+International+Speedway/@29.1815062,-81.0744275,15z/data=!4m13!1m7!3m6!1s0x88e6d935da1cced3:0xa6b3e1bc0f2fc83a!2s1801+W+International+Speedway+Blvd,+Daytona+Beach,+FL+32114!3b1!8m2!3d29.187028!4d-81.0703076!3m4!1s0x88e6d949a4cb8593:0x1387c6c0b5c8cc97!8m2!3d29.1851681!4d-81.0705292"
-                                            target="_blank" rel="noopener"> <img class="img-fluid" src="http://maps.googleapis.com/maps/api/staticmap?autoscale=2&amp;size=600x210&amp;maptype=roadmap&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C582+1801+W+International+Speedway+Blvd+Daytona+Beach+FL+32114&amp;zoom=12" alt="Google Map of Daytona International Speedway"></a></div>
+                                    <div class="static-map"><a href="https://www.google.com/maps/place/Perth+College+UHI/@56.4043308,-3.4636979,17z/data=!3m1!4b1!4m5!3m4!1s0x48863b490969b921:0xcfa7fc7d4040fa82!8m2!3d56.4043279!4d-3.4615092"
+                                            target="_blank" rel="noopener"> <img class="img-fluid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2207.6805422238126!2d-3.4636978835842487!3d56.404330849019935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48863b490969b921%3A0xcfa7fc7d4040fa82!2sPerth+College+UHI!5e0!3m2!1sen!2sde!4v1521221863915" alt="Google Map of Daytona International Speedway"></a></div>
                                 </div>
                                 <div class="col-sm-6 col-md-12 col-lg-6">
                                     <h2 class="h4"><i class="fa fa-user"></i> Our Info</h2>
@@ -144,8 +144,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                                     <div><span>Daytone Beach, FL 85150</span></div>
                                     <div><abbr data-toggle="tooltip" data-placement="top" title="Office Phone: 555-867-5309">O:</abbr> 555-867-5309</div>
                                     <hr class="d-sm-none">
-                                </div>
-                            </div>
+                                </div>   
                         </div>
                     </div>
                 </form>
