@@ -25,15 +25,15 @@ $email=$_SESSION['email'];
  include "../includes/banner.html";
   } ?>
 
-  <?php if($currentuser['userlevel']>1) {
-   include "../includes/banner.html";
-    } ?>
+
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <title>Login | UHI Induction Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- bootstrap css libary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
@@ -77,14 +77,13 @@ $email=$_SESSION['email'];
    } ?>
 
    <?php if($currentuser['userlevel']>0) {
-    // include "../includes/navLevel2.php";
-     header("location: ../web/index.php");
+    header("location: ../web/index.php");
+    } ?>
 
-      } ?>
   <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/processlogin.php" autocomplete="off">
+        <form class="form-signin"  data-toggle="validator" role="form" method="post"  action="../php/processlogin.php" sleep(3); autocomplete="on">
           <span class="reauth-email"> </span>
           <input class="form-control" type="text" required="" placeholder="Student ID" autofocus="" name="studentID" id="studentID"  data-error="This student ID is invalid">
           <input class="form-control" type="password" required="" placeholder="Password" name="inputPassword" id="inputPassword">
@@ -95,6 +94,8 @@ $email=$_SESSION['email'];
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
           </form>
               <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
+
+
 
     </div>
 

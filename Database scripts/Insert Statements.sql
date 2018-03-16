@@ -19,18 +19,18 @@ insert into course (courseid,coursename,coursedes) values ('HNDMgmt','HND Manage
 
 
 
-insert into users (userid,forename,surname,dob,telephone,addressline1,town,postcode,email,bio,usertype,courseid,collegeid) values (15011406,'Scott','Munsie','1993-07-28','07749056381','6 Drive Drive','Perth','PH1 9TY','15011406@uhi.ac.uk',null,2,'HNCCom','PC01');
-insert into users (userid,forename,surname,dob,telephone,addressline1,town,postcode,email,bio,usertype,courseid,collegeid) values (083321,'David','Ferguson','1993-07-28','07749056381','6 Drive Drive','Perth','PH1 9TY','083321@uhi.ac.uk',null,2,'HNDCom','PC01');
-insert into users (userid,forename,surname,dob,telephone,addressline1,town,postcode,email,bio,usertype,courseid,collegeid) values (09012233,'Scott','Robertson','1993-07-28','07749056381','6 Drive Drive','Perth','PH1 9TY','09012233@uhi.ac.uk',null,2,'HNCHD','PC01');
-insert into users (userid,forename,surname,dob,telephone,addressline1,town,postcode,email,bio,usertype,courseid,collegeid) values (13004417,'Benjamin','Traill','1993-07-28','07749056381','6 Drive Drive','Perth','PH1 9TY','13004417@uhi.ac.uk',null,2,'HNCSF','PC01');
-insert into users (userid,forename,surname,dob,telephone,addressline1,town,postcode,email,bio,usertype,courseid,collegeid) values (65231354,'James','Jamieson','1993-07-28','07749056381','6 Drive Drive','Perth','PH1 9TY','65231354@uhi.ac.uk',null,2,'HNCCom','IV01');
-insert into users (userid,forename,surname,dob,telephone,addressline1,town,postcode,email,bio,usertype,courseid,collegeid) values (12345678,'Heather','Smith','1993-07-28','07749056381','6 Drive Drive','Perth','PH1 9TY','12345678@uhi.ac.uk',null,2,'HNDMgmt','IV01');
+insert into users (userid,title,forename,surname,dob,addressline1,town,postcode,telephone,mobilephone,email,bio,usertype,courseid,collegeid) values (15011406,'Mr','Scott','Munsie','1993-07-28','6 Drive Drive','Perth','PH1 9TY','07749056381','07749056381','15011406@uhi.ac.uk',null,2,'HNCCom','PC01');
+insert into users (userid,title,forename,surname,dob,addressline1,town,postcode,telephone,mobilephone,email,bio,usertype,courseid,collegeid) values (083321,'Mr','David','Ferguson','1993-07-28','6 Drive Drive','Perth','PH1 9TY','07749056381','07749056381','083321@uhi.ac.uk',null,2,'HNDCom','PC01');
+insert into users (userid,title,forename,surname,dob,addressline1,town,postcode,telephone,mobilephone,email,bio,usertype,courseid,collegeid) values (09012233,'Mr','Scott','Robertson','1993-07-28','6 Drive Drive','Perth','PH1 9TY','07749056381','07749056381','09012233@uhi.ac.uk',null,2,'HNCHD','PC01');
+insert into users (userid,title,forename,surname,dob,addressline1,town,postcode,telephone,mobilephone,email,bio,usertype,courseid,collegeid) values (13004417,'Mr','Benjamin','Traill','1993-07-28','6 Drive Drive','Perth','PH1 9TY','07749056381','07749056381','13004417@uhi.ac.uk',null,2,'HNCSF','PC01');
+insert into users (userid,title,forename,surname,dob,addressline1,town,postcode,telephone,mobilephone,email,bio,usertype,courseid,collegeid) values (65231354,'Mr','James','Jamieson','1993-07-28','6 Drive Drive','Perth','PH1 9TY','07749056381','07749056381','65231354@uhi.ac.uk',null,2,'HNCCom','IV01');
+insert into users (userid,title,forename,surname,dob,addressline1,town,postcode,telephone,mobilephone,email,bio,usertype,courseid,collegeid) values (12345678,'Mr','Heather','Smith','1993-07-28','6 Drive Drive','Perth','PH1 9TY','07749056381','07749056381','12345678@uhi.ac.uk',null,2,'HNDMgmt','IV01');
 
-insert into users (userid,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (123,'Derek','Summers',null,'Derek@uhi.ac.uk','Derek is a great guy',3,'HNCCom','PC01');
-insert into users (userid,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (234,'Ian','Turnbull',null,'Ian@uhi.ac.uk','Ian is a great guy',3,'HNCCom','PC01');
-insert into users (userid,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (345,'Mike','Kula',null,'Mike@uhi.ac.uk','Mike is a great guy',3,'HNCCom','PC01');
-insert into users (userid,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (456,'Gillian','Douglas',null,'Gillian@uhi.ac.uk','Gillian is a great guy',3,'HNCCom','PC01');
-insert into users (userid,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (567,'Craig','Smith',null,'Craig@uhi.ac.uk','Craig is a great guy',3,'HNCCom','IV01');
+insert into users (userid,title,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (123,'Mr','Derek','Summers',null,'Derek@uhi.ac.uk','Derek is a great guy',3,'HNCCom','PC01');
+insert into users (userid,title,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (234,'Mr','Ian','Turnbull',null,'Ian@uhi.ac.uk','Ian is a great guy',3,'HNCCom','PC01');
+insert into users (userid,title,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (345,'Mr','Mike','Kula',null,'Mike@uhi.ac.uk','Mike is a great guy',3,'HNCCom','PC01');
+insert into users (userid,title,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (456,'Ms','Gillian','Douglas',null,'Gillian@uhi.ac.uk','Gillian is a great guy',3,'HNCCom','PC01');
+insert into users (userid,title,forename,surname,dob,email,bio,usertype,courseid,collegeid) values (567,'Mr','Craig','Smith',null,'Craig@uhi.ac.uk','Craig is a great guy',3,'HNCCom','IV01');
 
 insert into userpass (passwordid,userpass,salt,userid) values (1,'ad98e978a7c2921ab4c3ab2194445c544f51d412963d7ab6d61c3c9a48f418db','2a8a23ab94ab1695f09ce4a622b742e5',15011406);
 insert into userpass (passwordid,userpass,salt,userid) values (2,'ad98e978a7c2921ab4c3ab2194445c544f51d412963d7ab6d61c3c9a48f418db','2a8a23ab94ab1695f09ce4a622b742e5',083321);
@@ -53,10 +53,10 @@ insert into module (moduleid,modulename,moduledes,courseid) values ('DS01','Deve
 insert into module (moduleid,modulename,moduledes,courseid) values ('GU01','Graded Unit 1','Examination on what you have learned','HNCCom');
 
 
-insert into mainblog (title,blogtext,blogtime,userposter,collegeid) values ('Main Blog Entry Number 1 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',15011406,'PC01');
-insert into mainblog (title,blogtext,blogtime,userposter,collegeid) values ('Main Blog Entry Number 2 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',083321,'PC01');
-insert into mainblog (title,blogtext,blogtime,userposter,collegeid) values ('Main Blog Entry Number 3 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',15011406,'PC01');
-insert into mainblog (title,blogtext,blogtime,userposter,collegeid) values ('Main Blog Entry Number 4 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',083321,'PC01');
+insert into mainblog (title,blogtext,blogtime,blogposter,collegeid) values ('Main Blog Entry Number 1 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',15011406,'PC01');
+insert into mainblog (title,blogtext,blogtime,blogposter,collegeid) values ('Main Blog Entry Number 2 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-15 23:11:11',083321,'PC01');
+insert into mainblog (title,blogtext,blogtime,blogposter,collegeid) values ('Main Blog Entry Number 3 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-16 23:11:11',15011406,'PC01');
+insert into mainblog (title,blogtext,blogtime,blogposter,collegeid) values ('Main Blog Entry Number 4 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-17 23:11:11',083321,'PC01');
 
 
 insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,1);
@@ -69,10 +69,10 @@ insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem 
 
 
 
-insert into courseblog (title,blogtext,blogtime,userposter,courseid,collegeid) values ('Course Blog Entry Number 1 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',15011406,'HNCCom','PC01');
-insert into courseblog (title,blogtext,blogtime,userposter,courseid,collegeid) values ('Course Blog Entry Number 2 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',083321,'HNCCom','PC01');
-insert into courseblog (title,blogtext,blogtime,userposter,courseid,collegeid) values ('Course Blog Entry Number 3 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',15011406,'HNDCom','PC01');
-insert into courseblog (title,blogtext,blogtime,userposter,courseid,collegeid) values ('Course Blog Entry Number 4 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',083321,'HNDCom','PC01');
+insert into courseblog (title,blogtext,blogtime,blogposter,courseid,collegeid) values ('Course Blog Entry Number 1 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-14 23:11:11',15011406,'HNCCom','PC01');
+insert into courseblog (title,blogtext,blogtime,blogposter,courseid,collegeid) values ('Course Blog Entry Number 2 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-15 23:11:11',083321,'HNCCom','PC01');
+insert into courseblog (title,blogtext,blogtime,blogposter,courseid,collegeid) values ('Course Blog Entry Number 3 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-16 23:11:11',15011406,'HNDCom','PC01');
+insert into courseblog (title,blogtext,blogtime,blogposter,courseid,collegeid) values ('Course Blog Entry Number 4 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-17 23:11:11',083321,'HNDCom','PC01');
 
 
 insert into courseblogcom (commenttext,blogtime,userid,courseblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,1);
@@ -83,3 +83,7 @@ insert into courseblogcom (commenttext,blogtime,userid,courseblogid) values ('Lo
 insert into courseblogcom (commenttext,blogtime,userid,courseblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,4);
 insert into courseblogcom (commenttext,blogtime,userid,courseblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,3);
 
+
+insert into booking (bookdate,booktime,advisor,booked) values ('2018-03-08','12:00:00','Derek','N');
+insert into booking (bookdate,booktime,advisor,booked) values ('2018-03-08','13:00:00','Derek','N');
+insert into booking (bookdate,booktime,advisor,booked) values ('2018-03-08','14:00:00','Derek','N');

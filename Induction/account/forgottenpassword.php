@@ -16,9 +16,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
 
   <?php if($currentuser['userlevel']>1) {
    include "../includes/banner.html";
@@ -28,7 +25,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Password | UHI Induction Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <!-- bootstrap css libary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
@@ -75,7 +73,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   <!-- update Start --> <!--Email needs to be read only and changed to students email address -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <input class="form-control" readonly="" type="text"  placeholder=" <?php echo $userid; ?> ">
+        <input class="form-control" readonly="" type="text"  value=" <?php echo $userid; ?> ">
         <form class="form-signin"  data-toggle="validator" role="form" method="post" action="../php/updatePassword.php" autocomplete="off">
           <span class="reauth-email"> </span>
           <input class="form-control" type="password" required="" autofocus"" placeholder="New Password" maxlength="20" id="inputPassword">

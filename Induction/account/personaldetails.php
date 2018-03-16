@@ -10,33 +10,31 @@ $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 $telephone=$_SESSION['telephone'];
+$mobilephone=$_SESSION['mobilephone'];
 $addressline1=$_SESSION['addressline1'];
+$addressline2=$_SESSION['addressline2'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
 $email=$_SESSION['email'];
-$username=checkUser($_SESSION['userid'],session_id(),2);
 
 
-/*if(isset($_GET['uID'])) {
-	$userid=$_GET['uID'];
+if(isset($userid)) {
+
 	$db=createConnection();
-	$userdetailssql="select forename, surname, telephone, addressline1, town, postcode, email, usertype, collegeid from users,userpass where users.userid=?;";
+	$userdetailssql="SELECT userid, forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode FROM users WHERE userid=?;";
 	$userdetails = $db->prepare($userdetailssql);
 	$userdetails->bind_param("i",$userid);
 	$userdetails->execute();
 	$userdetails->store_result();
-	$userdetails->bind_result($username, $firstname, $surname);
+	$userdetails->bind_result($userid, $forename, $surname,$telephone,$mobilephone,$addressline1,$addressline2,$town,$postcode);
 	if($userdetails->num_rows==1) {
-	$userdetails->fetch();
-*/
-?>
+		$userdetails->fetch();
+	?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
-
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
 
   <?php if($currentuser['userlevel']>1) {
    include "../includes/banner.html";
@@ -46,16 +44,17 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello, <?php echo $forename; ?> | Update Details | UHI Induction Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+		<!-- bootstrap css libary -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 
     <!-- Favicons -->
@@ -84,7 +83,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
-<div class id=updateDetails>
+<div class id=edituser>
 
 
 <?php if($currentuser['userlevel']>1) {
@@ -94,45 +93,43 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
   <div class="container profile profile-view" id="profile">
     <div class="row">
       <div class="col-md-12 alert-col relative">
-        <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div>
+        <!-- Not needed <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div> -->
       </div>
     </div>
-    <form class="form-edit-details"  data-toggle="validator" role="form" id="editDetails" name="editDetials" method="post" action="../php/updateDetails.php" autocomplete="off">
+    <form class="form-edit-details"  data-toggle="validator" role="form" id="edituser" name="edituser" method="post" action="../php/updateDetails.php" autocomplete="off">
       <div class="form-row profile-row">
         <div class="col-md-4 relative">
-          <div class="avatar">
-            <div class="avatar-bg center"></div>
-          </div><input type="file" class="form-control" name="avatar-file"></div>
+           </div>
         <div class="col-md-8">
           <h1>Edit Details</h1>
           <hr>
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off" required=""  value="<?php echo $forename; ?>"  id="forename"></div>
+              <div class="form-group"><label>Firstname </label><input class="form-control" type="text" name="forename" autocomplete="off"   value="<?php echo $forename; ?>"  id="forename"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" required="" value="<?php echo $surname; ?>"  id="surname"></div>
+              <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off"  value="<?php echo $surname; ?>"  id="surname"></div>
             </div>
           </div>
-          <div class="form-group"><label>Email </label><input class="form-control" readonly="" type="email" name="email" autocomplete="off" required="" value="<?php echo $email; ?>"  id="emailadd"></div>
+
           <div class="form-row">
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="address1" autocomplete="off" required="" value="<?php echo $addressline1; ?>" id="address1"></div>
+              <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="addressline1" autocomplete="off"  value="<?php echo $addressline1; ?>" id="addressline1"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="address2" autocomplete="off" required="" value="<?php echo $addressline1; ?>"  id="address2"></div>
+              <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="addressline2" autocomplete="off" value="<?php echo $addressline2; ?>"  id="addressline2"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" required="" value="<?php echo $town; ?>"  id="town"></div>
+              <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" value="<?php echo $town; ?>"  id="town"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" required=""  maxlength="10" onkeydown="upperCaseF(this)" value="<?php echo $postcode; ?>" id="postcode"></div>
+              <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off"  maxlength="10" onkeydown="upperCaseF(this)" value="<?php echo $postcode; ?>" id="postcode"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" required=""  maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $telephone; ?>"  id="telephone"></div>
+              <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off"   maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $telephone; ?>"  id="telephone"></div>
             </div>
             <div class="col-sm-12 col-md-6">
-              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobile" autocomplete="off" required="" maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobile; ?>"  id="mobile"></div>
+              <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobilephone" autocomplete="off"  maxlength="15" onkeypress="return isNumberKey(event)"  value="<?php echo $mobilephone; ?>"  id="mobilephone"></div>
             </div>
           </div>
           <hr>
@@ -142,6 +139,15 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
         </div>
       </div>
     </form>
+		<?php
+		} else {
+			echo "<p>No user found!</p>";
+		}
+	} else {
+		echo "<p>No user submitted to edit</p>";
+	}
+	?>
+
   </div>
 
   <?php if($currentuser['userlevel']>1) {

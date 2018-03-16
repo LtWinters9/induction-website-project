@@ -1,3 +1,4 @@
+drop table if exists booking;
 drop table if exists courseblogcom;
 drop table if exists courseblog;
 drop table if exists mainblogcom;
@@ -41,15 +42,18 @@ create table course (
 
 create table users (
 	userid				int(8) unique not null,
-  forename			varchar(30),
-  surname				varchar(30),
-  dob						date,
-  telephone			varchar(12),
-  addressline1	varchar(50),
-  town					varchar(30),
-  postcode			varchar(8),
-	email					varchar(40),
-	bio						varchar(1000),
+  title 				varchar(6),
+	forename			varchar(30),
+	surname				varchar(30),
+	dob					date,
+	addressline1		varchar(50),
+  addressline2		varchar(50),
+	town				varchar(30),
+	postcode			varchar(8),
+	telephone			varchar(12),
+  mobilephone			varchar(13),
+	email				varchar(40),
+	bio					varchar(1000),
   usertype			int(1) not null default 2,
   sessionid			varchar(64),
   courseid			varchar(8),
@@ -86,10 +90,10 @@ create table mainblog (
 	title				varchar(40),
 	blogtext		text,
 	blogtime		timestamp default current_timestamp,
-	userposter	int(8),
+	blogposter	int(8),
   collegeid		varchar(6),
 	primary key(mainblogid),
-	foreign key(userposter) references users (userid),
+	foreign key(blogposter) references users (userid),
   foreign key(collegeid) references college (collegeid)
 ) engine=innodb default character set=utf8;
 
@@ -110,11 +114,11 @@ create table courseblog (
 	title					varchar(40),
 	blogtext			text,
 	blogtime			timestamp default current_timestamp,
-	userposter		int(8),
+	blogposter		int(8),
   courseid			varchar(8),
   collegeid			varchar(6),
 	primary key (courseblogid),
-	foreign key (userposter) references users (userid),
+	foreign key (blogposter) references users (userid),
   foreign key (courseid) references course (courseid),
   foreign key (collegeid) references college (collegeid)
 ) engine=innodb default character set=utf8;
@@ -129,3 +133,15 @@ create table courseblogcom (
   foreign key (userid) references users (userid),
   foreign key (courseblogid) references courseblog (courseblogid)
 ) engine=innodb default character set=utf8;
+
+
+create table booking (
+	bookingid	int(5) not null auto_increment,
+    bookdate	date,
+    booktime	time,
+    advisor		varchar(20),
+    booked		varchar(1),
+    userid		int(8),
+    primary key (bookingid),
+    foreign key (userid) references users (userid)
+    )engine=innodb default character set=utf8;

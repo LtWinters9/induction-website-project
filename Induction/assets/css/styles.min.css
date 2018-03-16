@@ -1,5 +1,29 @@
+.highlight-clean .buttons .btn:active, .highlight-phone .intro .btn:active {
+  transform: translateY(1px)
+}
+
 article, nav {
   font-family: Raleway
+}
+
+.jumbotron-contact {
+  background: #358CCE;
+  color: #FFF;
+  border-radius: 0;
+  margin-bottom: 30px
+}
+
+.jumbotron-contact-sm {
+  padding-top: 24px;
+  padding-bottom: 24px
+}
+
+.jumbotron-contact small {
+  color: #FFF
+}
+
+.h1 small {
+  font-size: 16px
 }
 
 div.jumbotron.carousel-hero {
@@ -275,15 +299,6 @@ p.hero-subtitle {
   opacity: .75
 }
 
-.highlight-clean .buttons .btn, .highlight-phone .intro .btn {
-  box-shadow: none;
-  letter-spacing: .4px;
-  font-weight: 700;
-  border: none;
-  text-shadow: none;
-  text-transform: uppercase
-}
-
 .footer-dark .item.social>a:hover {
   opacity: .9
 }
@@ -294,6 +309,103 @@ p.hero-subtitle {
   opacity: .3;
   font-size: 13px;
   margin-bottom: 0
+}
+
+.login-card {
+  max-width: 350px;
+  padding: 40px;
+  background-color: #F7F7F7;
+  margin: 50px auto 25px;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .3)
+}
+
+.login-card .profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 50%
+}
+
+.login-card .profile-name-card {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0 0;
+  min-height: 1em
+}
+
+.login-card .reauth-email {
+  display: block;
+  color: #404040;
+  line-height: 2;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box
+}
+
+.login-card .form-signin button, .login-card .form-signin input[type=email], .login-card .form-signin input[type=password], .login-card .form-signin input[type=text] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box
+}
+
+.login-card label {
+  color: #000
+}
+
+.login-card .form-signin .form-control:focus {
+  border-color: #6891a2;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #6891a2;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #6891a2
+}
+
+.login-card .btn.btn-signin {
+  font-weight: 700;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  background: #6891a2;
+  border-radius: 3px;
+  border: none;
+  transition: all 218ms;
+  padding: 0
+}
+
+.highlight-clean .buttons .btn, .highlight-phone .intro .btn {
+  border: none;
+  letter-spacing: .4px;
+  font-weight: 700;
+  box-shadow: none;
+  text-shadow: none;
+  text-transform: uppercase
+}
+
+nav, nav.sticky {
+  transition: all 1s ease
+}
+
+.login-card .btn.btn-signin:active, .login-card .btn.btn-signin:focus, .login-card .btn.btn-signin:hover {
+  background: #0c6121
+}
+
+.login-card .forgot-password {
+  color: #6891a2
+}
+
+.login-card .forgot-password:active, .login-card .forgot-password:focus, .login-card .forgot-password:hover {
+  color: #0c6121
 }
 
 .highlight-clean {
@@ -337,10 +449,6 @@ p.hero-subtitle {
 
 .highlight-clean .buttons .btn:hover {
   opacity: 1
-}
-
-.highlight-clean .buttons .btn:active {
-  transform: translateY(1px)
 }
 
 .highlight-clean .buttons .btn-primary {
@@ -399,10 +507,6 @@ p.hero-subtitle {
 
 .highlight-phone .intro .btn:hover {
   opacity: 1
-}
-
-.highlight-phone .intro .btn:active {
-  transform: translateY(1px)
 }
 
 .highlight-phone .intro .btn-primary {
@@ -480,94 +584,6 @@ p.hero-subtitle {
 
 .map-clean iframe {
   background-color: #eee
-}
-
-.login-card {
-  max-width: 350px;
-  padding: 40px;
-  background-color: #F7F7F7;
-  margin: 50px auto 25px;
-  border-radius: 2px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, .3)
-}
-
-.form-btn, img.avart-img {
-  max-width: 200px
-}
-
-.login-card .profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  border-radius: 50%
-}
-
-.login-card .profile-name-card {
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-  margin: 10px 0 0;
-  min-height: 1em
-}
-
-.login-card .reauth-email {
-  display: block;
-  color: #404040;
-  line-height: 2;
-  margin-bottom: 10px;
-  font-size: 14px;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-sizing: border-box
-}
-
-.login-card .form-signin button, .login-card .form-signin input[type=email], .login-card .form-signin input[type=password], .login-card .form-signin input[type=text] {
-  height: 44px;
-  font-size: 16px;
-  width: 100%;
-  display: block;
-  margin-bottom: 10px;
-  z-index: 1;
-  position: relative;
-  box-sizing: border-box
-}
-
-.login-card label {
-  color: #000
-}
-
-.login-card .form-signin .form-control:focus {
-  border-color: #6891a2;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #6891a2;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #6891a2
-}
-
-.login-card .btn.btn-signin {
-  font-weight: 700;
-  height: 36px;
-  line-height: 36px;
-  font-size: 14px;
-  background: #6891a2;
-  border-radius: 3px;
-  border: none;
-  transition: all 218ms;
-  padding: 0
-}
-
-.login-card .btn.btn-signin:active, .login-card .btn.btn-signin:focus, .login-card .btn.btn-signin:hover {
-  background: #0c6121
-}
-
-.login-card .forgot-password {
-  color: #6891a2
-}
-
-.login-card .forgot-password:active, .login-card .forgot-password:focus, .login-card .forgot-password:hover {
-  color: #0c6121
 }
 
 .navigation-clean {
@@ -730,166 +746,6 @@ p.hero-subtitle {
   .navigation-clean.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
     color: #fff
   }
-}
-
-div.avatar>img {
-  border-radius: 50%
-}
-
-div.container.profile {
-  padding: 10px 20px
-}
-
-.center {
-  text-align: center
-}
-
-.no-marging {
-  margin: 0 !important
-}
-
-.relative {
-  position: relative
-}
-
-.absolue {
-  position: absolute
-}
-
-div.profile-row {
-  margin-top: 55px
-}
-
-.absolue.center {
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 0)
-}
-
-div.alert {
-  width: 40%
-}
-
-.alert-col>.alert {
-  padding: 10px;
-  border-radius: 0;
-  transition: all .5s ease;
-  opacity: 0
-}
-
-nav, nav.sticky {
-  transition: all 1s ease
-}
-
-.alert-col>.alert.display {
-  opacity: 1
-}
-
-hr {
-  height: 2px
-}
-
-.content-right>* {
-  float: right
-}
-
-.form-btn {
-  min-width: 100px;
-  margin: 0 5px
-}
-
-div.avatar-bg {
-  background: url(https://www.gravatar.com/avatar/1234566?size=200&d=mm) 50% 50%;
-  height: 200px;
-  width: 200px;
-  background-size: cover;
-  border-radius: 50%;
-  margin-left: calc(50% - 100px)
-}
-
-.register-photo {
-  background: #f1f7fc;
-  padding: 80px 0
-}
-
-.register-photo .image-holder {
-  display: table-cell;
-  width: auto;
-  background: url(../../assets/img/meeting.jpg);
-  background-size: cover
-}
-
-.register-photo .form-container {
-  display: table;
-  max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
-}
-
-.register-photo form {
-  display: table-cell;
-  width: 400px;
-  background-color: #fff;
-  padding: 40px 60px;
-  color: #505e6c
-}
-
-@media (max-width:991px) {
-  .register-photo form {
-    padding: 40px
-  }
-}
-
-.register-photo form h2 {
-  font-size: 24px;
-  line-height: 1.5;
-  margin-bottom: 30px
-}
-
-.register-photo form .form-control {
-  background: #f7f9fc;
-  border: none;
-  border-bottom: 1px solid #dfe7f1;
-  border-radius: 0;
-  box-shadow: none;
-  outline: 0;
-  color: inherit;
-  text-indent: 6px;
-  height: 40px
-}
-
-.register-photo form .form-check {
-  font-size: 13px;
-  line-height: 20px
-}
-
-.register-photo form .btn-primary {
-  background: #f4476b;
-  border: none;
-  border-radius: 4px;
-  padding: 11px;
-  box-shadow: none;
-  margin-top: 35px;
-  text-shadow: none;
-  outline: 0 !important
-}
-
-.register-photo form .btn-primary:active, .register-photo form .btn-primary:hover {
-  background: #eb3b60
-}
-
-.register-photo form .btn-primary:active {
-  transform: translateY(1px)
-}
-
-.register-photo form .already {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  color: #6f7a85;
-  opacity: .9;
-  text-decoration: none
 }
 
 nav ul li a:hover {

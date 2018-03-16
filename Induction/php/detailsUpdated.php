@@ -11,18 +11,19 @@ $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 $telephone=$_SESSION['telephone'];
 $addressline1=$_SESSION['addressline1'];
+$addressline2=$_SESSION['addressline2'];
 $town=$_SESSION['town'];
 $postcode=$_SESSION['postcode'];
+$telephone=$_SESSION['telephone'];
+$mobilephone=$_SESSION['mobilephone'];
 $email=$_SESSION['email'];
-$userid=checkUser($_SESSION['userid'],session_id(),2);
+$username=checkUser($_SESSION['userid'],session_id(),2);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
+
 
   <?php if($currentuser['userlevel']>1) {
    include "../includes/banner.html";
@@ -32,12 +33,15 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details updated | UHI Induction Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    
+    <!-- bootstrap css libary -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">

@@ -11,7 +11,6 @@ $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
 ?>
 
-<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="refresh" content="0;url=account/login.php">
@@ -20,13 +19,7 @@ $collegeid=$_SESSION['collegeid'];
     window.location.href = "account/login.php"
 </script>
 
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
 
-  <?php if($currentuser['userlevel']>1) {
-   include "../includes/banner.html";
-    } ?>
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
