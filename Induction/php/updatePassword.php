@@ -15,7 +15,7 @@ $secondpass=$_POST['inputSecondPassword'];
 $salt=getSalt(16);
 $cyphertext=makeHash($userpass,$salt,50);
 
-	$updatesql= 'UPDATE `userpass` SET `userpass` = \'?\', `salt` = \'?\' WHERE `userpass`.`passwordid` = ?';
+	$updatesql= "UPDATE userpass SET userpass='$userpass',salt='$cyphertext' WHERE passwordid='$passwordid'";
     $doupdate=$db->prepare($updatesql);
     $doupdate->bind_param("ssi",$userpass,$cyphertext,$passwordid);
     $doupdate->execute();
