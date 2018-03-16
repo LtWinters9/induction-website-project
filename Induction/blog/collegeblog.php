@@ -81,7 +81,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <ol class="breadcrumb">
  <li class="breadcrumb-item"><a><span>Forum </span></a></li>
  <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
- <li class="breadcrumb-item"><a><span> </span></a></li>
+ <li class="breadcrumb-item"><a><span><?php echo $blogtitle; ?></span></a></li>
 </ol>
 
 <div class="intro">
@@ -97,7 +97,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
         echo "Good Evening";
     }
     ?>. Welcome to the student blog, <?php echo $forename; ?></h2>
-    <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions. You should gett involved!</p>
+    <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions for <?php echo $blogtitle; ?> You should get involved!</p>
 </div>
 
 
