@@ -133,16 +133,16 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                                 <div class="col-sm-6 col-md-12 col-lg-6">
                                     <h2 class="h4"><i class="fa fa-user"></i> Our Info</h2>
                                     <div><span><strong>Name</strong></span></div>
-                                    <div><span>email@awebsite.com</span></div>
-                                    <div><span>www.awebsite.com</span></div>
+                                    <div><span>Email https://www.uhi.ac.uk/en/</span></div>
+                                    <div><span>Website https://www.uhi.ac.uk/en/</span></div>
                                     <hr class="d-sm-none d-md-block d-lg-none">
                                 </div>
                                 <div class="col-sm-6 col-md-12 col-lg-6">
                                     <h2 class="h4"><i class="fa fa-location-arrow"></i> Our Address</h2>
                                     <div><span><strong>Office Name</strong></span></div>
-                                    <div><span>55 Icannot Dr</span></div>
-                                    <div><span>Daytone Beach, FL 85150</span></div>
-                                    <div><abbr data-toggle="tooltip" data-placement="top" title="Office Phone: 555-867-5309">O:</abbr> 555-867-5309</div>
+                                    <div><span>University of the Highlands and Islands Registered office</span></div>
+                                    <div><span>12b Ness Walk, Inverness, Scotland, IV3 5SQ</span></div>
+                                    <div><abbr data-toggle="tooltip" data-placement="top" title="Office Phone: +44 1738 877000">O:</abbr>+44 1738 877000</div>
                                     <hr class="d-sm-none">
                                 </div>
                         </div>
