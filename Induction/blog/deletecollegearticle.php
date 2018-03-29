@@ -9,9 +9,23 @@ $userid = $_SESSION['userid'];
 $forename = $_SESSION['forename'];
 $surname = $_SESSION['surname'];
 $collegeid = $_SESSION['collegeid'];
+$courseid = $_SESSION['courseid'];
 $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
-?>
 
+
+if($currentuser['userlevel']<2) {
+    header("location:	index.php");
+}
+
+if(isset($_COOKIE['userintent'])) {
+    if($currentuser['userlevel']==0 && $_COOKIE['userintent']=="addarticle") {
+        header("location:	login.php");
+        exit;
+    }
+}
+$username=checkUser($_SESSION['userid'],session_id(),2);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,127 +81,89 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
 </head>
-
 <body>
-  <div id=header>
+<header>
+</header>
+<nav>
+    <div id="menubutton">Menu</div>
+    <ul id="menu">
+        <li><a href="index.php">Home</a></li>
+        <?php if($currentuser['userlevel']>1) { ?>
+            <li><a href="makeabooking.php">Make a Booking</a></li> <?php } ?>
+        <?php if($currentuser['userlevel']<2) { ?>
+            <li><a href="makeabookinglogin.php">Make a Booking</a></li> <?php } ?>
+        <li><a href="services.php">Services</a></li>
+        <li><a href="blog.php">News</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
+    </ul>
+</nav>
 
+<h1>Delete Article</h1>
 
-
-<?php if ($currentuser['userlevel'] > 1) {
-    include "../includes/navLevel2.php";
-} ?>
-
-<div></div>
-<ol class="breadcrumb">
- <li class="breadcrumb-item"><a><span>Forum </span></a></li>
- <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
- <li class="breadcrumb-item"><a><span><?php echo $blogtitle; ?></span></a></li>
-</ol>
-
-<div class="intro">
-    <h2 class="text-center" style="font-family:'Roboto Condensed', sans-serif;"><?php
-
-    $Hour = date('G');
-
-    if ( $Hour >= 5 && $Hour <= 11 ) {
-        echo "Good Morning";
-    } else if ( $Hour >= 12 && $Hour <= 17 ) {
-        echo "Good Afternoon";
-    } else if ( $Hour >= 18 || $Hour <= 4 ) {
-        echo "Good Evening";
-    }
-    ?>. Welcome to the student blog, <?php echo $forename; ?></h2>
-    <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions for <?php echo $blogtitle; ?> You should get involved!</p>
-  </div>
-</div>
-
-  <aside>
-  <h2>Add an Article?</h2>
-
-  <a href="addcollegearticle.php">Click here to add an news story</a>
-  </aside>
-
-<section id="main">
+<div id="main">
     <?php
-    $db = createConnection();
+    $db=createConnection();
     // get the first two articles
-    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 2";
-
+    $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid where blogid=?";
     $stmt = $db->prepare($sql);
+    $stmt->bind_param("i",$article);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($mainblogid, $title, $blogtext, $blogtime, $blogposter, $forename, $userid);
-
-
-    $cmntsql = "select mbcid,commenttext,mainblogcom.blogtime,mainblogcom.userid, forename from mainblogcom, users where mainblogcom.mainblogid=? and mainblogcom.userid = users.userid;";
-    $cmnt = $db->prepare($cmntsql);
-    $cmnt->bind_param("i", $mainblogid);
-    $cmnt->bind_result($mbcid, $commenttext, $commenttime, $comuserid, $comforename);
-
+    $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
 
     //build article html
-    while ($stmt->fetch()) {
-        echo "<article id='a$mainblogid'>
-      <h1>$title</h1>
-      <p>" . nl2br($blogtext) . "</p>
-      <footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
+    while($stmt->fetch()) {
+        echo "<article id='a$articleid'>
+			<h3>$articletitle</h3>
+			<p>".nl2br($articletext)."</p>
+			<footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$username</em></p></footer>";
 
-        // if user is logged in and not suspended add comment button
-        if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
-            echo "<p><a href='deletearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
-        };
 
-        echo "<h2>Comments</h2>";
-
-        $cmnt->execute();
-        $cmnt->store_result();
-
-        while ($cmnt->fetch()) {
-
-            echo "<aside id='c$mbcid'>
-                <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>
-            </aside>";
-
+        if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
+            ?> <form method='post' action='php/xdeletearticle.php'>
+                <input type="hidden" readonly value="<?php echo $article ?>" id="articleid" name="articleid" />
+                <button type="submit">Confirm Delete</button>
+            </form>
+            <?php
         }
         echo "</article>";
     }
-
-
-    $cmnt->close();
     $stmt->close();
     $db->close();
 
     ?>
-</section>
 
-<?php if($currentuser['userlevel']>1) {
- include "../includes/slide-in.php";
-  } ?>
+    <footer>
+        <span>Copyright &copy; Abla Cruises</span>
+        <nav>
+            <ul id="footernav">
+                <?php if($currentuser['userlevel']==0) { ?>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li> <?php } ?>
+                <?php if($currentuser['userlevel']==3) { ?>
+                    <li><a href="admin.php">My Account</a></li> <?php } ?>
+                <?php if($currentuser['userlevel']==2) { ?>
+                    <li><a href="user.php">My Account</a></li> <?php } ?>
+                <?php if($currentuser['userlevel']==1) { ?>
+                    <li><a href="inactive.php">My Account</a></li> <?php } ?>
+                <?php if($currentuser['userlevel']>0) { ?>
+                    <li><a href="php/logout.php">Logout</a></li> <?php } ?>
+            </ul>
+        </nav>
 
-<?php if($currentuser['userlevel']>1) {
- include "../includes/footer.php";
-  } ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-<script src="../assets/js/script.min.js"></script>
-<script src="../dist/js/jqBootstrapValidation.js"></script>
-<script src="../dist/js/functions.js"></script>
-<script src="../dist/js/article.js"></script>
-<!-- <script src="../dist/js/login.js"></script> -->
-<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
-<script src="../dist/js/cookies.js"></script>
+
+    </footer>
+
+</body>
+<script src="js/functions.js"></script>
+
 <script>
-    document.onreadystatechange = function () {
-        if (document.readyState == "complete") {
+    document.onreadystatechange=function() {
+        if(document.readyState=="complete") {
             prepareMenu();
-            prepareArticle();
         }
     }
 </script>
 
-
-</body>
 </html>
