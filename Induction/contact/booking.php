@@ -92,6 +92,8 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
           <div class="container">
             <div class="row">
               <div class="col-sm-12 col-lg-12">
+                  <h1 class="h1">
+                      Book an Appointment with your Personal Academic Tutor (PAT)</h1>
                 <h1 class="h1">
                 Please select an appointment <small>to book now</small></h1>
               </div>
@@ -115,7 +117,7 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                             echo "<option value = ",$row[bookingid],">",
                             " Date: ", $row[bookdate],
                             " Time: ", $row[booktime],
-                            " Advisor: ", $row[advisor],"</option>";
+                            " Personal Academic Tutor: ", $row[advisor],"</option>";
                         }
                         echo "</select>";
 
