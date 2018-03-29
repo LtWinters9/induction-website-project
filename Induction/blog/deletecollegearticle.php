@@ -11,28 +11,28 @@ $surname = $_SESSION['surname'];
 $collegeid = $_SESSION['collegeid'];
 $courseid = $_SESSION['courseid'];
 $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
+$article=$_GET['aID'];
+if(!$article) { header("location: index.php"); }
 
 
 if($currentuser['userlevel']<2) {
     header("location:	index.php");
 }
 
-if(isset($_COOKIE['userintent'])) {
-    if($currentuser['userlevel']==0 && $_COOKIE['userintent']=="addarticle") {
-        header("location:	login.php");
-        exit;
-    }
-}
-$username=checkUser($_SESSION['userid'],session_id(),2);
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if ($currentuser['userlevel'] > 1) {
-    include "../includes/banner.html";
-} ?>
+<div id=header>
 
+
+
+    <?php if ($currentuser['userlevel'] > 1) {
+        include "../includes/navLevel2.php";
+    } ?>
+
+    <div>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,8 +45,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
@@ -80,23 +79,9 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
       href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
-</head>
+
 <body>
-<header>
-</header>
-<nav>
-    <div id="menubutton">Menu</div>
-    <ul id="menu">
-        <li><a href="index.php">Home</a></li>
-        <?php if($currentuser['userlevel']>1) { ?>
-            <li><a href="makeabooking.php">Make a Booking</a></li> <?php } ?>
-        <?php if($currentuser['userlevel']<2) { ?>
-            <li><a href="makeabookinglogin.php">Make a Booking</a></li> <?php } ?>
-        <li><a href="services.php">Services</a></li>
-        <li><a href="blog.php">News</a></li>
-        <li><a href="contact.php">Contact Us</a></li>
-    </ul>
-</nav>
+
 
 <h1>Delete Article</h1>
 
@@ -104,23 +89,23 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
     <?php
     $db=createConnection();
     // get the first two articles
-    $sql = "select blogid,articletitle,articletext,blogtime,blogposter,username,userid from ScotiaNews join ScotiaUser on blogposter = userid where blogid=?";
+    $sql = "select mainblog.mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,users.userid from mainblog join users on blogposter = users.userid where mainblogid=?";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("i",$article);
     $stmt->execute();
     $stmt->store_result();
-    $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$username,$userid);
+    $stmt->bind_result($articleid,$articletitle,$articletext,$blogtime,$blogposter,$forename,$userid);
 
     //build article html
     while($stmt->fetch()) {
         echo "<article id='a$articleid'>
 			<h3>$articletitle</h3>
 			<p>".nl2br($articletext)."</p>
-			<footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$username</em></p></footer>";
+			<footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
 
 
         if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
-            ?> <form method='post' action='php/xdeletearticle.php'>
+            ?> <form method='post' action='../php/xdeletecollegearticle.php'>
                 <input type="hidden" readonly value="<?php echo $article ?>" id="articleid" name="articleid" />
                 <button type="submit">Confirm Delete</button>
             </form>
@@ -133,37 +118,35 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
 
     ?>
 
-    <footer>
-        <span>Copyright &copy; Abla Cruises</span>
-        <nav>
-            <ul id="footernav">
-                <?php if($currentuser['userlevel']==0) { ?>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="login.html">Login</a></li> <?php } ?>
-                <?php if($currentuser['userlevel']==3) { ?>
-                    <li><a href="admin.php">My Account</a></li> <?php } ?>
-                <?php if($currentuser['userlevel']==2) { ?>
-                    <li><a href="user.php">My Account</a></li> <?php } ?>
-                <?php if($currentuser['userlevel']==1) { ?>
-                    <li><a href="inactive.php">My Account</a></li> <?php } ?>
-                <?php if($currentuser['userlevel']>0) { ?>
-                    <li><a href="php/logout.php">Logout</a></li> <?php } ?>
-            </ul>
-        </nav>
 
 
+    <?php if($currentuser['userlevel']>1) {
+        include "../includes/slide-in.php";
+    } ?>
 
-    </footer>
+    <?php if($currentuser['userlevel']>1) {
+        include "../includes/footer.php";
+    } ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../dist/js/jqBootstrapValidation.js"></script>
+    <script src="../dist/js/functions.js"></script>
+    <script src="../dist/js/article.js"></script>
+    <!-- <script src="../dist/js/login.js"></script> -->
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+    <script src="../dist/js/cookies.js"></script>
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                prepareMenu();
+                prepareArticle();
+            }
+        }
+    </script>
+
 
 </body>
-<script src="js/functions.js"></script>
-
-<script>
-    document.onreadystatechange=function() {
-        if(document.readyState=="complete") {
-            prepareMenu();
-        }
-    }
-</script>
-
 </html>

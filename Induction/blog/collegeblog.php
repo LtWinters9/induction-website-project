@@ -134,7 +134,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
         // if user is logged in and not suspended add comment button
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
-            echo "<p><a href='deletearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
+            echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
         };
 
         echo "<h2>Comments</h2>";
