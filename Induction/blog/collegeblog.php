@@ -102,9 +102,9 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 </div>
 
   <aside>
-  <h2>Add an Article?</h2>
+  <h2>Add an Blog?</h2>
 
-  <a href="addcollegearticle.php">Click here to add an news story</a>
+  <a href="addcollegearticle.php">Add a blog entry</a>
   </aside>
 
 <section id="main">

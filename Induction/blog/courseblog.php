@@ -102,12 +102,17 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
   </div>
 </div>
 
+  <aside>
+      <h2>Add a Blog?</h2>
+
+      <a href="addcoursearticle.php">Add a blog entry</a>
+  </aside>
 
 <section id="main">
     <?php
     $db = createConnection();
     // get the first two articles
-    $sql = "select courseblogid,courseblog.title,blogtext,blogtime,blogposter,forename,userid from courseblog join users on blogposter = userid and courseblog.collegeid = '$collegeid' and courseblog.courseid = '$courseid' order by blogtime desc limit 2";
+    $sql = "select courseblogid,courseblog.title,blogtext,blogtime,blogposter,forename,userid from courseblog join users on blogposter = userid and courseblog.collegeid = '$collegeid' and courseblog.courseid = '$courseid' order by blogtime desc limit 4";
 
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -133,6 +138,11 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
             echo "<p><a href='deletearticle.php?aID=$courseblogid' id='db$courseblogid'>Delete Post</a></p>";
         };
 
+        if($currentuser['userlevel']>1) {
+            echo "<p><a href='addcoursecomment.php?aID=$courseblogid' id='db$courseblogid'>Add Comment</a></p>";
+
+        }
+
         echo "<h2>Comments</h2>";
 
         $cmnt->execute();
@@ -142,8 +152,13 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
             echo "<aside id='c$cbcid'>
                 <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>
-            </aside>";
+                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>";
+
+            if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $comuserid && $currentuser['userlevel'] > 1)) {
+                echo "<p><a href='deletecoursecomment.php?aID=$courseblogid&cID=$cbcid' id='db$cbcid'>Delete Comment</a></p>";
+            };
+
+            "</aside>";
 
         }
         echo "</article>";
