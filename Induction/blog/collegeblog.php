@@ -111,7 +111,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     <?php
     $db = createConnection();
     // get the first two articles
-    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 2";
+    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 4";
 
     $stmt = $db->prepare($sql);
     $stmt->execute();
