@@ -106,7 +106,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="box"><i class="icon ion-android-chat icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Chat to other Students </h3>
-                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</strong><br><br></p><a href="../blog/collegeblog.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat now »</a></div>
+                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</strong><br><br></p><a href="../blog/collegeblog.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat College » </a><a href="../blog/courseblog.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat Course »</a></div>
                   </div>
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="box"><i class="material-icons icon" style="color:#7e3ca6;">contact_mail</i>
