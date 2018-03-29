@@ -117,7 +117,7 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                             echo "<option value = ",$row[bookingid],">",
                             " Date: ", $row[bookdate],
                             " Time: ", $row[booktime],
-                            " Advisor: ", $row[advisor],"</option>";
+                            " Personal Academic Tutor: ", $row[advisor],"</option>";
                         }
                         echo "</select>";
 
