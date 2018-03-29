@@ -59,13 +59,13 @@ insert into mainblog (title,blogtext,blogtime,blogposter,collegeid) values ('Mai
 insert into mainblog (title,blogtext,blogtime,blogposter,collegeid) values ('Main Blog Entry Number 4 Heading','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue a urna nec pharetra. Maecenas et felis ipsum. Donec mattis lacus orci, quis hendrerit nibh blandit at.','2014-04-17 23:11:11',083321,'PC01');
 
 
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,1);
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,2);
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,3);
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,1);
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,2);
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,4);
-insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',09012233,3);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',15011406,1);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',15011406,2);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',15011406,3);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',15011406,1);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',083321,2);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',083321,4);
+insert into mainblogcom (commenttext,blogtime,userid,mainblogid) values ('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','2014-04-14 23:11:11',083321,3);
 
 
 

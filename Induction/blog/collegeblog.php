@@ -136,6 +136,10 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
             echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
         };
+        if($currentuser['userlevel']>1) {
+            echo "<p><a href='addcollegecomment.php?aID=$mainblogid' id='db$mainblogid'>Add Comment</a></p>";
+
+        }
 
         echo "<h2>Comments</h2>";
 
@@ -146,9 +150,14 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
             echo "<aside id='c$mbcid'>
                 <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>
-            </aside>";
+                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>";
 
+            if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $comuserid && $currentuser['userlevel'] > 1)) {
+                echo "<p><a href='deletecollegecomment.php?aID=$mainblogid&cID=$mbcid' id='db$mbcid'>Delete Comment</a></p>";
+            };
+                
+                
+            "</aside>";
         }
         echo "</article>";
     }
