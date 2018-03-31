@@ -78,7 +78,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   </div>
   <div>
     <div class="container" style="font-family:'Roboto Condensed', sans-serif;">
-      <h1 style="font-family:'Roboto Condensed', sans-serif;font-size:28px;">How to Find Us<br><br></h1>
       <hr>
       <form action="javascript:void(0);" method="get" id="contactForm"><input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.awebsite.com"><input class="form-control" type="hidden" name="subject" value="Awebsite.com Contact Form"><input class="form-control" type="hidden"
           name="to" value="email@awebsite.com">
