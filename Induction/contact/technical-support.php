@@ -61,7 +61,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
         <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
           <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-cog icon"></i>
             <h3 class="name">Technical Help</h3>
-            <p class="description"></p><a href="../contact/contact-tech-support.php" class="learn-more">Contact Now »</a></div>
+            <p class="description"></p><a href="../contact/technical-support.php" class="learn-more">Contact Now »</a></div>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="material-icons icon">headset_mic</i>
