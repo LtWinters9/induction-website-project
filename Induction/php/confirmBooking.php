@@ -91,7 +91,7 @@ $insertorder->close();
             <div class="intro">
                 <h2 class="text-center"> Hello, <?php echo $forename; ?> </h2>
                 <p class="text-center">You have successfully made a booking with <?php echo $bookedAdvisor; ?> </p>
-                <p class="text-center">Please contact the help centre if you need to cancel a booking.</p>
+                <p class="text-center" style="color:#ffffff;">Please contact the help centre if you need to cancel a booking.</p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount.php">Return to my account</a>
             <div class="buttons"><a class="btn btn-light" role="button" href="../contact/contact-cancel-booking.php">Cancel Booking</a>
