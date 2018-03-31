@@ -67,27 +67,27 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
 
 
             if($usertype>0) {
-                header("location: ../web/index.php");
+                header("location: ../web/index");
                 exit();
             }
 
             else {
-                header("location: logout.php");
+                header("location: logout");
             }
 
 
         } else {
-            header("location: ../account/login.php");
+            header("location: ../account/login");
             exit();
         }
     } else {
-        header("location: ../account/login.php");
+        header("location: ../account/login");
         exit();
     }
     $db->close();
 
 } else {
-    header("location: ../account/login.php");
+    header("location: ../account/login");
     exit();
 }
 
