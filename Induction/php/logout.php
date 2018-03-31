@@ -90,7 +90,7 @@ session_destroy();
                 <h2 class="text-center">Logout </h2>
                 <p class="text-center">You have been successfully logged out </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/login.php">Return to Login</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/login">Return to Login</a></div>
         </div>
     </div>
 

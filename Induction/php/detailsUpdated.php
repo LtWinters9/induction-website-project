@@ -33,7 +33,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details updated | UHI Induction Services</title>
-    
+
     <!-- bootstrap css libary -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -91,7 +91,7 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
                 <h2 class="text-center">Hello, <?php echo $forename; ?>  </h2>
                 <p class="text-center">Your details have successfully been updated </p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount.php">Return to my account</a></div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount">Return to my account</a></div>
         </div>
     </div>
 

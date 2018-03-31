@@ -93,8 +93,8 @@ $insertorder->close();
                 <p class="text-center" style="color:#ffffff;">You have successfully made a booking with <?php echo $bookedAdvisor; ?> </p>
                 <p class="text-center" style="color:#ffffff;">Please contact the help centre if you need to cancel a booking.</p>
             </div>
-            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount.php">Return to my account</a>
-            <div class="buttons"><a class="btn btn-light" role="button"  style="color:#ffffff;" href="../contact/contact-cancel-booking.php">Cancel Booking</a>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount">Return to my account</a>
+            <div class="buttons"><a class="btn btn-light" role="button"  style="color:#ffffff;" href="../contact/contact-cancel-booking">Cancel Booking</a>
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@ $insertorder->close();
         <div class="intro">
             <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Questions about your student experience?</h2>
         </div>
-        <div class="buttons"><a class="btn btn-light" role="button" href="../account/login.php" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
+        <div class="buttons"><a class="btn btn-light" role="button" href="../account/login" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
     </div>
 </div>
 <?php if($currentuser['userlevel']>1) {
