@@ -93,7 +93,7 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
         </div>
       </div>
     </div>
-
+<div class="form-row text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
@@ -124,7 +124,7 @@ echo "</select>";
         </div>
       </div>
     </div>
-  <div class="form-row text-center">
+
     <div class="col-md-12">
       <button class="btn btn-primary btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
     </div>
