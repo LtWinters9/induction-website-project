@@ -94,7 +94,7 @@ $insertorder->close();
                 <p class="text-center" style="color:#ffffff;">Please contact the help centre if you need to cancel a booking.</p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount.php">Return to my account</a>
-            <div class="buttons"  style="color:#ffffff;"><a class="btn btn-light" role="button" href="../contact/contact-cancel-booking.php">Cancel Booking</a>
+            <div class="buttons"><a class="btn btn-light" role="button"  style="color:#ffffff;" href="../contact/contact-cancel-booking.php">Cancel Booking</a>
             </div>
         </div>
     </div>
