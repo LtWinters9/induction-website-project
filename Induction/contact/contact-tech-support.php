@@ -83,7 +83,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
       <form action="javascript:void(0);" method="get" id="contactForm"><input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.awebsite.com"><input class="form-control" type="hidden" name="subject" value="Awebsite.com Contact Form"><input class="form-control" type="hidden"
           name="to" value="email@awebsite.com">
         <div class="form-row">
-          <div class="col-md-6">
+            <div class="col-lg-8 mx-auto">
             <div id="successfail"></div>
           </div>
         </div>
