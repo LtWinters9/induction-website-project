@@ -124,11 +124,12 @@ echo "</select>";
         </div>
       </div>
     </div>
-
+  <div class="form-row text-center">
     <div class="col-md-12">
       <button class="btn btn-primary btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
     </div>
-    </form>
+  </div>
+</form>
 
 
 
