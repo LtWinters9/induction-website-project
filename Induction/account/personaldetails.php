@@ -134,7 +134,7 @@ if(isset($userid)) {
           </div>
           <hr>
           <div class="form-row">
-            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><a class="btn btn-danger form-btn" role="button" href="../account/myaccount.php" type="reset">CANCEL</a></div>
+            <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><a class="btn btn-danger form-btn" role="button" href="../account/myaccount" type="reset">CANCEL</a></div>
           </div>
         </div>
       </div>
