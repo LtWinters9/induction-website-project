@@ -13,10 +13,10 @@ $collegeid=$_SESSION['collegeid'];
 
 <html>
 <head>
-<meta http-equiv="refresh" content="0;url=account/login.php">
+<meta http-equiv="refresh" content="0;url=account/login">
 <title>Home</title>
 <script language="javascript">
-    window.location.href = "account/login.php"
+    window.location.href = "account/login"
 </script>
 
 
@@ -41,6 +41,6 @@ $collegeid=$_SESSION['collegeid'];
 <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-Go to <a href="account/login.php">Login</a>
+Go to <a href="account/login">Login</a>
 </body>
 </html>
