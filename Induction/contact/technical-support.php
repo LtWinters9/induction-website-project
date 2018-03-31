@@ -54,7 +54,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                 </div>
             </div> -->
       <div class="container">
-        <h2 class="text-center" style="color:rgb(0, 0, 0);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Ask us a question</h2>
+        <h2 class="text-center" style="color:rgb(0, 0, 0);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Contact Technical Support</h2>
         <h3 class="text-center" style="color:rgb(0, 0, 0);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;"><br>Or choose one of the options below<br></h3>
       </div>
       <div class="row justify-content-center features">
