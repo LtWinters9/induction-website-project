@@ -26,7 +26,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book now | UHI Induction Services</title>
+  <title>Book Appointment | UHI Induction Services</title>
 
   <!-- bootstrap css libary -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
@@ -68,13 +68,13 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
-  <!-- Nav Bar -->
+
 
   <?php if($currentuser['userlevel']>1) {
     include "../includes/navLevel2.php";
 } ?>
 
-  <!-- Book Section -->
+
 
 
 
@@ -131,13 +131,11 @@ echo "</select>";
   </div>
 </form>
 
-
-
-    <?php
+<?php
 $conn->close();
 ?>
 
-    <div class="testimonials-clean"></div>
+<div class="testimonials-clean"></div>
     <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
       <div class="container">
         <div class="intro">
