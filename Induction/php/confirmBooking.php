@@ -37,7 +37,7 @@ $insertorder->close();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | UHI Induction Services</title>
+    <title>Confirm Booking | UHI Induction Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
@@ -89,7 +89,8 @@ $insertorder->close();
         <div class="container">
             <div class="intro">
                 <h2 class="text-center"> Hello, <?php echo $forename; ?> </h2>
-                <p class="text-center">You have been successfully made a booking</p>
+                <p class="text-center">You have successfully made a booking</p>
+                <p class="text-center">Please <href="../contact/contact-cancel-booking.php">Cancel Booking</a>contact us to cancel your booking if you can not make it. </p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount.php">Return to my account</a></div>
         </div>
