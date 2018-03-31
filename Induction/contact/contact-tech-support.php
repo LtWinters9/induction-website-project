@@ -88,7 +88,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           </div>
         </div>
         <div class="form-row">
-          <div class="col-12 col-md-6" id="message">
+            <div class="col-lg-8 mx-auto"> id="message">
             <h2 class="h4"><i class="fa fa-envelope"></i> Contact Us<small><small class="required-input">&nbsp;(*required)</small></small>
                             </h2>
             <div class="form-group"><label for="from-name">Name</label><span class="required-input">*</span>
@@ -100,13 +100,13 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                 <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-envelope-o"></i></span></div><input class="form-control" type="text" name="email" required="" placeholder="Email Address" id="from-email"></div>
             </div>
             <div class="form-row">
-              <div class="col-12 col-sm-6 col-md-12 col-lg-6">
+              <div class="col-lg-8 mx-auto">
                 <div class="form-group"><label for="from-phone">Phone</label><span class="required-input">*</span>
                   <div class="input-group">
                     <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-phone"></i></span></div><input class="form-control" type="text" name="phone" required="" placeholder="Primary Phone" id="from-phone"></div>
                 </div>
               </div>
-              <div class="col-12 col-sm-6 col-md-12 col-lg-6">
+                <div class="col-lg-8 mx-auto">
                 <div class="form-group"><label for="from-calltime">Best Time to Call</label>
                   <div class="input-group">
                     <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></div><select class="form-control" name="call time" id="from-calltime"><optgroup label="Best Time to Call"><option value="Morning" selected="">Morning</option><option value="Afternoon">Afternoon</option><option value="Evening">Evening</option></optgroup></select></div>
