@@ -126,7 +126,7 @@ echo "</select>";
     </div>
 
     <div class="col-md-12">
-      <button class="btn btn-primary btn-block btn-lg btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
+      <button class="btn btn-primary btn-block  btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
     </div>
     </form>
 
