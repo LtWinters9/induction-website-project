@@ -94,7 +94,15 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
       </div>
     </div>
 
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="well well-sm">
+            <form action="../php/confirmBooking.php" method="post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="subject">Select appointment</label>
 
 <?php
 echo "<select name = 'optionselected'>";
@@ -109,15 +117,6 @@ while($row = mysqli_fetch_array($result))
 echo "</select>";
 ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="well well-sm">
-        <form action="../php/confirmBooking.php" method="post">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="subject">Select appointment</label>
                   </div>
                 </div>
               </div>
