@@ -85,7 +85,7 @@ $insertorder->close();
     include "../includes/navLevel2.php";
 } ?>
 
-<?php if($currentuser['userlevel']>0) {
+<?php if($currentuser['userlevel']<1) {
  header("location: ../account/login.php");
  } ?>
 
