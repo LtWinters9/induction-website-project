@@ -85,7 +85,7 @@ $email=$_SESSION['email'];
             </div>
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
           </form>
-              <a href="../contact/contact-student-services" class="forgot-password">Forgot your password?</a>
+              <a href="../error_docs/maintenance.html" class="forgot-password">Forgot your password?</a>
 
 
 
