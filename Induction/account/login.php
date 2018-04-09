@@ -81,7 +81,7 @@ $email=$_SESSION['email'];
     header("location: ../web/index.php");
     } ?>
 
-  <!-- Login Start --> <!-- Js for submit login could be worth trying instead of post -->
+  <!-- Login Start -->
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
         <p class="profile-name-card"> </p>
         <form class="form-signin"  data-toggle="validator" role="form" method="post"  action="../php/processlogin.php" sleep(3); autocomplete="on">
@@ -94,7 +94,7 @@ $email=$_SESSION['email'];
             </div>
                 <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
           </form>
-              <a href="../contact/contact-student-services.php" class="forgot-password">Forgot your password?</a>
+              <a href="../contact/contact-student-services" class="forgot-password">Forgot your password?</a>
 
 
 
@@ -114,7 +114,6 @@ $email=$_SESSION['email'];
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
   <script src="../assets/js/script.min.js"></script>
   <script src="../dist/js/jqBootstrapValidation.js"></script>
-  <!-- <script src="../dist/js/login.js"></script> -->
   <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
   <script src="../dist/js/cookies.js"></script>
 
