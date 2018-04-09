@@ -4,16 +4,7 @@
 
 ### Synopsis
 
-This project has been created to assist new students during the induction process
-by providing students a way to find out more about the college/university they are going too by having access
-to all the contact information for the place of study the student is going to.
-
-The site will provide students with a way of interacting with other students through a blog/forum page, as well
-as the student has access to a chat bot to allow them to ask simple/frequently asked questions about their place of study and
-all the services provided to them.
-
-The students have access to a document management system which will allow them to download forms and documents from google drive,
-staff of the site and colleges have access to delete these files as well as upload new files for the students to access. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+Our team of four has been tasked as discussed in the initial team meeting to create a University of the Highlands and Islands (UHI) Induction Service Webpage.  As a team, we feel that the UHI would benefit from the Induction website to ease work demands on Student Services. It was also noted that UHI partnership colleges did not have this facility either. For example, the Induction Service will include a functional login system which will lead students to query the chatbot for any student related issues. There will also be an appointment / booking system if students would rather speak in person. The UHI induction system will also include a blog system for students to get to know each other before starting. Overall, this will provide an interactive experience for new students , and will allow individuals who have questions to be answered sooner before starting their first day.  
 
 ### Motivation
 

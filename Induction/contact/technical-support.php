@@ -45,14 +45,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
   <div class="features-boxed">
     <div class="container">
-      <!--      <div class="intro"></div>
-            <div style="background-image:url(&quot;../assets/img/studentserv.png&quot;);height:500px;background-position:center;background-size:cover;background-repeat:no-repeat;">
-                <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgba(0,0,0,0.1);font-family:'Roboto Condensed', sans-serif;">
-                    <div class="d-flex align-items-center order-12" style="height:200px;">
-
-                    </div>
-                </div>
-            </div> -->
       <div class="container">
         <h2 class="text-center" style="color:rgb(0, 0, 0);font-size:56px;font-weight:bold;font-family:'Roboto Condensed', sans-serif;">Contact Technical Support</h2>
         <h3 class="text-center" style="color:rgb(0, 0, 0);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;"><br>Or choose one of the options below<br></h3>
