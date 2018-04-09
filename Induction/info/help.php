@@ -2,8 +2,8 @@
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
 date_default_timezone_set('London/GMT');
-require_once('../php/functions');
-require_once('../php/db_config');
+require_once('../php/functions.php');
+require_once('../php/db_config.php');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -30,7 +30,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 <body>
   <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2";
+    include "../includes/navLevel2.php";
      } ?>
 
   <div class="features-boxed">
@@ -209,7 +209,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
       </div>
     </div>
     <?php if($currentuser['userlevel']>1) {
-     include "../includes/footer";
+     include "../includes/footer.php";
       } ?>
 
       <script src="../dist/scripts/inductioncorejs.js"></script>
