@@ -2,7 +2,7 @@
     <div class="container"><a class="navbar-brand" href="../web/index.php"> <span style="color:#9da9ae;font-size:20px;"><img class="img-fluid" src="../assets/img/UHI_Logo_RGB_transparent_orig.png" alt="uhi-main-logo" style="color:#ffffff;width:140px;"> </span></a><button class="navbar-toggler" data-toggle="collapse"
             data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav nav-right">
+            <ul class="nav navnav nav-right">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="../web/index" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-home"></i>&nbsp;Current Students</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-user"></i>&nbsp;My Account</a>
                     <div class="dropdown-menu" role="menu"
