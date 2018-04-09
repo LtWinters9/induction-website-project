@@ -28,6 +28,10 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   <link rel="stylesheet" href="../dist/styles/main/css-main.css">
   <link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
 
+  <!-- Cookies -->
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+
 </head>
 
 <body>

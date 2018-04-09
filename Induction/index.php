@@ -19,7 +19,9 @@ $collegeid=$_SESSION['collegeid'];
     window.location.href = "account/login"
 </script>
 
-
+<!-- bootstrap css libary -->
+<link rel="stylesheet" href="../dist/styles/main/css-main.css">
+<link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -42,5 +44,8 @@ $collegeid=$_SESSION['collegeid'];
 </head>
 <body>
 Go to <a href="account/login">Login</a>
+
+<script src="../dist/scripts/inductioncorejs.js"></script>
+
 </body>
 </html>

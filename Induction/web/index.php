@@ -26,9 +26,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <?php if($currentuser['userlevel']<1) { ?>
-  <title>UHI Induction Services</title>
-  <?php } ?>
+
 
   <?php if($currentuser['userlevel']>1) { ?>
   <title>Welcome,
@@ -81,21 +79,21 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           <div class="jumbotron hero-nature carousel-hero" style="background-image:url(&quot;../assets/img/union.png&quot;);">
             <h1 class="hero-title">Welcome </h1>
             <p class="hero-subtitle">To University of the Highlands</p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/about-us.php" style="color:#ffffff;background-color:#7e3ca6;">About us</a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/about-us" style="color:#ffffff;background-color:#7e3ca6;">About us</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="jumbotron hero-photography carousel-hero" style="background-image:url(&quot;../assets/img/banner2.png&quot;);">
             <h1 class="hero-title">Contact Us </h1>
             <p class="hero-subtitle">Today </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../contact/contact-student-services.php" style="background-color:#7e3ca6;">Contact Student Services</a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../contact/contact-student-services" style="background-color:#7e3ca6;">Contact Student Services</a></p>
           </div>
         </div>
         <div class="carousel-item">
           <div class="jumbotron hero-technology carousel-hero" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);">
             <h1 class="hero-title">Academy of Sport and Wellbeing </h1>
             <p class="hero-subtitle"> Perth College UHI </p>
-            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus.php" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">Tour the campus </a></p>
+            <p><a class="btn btn-primary btn-lg hero-button" role="button" href="../info/tour-the-campus" style="background-color:#7e3ca6;font-family:'Roboto Condensed', sans-serif;">Tour the campus </a></p>
           </div>
         </div>
       </div>
