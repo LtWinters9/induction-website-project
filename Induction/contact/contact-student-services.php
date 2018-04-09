@@ -168,6 +168,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
     <script src="../dist/scripts/inductioncorejs.js"></script>
     <script src="../dist/js/contact_student_serv.js"></script>
-</body>
 
+</body>
 </html>
