@@ -25,18 +25,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <title>Welcome to your account, <?php echo $forename; ?>  | UHI Induction Services</title>
 
     <!-- bootstrap css libary -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../dist/styles/main/css-main.css">
+    <link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -96,27 +86,27 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="300" data-aos-delay="300" data-aos-once="true" class="box"><i class="fa fa-file-zip-o icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Forms and Guidance </h3>
-                          <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Browse though the files that are related to your current course. &nbsp;This will ensure you're ready for your first day, or stay ontop of your current course work with updates.</p><a href="../course/student-course.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Browse now »</a></div>
+                          <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Browse though the files that are related to your current course. &nbsp;This will ensure you're ready for your first day, or stay ontop of your current course work with updates.</p><a href="../course/student-course" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Browse now »</a></div>
                   </div>
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="400" data-aos-delay="400" data-aos-once="true" class="box"><i class="icon ion-images icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Tour the Campus </h3>
-                          <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to get a birds eye view of Perth UHI, or get to know your surroundings before you start? Click the link below to view our 360° of Perth UHI.&nbsp;</strong><br><br></p><a href="../info/tour-the-campus.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">View now »</a></div>
+                          <p class="text-center description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to get a birds eye view of Perth UHI, or get to know your surroundings before you start? Click the link below to view our 360° of Perth UHI.&nbsp;</strong><br><br></p><a href="../info/tour-the-campus" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">View now »</a></div>
                   </div>
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="500" data-aos-delay="500" data-aos-once="true" class="box"><i class="icon ion-android-chat icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Chat to other Students </h3>
-                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</strong><br><br></p><a href="../blog/collegeblog.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat College » </a><a href="../blog/courseblog.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat Course »</a></div>
+                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;"><strong>Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</strong><br><br></p><a href="../blog/collegeblog" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat College » </a><a href="../blog/courseblog" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Chat Course »</a></div>
                   </div>
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="box"><i class="material-icons icon" style="color:#7e3ca6;">contact_mail</i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Contact us now </h3>
-                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</p><a href="../info/help.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Contact now »</a></div>
+                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Want to break the ice with your fellow students, or just generally want to get to know everyone before your first day? Great! click below now to get started.&nbsp;</p><a href="../info/help" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Contact now »</a></div>
                   </div>
                   <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="700" data-aos-once="true" class="box"><i class="fa fa-users icon" style="color:#7e3ca6;"></i>
                           <h3 class="name" style="font-family:'Roboto Condensed', sans-serif;">Meet your Lectuers </h3>
-                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're before you start? Click now below to find out more information.</p><a href="../course/student-course.php" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
+                          <p class="description" style="font-family:'Roboto Condensed', sans-serif;font-size:16px;">Need to know how to get in touch with one of your lectuers, or simply want to know who they're before you start? Click now below to find out more information.</p><a href="../course/student-course" class="learn-more" style="font-family:'Roboto Condensed', sans-serif;">Learn more »</a></div>
                   </div>
               </div>
           </div>
@@ -138,10 +128,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
        include "../includes/footer.php";
         } ?>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-      <script src="../assets/js/script.min.js"></script>
-  </body>
+      <script src="../dist/scripts/inductioncorejs.js"></script>
 
-  </html>
+</body>
+</html>
