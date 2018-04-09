@@ -25,7 +25,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <title>Welcome to your account, <?php echo $forename; ?>  | UHI Induction Services</title>
 
     <!-- bootstrap css libary -->
-    <link rel="stylesheet" href="../dist/styles/main/css-main.css">
+    <link rel="stylesheet" href="../dist/styles/main/css?79afe3bf7c7d425edbf65cfbe0d72f52">
     <link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
 
     <!-- Favicons -->
