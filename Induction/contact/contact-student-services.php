@@ -27,6 +27,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
   <link rel="stylesheet" href="../dist/styles/main/css-main.css">
   <link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
+  <link rel="stylesheet" href="../assets/css/styles.min.css">
 
 </head>
 
