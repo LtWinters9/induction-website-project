@@ -36,6 +36,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   <!-- bootstrap css libary -->
   <link rel="stylesheet" href="../dist/styles/main/css-main.css">
   <link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
