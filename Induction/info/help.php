@@ -2,8 +2,8 @@
 setCookie("userintent","",(time+86400),"/~15011406");
 session_start();
 date_default_timezone_set('London/GMT');
-require_once('../php/functions.php');
-require_once('../php/db_config.php');
+require_once('../php/functions');
+require_once('../php/db_config');
 $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
@@ -30,7 +30,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 <body>
   <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2.php";
+    include "../includes/navLevel2";
      } ?>
 
   <div class="features-boxed">
@@ -43,17 +43,17 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
         <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
           <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-cog icon"></i>
             <h3 class="name">Technical Help</h3>
-            <p class="description"></p><a href="../contact/technical-support.php" class="learn-more">Contact Now »</a></div>
+            <p class="description"></p><a href="../contact/technical-support" class="learn-more">Contact Now »</a></div>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item">
           <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="material-icons icon">headset_mic</i>
             <h3 class="name">Student Services</h3>
-            <p class="description"></p><a href="../contact/contact-student-services.php" class="learn-more">Contact Now »</a></div>
+            <p class="description"></p><a href="../contact/contact-student-services" class="learn-more">Contact Now »</a></div>
         </div>
         <div class="col-sm-6 col-md-5 col-lg-4 item" style="height:257px;">
           <div class="box" style="font-family:'Roboto Condensed', sans-serif;"><i class="fa fa-user icon"></i>
             <h3 class="name">Cancel Booking</h3>
-            <p class="description"></p><a href="../contact/contact-cancel-booking.php" class="learn-more">Contact Now »</a></div>
+            <p class="description"></p><a href="../contact/contact-cancel-booking" class="learn-more">Contact Now »</a></div>
         </div>
       </div>
     </div>
@@ -209,7 +209,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
       </div>
     </div>
     <?php if($currentuser['userlevel']>1) {
-     include "../includes/footer.php";
+     include "../includes/footer";
       } ?>
 
       <script src="../dist/scripts/inductioncorejs.js"></script>
