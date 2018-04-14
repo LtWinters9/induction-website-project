@@ -169,6 +169,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
       } ?>
 
       <script src="../dist/scripts/inductioncorejs.js"></script>
+      <script src="../dist/js/jqBootstrapValidation.js"></script>
       <script src="../dist/js/contact_tech.js"></script>
 
 
