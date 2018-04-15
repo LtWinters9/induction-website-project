@@ -28,10 +28,10 @@
        </ul>
        <ul class="navbar-nav ml-md-auto d-md-flex">
          <li class="nav-item">
-           <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+           <a class="nav-link" href="#"><i class="fas fa-user"></i>Hello, <?php echo $forename; ?></a>
          </li>
          <li class="nav-item">
-           <a class="nav-link" href="#"><i class="fas fa-key"></i> Logout</a>
+           <a class="nav-link" href="../php/logout"><i class="fas fa-key"></i> Logout</a>
          </li>
        </ul>
      </div>
