@@ -5,7 +5,7 @@
       <ul class="nav navnav nav-right">
         <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-home"></i>&nbsp;Current Students</a></li>
         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-user"></i>&nbsp;My Account</a>
-          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
+          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login?page=student" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
             <a class="dropdown-item" role="presentation" href="../contact/contact-student-services" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a></div>
         </li>
         <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login?page=staff" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-lock"></i>&nbsp; Staff </a></li>
