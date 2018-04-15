@@ -46,11 +46,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Cookies -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
 </head>
 
 <body>
