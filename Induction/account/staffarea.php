@@ -50,15 +50,15 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 <body>
 
-  <?php if($currentuser['userlevel']>1) {
+  <?php if($currentuser['userlevel']>1)
+  {
    include "../includes/widget.php";
-    } ?>
-
-
-
-<?php if($currentuser['userlevel']>1) {
- include "../includes/footer.php";
   } ?>
+
+<?php if($currentuser['userlevel']>1)
+{
+ include "../includes/footer.php";
+} ?>
 
 <script src="../dist/scripts/inductioncorejs.js"></script>
 
