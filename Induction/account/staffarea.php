@@ -51,8 +51,9 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <body>
 
   <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel3.php";
+    include "../includes/navLevel2.php";
      } ?>
+
 
 
      <div id="wrapper">
