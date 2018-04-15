@@ -8,7 +8,7 @@
           <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../account/login" style="color:#ffffff;background-color:#7e3ca6;">Login </a>
             <a class="dropdown-item" role="presentation" href="../contact/contact-student-services" style="color:#ffffff;background-color:#7e3ca6;">Student Services</a></div>
         </li>
-        <li class="nav-item" role="presentation"><a class="nav-link" href="account/login" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-lock"></i>&nbsp; Staff </a></li>
+        <li class="nav-item" role="presentation"><a class="nav-link" href="../account/login" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-lock"></i>&nbsp; Staff </a></li>
         <li class="nav-item" role="presentation"><a class="nav-link" href="#" data-bs-hover-animate="pulse" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-globe"></i>&nbsp;Gàidhlig </a></li>
       </ul>
       <p class="ml-auto navbar-text actions"> </p>
