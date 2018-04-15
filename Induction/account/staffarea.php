@@ -199,7 +199,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
   } ?>
 
 <script src="../dist/scripts/inductioncorejs.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
 
 </body>
 </html>
