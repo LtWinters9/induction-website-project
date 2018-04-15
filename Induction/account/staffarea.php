@@ -50,14 +50,11 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 <body>
 
-  <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2.php";
-     } ?>
 
 
 
      <div id="wrapper">
-         <!-- <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+          <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
            <a class="navbar-brand" href="#">LOGO</a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
              aria-expanded="false" aria-label="Toggle navigation">
@@ -91,7 +88,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                </li>
              </ul>
            </div>
-         </nav> -->
+         </nav>
          <div class="container-fluid">
                  <div class="row">
              <div class="col">
