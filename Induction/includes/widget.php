@@ -28,7 +28,18 @@
        </ul>
        <ul class="navbar-nav ml-md-auto d-md-flex">
          <li class="nav-item">
-           <a class="nav-link" href="#"><i class="fas fa-user"></i>Hello, <?php echo $forename; ?></a>
+           <a class="nav-link" href="#"><i class="fas fa-user"></i><?php
+           // 24-hour format of an hour without leading zeros (0 through 23)
+           $Hour = date('G');
+
+           if ( $Hour >= 5 && $Hour <= 11 ) {
+               echo "Good Morning";
+           } else if ( $Hour >= 12 && $Hour <= 17 ) {
+               echo "Good Afternoon";
+           } else if ( $Hour >= 18 || $Hour <= 4 ) {
+               echo "Good Evening";
+           }
+           ?>, <?php echo $forename; ?></a>
          </li>
          <li class="nav-item">
            <a class="nav-link" href="../php/logout"><i class="fas fa-key"></i> Logout</a>
