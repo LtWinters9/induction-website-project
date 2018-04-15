@@ -77,7 +77,7 @@ $email=$_SESSION['email'];
         <p class="profile-name-card"> </p>
         <form class="form-signin"  data-toggle="validator" role="form" method="post"  action="../php/processlogin.php" sleep(3); autocomplete="on">
           <span class="reauth-email"> </span>
-          <input class="form-control" type="text" required="" placeholder="Usernumber" autofocus="" name="studentID" id="studentID"  data-error="invalid student number">
+          <input class="form-control" type="text" required="" placeholder="User number" autofocus="" name="studentID" id="studentID"  data-error="invalid student number">
           <input class="form-control" type="password" required="" placeholder="Password" name="inputPassword" id="inputPassword" data-error="Password does not match">
 
             <div class="checkbox">
