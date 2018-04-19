@@ -128,16 +128,16 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $cmnt->store_result();
 
     while ($stmt->fetch()) {
-    echo "<article id='a$mainblogid' class='blog-item' class='pull-left img-responsive'>
+        echo "<article id='a$mainblogid' class='blog-item' class='pull-left img-responsive'>
       <div class='text'>
         <h3>$title</h3>
         <p>" . nl2br($blogtext) . "</p>
         <p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
-        }
+
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
             echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
         };
-        if($currentuser['userlevel']>1) {
+        if ($currentuser['userlevel'] > 1) {
             echo "<p><a href='addcollegecomment.php?aID=$mainblogid' id='db$mainblogid'>Add Comment</a></p>";
 
         };
@@ -146,7 +146,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
       <div class='clearfix'></div>
     </article>";
 
-
+    }
 /*
     //build article html
     while ($stmt->fetch()) {
