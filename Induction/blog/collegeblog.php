@@ -23,24 +23,10 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forums | UHI Induction Services</title>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-
 
 <!-- bootstrap css libary -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-<link rel="stylesheet" href="../assets/css/styles.min.css">
+<link rel="stylesheet" href="../dist/styles/main/css-main.css">
+<link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -60,12 +46,6 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
-<!-- Cookies -->
-<link rel="stylesheet" type="text/css"
-      href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
 </head>
 
 <body>
@@ -179,8 +159,8 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
             if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $comuserid && $currentuser['userlevel'] > 1)) {
                 echo "<p><a href='deletecollegecomment.php?aID=$mainblogid&cID=$mbcid' id='db$mbcid'>Delete Comment</a></p>";
             };
-                
-                
+
+
             "</aside>";
         }
         echo "</article>";
@@ -202,16 +182,11 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
  include "../includes/footer.php";
   } ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-<script src="../assets/js/script.min.js"></script>
-<script src="../dist/js/jqBootstrapValidation.js"></script>
+<script src="../dist/scripts/inductioncorejs.js"></script>
 <script src="../dist/js/functions.js"></script>
 <script src="../dist/js/article.js"></script>
-<!-- <script src="../dist/js/login.js"></script> -->
-<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
-<script src="../dist/js/cookies.js"></script>
+
+
 <script>
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {
