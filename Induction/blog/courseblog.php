@@ -81,7 +81,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <div></div>
 <ol class="breadcrumb">
  <li class="breadcrumb-item"><a><span>Forum </span></a></li>
- <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
+ <li class="breadcrumb-item"><a><span>Course Discussions</span></a></li>
  <li class="breadcrumb-item"><a><span><?php echo $blogtitle; ?></span></a></li>
 </ol>
 
@@ -135,7 +135,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
         // if user is logged in and not suspended add comment button
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
-            echo "<p><a href='deletearticle.php?aID=$courseblogid' id='db$courseblogid'>Delete Post</a></p>";
+            echo "<p><a href='deletecoursearticle.php?aID=$courseblogid' id='db$courseblogid'>Delete Post</a></p>";
         };
 
         if($currentuser['userlevel']>1) {

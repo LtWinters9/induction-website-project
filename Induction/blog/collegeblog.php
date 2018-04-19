@@ -80,7 +80,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <div></div>
 <ol class="breadcrumb">
  <li class="breadcrumb-item"><a><span>Forum </span></a></li>
- <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
+ <li class="breadcrumb-item"><a><span>College Blog</span></a></li>
  <li class="breadcrumb-item"><a><span><?php echo $blogtitle; ?></span></a></li>
 </ol>
 
@@ -124,13 +124,37 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $cmnt->bind_param("i", $mainblogid);
     $cmnt->bind_result($mbcid, $commenttext, $commenttime, $comuserid, $comforename);
 
+    $cmnt->execute();
+    $cmnt->store_result();
 
+    while ($stmt->fetch()) {
+    echo "<article id='a$mainblogid' class='blog-item' class='pull-left img-responsive'>
+      <div class='text'>
+        <h3>$title</h3>
+        <p>" . nl2br($blogtext) . "</p>
+        <p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
+        }
+        if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
+            echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
+        };
+        if($currentuser['userlevel']>1) {
+            echo "<p><a href='addcollegecomment.php?aID=$mainblogid' id='db$mainblogid'>Add Comment</a></p>";
+
+        };
+        echo "<h3>Comments</h3>
+      </div>
+      <div class='clearfix'></div>
+    </article>";
+
+
+/*
     //build article html
     while ($stmt->fetch()) {
         echo "<article id='a$mainblogid'>
       <h1>$title</h1>
       <p>" . nl2br($blogtext) . "</p>
       <footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
+    }
 
         // if user is logged in and not suspended add comment button
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
@@ -160,7 +184,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
             "</aside>";
         }
         echo "</article>";
-    }
+    }*/
 
 
     $cmnt->close();
