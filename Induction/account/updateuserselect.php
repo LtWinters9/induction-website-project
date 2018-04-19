@@ -64,66 +64,45 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     include "../includes/navLevel2.php";
 } ?>
 
+<Article>
+
+    <?php
+    $db=createConnection();
+    $userlistsql="select userid, forename, surname from users;";
+    $userlist = $db->prepare($userlistsql);
+    $userlist->execute();
+    $userlist->store_result();
+    $userlist->bind_result($useridupdate,$forename, $surname);
+    if($userlist->num_rows>0) {
+        ?>
+        <form id="listusers" name="listusers" method="post" action="edituser.php" />
+        <fieldset><legend>Edit User</legend>
+            <label for="userid">Select User to Edit </label><select name="userid" id="userid" required>
+                <?php
+                while($userlist->fetch()) {
+                    echo "<option value='$useridupdate'> User ID: $useridupdate, Name: $forename, Surname: $surname </option>";
+                }
+                ?>
+            </select>
+            <div class="form-row text-center">
+                <div class="col-md-12">
+                    <button class="btn btn-primary  btn-lg btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
+                </div>
+        </fieldset>
+        </form>
+
+        <?php
+    } else {
+        echo "<p>No users found!</p>";
+    }
+
+    ?>
+</Article>
 
 
 
 
-<?php
-$conn = createConnection();
-$result = $conn->query("select bookingid, bookdate, booktime, advisor, booked from booking where booked = 'N'");
-?>
 
-<div class="jumbotron-contact jumbotron-contact-sm">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="h1">Book an Appointment with your Personal Academic Tutor (PAT)</h1>
-                <h1 class="h1">Please select an appointment <small>to book now</small></h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="well well-sm">
-                <form action="../php/confirmBooking.php" method="post">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="subject">Select appointment</label>
-
-                                <?php
-                                echo "<select name = 'optionselected'>";
-                                while($row = mysqli_fetch_array($result))
-                                {
-                                    echo "<option value = ",$row[bookingid],">",
-                                    " Date: ", $row[bookdate],
-                                    " Time: ", $row[booktime],
-                                    " Personal Academic Tutor: ", $row[advisor],"</option>";
-                                }
-
-                                echo "</select>";
-                                ?>
-
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="form-row text-center">
-    <div class="col-md-12">
-        <button class="btn btn-primary  btn-lg btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
-    </div>
-</div>
-</form>
-
-<?php
-$conn->close();
-?>
 
 <div class="testimonials-clean"></div>
 <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
