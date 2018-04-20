@@ -54,7 +54,35 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
 </head>
+<style>
+    div.a {
+        text-indent: 50px;
 
+    }
+
+    div.b {
+        margin:20px;
+    }
+
+
+    article.inset {
+        width: 90%;
+        border-top-style:double;
+        border-bottom-style:double;
+        padding-top:5px;
+        padding-bottom:5px;
+        border-top-color:purple;
+        border-bottom-color:purple;
+        border-top-width:8px;
+        border-bottom-width:8px;
+        border-left: 5px solid purple;
+        border-right: 5px solid purple;
+    }
+    aside.leftline {
+        border-left: 5px solid purple;
+    }
+
+</style>
 <body>
   <div id=header>
 
@@ -71,6 +99,16 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
  <li class="breadcrumb-item"><a><span><?php echo $blogtitle; ?></span></a></li>
 </ol>
 
+      <?php
+      $db = createConnection();
+      $coursesql = "select coursename from course where courseid='$courseid' ";
+      $course = $db->prepare($coursesql);
+      $course ->execute();
+      $course ->store_result();
+      $course ->bind_result($coursename);
+      $course ->fetch();
+      ?>
+
 <div class="intro">
     <h2 class="text-center" style="font-family:'Roboto Condensed', sans-serif;"><?php
 
@@ -83,22 +121,19 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     } else if ( $Hour >= 18 || $Hour <= 4 ) {
         echo "Good Evening";
     }
-    ?>. Welcome to the student blog, <?php echo $forename; ?></h2>
-    <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions for <?php echo $blogtitle; ?> You should get involved!</p>
+    ?>. Welcome to the course blog, <?php echo $forename; ?>. Chat with your course mates about <?php echo $coursename; ?>.</h2>
   </div>
 </div>
 
   <aside>
-      <h2>Add a Blog?</h2>
-
-      <a href="addcoursearticle.php">Add a blog entry</a>
+      <h2 class="text-center"><a href="addcoursearticle.php">Click Here</a> to Add a Blog</h2>
   </aside>
-
+  <div class="b">
 <section id="main">
     <?php
     $db = createConnection();
     // get the first two articles
-    $sql = "select courseblogid,courseblog.title,blogtext,blogtime,blogposter,forename,userid from courseblog join users on blogposter = userid and courseblog.collegeid = '$collegeid' and courseblog.courseid = '$courseid' order by blogtime desc limit 4";
+    $sql = "select courseblogid,courseblog.title,blogtext,blogtime,blogposter,forename,userid from courseblog join users on blogposter = userid and courseblog.collegeid = '$collegeid' and courseblog.courseid = '$courseid' order by blogtime desc limit 15";
 
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -114,10 +149,12 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
     //build article html
     while ($stmt->fetch()) {
-        echo "<article id='a$courseblogid'>
-      <h1>$title</h1>
-      <p>" . nl2br($blogtext) . "</p>
-      <footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
+        echo "<article id='a$courseblogid' class='inset' class='pull-left img-responsive'>
+        <div class='text'>
+      <div class='articleonly'>
+      <h3>$title</h3>
+      <p style='color:#3d3d3d;'>" . nl2br($blogtext) . "</p>
+      <p style='color:grey;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
 
         // if user is logged in and not suspended add comment button
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
@@ -127,27 +164,35 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
         if($currentuser['userlevel']>1) {
             echo "<p><a href='addcoursecomment.php?aID=$courseblogid' id='db$courseblogid'>Add Comment</a></p>";
 
-        }
+        };
 
-        echo "<h2>Comments</h2>";
+        echo" </div>
+         <div class='a'>
+        <h5>Comments</h5></div>";
 
         $cmnt->execute();
         $cmnt->store_result();
 
         while ($cmnt->fetch()) {
-
-            echo "<aside id='c$cbcid'>
-                <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>";
+            echo" <div class='a'>";
+            echo "<aside id='c$cbcid' class='leftline'>
+                <p style='color:#3d3d3d;'>" . nl2br($commenttext) . "</p>
+                <footer><p style='color:grey;'>Commented on $commenttime by <em>$comforename</em><p></footer>";
 
             if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $comuserid && $currentuser['userlevel'] > 1)) {
                 echo "<p><a href='deletecoursecomment.php?aID=$courseblogid&cID=$cbcid' id='db$cbcid'>Delete Comment</a></p>";
             };
 
-            "</aside>";
+            echo  "</aside>";
+            echo "</div>";
 
         }
-        echo "</article>";
+        echo "</div>
+    </article>
+   
+
+    <br>";
+
     }
 
 
