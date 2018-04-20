@@ -47,8 +47,35 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 </head>
+<style>
+div.a {
+text-indent: 50px;
 
-<body>
+}
+
+div.b {
+    margin:20px;
+}
+
+
+article.inset {
+width: 1200px;
+    border-top-style:double;
+    border-bottom-style:double;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-top-color:purple;
+    border-bottom-color:purple;
+    border-top-width:8px;
+    border-bottom-width:8px;
+    border-left: 5px solid purple;
+    }
+aside.leftline {
+    border-left: 5px solid purple;
+}
+
+</style>
+<body >
   <div id=header>
 
 
@@ -86,7 +113,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
   <a href="addcollegearticle.php">Add a blog entry</a>
   </aside>
-
+    <div class="b">
 <section id="main">
     <?php
     $db = createConnection();
@@ -104,15 +131,14 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $cmnt->bind_param("i", $mainblogid);
     $cmnt->bind_result($mbcid, $commenttext, $commenttime, $comuserid, $comforename);
 
-    $cmnt->execute();
-    $cmnt->store_result();
+
 
     while ($stmt->fetch()) {
-        echo "<article id='a$mainblogid' class='blog-item' class='pull-left img-responsive'>
+        echo "<article id='a$mainblogid' class='inset' class='pull-left img-responsive'>
       <div class='text'>
         <h3>$title</h3>
-        <p>" . nl2br($blogtext) . "</p>
-        <p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
+        <p style='color:black;'>" . nl2br($blogtext) . "</p>
+        <p style='color:black;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
 
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
             echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
@@ -121,14 +147,37 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
             echo "<p><a href='addcollegecomment.php?aID=$mainblogid' id='db$mainblogid'>Add Comment</a></p>";
 
         };
-        echo "<h3>Comments</h3>
-      </div>
+        echo" <div class='a'>
+        <h4>Comments</h4></div>";
+
+
+        $cmnt->execute();
+        $cmnt->store_result();
+
+        while ($cmnt->fetch()) {
+            echo" <div class='a'>";
+
+            echo "<aside id='c$mbcid' class='leftline'>
+                <p style='color:black;'>" . nl2br($commenttext) . "</p>
+                <footer><p style='color:black;'>Commented on $commenttime by <em>$comforename</em></p></footer>";
+
+            if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $comuserid && $currentuser['userlevel'] > 1)) {
+                echo "<p><a href='deletecollegecomment.php?aID=$mainblogid&cID=$mbcid' id='db$mbcid'>Delete Comment</a></p>";
+            }
+
+
+        echo  "</aside>";
+        echo "</div>";
+        }
+
+      echo "</div>
       <div class='clearfix'></div>
-    </article>";
+    </article>
+    <br>";
 
     }
-/*
-    //build article html
+
+/*  //build article html
     while ($stmt->fetch()) {
         echo "<article id='a$mainblogid'>
       <h1>$title</h1>
@@ -172,6 +221,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $db->close();
 
     ?>
+    <div>
 </section>
 
 <?php if($currentuser['userlevel']>1) {
