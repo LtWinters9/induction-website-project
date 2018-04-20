@@ -75,7 +75,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     $userlist->bind_result($useridupdate,$forename, $surname);
     if($userlist->num_rows>0) {
         ?>
-        <form id="listusers" name="listusers" method="post" action="edituser.php" />
+        <form id="listusers" name="listusers" method="post" action="updateuser.php" />
         <fieldset><legend>Edit User</legend>
             <label for="userid">Select User to Edit </label><select name="userid" id="userid" required>
                 <?php
@@ -86,7 +86,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
             </select>
             <div class="form-row text-center">
                 <div class="col-md-12">
-                    <button class="btn btn-primary  btn-lg btn-success" id="btnBookNow" type="submit" style="background-color:#7e3ca6;">Confirm booking</button>
+                    <button class="btn btn-primary  btn-lg btn-success" id="btnSubmit" type="submit" style="background-color:#7e3ca6;">Select User</button>
                 </div>
         </fieldset>
         </form>
