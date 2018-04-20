@@ -145,3 +145,5 @@ create table booking (
     primary key (bookingid),
     foreign key (userid) references users (userid)
     )engine=innodb default character set=utf8;
+
+COMMIT;

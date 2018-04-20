@@ -9,20 +9,20 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
-$userid=checkUser($_SESSION['userid'],session_id(),2);
+$userid=checkUser($_SESSION['userid'],session_id(),3);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']>1) {
+<?php if($currentuser['userlevel']>2) {
    include "../includes/banner.html";
     } ?>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to your Staff area, <?php echo $forename; ?>  | UHI Induction Services</title>
+    <title>Welcome to the staff area, <?php echo $forename; ?>  | UHI Induction Services</title>
 
     <!-- bootstrap css libary -->
     <link rel="stylesheet" href="../dist/styles/main/css-main.css">
@@ -50,15 +50,15 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 <body>
 
-  <?php if($currentuser['userlevel']>1)
+  <?php if($currentuser['userlevel']>2)
   {
    include "../includes/widget.php";
   } ?>
 
-<?php if($currentuser['userlevel']>1)
-{
+  <?php if($currentuser['userlevel']>2)
+  {
  include "../includes/footer.php";
-} ?>
+  } ?>
 
 <script src="../dist/scripts/inductioncorejs.js"></script>
 
