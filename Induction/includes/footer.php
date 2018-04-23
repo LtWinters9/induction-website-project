@@ -4,21 +4,19 @@
             <div class="row">
                 <div class="col-md-6 item text">
                   <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">The University of the Highlands and Islands</h3>
-                  <p><a href="../info/privacy.php"   target="_blank" style="color:#ffffff;">About</a>
-                    • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">News and Events</a>
-                    • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Business and employers</a>
-                    • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Vacancies</a>
-                    • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Give to UHI</a>
-                    • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">FOI</a>
+                  <p><a href="../info/about-us"   target="_blank" style="color:#ffffff;">About</a>
+                    • <a href="https://www.uhi.ac.uk/en/media/"  target="_blank" style="color:#ffffff;">News and Events</a>
+                    • <a href="https://www.uhi.ac.uk/en/staff/vacancies/"  target="_blank" style="color:#ffffff;">Vacancies</a>
+                    • <a href="https://www.uhi.ac.uk/en/alumni/donate/"  target="_blank" style="color:#ffffff;">Give to UHI</a>
                     • <a href="../info/privacy.php"  target="_blank" style="color:#ffffff;">Cookies</a>
                     • <a href="../info/help.php"  target="_blank" style="color:#ffffff;">Contact Us</a></p>
                 </div>
                 <div class="col-sm-4 col-md-3 item">
                     <h3 class="text-uppercase" style="color:#ffffff;font-family:'Roboto Condensed', sans-serif;">About UHI</h3>
                     <ul>
-                        <li><a href="#" style="color:#ffffff;">Argyll College UHI </a></li>
-                        <li><a href="#">Highland Theological College UHI </a></li>
-                        <li><a href="#">Inverness College UHI </a></li>
+                        <li><a href="https://www.argyll.uhi.ac.uk/" target="_blank" style="color:#ffffff;">Argyll College UHI </a></li>
+                        <li><a href="https://www.htc.uhi.ac.uk/" target="_blank" >Highland Theological College UHI </a></li>
+                        <li><a href="https://www.inverness.uhi.ac.uk/" target="_blank" >Inverness College UHI </a></li>
                         <li><a href="https://www.lews.uhi.ac.uk/" target="_blank">Lews Castle College UHI</a> </li>
                         <li><a href="https://www.moray.uhi.ac.uk/" target="_blank">Moray College UHI</a> </li>
                         <li><a href="https://www.nafc.uhi.ac.uk/" target="_blank">NAFC Marine Centre UHI</a> </li>
@@ -31,7 +29,7 @@
                     <ul>
                         <li><a href="https://www.uhi.ac.uk/en/" target="_blank">Perth College UHI </a></li>
                         <li><a href="../info/opening-times.php">Opening Times</a></li>
-                        <li><a href="../info/how-to-find-us/php" style="color:#ffffff;">How To Find Us</a></li>
+                        <li><a href="../info/how-to-find-us.php" style="color:#ffffff;">How To Find Us</a></li>
                         <li><a href="../info/sitemap.php">Sitemap</a></li>
                     </ul>
                 </div>

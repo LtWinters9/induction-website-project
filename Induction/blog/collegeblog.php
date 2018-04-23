@@ -23,24 +23,10 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forums | UHI Induction Services</title>
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-
 
 <!-- bootstrap css libary -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-<link rel="stylesheet" href="../assets/css/styles.min.css">
+<link rel="stylesheet" href="../dist/styles/main/css-main.css">
+<link rel="stylesheet" href="../dist/styles/includes/css-includes.css">
 
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="../dist/favicons.ico/apple-icon-57x57.png">
@@ -60,17 +46,38 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-
-<!-- Cookies -->
-<link rel="stylesheet" type="text/css"
-      href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
 </head>
+<style>
+div.a {
+text-indent: 50px;
 
-<body>
+}
+
+div.b {
+    margin:20px;
+}
+
+
+article.inset {
+width: 90%;
+    border-top-style:double;
+    border-bottom-style:double;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-top-color:purple;
+    border-bottom-color:purple;
+    border-top-width:8px;
+    border-bottom-width:8px;
+    border-left: 5px solid purple;
+    border-right: 5px solid purple;
+    }
+aside.leftline {
+    border-left: 5px solid purple;
+}
+
+</style>
+<body >
   <div id=header>
-
 
 
 <?php if ($currentuser['userlevel'] > 1) {
@@ -80,9 +87,19 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <div></div>
 <ol class="breadcrumb">
  <li class="breadcrumb-item"><a><span>Forum </span></a></li>
- <li class="breadcrumb-item"><a><span>General Discussions</span></a></li>
+ <li class="breadcrumb-item"><a><span>College Blog</span></a></li>
  <li class="breadcrumb-item"><a><span><?php echo $blogtitle; ?></span></a></li>
 </ol>
+
+      <?php
+      $db = createConnection();
+      $colnamesql = "select collegename from college where collegeid='$collegeid' ";
+      $colname = $db->prepare($colnamesql);
+      $colname->execute();
+      $colname->store_result();
+      $colname->bind_result($collegename);
+      $colname->fetch();
+      ?>
 
 <div class="intro">
     <h2 class="text-center" style="font-family:'Roboto Condensed', sans-serif;"><?php
@@ -96,22 +113,21 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     } else if ( $Hour >= 18 || $Hour <= 4 ) {
         echo "Good Evening";
     }
-    ?>. Welcome to the student blog, <?php echo $forename; ?></h2>
-    <p class="lead text-center text-dark" style="font-family:'Roboto Condensed', sans-serif;">Below are the current discussions for <?php echo $blogtitle; ?> You should get involved!</p>
+    ?>. Welcome to the blog for <?php echo $collegename ?>, <?php echo $forename; ?>. Get involved!</h2>
+
   </div>
 </div>
 
-  <aside>
-  <h2>Add an Blog?</h2>
 
-  <a href="addcollegearticle.php">Add a blog entry</a>
-  </aside>
+  <h2 class="text-center"><a href="addcollegearticle.php">Click Here</a> to Add a Post</h2>
 
+
+    <div class="b">
 <section id="main">
     <?php
-    $db = createConnection();
+//    $db = createConnection();
     // get the first two articles
-    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 4";
+    $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 15";
 
     $stmt = $db->prepare($sql);
     $stmt->execute();
@@ -125,42 +141,54 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $cmnt->bind_result($mbcid, $commenttext, $commenttime, $comuserid, $comforename);
 
 
-    //build article html
-    while ($stmt->fetch()) {
-        echo "<article id='a$mainblogid'>
-      <h1>$title</h1>
-      <p>" . nl2br($blogtext) . "</p>
-      <footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
 
-        // if user is logged in and not suspended add comment button
+    while ($stmt->fetch()) {
+        echo "<article id='a$mainblogid' class='inset' class='pull-left img-responsive'>
+      <div class='text'>
+      <div class='articleonly'>
+        <h3>$title</h3>
+        <p style='color:#3d3d3d;'>" . nl2br($blogtext) . "</p>
+        <p style='color:grey;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
+
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
             echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
         };
-        if($currentuser['userlevel']>1) {
+        if ($currentuser['userlevel'] > 1) {
             echo "<p><a href='addcollegecomment.php?aID=$mainblogid' id='db$mainblogid'>Add Comment</a></p>";
 
-        }
+        };
+        echo" </div>
+         <div class='a'>
+        <h5>Comments</h5></div>";
 
-        echo "<h2>Comments</h2>";
 
         $cmnt->execute();
         $cmnt->store_result();
 
         while ($cmnt->fetch()) {
+            echo" <div class='a'>";
 
-            echo "<aside id='c$mbcid'>
-                <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>";
+            echo "<aside id='c$mbcid' class='leftline'>
+                <p style='color:#3d3d3d;'>" . nl2br($commenttext) . "</p>
+                <footer><p style='color:grey;'>Commented on $commenttime by <em>$comforename</em></p></footer>";
 
             if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $comuserid && $currentuser['userlevel'] > 1)) {
                 echo "<p><a href='deletecollegecomment.php?aID=$mainblogid&cID=$mbcid' id='db$mbcid'>Delete Comment</a></p>";
-            };
-                
-                
-            "</aside>";
+            }
+
+
+        echo  "</aside>";
+        echo "</div>";
         }
-        echo "</article>";
+
+      echo "</div>
+    </article>
+   
+
+    <br>";
+
     }
+
 
 
     $cmnt->close();
@@ -168,26 +196,22 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $db->close();
 
     ?>
+
 </section>
 
-<?php if($currentuser['userlevel']>1) {
+<?php /*if($currentuser['userlevel']>1) {
  include "../includes/slide-in.php";
-  } ?>
+  } */?><!--
 
-<?php if($currentuser['userlevel']>1) {
+--><?php /*if($currentuser['userlevel']>1) {
  include "../includes/footer.php";
-  } ?>
+  } */?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-<script src="../assets/js/script.min.js"></script>
-<script src="../dist/js/jqBootstrapValidation.js"></script>
+<script src="../dist/scripts/inductioncorejs.js"></script>
 <script src="../dist/js/functions.js"></script>
 <script src="../dist/js/article.js"></script>
-<!-- <script src="../dist/js/login.js"></script> -->
-<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
-<script src="../dist/js/cookies.js"></script>
+
+
 <script>
     document.onreadystatechange = function () {
         if (document.readyState == "complete") {

@@ -66,6 +66,14 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
             $_SESSION['collegeid']=$collegeid;
 
 
+            if($usertype>2) {
+                header("location: ../account/staffarea");
+                exit();
+            }
+            else {
+                header("location: logout");
+            }
+
             if($usertype>0) {
                 header("location: ../web/index");
                 exit();

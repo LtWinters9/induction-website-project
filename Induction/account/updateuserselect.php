@@ -9,27 +9,20 @@ $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
 $collegeid=$_SESSION['collegeid'];
-$telephone=$_SESSION['telephone'];
-$addressline1=$_SESSION['addressline1'];
-$town=$_SESSION['town'];
-$postcode=$_SESSION['postcode'];
-$email=$_SESSION['email'];
+$userid=checkUser($_SESSION['userid'],session_id(),3);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']<1) {
- include "../includes/banner.html";
-  } ?>
-
-
+<?php if($currentuser['userlevel']>2) {
+    include "../includes/banner.html";
+} ?>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <title>Login | UHI Induction Services</title>
+  <title>Edit User | UHI Induction Services</title>
 
   <!-- bootstrap css libary -->
   <link rel="stylesheet" href="../dist/styles/main/css-main.css">
@@ -53,53 +46,67 @@ $email=$_SESSION['email'];
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-
-  <!-- Cookies -->
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
 </head>
 
 <body>
-  <!-- Nav Bar -->
-  <?php if($currentuser['userlevel']<1) {
-  include "../includes/navLevel1.php";
-   } ?>
 
-  <?php if($currentuser['userlevel']>0) {
-    header("location: ../web/index.php");
-    } ?>
 
-  <!-- Login Start -->
-  <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
-    <p class="profile-name-card"> </p>
-    <form class="form-signin" data-toggle="validator" role="form" method="post" action="../php/processlogin.php" sleep(3); autocomplete="on">
-      <span class="reauth-email"> </span>
-      <input class="form-control" type="text" required="" placeholder="User number" autofocus="" name="studentID" id="studentID" data-error="invalid student number">
-      <input class="form-control" type="password" required="" placeholder="Password" name="inputPassword" id="inputPassword" data-error="Password does not match">
+  <?php if($currentuser['userlevel']>2) {
+    include "../includes/navLevel3.php";
+} ?>
 
-      <div class="checkbox">
-        <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me</label></div>
+  <Article>
+
+    <?php
+    $db=createConnection();
+    $userlistsql="select userid, forename, surname from users;";
+    $userlist = $db->prepare($userlistsql);
+    $userlist->execute();
+    $userlist->store_result();
+    $userlist->bind_result($useridupdate,$forename, $surname);
+    if($userlist->num_rows>0) {
+        ?>
+      <form id="listusers" name="listusers" method="post" action="updateuser.php" />
+      <fieldset>
+        <legend>Edit User</legend>
+        <label for="userid">Select User to Edit </label><select name="userid" id="userid" required>
+                <?php
+                while($userlist->fetch()) {
+                    echo "<option value='$useridupdate'> User ID: $useridupdate, Name: $forename, Surname: $surname </option>";
+                }
+                ?>
+            </select>
+        <div class="form-row text-center">
+          <div class="col-md-12">
+            <button class="btn btn-primary  btn-lg btn-success" id="btnSubmit" type="submit" style="background-color:#7e3ca6;">Select User</button>
+          </div>
+      </fieldset>
+      </form>
+
+      <?php
+    } else {
+        echo "<p>No users found!</p>";
+    }
+
+    ?>
+  </Article>
+
+<div class="testimonials-clean"></div>
+  <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
+    <div class="container">
+      <div class="intro">
+        <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Questions about your student experience?</h2>
       </div>
-      <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
-    </form>
-    <a href="../error_docs/maintenance.html" class="forgot-password">Forgot your password?</a>
-
-
-
+      <div class="buttons"><a class="btn btn-light" role="button" href="../account/login" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
+    </div>
+  </div>
+  <?php if($currentuser['userlevel']>2) {
+    include "../includes/footer.php";
+} ?>
   </div>
 
-  <?php if($currentuser['userlevel']<1) {
-     include "../includes/footer.php";
-      } ?>
-
-  <?php if($currentuser['userlevel']>1) {
-       include "../includes/footer.php";
-        } ?>
-
-
   <script src="../dist/scripts/inductioncorejs.js"></script>
-  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+
 
 </body>
 </html>
