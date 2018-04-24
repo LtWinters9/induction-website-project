@@ -130,7 +130,7 @@ $modulename=$_POST['modulename'];
             <h4><i class="ion-android-cloud icon"></i> File Downloads</h4>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="../php/processfile.php"> Cloud Computing (1MB)</a>
               <?php echo $modulename; ?> </p>
-            <a href="../php/processfile.php"><p style="color:#000000;"><i class="ion-android-cloud"></i> Databases (1MB)</a>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="../php/uploadform.php">Databases (1MB)</a>
               <?php echo $modulename; ?> </p>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> Developing Web Based Applications (5MB)
               <?php echo $modulename; ?> </p>
