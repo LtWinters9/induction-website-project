@@ -8,7 +8,7 @@ $client->useApplicationDefaultCredentials();
 
 $service = new Google_Service_Drive($client);
 
-$fileId = "13NpNXk5vDNhEsj4I8vrrjN8lNuPZSc3A?usp=sharing"; // Google File ID
+$fileId = "0B13NpNXk5vDNhEsj4I8vrrjN8lNuPZSc3A?usp=sharing"; // Google File ID
 $content = $service->files->get($fileId, array("alt" => "media"));
 
 // Open file handle for output.
