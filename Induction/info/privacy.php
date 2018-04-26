@@ -71,9 +71,13 @@ $collegeid=$_SESSION['collegeid'];
     include "../includes/navLevel1.php";
      } ?>
 
-     <?php if($currentuser['userlevel']>1) {
-       include "../includes/navLevel2.php";
-        } ?>
+  <?php if($currentuser['userlevel']==2) {
+      include "../includes/navLevel2.php";
+  } ?>
+
+  <?php if($currentuser['userlevel']==3) {
+      include "../includes/navLevel3.php";
+  } ?>
     <div class="highlight-clean">
         <div class="container">
             <div class="intro">

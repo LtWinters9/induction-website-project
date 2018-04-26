@@ -16,8 +16,12 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if ($currentuser['userlevel'] > 1) {
-    include "../includes/banner.html";
+<?php if($currentuser['userlevel']==2) {
+    include "../includes/navLevel2.php";
+} ?>
+
+<?php if($currentuser['userlevel']==3) {
+    include "../includes/navLevel3.php";
 } ?>
 
 

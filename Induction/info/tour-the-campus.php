@@ -16,9 +16,13 @@ $collegeid=$_SESSION['collegeid'];
 
 
 
-  <?php if($currentuser['userlevel']>1) {
-   include "../includes/banner.html";
-    } ?>
+<?php if($currentuser['userlevel']==2) {
+    include "../includes/navLevel2.php";
+} ?>
+
+<?php if($currentuser['userlevel']==3) {
+    include "../includes/navLevel3.php";
+} ?>
 
 <head>
     <meta charset="utf-8">
