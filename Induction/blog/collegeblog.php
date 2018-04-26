@@ -80,9 +80,13 @@ aside.leftline {
   <div id=header>
 
 
-<?php if ($currentuser['userlevel'] > 1) {
-    include "../includes/navLevel2.php";
-} ?>
+      <?php if($currentuser['userlevel']==2) {
+          include "../includes/navLevel2.php";
+      } ?>
+
+      <?php if($currentuser['userlevel']==3) {
+          include "../includes/navLevel3.php";
+      } ?>
 
 <div></div>
 <ol class="breadcrumb">
