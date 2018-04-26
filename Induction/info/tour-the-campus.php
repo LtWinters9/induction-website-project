@@ -115,8 +115,9 @@ $collegeid=$_SESSION['collegeid'];
               ['<div class="info_content">' +
               '<h3>Perth College - Brahan Buiding</h3>' +
               '<p style=\'color:#3d3d3d;\'>The main building of Perth College where courses such as Computing, ' +
-              'Hairdressing, Aviation Engineering among others are located</p>' + '</div>'],
+              'Hairdressing, Aviation Engineering among others are located</p>' +
               ' <a href="https://www.perth.uhi.ac.uk/">More Information</a> ' +
+              '</div>'],
               ['<div class="info_content">' +
               '<h3>Perth College - Academy of Sport and Wellbeing</h3>' +
               '<p style=\'color:#3d3d3d;\'>You do sporty stuff here!</p>' +
