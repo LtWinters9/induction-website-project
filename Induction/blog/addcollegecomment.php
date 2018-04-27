@@ -36,7 +36,7 @@ if($currentuser['userlevel']<2) {
         include "../includes/navLevel3.php";
     } ?>
 
-    <div>
+    </div>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,21 +83,73 @@ if($currentuser['userlevel']<2) {
               href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
+        <style>
+            div.main {
+                width: 60%;
+                border-top-style:double;
+                border-bottom-style:double;
+                padding-top:5px;
+                padding-bottom:5px;
+                border-top-color:purple;
+                border-bottom-color:purple;
+                border-top-width:8px;
+                border-bottom-width:8px;
+                border-left: 5px solid purple;
+                border-right: 5px solid purple;
+                margin: auto;
+            }
+            div.b {
+                margin:20px;
+            }
+            .left {
+                width: 100px;
+                float: left;
+                text-align: right;
+            }
+            .right {
+                width: 600px;
+                margin-left: 10px;
+                float:left;
+            }
+            button {
+                background-color: purple; color: white;
+                border-radius: 4px;
+                padding: 12px 35px;
+                font-size: 16px;
+                display: inline-block;
+            }
+
+        </style>
+
+
         <body>
 
-<h1>Add Comment</h1>
-<section id="main">
+
+
+
+<h2 class="text-center">Add Comment</h2>
+<div class="b">
+    <div class="main">
+<section id="main" class="main">
 
     <form method="post" action="../php/xaddcollegecomment.php">
         <fieldset><legend>Add New Comment</legend>
-            <label for="articleidtitle">Article ID</label><input name="articleid" id="articleid" type="text" size="4" readonly required value="<?php echo $article; ?>" /><br />
-            <label for="commenttext">Text</label><textarea name="commenttext" id="commenttext" cols="60" rows="5"></textarea><br />
-            <button type="submit">Add Comment</button>
+            <div class="left"><label for="articleidtitle">Article ID</label></div><div class="right"><input name="articleid" id="articleid" type="text" size="4" readonly required value="<?php echo $article; ?>" /></div>
+            <br />
+            <br />
+            <div class="left"><label for="commenttext">Comment</label></div><div class="right"><textarea name="commenttext" id="commenttext" cols="60" rows="5"></textarea></div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="right"> <button type="submit">Add Comment</button></div>
         </fieldset>
     </form>
 </section>
-
-
+</div>
+        </div>
 
 <?php if($currentuser['userlevel']>1) {
     include "../includes/slide-in.php";
@@ -107,6 +159,7 @@ if($currentuser['userlevel']<2) {
     include "../includes/footer.php";
 } ?>
 
+        </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
@@ -127,5 +180,5 @@ if($currentuser['userlevel']<2) {
 </script>
 
 
-</body>
+
 </html>

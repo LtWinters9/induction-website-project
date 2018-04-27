@@ -16,13 +16,6 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']==2) {
-    include "../includes/navLevel2.php";
-} ?>
-
-<?php if($currentuser['userlevel']==3) {
-    include "../includes/navLevel3.php";
-} ?>
 
 
 <meta charset="utf-8">
@@ -92,9 +85,13 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
 
 
-<?php if ($currentuser['userlevel'] > 1) {
-    include "../includes/navLevel2.php";
-} ?>
+      <?php if($currentuser['userlevel']==2) {
+          include "../includes/navLevel2.php";
+      } ?>
+
+      <?php if($currentuser['userlevel']==3) {
+          include "../includes/navLevel3.php";
+      } ?>
 
 <div></div>
 <ol class="breadcrumb">
@@ -158,7 +155,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
       <div class='articleonly'>
       <h3>$title</h3>
       <p style='color:#3d3d3d;'>" . nl2br($blogtext) . "</p>
-      <p style='color:grey;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
+      <p style='color:lightgray;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
 
         // if user is logged in and not suspended add comment button
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
@@ -206,7 +203,14 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
     ?>
 </section>
+      <?php if($currentuser['userlevel']>1) {
+          include "../includes/slide-in.php";
+      } ?>
 
+      <?php if($currentuser['userlevel']>1) {
+          include "../includes/footer.php";
+      } ?>
+</body>
 
 <script src="../dist/scripts/inductioncorejs.js"></script>
 <script src="../dist/js/functions.js"></script>
@@ -222,7 +226,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 </script>
 
 
-</body>
+
 
 
 </html>

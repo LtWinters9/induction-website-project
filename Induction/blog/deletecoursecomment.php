@@ -84,13 +84,36 @@ if($currentuser['userlevel']<2) {
               href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
+        <style>
+            div.b {
+                margin:20px;
+            }
+
+
+            div.main {
+                width: 50%;
+                border-top-style:double;
+                border-bottom-style:double;
+                padding-top:5px;
+                padding-bottom:5px;
+                border-top-color:purple;
+                border-bottom-color:purple;
+                border-top-width:8px;
+                border-bottom-width:8px;
+                border-left: 5px solid purple;
+                border-right: 5px solid purple;
+                margin: auto;
+            }
+        </style>
 
         <body>
 
 
-        <h1>Delete Comment</h1>
-
-        <div id="main">
+        <br />
+        <h2 class="text-center">Delete Comment</h2>
+        <br />
+    <div class="b">
+        <div id="main" class="main">
             <?php
             $db=createConnection();
             // get the first two articles
@@ -104,9 +127,9 @@ if($currentuser['userlevel']<2) {
             //build article html
             while ($cmnt->fetch()) {
 
-                echo "<article id='c$cbcid'>
-                <p>" . nl2br($commenttext) . "</p>
-                <footer><p>Commented on $commenttime by <em>$comforename</em><p></footer>
+                echo "<article id='c$cbcid' class='inset'>
+                <p style='color:#3d3d3d;'>" . nl2br($commenttext) . "</p>
+                <footer><p style='color:lightgray;'>Commented on $commenttime by <em>$comforename</em><p></footer>
                 </article>";
             }
 
@@ -124,6 +147,9 @@ if($currentuser['userlevel']<2) {
             $db->close();
 
             ?>
+        </div>
+    </div>
+
 
 
 
@@ -135,6 +161,7 @@ if($currentuser['userlevel']<2) {
                 include "../includes/footer.php";
             } ?>
 
+        </body>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
@@ -155,5 +182,4 @@ if($currentuser['userlevel']<2) {
             </script>
 
 
-        </body>
 </html>

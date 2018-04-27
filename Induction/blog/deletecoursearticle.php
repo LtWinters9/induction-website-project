@@ -83,12 +83,36 @@ if($currentuser['userlevel']<2) {
               href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
         <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
+        <style>
+            div.b {
+                margin:20px;
+            }
+
+
+            article.inset {
+                width: 50%;
+                border-top-style:double;
+                border-bottom-style:double;
+                padding-top:5px;
+                padding-bottom:5px;
+                border-top-color:purple;
+                border-bottom-color:purple;
+                border-top-width:8px;
+                border-bottom-width:8px;
+                border-left: 5px solid purple;
+                border-right: 5px solid purple;
+                margin: auto;
+            }
+        </style>
 
         <body>
 
 
-        <h1>Delete Article</h1>
+        <br />
+        <h2 class="text-center">Delete Post</h2>
+        <br />
 
+        <div class="b">
         <div id="main">
             <?php
             $db=createConnection();
@@ -102,10 +126,10 @@ if($currentuser['userlevel']<2) {
 
             //build article html
             while($stmt->fetch()) {
-                echo "<article id='a$articleid'>
+                echo "<article id='a$articleid' class='inset'>
 			<h3>$articletitle</h3>
-			<p>".nl2br($articletext)."</p>
-			<footer><p>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
+			<p style='color:#3d3d3d;'>".nl2br($articletext)."</p>
+			<footer><p style='color:lightgray;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
 
 
                 if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
@@ -122,6 +146,8 @@ if($currentuser['userlevel']<2) {
 
             ?>
 
+        </div>
+        </div>
 
 
             <?php if($currentuser['userlevel']>1) {
@@ -131,7 +157,7 @@ if($currentuser['userlevel']<2) {
             <?php if($currentuser['userlevel']>1) {
                 include "../includes/footer.php";
             } ?>
-
+        </body>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
@@ -152,5 +178,5 @@ if($currentuser['userlevel']<2) {
             </script>
 
 
-        </body>
+
 </html>

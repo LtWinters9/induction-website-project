@@ -152,7 +152,7 @@ aside.leftline {
       <div class='articleonly'>
         <h3>$title</h3>
         <p style='color:#3d3d3d;'>" . nl2br($blogtext) . "</p>
-        <p style='color:grey;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
+        <p style='color:lightgray;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p>";
 
         if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
             echo "<p><a href='deletecollegearticle.php?aID=$mainblogid' id='db$mainblogid'>Delete Post</a></p>";
@@ -203,13 +203,14 @@ aside.leftline {
 
 </section>
 
-<?php /*if($currentuser['userlevel']>1) {
- include "../includes/slide-in.php";
-  } */?><!--
+        <?php if($currentuser['userlevel']>1) {
+            include "../includes/slide-in.php";
+        } ?>
 
---><?php /*if($currentuser['userlevel']>1) {
- include "../includes/footer.php";
-  } */?>
+        <?php if($currentuser['userlevel']>1) {
+            include "../includes/footer.php";
+        } ?>
+</body>
 
 <script src="../dist/scripts/inductioncorejs.js"></script>
 <script src="../dist/js/functions.js"></script>
@@ -226,5 +227,5 @@ aside.leftline {
 </script>
 
 
-</body>
+
 </html>

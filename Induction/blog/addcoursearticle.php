@@ -80,6 +80,44 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
       href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
+<style>
+    div.main {
+        width: 60%;
+        border-top-style:double;
+        border-bottom-style:double;
+        padding-top:5px;
+        padding-bottom:5px;
+        border-top-color:purple;
+        border-bottom-color:purple;
+        border-top-width:8px;
+        border-bottom-width:8px;
+        border-left: 5px solid purple;
+        border-right: 5px solid purple;
+        margin: auto;
+    }
+    div.b {
+        margin:20px;
+    }
+    .left {
+        width: 100px;
+        float: left;
+        text-align: right;
+    }
+    .right {
+        width: 600px;
+        margin-left: 10px;
+        float:left;
+    }
+    button {
+        background-color: purple; color: white;
+        border-radius: 4px;
+        padding: 12px 35px;
+        font-size: 16px;
+        display: inline-block;
+    }
+
+</style>
+
 </head>
 
 <body>
@@ -95,18 +133,41 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
     <?php if($currentuser['userlevel']==3) {
         include "../includes/navLevel3.php";
     } ?>
-
-    <h1>Add Article</h1>
-    <section id="main">
+</div>
+    <h2 class="text-center">Add Post</h2>
+    <div class="b">
+        <div class="main">
+    <section id="main" class="main">
 
         <form method="post" action="../php/xaddcoursearticle.php">
             <fieldset><legend>Add New Article</legend>
-                <label for="articletitle">Title</label><input type="text" name="articletitle" id="articletitle" size="30" required /><br />
-                <label for="articletext">Text</label><textarea name="articletext" id="articletext" cols="60" rows="5"></textarea><br />
-                <button type="submit">Add Post</button>
+                <div class="left"><label for="articletitle">Title</label></div><div class="right"><input type="text" name="articletitle" id="articletitle" size="30" required /></div>
+                <br />
+                <br />
+                <div class="left"><label for="articletext">Body</label></div><div class="right"><textarea name="articletext" id="articletext" cols="60" rows="5"></textarea></div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div class="right"> <button type="submit">Add Post</button></div>
             </fieldset>
         </form>
     </section>
+        </div>
+    </div>
+
+<?php if($currentuser['userlevel']>1) {
+    include "../includes/slide-in.php";
+} ?>
+
+<?php if($currentuser['userlevel']>1) {
+    include "../includes/footer.php";
+} ?>
+
+</body>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
