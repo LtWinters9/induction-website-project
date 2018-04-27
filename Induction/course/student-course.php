@@ -13,21 +13,11 @@ $surname=$_SESSION['surname'];
 $modulename=$_SESSION['courseid'];
 $collegeid=$_SESSION['collegeid'];
 $userid=checkUser($_SESSION['userid'],session_id(),2);
-
-
-
 ?>
 
   <!DOCTYPE html>
   <html lang="en">
 
-<?php if($currentuser['userlevel']==2) {
-    include "../includes/navLevel2.php";
-} ?>
-
-<?php if($currentuser['userlevel']==3) {
-    include "../includes/navLevel3.php";
-} ?>
 
   <head>
     <meta charset="utf-8">
@@ -56,14 +46,18 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="../dist/favicons.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Cookies -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-
-  </head>
+</head>
 
   <body>
+
+    <?php if($currentuser['userlevel']==2) {
+        include "../includes/navLevel2.php";
+    } ?>
+
+    <?php if($currentuser['userlevel']==3) {
+        include "../includes/navLevel3.php";
+    } ?>
+
     <div class="card">
       <div class="card-header">
         <header></header>
