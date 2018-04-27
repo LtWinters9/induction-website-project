@@ -15,13 +15,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if($currentuser['userlevel']==2) {
-    include "../includes/navLevel2.php";
-} ?>
-
-<?php if($currentuser['userlevel']==3) {
-    include "../includes/navLevel3.php";
-} ?>
 
 <head>
   <meta charset="utf-8">
@@ -37,10 +30,15 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
-  <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2.php";
-     } ?>
+  <!-- Nav Bar -->
+      <?php if($currentuser['userlevel']==2) {
+       include "../includes/navLevel2.php";
+        } ?>
 
+    <?php if($currentuser['userlevel']==3) {
+        include "../includes/navLevel3.php";
+    } ?>
+    
   <div class="features-boxed">
     <div class="container">
       <div class="container">
