@@ -68,7 +68,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
 
 
             if($usertype>2) {
-                header("location: ../account/staffarea");
+                header("location: ../web/index");
                 exit();
             }
             else {
