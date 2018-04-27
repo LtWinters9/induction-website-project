@@ -57,6 +57,17 @@ $collegeid=$_SESSION['collegeid'];
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
+
+    <style>
+        #mapCanvas {
+            width: 80%;
+            height: 500px;
+            background-color: grey;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -68,46 +79,118 @@ $collegeid=$_SESSION['collegeid'];
      <?php if($currentuser['userlevel']>1) {
        include "../includes/navLevel2.php";
         } ?>
+ <br>
 
-  <h2 class="text-uppercase text-center" style="color:#37434d;">Perth UHI Campus </h2>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row clearmargin clearpadding row-image-txt">
-                        <div data-aos="fade-left" data-aos-duration="300" data-aos-delay="450" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image:url(&quot;../assets/img/banner.jpg&quot;);background-size:cover;height:400px;background-position:center;background-color:#37434d;color:#37434d;">
-                            <div></div>
-                        </div>
-                        <div data-aos="fade-left" data-aos-duration="400" data-aos-delay="500" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding:20px;background-color:#7e3ca6;">
-                            <h1 style="color:#ffffff;">The Academy of Sport and Wellbeing</h1>
-                            <hr>
-                            <p style="color:#ffffff;">Academy of Sport and Wellbeing / ... Our gym equipment includes a variety of the latest cardiovascular and strength resistance equipment to help you with achieving your fitness goals and to inspire you to move your body, de-stress and improve or maintain your fitness levels</p>
-                            <div style="text-align:center"><a class="btn btn-light btn-lg" role="button" href="https://www.perth.uhi.ac.uk/academy-of-sport-and-wellbeing/" target="_blank" >Learn more </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row clearmargin clearpadding row-image-txt">
-                        <div data-aos="fade-left" data-aos-duration="600" data-aos-delay="600" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 clearmargin clearpadding col-sm-push-6" style="background-image:url(&quot;../assets/img/banner.png&quot;);background-size:cover;height:400px;background-position:center;background-color:#37434d;color:#37434d;">
-                            <div></div>
-                        </div>
-                        <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="650" data-aos-once="true" class="col-xs-12 col-sm-6 col-md-6 col-sm-pull-6" style="padding:20px;background-color:#7e3ca6;">
-                            <h1 style="color:#ffffff;">Brahan Building </h1>
-                            <hr>
-                            <p style="color:#ffffff;">We're delighted that you have chosen to come to Perth College UHI, one of Scotland's leading colleges of further and higher education and part of the University of the Highlands and Islands</p>
-                            <div style="text-align:center"><a class="btn btn-light btn-lg" role="button" href="https://www.perth.uhi.ac.uk/" target="_blank" >Learn more </a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Explore the UHI Network</h2>
+
+  <br>
+  <div id="mapCanvas"></div>
+  <script>
+      function initMap() {
+          var map;
+          var bounds = new google.maps.LatLngBounds();
+          var mapOptions = {
+              mapTypeId: 'roadmap'
+          };
+
+          // Display a map on the web page
+          map = new google.maps.Map(document.getElementById("mapCanvas"), mapOptions);
+          map.setTilt(50);
+
+          // Multiple markers location, latitude, and longitude
+          var markers = [
+              ['Brahan Building', 56.404179, -3.461521],
+              ['Academy of Sport', 56.403416, -3.458507],
+              ['Goodlyburn Building', 56.403635, -3.457282],
+              ['Inverness College', 57.475009, -4.182238],
+              ['School of Forestry', 57.488882, -4.108393],
+              ['Moray', 57.645394, -3.315859],
+              ['Orkney', 58.986340, -2.947613]
+          ];
+
+
+
+          // Info window content
+          var infoWindowContent = [
+              ['<div class="info_content">' +
+              '<h3>Perth College - Brahan Buiding</h3>' +
+              '<p style=\'color:#3d3d3d;\'>The main building of Perth College where courses such as Computing, ' +
+              'Hairdressing, Aviation Engineering among others are located</p>' +
+              ' <a href="https://www.perth.uhi.ac.uk/">More Information</a> ' +
+              '</div>'],
+              ['<div class="info_content">' +
+              '<h3>Perth College - Academy of Sport and Wellbeing</h3>' +
+              '<p style=\'color:#3d3d3d;\'>You do sporty stuff here!</p>' +
+              ' <a href="https://www.perth.uhi.ac.uk/academy-of-sport-and-wellbeing/">More Information</a> ' +
+              '</div>'],
+              ['<div class="info_content">' +
+              '<h3>Perth College - Goodlyburn Building</h3>' +
+              '<p style=\'color:#3d3d3d;\'>Courses such as Music are located here.</p>' +
+              ' <a href="https://www.perth.uhi.ac.uk/">More Information</a> ' +
+              '</div>'],
+              ['<div class="info_content">' +
+              '<h3 >Inverness College</h3>' +
+              '<p style=\'color:#3d3d3d;\'>Most courses on offer at Inverness College are located here.</p>' +
+              ' <a href="https://www.inverness.uhi.ac.uk/">More Information</a> ' +
+              '</div>'],
+              ['<div class="info_content">' +
+              '<h3>Inverness College - Scottish School of Forestry</h3>' +
+              '<p style=\'color:#3d3d3d;\'>Learn about forests</p>' +
+              ' <a href="https://www.inverness.uhi.ac.uk/">More Information</a> ' +
+              '</div>'],
+              ['<div class="info_content">' +
+              '<h3>Moray College</h3>' +
+              '<p style=\'color:#3d3d3d;\'>All Moray courses are offered here.</p>' +
+              ' <a href="https://www.moray.uhi.ac.uk/">More Information</a> ' +
+              '</div>'],
+              ['<div class="info_content">' +
+              '<h3>Orkney College</h3>' +
+              '<p style=\'color:#3d3d3d;\'>All Orkney College courses are offered here.</p>' +
+              ' <a href="https://www.orkney.uhi.ac.uk/">More Information</a> ' +
+              '</div>']
+          ];
+
+          // Add multiple markers to map
+          var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+          // Place each marker on the map
+          for( i = 0; i < markers.length; i++ ) {
+              var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+              bounds.extend(position);
+              marker = new google.maps.Marker({
+                  position: position,
+                  map: map,
+                  title: markers[i][0]
+              });
+
+
+              // Add info window to marker
+              google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                  return function() {
+                      infoWindow.setContent(infoWindowContent[i][0]);
+                      infoWindow.open(map, marker);
+                  }
+              })(marker, i));
+
+              // Center the map to fit all markers on the screen
+              map.fitBounds(bounds);
+          }
+
+          // Set zoom level
+          var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+              this.setZoom(14);
+              google.maps.event.removeListener(boundsListener);
+          });
+
+
+      }
+      // Load initialize function
+      google.maps.event.addDomListener(window, 'load', initMap);
+
+  </script>
+
+  <!--  https://www.codexworld.com/google-maps-with-multiple-markers-using-javascript-api/-->
+
     <div class="testimonials-clean"></div>
     <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
         <div class="container">
@@ -129,6 +212,8 @@ $collegeid=$_SESSION['collegeid'];
 
     <script src="../dist/scripts/inductioncorejs.js"></script>
 
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo7doclUFDIbAyE1Uemyo79yTjeOzy6O4&callback=initMap"></script>
 
 </body>
+
 </html>
