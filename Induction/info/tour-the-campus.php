@@ -16,14 +16,6 @@ $collegeid=$_SESSION['collegeid'];
 
 
 
-<?php if($currentuser['userlevel']==2) {
-    include "../includes/navLevel2.php";
-} ?>
-
-<?php if($currentuser['userlevel']==3) {
-    include "../includes/navLevel3.php";
-} ?>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,7 +53,7 @@ $collegeid=$_SESSION['collegeid'];
     <style>
         #mapCanvas {
             width: 80%;
-            height: 500px;
+            height: 700px;
             background-color: grey;
             margin-left: auto;
             margin-right: auto;
@@ -71,17 +63,21 @@ $collegeid=$_SESSION['collegeid'];
 </head>
 
 <body>
-  <!-- Nav Bar -->
-  <?php if($currentuser['userlevel']<1) {
-    include "../includes/navLevel1.php";
-     } ?>
 
-     <?php if($currentuser['userlevel']>1) {
-       include "../includes/navLevel2.php";
-        } ?>
+
+<?php if($currentuser['userlevel']==2) {
+    include "../includes/navLevel2.php";
+} ?>
+
+<?php if($currentuser['userlevel']==3) {
+    include "../includes/navLevel3.php";
+} ?>
+
+
  <br>
 
   <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Explore the UHI Network</h2>
+    <h3 class="text-center">Select an icon on the map below to find out about the locations in the UHI network</h3>
 
   <br>
   <div id="mapCanvas"></div>
@@ -108,7 +104,7 @@ $collegeid=$_SESSION['collegeid'];
               ['Orkney', 58.986340, -2.947613]
           ];
 
-
+        var icon = '../assets/img/uhimap.png'
 
           // Info window content
           var infoWindowContent = [
@@ -117,6 +113,7 @@ $collegeid=$_SESSION['collegeid'];
               '<p style=\'color:#3d3d3d;\'>The main building of Perth College where courses such as Computing, ' +
               'Hairdressing, Aviation Engineering among others are located</p>' +
               ' <a href="https://www.perth.uhi.ac.uk/">More Information</a> ' +
+              '<img src="../assets/img/Moray.jpg" alt="Moray College"> ' +
               '</div>'],
               ['<div class="info_content">' +
               '<h3>Perth College - Academy of Sport and Wellbeing</h3>' +
@@ -159,6 +156,7 @@ $collegeid=$_SESSION['collegeid'];
               bounds.extend(position);
               marker = new google.maps.Marker({
                   position: position,
+                  icon: icon,
                   map: map,
                   title: markers[i][0]
               });
