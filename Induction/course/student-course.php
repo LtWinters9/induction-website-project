@@ -10,17 +10,16 @@ $currentuser=getUserLevel();
 $userid=$_SESSION['userid'];
 $forename=$_SESSION['forename'];
 $surname=$_SESSION['surname'];
-$modulename=$_SESSION['modulename'];
+$modulename=$_SESSION['courseid'];
 $collegeid=$_SESSION['collegeid'];
 $userid=checkUser($_SESSION['userid'],session_id(),2);
 
-// Staff
-$modulename=$_POST['modulename'];
+
+
 ?>
 
   <!DOCTYPE html>
   <html lang="en">
-
 
 <?php if($currentuser['userlevel']==2) {
     include "../includes/navLevel2.php";
@@ -65,10 +64,6 @@ $modulename=$_POST['modulename'];
   </head>
 
   <body>
-    <?php if($currentuser['userlevel']>1) {
-    include "../includes/navLevel2.php";
-     } ?>
-
     <div class="card">
       <div class="card-header">
         <header></header>
@@ -80,36 +75,49 @@ $modulename=$_POST['modulename'];
           <li class="nav-item"><a class="nav-link" href="#item-1-4" id="item-1-4-tab" data-toggle="tab" role="tab" aria-controls="item-1-4" aria-selected="false" style="color:#7e3ca6;">File Downloads</a></li>
         </ul>
       </div>
+
+
+
+
       <div class="card-body">
         <div id="nav-tabContent" class="tab-content">
           <div id="item-1-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="item-1-1-tab">
             <!-- Staff Information -->
-            <h4><i class="fa fa-user"></i> Mr Derek Summers <?php echo $courseLectuer; ?></h4>
-            <p style="color:#000000;"><i class="icon ion-email"></i> Email
-              <?php echo $emailaddd; ?> </p>
-            <p style="color:#000000;"><i class="icon ion-ios-location"></i> Office Location
-              <?php echo $department; ?> </p>
-            <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Phone Number
-              <?php echo $telno; ?> </p>
-            <div id="item-1-1" class="tab-pane fade show" role="tabpanel" aria-labelledby="item-1-1-tab">
-              <h4><i class="fa fa-user"></i> Mrs Gillian Douglas <?php echo $courseLectuer; ?></h4>
+
+              <?php
+              $lecturer = 3;
+              $db=createConnection();
+              //Create query, note that parameters being passed in are represented by question marks
+              $loginsql="select title, forename, surname, bio, email, telephone from users where users.usertype=? and users.courseid=?;";
+              $lgnstmt = $db->prepare($loginsql);
+              //Bound parameters are defined by type, s = string, i = integer, d = double and b = blob
+              $lgnstmt->bind_param("is",$lecturer, $modulename);
+              //Run query
+              $lgnstmt->execute();
+              //Store Query Result
+              $lgnstmt->store_result();
+              $lgnstmt->bind_result($title2, $forename2, $surname2, $bio2, $email2, $telephone);
+
+
+              while($lgnstmt->fetch()) { ?>
+
+              <h4><i class="fa fa-user"></i> <?php echo $title2. " " . $forename2. " " . $surname2; ?></h4>
               <p style="color:#000000;"><i class="icon ion-email"></i> Email
-                <?php echo $emailaddd; ?> </p>
-              <p style="color:#000000;"><i class="icon ion-ios-location"></i> Office Location
-                <?php echo $department; ?> </p>
-              <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Phone Number
-                <?php echo $telno; ?> </p>
-            </div>
-            <div id="item-1-1" class="tab-pane fade show" role="tabpanel" aria-labelledby="item-1-1-tab">
-              <h4><i class="fa fa-user"></i> Mr Ian Turnbull <?php echo $courseLectuer; ?></h4>
-              <p style="color:#000000;"><i class="icon ion-email"></i> Email
-                <?php echo $emailaddd; ?> </p>
-              <p style="color:#000000;"><i class="icon ion-ios-location"></i> Office Location
-                <?php echo $department; ?> </p>
-              <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Phone Number
-                <?php echo $telno; ?> </p>
-            </div>
+                  <?php echo $email2; ?> </p>
+              <p style="color:#000000;"><i class="icon ion-ios-telephone"></i>
+                  01738877000  </p>
+              <p style="color:#000000;"></i> Bio:
+                  <?php echo $bio2; ?> </p>
           </div>
+
+
+
+
+
+              <?php }	?>
+
+
+
 
           <div id="item-1-2" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-2-tab">
             <!-- Module Information -->

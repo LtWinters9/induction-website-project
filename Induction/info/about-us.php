@@ -16,14 +16,6 @@ $collegeid=$_SESSION['collegeid'];
 <html lang="en">
 
 
-<?php if($currentuser['userlevel']==2) {
-    include "../includes/navLevel2.php";
-} ?>
-
-<?php if($currentuser['userlevel']==3) {
-    include "../includes/navLevel3.php";
-} ?>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

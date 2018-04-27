@@ -62,6 +62,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
             $_SESSION['town']=$town;
             $_SESSION['postcode']=$postcode;
             $_SESSION['email']=$email;
+
             $_SESSION['courseid']=$courseid;
             $_SESSION['collegeid']=$collegeid;
 

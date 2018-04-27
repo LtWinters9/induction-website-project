@@ -90,7 +90,7 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                     <label for="subject">Select appointment</label>
 
 <?php
-echo "<select name = 'optionselected'>";
+echo "<select name = 'optionselected' required>";
 while($row = mysqli_fetch_array($result))
 {
   echo "<option value = ",$row[bookingid],">",
