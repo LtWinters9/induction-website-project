@@ -84,10 +84,14 @@ $email=$_SESSION['email'];
       <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
     </form>
     <a href="../error_docs/maintenance.html" class="forgot-password">Forgot your password?</a>
+</div>
 
-
-
-  </div>
+<?php
+if(isset($_SESSION['error'])) { echo '
+  <div id="error">'.$_SESSION['error'].'</div>';
+  unset($_SESSION['error']);
+}
+?>
 
   <?php if($currentuser['userlevel']<1) {
      include "../includes/footer.php";
