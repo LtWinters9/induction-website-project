@@ -72,6 +72,7 @@ $email=$_SESSION['email'];
 
   <!-- Login Start -->
   <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
+    <div class="error">
     <p class="profile-name-card"> </p>
     <form class="form-signin" data-toggle="validator" role="form" method="post" action="../php/processlogin.php" sleep(3); autocomplete="on">
       <span class="reauth-email"> </span>
@@ -84,14 +85,17 @@ $email=$_SESSION['email'];
       <button class="btn btn-primary btn-block btn-lg btn-signin" id="signUp" type="submit" style="background-color:#7e3ca6;">Sign in</button>
     </form>
     <a href="../error_docs/maintenance.html" class="forgot-password">Forgot your password?</a>
+    <?php
+    if(isset($_SESSION['error'])) { echo '
+      <div id="error">'.$_SESSION['error'].'</div>';
+      unset($_SESSION['error']);
+    }
+
+    ?>
+
+  </div>
 </div>
 
-<?php
-if(isset($_SESSION['error'])) { echo '
-  <div id="error">'.$_SESSION['error'].'</div>';
-  unset($_SESSION['error']);
-}
-?>
 
   <?php if($currentuser['userlevel']<1) {
      include "../includes/footer.php";
