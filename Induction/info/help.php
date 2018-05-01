@@ -31,12 +31,16 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 </head>
 
 <body>
-  <!-- Nav Bar -->
-      <?php if($currentuser['userlevel']==2) {
-       include "../includes/navLevel2.php";
-        } ?>
 
-  
+  <?php if($currentuser['userlevel']==2) {
+      include "../includes/navLevel2.php";
+  } ?>
+
+  <?php if($currentuser['userlevel']==3) {
+      include "../includes/navLevel3.php";
+  } ?>
+
+
 
   <div class="features-boxed">
     <div class="container">
