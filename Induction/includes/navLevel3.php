@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav nav-right">
         <li class="nav-item" role="presentation"><a class="nav-link" href="../web/index" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-home"></i>&nbsp;Current Students</a></li>
         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-family:'Roboto Condensed', sans-serif;color:#ffffff;"><i class="fa fa-user"></i>&nbsp;My Account</a>
-          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../blog/collegeblog" style="color:#ffffff;background-color:#7e3ca6;">UHI Form </a>
+          <div class="dropdown-menu" role="menu" style="background-color:#7e3ca6;"><a class="dropdown-item" role="presentation" href="../blog/collegeblog" style="color:#ffffff;background-color:#7e3ca6;">UHI Forum </a>
             <a class="dropdown-item" role="presentation" href="../account/updateuserselect" style="color:#ffffff;background-color:#7e3ca6;">Edit User</a>
             <a class="dropdown-item" role="presentation" href="../info/help" style="color:#ffffff;background-color:#7e3ca6;">Help Centre</a>
             <a class="dropdown-item" role="presentation" href="../php/logout" style="color:#ffffff;background-color:#7e3ca6;">Logout</a>
