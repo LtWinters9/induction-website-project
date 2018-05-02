@@ -20,7 +20,7 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
     //Assign POSTed values to variables
     $studentid=$_POST['studentID'];
     $userpass=$_POST['inputPassword'];
-    $_SESSION['error'] = 'Your username or password is incorrect. Please try again. ';
+    $_SESSION['error'] = ' Incorrect username or password.';
 
 	//echo $studentid;
 	//echo $userpass;
