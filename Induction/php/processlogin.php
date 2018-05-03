@@ -2,15 +2,6 @@
 session_start();
 date_default_timezone_set('London/GMT');
 session_regenerate_id();
-?>
-
-<html lang="en-gb" dir="ltr">
-<head>>Return</head>
-<body>
-
-
-
-<?php
 require_once('functions.php');
 require_once('db_config.php');
 
@@ -21,10 +12,6 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
     $studentid=$_POST['studentID'];
     $userpass=$_POST['inputPassword'];
     $_SESSION['error'] = ' Incorrect username or password.';
-
-	//echo $studentid;
-	//echo $userpass;
-
 
     //Create query, note that parameters being passed in are represented by question marks
     $loginsql="select userpass, salt, forename, surname, telephone, mobilephone, addressline1, addressline2, town, postcode, email, usertype, courseid, collegeid from users,userpass where users.userid=? and userpass.userid=?";
@@ -102,6 +89,3 @@ if(isset($_POST['studentID']) && isset($_POST['inputPassword'])){
 }
 
 ?>
-
-</body>
-</html>
