@@ -61,7 +61,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
     <div class="card">
       <div class="card-header">
         <header></header>
-        <h3 class="text-center">Welcome to your Course,<?php echo $modulename; ?> <?php echo $forename." ".$surname; ?>.</h3>
+        <h3 class="text-center">Welcome to your Course, <?php echo $forename." ".$surname; ?>.</h3>
         <ul class="nav nav-tabs card-header-tabs" role="tablist">
           <li class="nav-item"><a class="nav-link active" href="#item-1-1" id="item-1-1-tab" data-toggle="tab" role="tab" aria-controls="item-1-1" aria-selected="true" style="color:#7e3ca6;">Staff Information</a></li>
           <li class="nav-item"><a class="nav-link" href="#item-1-2" id="item-1-2-tab" data-toggle="tab" role="tab" aria-controls="item-1-2" aria-selected="false" style="color:#7e3ca6;">Module Information</a></li>
@@ -102,35 +102,10 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
                   01738877000  </p>
               <p style="color:#000000;"></i> Bio:
                   <?php echo $bio2; ?> </p>
-          </div>
-
-
-
-
-
               <?php }	?>
-
-
-
-
-          <div id="item-1-2" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-2-tab">
-            <!-- Module Information -->
-            <h4><i class="icon ion-information-circled"></i> Module Information</h4>
-            <p style="color:#000000;"><i class="fa fa-user"></i> Module Leader
-              <?php echo $courseLectuer; ?> </p>
-            <p style="color:#000000;"><i class="icon ion-ios-information"></i> Course Name
-              <?php echo $courseName; ?> </p>
-            <p style="color:#000000;"><i class="icon ion-ios-location"></i> Department
-              <?php echo $departmentName; ?> </p>
           </div>
-          <div id="item-1-3" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
-            <!-- Student Services Information -->
-            <h4><i class="icon ion-android-chat icon"></i> Student Services</h4>
-            <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Contact Number
-              <?php echo $departmentTelNo; ?> </p>
-            <p style="color:#000000;"><i class="icon ion-email"></i> Email
-              <?php echo $departmentEmailAddd; ?> </p>
-          </div>
+
+            
           <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
             <!-- File Downloads -->
             <h4><i class="ion-android-cloud icon"></i> File Downloads</h4>
