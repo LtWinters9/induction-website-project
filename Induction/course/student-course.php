@@ -64,7 +64,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
         <h3 class="text-center">Welcome to your Course, <?php echo $forename." ".$surname; ?>.</h3>
         <ul class="nav nav-tabs card-header-tabs" role="tablist">
           <li class="nav-item"><a class="nav-link active" href="#item-1-1" id="item-1-1-tab" data-toggle="tab" role="tab" aria-controls="item-1-1" aria-selected="true" style="color:#7e3ca6;">Staff Information</a></li>
-          <li class="nav-item"><a class="nav-link" href="#item-1-2" id="item-1-2-tab" data-toggle="tab" role="tab" aria-controls="item-1-2" aria-selected="false" style="color:#7e3ca6;">Module Information</a></li>
           <li class="nav-item"><a class="nav-link" href="#item-1-3" id="item-1-3-tab" data-toggle="tab" role="tab" aria-controls="item-1-3" aria-selected="false" style="color:#7e3ca6;">Student Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#item-1-4" id="item-1-4-tab" data-toggle="tab" role="tab" aria-controls="item-1-4" aria-selected="false" style="color:#7e3ca6;">File Downloads</a></li>
         </ul>
@@ -105,7 +104,17 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
               <?php }	?>
           </div>
 
-            
+
+          <div id="item-1-3" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-3-tab">
+            <!-- Student Services Information -->
+            <h4><i class="icon ion-android-chat icon"></i> Student Services</h4>
+            <p style="color:#000000;"><i class="icon ion-ios-telephone"></i> Contact Number
+              <?php echo $departmentTelNo; ?> </p>
+            <p style="color:#000000;"><i class="icon ion-email"></i> Email
+              <?php echo $departmentEmailAddd; ?> </p>
+          </div>
+
+
           <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
             <!-- File Downloads -->
             <h4><i class="ion-android-cloud icon"></i> File Downloads</h4>
