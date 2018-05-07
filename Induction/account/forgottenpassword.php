@@ -68,7 +68,6 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
       <form class="form-signin" data-toggle="validator" role="form" method="post" action="../php/updatePassword.php" autocomplete="off">
         <span class="reauth-email"> </span>
         <input class="form-control" type="password" required="" placeholder="New Password" maxlength="20" id="inputPassword" name="inputPassword">
-        <input class="form-control" type="password" required="" placeholder="Confirm New Password" maxlength="20" id="inputSecondPassword" name="inputSecondPassword">
         <div class="checkbox">
 
         </div>

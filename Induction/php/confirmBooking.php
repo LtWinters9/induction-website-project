@@ -92,7 +92,7 @@ $insertorder->close();
         <div class="container">
             <div class="intro">
                 <h2 class="text-center"> Hello, <?php echo $forename; ?> </h2>
-                <p class="text-center" style="color:#ffffff;">You have successfully made a booking with <?php echo $bookedAdvisor; ?> </p>
+                <p class="text-center" style="color:#ffffff;">You have successfully made a booking. </p>
                 <p class="text-center" style="color:#ffffff;">Please contact the help centre if you need to <strong>cancel a booking.</strong></p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="../account/myaccount">Return to my account</a>
