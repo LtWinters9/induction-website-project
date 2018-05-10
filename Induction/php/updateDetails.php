@@ -6,8 +6,8 @@ session_start();
 include("functions.php");
 include("db_config.php");
 
+$db = createConnection();
 $userid2 = $_POST['userid2'];
-
 if (isset($userid2)) {
     $db = createConnection();
     $forename = $_POST['forename'];

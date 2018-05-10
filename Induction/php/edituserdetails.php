@@ -9,9 +9,9 @@ include('db_config.php');
 
 
 
-if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname'])&& isset($_POST['usertype'])) {
+if(isset($_POST['userid2']) && isset($_POST['forename']) && isset($_POST['surname'])&& isset($_POST['usertype'])) {
     $db=createConnection();
-    $userid=$_POST['userid'];
+    $userid2=$_POST['userid2'];
     $forename=$_POST['forename'];
     $surname=$_POST['surname'];
     $addressline1=$_POST['addressline1'];
@@ -23,7 +23,7 @@ if(isset($_POST['userid']) && isset($_POST['forename']) && isset($_POST['surname
     $usertype=$_POST['usertype'];
     $updatesql="update users set forename=?,surname=?,addressline1=?,addressline2=?,town=?,postcode=?,telephone=?, mobilephone=? ,usertype=? where userid=?";
     $doupdate=$db->prepare($updatesql);
-    $doupdate->bind_param("ssssssssis",$forename,$surname,$addressline1,$addressline2,$town,$postcode,$telephoneno, $mobileno, $usertype,$userid);
+    $doupdate->bind_param("ssssssssis",$forename,$surname,$addressline1,$addressline2,$town,$postcode,$telephoneno, $mobileno, $usertype,$userid2);
     $doupdate->execute();
     $doupdate->close();
 
