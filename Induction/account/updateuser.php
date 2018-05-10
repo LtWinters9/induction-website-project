@@ -156,17 +156,7 @@ if(isset($_POST['userid'])) {
     echo "<p>No user submitted to edit</p>";
 }
 ?>
-
-        <div class="testimonials-clean"></div>
-        <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">
-          <div class="container">
-            <div class="intro">
-              <h2 class="text-center" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;">Questions about your student experience?</h2>
-            </div>
-            <div class="buttons"><a class="btn btn-light" role="button" href="../account/login" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" style="font-family:'Roboto Condensed', sans-serif;background-color:#7e3ca6;color:#ffffff;">CHAT NOW</a></div>
-          </div>
-        </div>
-        <?php if($currentuser['userlevel']>1) {
+<?php if($currentuser['userlevel']==3) {
     include "../includes/footer.php";
 } ?>
         </div>
