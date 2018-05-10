@@ -118,7 +118,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           <div id="item-1-4" class="tab-pane fade" role="tabpanel" aria-labelledby="item-1-4-tab">
             <!-- File Downloads -->
             <h4><i class="ion-android-cloud icon"></i> File Downloads</h4>
-            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://drive.google.com/open?id=1WM4oRRc3caAv94R4-JkcYuY3GnNAJPhVCGzCACO9v-w" target="_blank" >Cloud Computing (1MB)</a>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://drive.google.com/document/d/open?id=1WM4oRRc3caAv94R4-JkcYuY3GnNAJPhVCGzCACO9v-w/export?format=doc">Cloud Computing (1MB)</a>
               <?php echo $modulename; ?> </p>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="" target="_blank">Databases (1MB)</a>
               <?php echo $modulename; ?> </p>
