@@ -70,8 +70,8 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
   <?php
 
-if(isset($_POST['userid'])) {
-    $userid2=$_POST['userid'];
+if(isset($_POST['userid2'])) {
+    $userid2=$_POST['userid2'];
     $db=createConnection();
     $userdetailssql="select forename, surname, addressline1, addressline2, town, postcode, telephone, mobilephone, usertype from users where userid=?;";
     $userdetails = $db->prepare($userdetailssql);
@@ -97,15 +97,15 @@ if(isset($_POST['userid'])) {
             <hr>
             <div class="form-row">
               <div class="col-sm-12 col-md-6">
-                <div class="form-group"><label>User No </label><input class="form-control" type="text" name="userid" autocomplete="off" value="<?php echo $userid2; ?>" id="userid"></div>
+                <div class="form-group"><label>User No </label><input class="form-control" type="text" name="userid2" autocomplete="off" value="<?php echo $userid2; ?>" id="userid2"></div>
               </div>
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                   <label for="sel1">User Level:</label>
-                <select class="form-control" id="usertype">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
+                <select class="form-control" name="usertype" id="usertype">
+                    <option value="1" <?php echo ($usertype == 1)?"selected":""; ?>>Inactive: Level 1</option>
+                    <option value="2" <?php echo ($usertype == 2)?"selected":""; ?>>User: Level 2</option>
+                    <option value="3" <?php echo ($usertype == 3)?"selected":""; ?>>Admin: Level 3</option>
                </select>
                 </div>
               </div>

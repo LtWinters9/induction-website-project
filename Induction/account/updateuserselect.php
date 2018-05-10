@@ -73,7 +73,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),3);
       <form id="listusers" name="listusers" method="post" action="updateuser.php" />
       <fieldset>
         <legend>Edit User</legend>
-        <label for="userid">Select User to Edit </label><select name="userid" id="userid" required>
+        <label for="userid2">Select User to Edit </label><select name="userid2" id="userid2" required>
                 <?php
                 while($userlist->fetch()) {
                     echo "<option value='$useridupdate'> User ID: $useridupdate, Name: $forename, Surname: $surname </option>";
