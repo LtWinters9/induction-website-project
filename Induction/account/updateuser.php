@@ -98,7 +98,7 @@ if(isset($_POST['userid'])) {
             <hr>
             <div class="form-row">
               <div class="col-sm-12 col-md-6">
-                <div class="form-group"><label>User No </label><input class="form-control" type="text" name="userid" autocomplete="off" value="<?php echo $userid2; ?>" id="userid"></div>
+                <div class="form-group"><label>User No </label><input class="form-control" readonly="" type="text" name="userid" autocomplete="off" value="<?php echo $userid2; ?>" id="userid"></div>
               </div>
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
