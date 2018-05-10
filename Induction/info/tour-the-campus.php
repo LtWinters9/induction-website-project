@@ -187,7 +187,7 @@ $collegeid=$_SESSION['collegeid'];
 
   </script>
 
-  <!--  https://www.codexworld.com/google-maps-with-multiple-markers-using-javascript-api/-->
+  <!-- reference: https://www.codexworld.com/google-maps-with-multiple-markers-using-javascript-api/-->
 
     <div class="testimonials-clean"></div>
     <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">

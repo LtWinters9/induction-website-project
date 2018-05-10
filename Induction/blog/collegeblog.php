@@ -130,7 +130,7 @@ aside.leftline {
 <section id="main">
     <?php
 //    $db = createConnection();
-    // get the first two articles
+    // get 15 articles when page loads
     $sql = "select mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,userid from mainblog join users on blogposter = userid and mainblog.collegeid = '$collegeid' order by blogtime desc limit 15";
 
     $stmt = $db->prepare($sql);
@@ -138,14 +138,14 @@ aside.leftline {
     $stmt->store_result();
     $stmt->bind_result($mainblogid, $title, $blogtext, $blogtime, $blogposter, $forename, $userid);
 
-
+    //gets all the comments from the generated articles
     $cmntsql = "select mbcid,commenttext,mainblogcom.blogtime,mainblogcom.userid, forename from mainblogcom, users where mainblogcom.mainblogid=? and mainblogcom.userid = users.userid;";
     $cmnt = $db->prepare($cmntsql);
     $cmnt->bind_param("i", $mainblogid);
     $cmnt->bind_result($mbcid, $commenttext, $commenttime, $comuserid, $comforename);
 
 
-
+    // loop which displays all the articles
     while ($stmt->fetch()) {
         echo "<article id='a$mainblogid' class='inset' class='pull-left img-responsive'>
       <div class='text'>
@@ -169,6 +169,7 @@ aside.leftline {
         $cmnt->execute();
         $cmnt->store_result();
 
+        // loop which displays the comments. within the article loop
         while ($cmnt->fetch()) {
             echo" <div class='a'>";
 
@@ -183,7 +184,7 @@ aside.leftline {
 
         echo  "</aside>";
         echo "</div>";
-        }
+        } //end of comment loop
 
       echo "</div>
     </article>
@@ -191,7 +192,7 @@ aside.leftline {
 
     <br>";
 
-    }
+    } //end of article loop
 
 
 

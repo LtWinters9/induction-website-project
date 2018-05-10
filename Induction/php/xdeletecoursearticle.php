@@ -8,7 +8,7 @@ $article=$_POST['articleid'];
 if(!$article) { header("location: ../index.php"); }
 
 $db=createConnection();
-// get the first two articles
+// get the article to delete
 $sql = "select courseblogid,users.userid from courseblog join users on blogposter = users.userid where courseblogid=?";
 $stmt = $db->prepare($sql);
 $stmt->bind_param("i",$article);
@@ -17,6 +17,7 @@ $stmt->store_result();
 $stmt->bind_result($articleid,$userid);
 if($stmt->num_rows==1) {
     $stmt->fetch();
+    //delete article
     if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
         $deletesql="delete from courseblog where courseblogid=?;";
         $deletestmt=$db->prepare($deletesql);

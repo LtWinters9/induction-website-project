@@ -117,6 +117,7 @@ if ($currentuser['userlevel'] < 2) {
         <div class="b">
         <div id="main">
             <?php
+            // grabbing the article to delete
             $db = createConnection();
             // get the first two articles
             $sql = "select mainblog.mainblogid,mainblog.title,blogtext,blogtime,blogposter,forename,users.userid from mainblog join users on blogposter = users.userid where mainblogid=?";
@@ -133,7 +134,7 @@ if ($currentuser['userlevel'] < 2) {
 			<p style='color:#3d3d3d;'>" . nl2br($articletext) . "</p>
 			<footer><p style='color:lightgray;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
 
-
+                //check if the user is authorised to delete
                 if ($currentuser['userlevel'] > 2 || ($currentuser['userid'] == $userid && $currentuser['userlevel'] > 1)) {
                     ?>
                     <form method='post' action='../php/xdeletecollegearticle.php'>

@@ -67,6 +67,8 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
       href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"/>
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 
+<!--manual CSS for the page -->
+
 <style>
     div.main {
         width: 60%;
@@ -120,6 +122,9 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
     <?php if($currentuser['userlevel']==3) {
         include "../includes/navLevel3.php";
     } ?>
+
+<!--    Fields for adding new post-->
+
 </div>
 <h2 class="text-center">Add Post</h2>
 <div class="b">

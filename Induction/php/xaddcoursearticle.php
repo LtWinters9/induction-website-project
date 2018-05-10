@@ -9,7 +9,7 @@ $courseid = $_SESSION['courseid'];
 
 $db=createConnection();
 
-
+// add college blog to database
 $articletitle=$_POST['articletitle'];
 $articletext=$_POST['articletext'];
 $insertblogsql="insert into courseblog (title,blogtext,blogposter,courseid,collegeid) values (?,?,?,?,?)";
@@ -18,5 +18,6 @@ $insertblog->bind_param("ssiss",$articletitle,$articletext,$userid,$courseid,$co
 $insertblog->execute();
 $insertblog->close();
 $db->close();
+//back to blog page
 header("location: ../blog/courseblog.php");
 ?>

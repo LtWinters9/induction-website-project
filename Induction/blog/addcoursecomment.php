@@ -125,7 +125,7 @@ if($currentuser['userlevel']<2) {
         <body>
 
 
-
+<!--    Fields for adding new comment-->
 
         <h2 class="text-center">Add Comment</h2>
         <div class="b">
