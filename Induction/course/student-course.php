@@ -120,13 +120,13 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
             <h4><i class="ion-android-cloud icon"></i> File Downloads</h4>
             <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://docs.google.com/document/d/1WM4oRRc3caAv94R4-JkcYuY3GnNAJPhVCGzCACO9v-w/export?format=docx">Cloud Computing (1MB)</a>
               <?php echo $modulename; ?> </p>
-            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="" target="_blank">Databases (1MB)</a>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://docs.google.com/document/d/1FbLvgWy5ygAWrP9uIX-DOlPQyN0eTagDSmqFjmngNvY/export?format=docx">Databases (1MB)</a>
               <?php echo $modulename; ?> </p>
-            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="" target="_blank">Developing Web Based Applications (5MB)</a>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://docs.google.com/document/d/1WRYzA3OJNuOPzWc_HNdZPVHzOZEQJxTZEBWSBqckn-I/export?format=docx">Developing Web Based Applications (5MB)</a>
               <?php echo $modulename; ?> </p>
-            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="" target="_blank">Security Concepts (2MB)</a>
+            <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://docs.google.com/document/d/11GQXdwWC9Wq1HDwVlIO7PhWD-HACQJE26I_-muJ1PHI/export?format=docx">Security Concepts (2MB)</a>
               <?php echo $modulename; ?> </p>
-              <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="" target="_blank">Graded Unit - 1 (8MB)</a>
+              <p style="color:#000000;"><i class="ion-android-cloud"></i> <a href="https://docs.google.com/document/d/1ff8-T049FjJZy4AM6aeGDpSoiXNirgpHcd2ud3C8p-E/export?format=docx">Graded Unit - 1 (8MB)</a>
               <?php echo $modulename; ?> </p>
           </div>
         </div>
