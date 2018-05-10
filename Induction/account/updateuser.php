@@ -25,8 +25,9 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 
 <head>
   <meta charset="utf-8">
+  <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Appointment | UHI Induction Services</title>
+  <title>Admin Edit User | UHI Induction Services</title>
 
   <!-- bootstrap css libary -->
   <link rel="stylesheet" href="../dist/styles/main/css-main.css">
