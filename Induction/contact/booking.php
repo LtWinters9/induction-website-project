@@ -60,7 +60,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
 } ?>
 
 
-
+<!-- Page for the user to make a booking to meet with their Personal Academic Tutor. -->
 
 
   <?php
@@ -89,6 +89,7 @@ $result = $conn->query("select bookingid, bookdate, booktime, advisor, booked fr
                   <div class="form-group">
                     <label for="subject">Select appointment</label>
 
+// The bookings available display in a drop down field. On booking a flag is changed within the database so the booking will no longer be available.
 <?php
 echo "<select name = 'optionselected' required>";
 while($row = mysqli_fetch_array($result))
