@@ -103,7 +103,7 @@ if(isset($_POST['userid'])) {
               <div class="col-sm-12 col-md-6">
                 <div class="form-group">
                   <label for="sel1">User Level:</label>
-                <select class="form-control" id="usertype">
+                <select class="form-control" name="userid"  id="usertype">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
