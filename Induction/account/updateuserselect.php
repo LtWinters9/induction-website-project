@@ -60,7 +60,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),3);
 } ?>
 
   <Article>
-
+  <!-- PHP code to select all the users from the users database table. On select the user is directed to the updateuser.php form. -->
     <?php
     $db=createConnection();
     $userlistsql="select userid, forename, surname from users;";

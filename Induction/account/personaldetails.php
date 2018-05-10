@@ -87,6 +87,8 @@ if(isset($userid)) {
                 include "../includes/navLevel3.php";
             } ?>
 
+            <!-- Page for the user to update their personal details, on submit the relevant database tables update. -->
+
 			<div class="container profile profile-view" id="profile">
 				<div class="row">
 					<div class="col-md-12 alert-col relative">

@@ -61,6 +61,7 @@ $userid=checkUser($_SESSION['userid'],session_id(),2);
           include "../includes/navLevel3.php";
       } ?>
 
+      <!-- Form for user to update their password, details post to updatePassword page. -->
 
     <div class="login-card"><img src="../assets/img/logo.jpg" class="profile-img-card">
       <p class="profile-name-card"> </p>
