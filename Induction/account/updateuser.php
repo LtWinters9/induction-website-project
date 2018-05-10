@@ -82,45 +82,74 @@ if(isset($_POST['userid'])) {
     if($userdetails->num_rows==1) {
         $userdetails->fetch();
         ?>
-        <form id="edituser" name="edituser" method="post" action="../php/edituserdetails.php">
-            <fieldset><legend>Edit User</legend>
-                <label for="userid">User ID : </label>
-                <input name="userid" id="userid" type="text" size="4" readonly required value="<?php echo $userid2; ?>" /><br />
-                <label for="forename">First Name : </label>
-                <input name="forename" id="forename" type="text" size="10" required value="<?php echo $forename; ?>" /><br />
-                <label for="surname">Surname : </label>
-                <input name="surname" id="surname" type="text" size="10" required value="<?php echo $surname; ?>" /><br />
-                <label for="addressline1">Address Line 1 : </label>
-                <input name="addressline1" id="addressline1" type="text" size="20" required value="<?php echo $addressline1; ?>" /><br />
-                <label for="addressline2">Address Line 2 : </label>
-                <input name="addressline2" id="addressline2" type="text" size="20" value="<?php echo $addressline2; ?>" /><br />
-                <label for="town">Town : </label>
-                <input name="town" id="town" type="text" size="20" required value="<?php echo $town; ?>" /><br />
-                <label for="postcode">Postcode : </label>
-                <input name="postcode" id="postcode" type="text" size="20" required value="<?php echo $postcode; ?>" /><br />
-                <label for="telephoneno">Telephone : </label>
-                <input name="telephoneno" id="telephoneno" type="text" size="20" required value="<?php echo $telephone; ?>" /><br /><br />
-                <label for="mobileno">Mobile : </label>
-                <input name="mobileno" id="mobileno" type="text" size="20" required value="<?php echo $mobilephone; ?>" /><br /><br />
-                <label for="userpass">Password : </label>
-                <input name="userpass" id="userpass" type="password" size="10" /><br />
-                <label for="usertype">Member Level : </label>
-                <input name="usertype" id="usertype" type="number" min="0" max="3" size="10" required  value="<?php echo $usertype; ?>" /><br />
-                <button type="submit">Edit User</button>
-            </fieldset>
-        </form>
+        <div class="container profile profile-view" id="profile">
+          <div class="row">
+            <div class="col-md-12 alert-col relative">
+              <!-- Not needed <div class="alert alert-info absolue center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save with success</span></div> -->
+            </div>
+          </div>
+          <form class="form-edit-details" data-toggle="validator" role="form" id="edituser" name="edituser" method="post" action="../php/edituserdetails.php" autocomplete="off">
+            <div class="form-row profile-row">
+              <div class="col-md-4 relative">
+              </div>
+              <div class="col-md-8">
+                <h1>Edit user details</h1>
+                <hr>
+                <div class="form-row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>User No </label><input class="form-control" type="text" name="userid" autocomplete="off" value="<?php echo $userid2; ?>" id="userid"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>User Type </label><input class="form-control" type="text" name="usertype" autocomplete="off" value="<?php echo $usertype; ?>" id="usertype"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Forename </label><input class="form-control" type="text" name="forename" autocomplete="off" value="<?php echo $forename; ?>" id="forname"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Surname </label><input class="form-control" type="text" name="surname" autocomplete="off" value="<?php echo $surname; ?>" id="surname"></div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Address Line 1 </label><input class="form-control" type="text" name="addressline1" autocomplete="off" value="<?php echo $addressline1; ?>" id="addressline1"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Address Line 2</label><input class="form-control" type="text" name="addressline2" autocomplete="off" value="<?php echo $addressline2; ?>" id="addressline2"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Town</label><input class="form-control" type="text" name="town" autocomplete="off" value="<?php echo $town; ?>" id="town"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Postcode</label><input class="form-control" type="text" name="postcode" autocomplete="off" maxlength="10" onkeydown="upperCaseF(this)" value="<?php echo $postcode; ?>" id="postcode"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Telephone</label><input class="form-control" type="tel" name="telephone" autocomplete="off" maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $telephone; ?>" id="telephone"></div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div class="form-group"><label>Mobile</label><input class="form-control" type="tel" name="mobilephone" autocomplete="off" maxlength="15" onkeypress="return isNumberKey(event)" value="<?php echo $mobilephone; ?>" id="mobilephone"></div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="form-group"><label>New Password </label><input class="form-control" type="password" name="inputPassword" autocomplete="off" id="inputPassword"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-row">
+                  <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">UPDATE</button><a class="btn btn-danger form-btn" role="button" href="../account/updateuserselect" type="reset">CANCEL</a></div>
+                </div>
+              </div>
+            </div>
+          </form>
         <?php
-    } else {
+
+  } else {
         echo "<p>No user found!</p>";
     }
 } else {
     echo "<p>No user submitted to edit</p>";
 }
 ?>
-
-
-
-
 
 <div class="testimonials-clean"></div>
 <div data-aos="fade-right" data-aos-once="true" class="highlight-clean">

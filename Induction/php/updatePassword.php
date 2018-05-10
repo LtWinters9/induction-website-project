@@ -1,6 +1,6 @@
 <html lang="en-gb" dir="ltr">
 <body>
-	
+
 <?php
 // page to update students password from forgottenpassword form
 
@@ -13,7 +13,6 @@ $userid = $_SESSION['userid'];
 if(isset($userid)) {
 $db=createConnection();
 $userpass=$_POST['inputPassword'];
-$secondpass=$_POST['inputSecondPassword'];
 $userid = $_SESSION['userid'];
 
 $salt=getSalt(16);
