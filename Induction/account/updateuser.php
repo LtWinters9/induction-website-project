@@ -100,15 +100,13 @@ if(isset($_POST['userid'])) {
                 <div class="form-group"><label>User No </label><input class="form-control" type="text" name="userid" autocomplete="off" value="<?php echo $userid2; ?>" id="userid"></div>
               </div>
               <div class="col-sm-12 col-md-6">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <div class="form-group"><label>1</label><input class="form-control" type="tel" name="usertype" autocomplete="off" value="<?php echo "1"; ?>" id="usertype"></div>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
+                <div class="form-group">
+                  <label for="sel1">User Level:</label>
+                <select class="form-control" id="usertype">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+               </select>
                 </div>
               </div>
               <div class="col-sm-12 col-md-6">
