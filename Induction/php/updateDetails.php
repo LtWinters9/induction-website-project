@@ -7,8 +7,8 @@ include("functions.php");
 include("db_config.php");
 
 $db = createConnection();
-$userid2 = $_POST['userid2'];
-if (isset($userid2)) {
+$userid = $_SESSION['userid'];
+if (isset($userid)) {
     $db = createConnection();
     $forename = $_POST['forename'];
     $surname = $_POST['surname'];
@@ -21,7 +21,7 @@ if (isset($userid2)) {
 
     $updatesql = "update users set forename=?,surname=?,addressline1=?,addressline2=?,town=?,postcode=?,telephone=?, mobilephone=? where userid=?";
     $doupdate = $db->prepare($updatesql);
-    $doupdate->bind_param("ssssssssi", $forename, $surname, $addressline1, $addressline2, $town, $postcode, $telephone, $mobilephone, $userid2);
+    $doupdate->bind_param("ssssssssi", $forename, $surname, $addressline1, $addressline2, $town, $postcode, $telephone, $mobilephone, $userid);
     $doupdate->execute();
     $doupdate->close();
 
