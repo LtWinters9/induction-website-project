@@ -116,7 +116,7 @@ if($currentuser['userlevel']<2) {
         <div id="main">
             <?php
             $db=createConnection();
-            // get the first two articles
+            // get the article to delete
             $sql = "select courseblog.courseblogid,courseblog.title,blogtext,blogtime,blogposter,forename,users.userid from courseblog join users on blogposter = users.userid where courseblogid=?";
             $stmt = $db->prepare($sql);
             $stmt->bind_param("i",$article);
@@ -131,7 +131,7 @@ if($currentuser['userlevel']<2) {
 			<p style='color:#3d3d3d;'>".nl2br($articletext)."</p>
 			<footer><p style='color:lightgray;'>Posted on <time datetime='$blogtime'>$blogtime</time> by <em>$forename</em></p></footer>";
 
-
+                //check user is authorised to delete article
                 if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
                     ?> <form method='post' action='../php/xdeletecoursearticle.php'>
                         <input type="hidden" readonly value="<?php echo $article ?>" id="articleid" name="articleid" />

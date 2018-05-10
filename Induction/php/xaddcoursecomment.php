@@ -7,6 +7,7 @@ $currentuser=getUserLevel();
 $db=createConnection();
 $article=$_POST['articleid'];
 $commenttext=$_POST['commenttext'];
+//adding comment for a course article to database
 $insertblogsql="insert into courseblogcom (commenttext,userid,courseblogid) values (?,?,?)";
 $insertblog=$db->prepare($insertblogsql);
 $insertblog->bind_param("sii",$commenttext,$currentuser['userid'],$article);

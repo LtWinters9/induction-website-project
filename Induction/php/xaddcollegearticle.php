@@ -7,7 +7,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 $collegeid = $_SESSION['collegeid'];
 $userid = $_SESSION['userid'];
 $db=createConnection();
-
+//inserting college article to database
 $articletitle=$_POST['articletitle'];
 $articletext=$_POST['articletext'];
 $insertblogsql="insert into mainblog (title,blogtext,blogposter,collegeid) values (?,?,?,?)";
@@ -16,5 +16,6 @@ $insertblog->bind_param("ssis",$articletitle,$articletext,$userid,$collegeid);
 $insertblog->execute();
 $insertblog->close();
 $db->close();
+//return to blog
 header("location: ../blog/collegeblog.php");
 ?>

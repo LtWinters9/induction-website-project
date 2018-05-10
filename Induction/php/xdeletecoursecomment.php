@@ -8,7 +8,7 @@ $comment=$_POST['commentid'];
 if(!$comment) { header("location: ../index.php"); }
 
 $db=createConnection();
-// get the first two articles
+// get the comment to delete
 $sql = "select cbcid,users.userid from courseblogcom join users on courseblogcom.userid = users.userid where cbcid=?";
 $stmt = $db->prepare($sql);
 $stmt->bind_param("i",$comment);
@@ -17,6 +17,7 @@ $stmt->store_result();
 $stmt->bind_result($cbcid,$userid);
 if($stmt->num_rows==1) {
     $stmt->fetch();
+    //delete comment
     if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
         $deletesql="delete from courseblogcom where cbcid=?;";
         $deletestmt=$db->prepare($deletesql);

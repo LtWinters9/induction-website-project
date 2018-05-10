@@ -133,7 +133,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 <section id="main">
     <?php
     $db = createConnection();
-    // get the first two articles
+    // get the first 15 articles
     $sql = "select courseblogid,courseblog.title,blogtext,blogtime,blogposter,forename,userid from courseblog join users on blogposter = userid and courseblog.collegeid = '$collegeid' and courseblog.courseid = '$courseid' order by blogtime desc limit 15";
 
     $stmt = $db->prepare($sql);
@@ -141,7 +141,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
     $stmt->store_result();
     $stmt->bind_result($courseblogid, $title, $blogtext, $blogtime, $blogposter, $forename, $userid);
 
-
+    //select all the comments from the articles
     $cmntsql = "select cbcid,commenttext,courseblogcom.blogtime,courseblogcom.userid, forename from courseblogcom, users where courseblogcom.courseblogid=? and courseblogcom.userid = users.userid";
     $cmnt = $db->prepare($cmntsql);
     $cmnt->bind_param("i", $courseblogid);
@@ -173,7 +173,7 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
 
         $cmnt->execute();
         $cmnt->store_result();
-
+        //building the comments. inside article loop
         while ($cmnt->fetch()) {
             echo" <div class='a'>";
             echo "<aside id='c$cbcid' class='leftline'>
@@ -187,14 +187,14 @@ $userid = checkUser($_SESSION['userid'], session_id(), 2, 3);
             echo  "</aside>";
             echo "</div>";
 
-        }
+        }//end comment loop
         echo "</div>
     </article>
    
 
     <br>";
 
-    }
+    }//end article loop
 
 
     $cmnt->close();

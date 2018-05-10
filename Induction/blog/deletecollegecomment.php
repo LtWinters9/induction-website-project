@@ -118,7 +118,7 @@ if($currentuser['userlevel']<2) {
         <div id="main" class="main">
             <?php
             $db=createConnection();
-            // get the first two articles
+            // grab the comment to delete
             $cmntsql = "select mbcid,commenttext,mainblogcom.blogtime,mainblogcom.userid, forename from mainblogcom, users where mainblogcom.mainblogid=? and mainblogcom.userid = users.userid and mbcid=?;";
             $cmnt = $db->prepare($cmntsql);
             $cmnt->bind_param("ii", $article,$comment);
@@ -135,7 +135,7 @@ if($currentuser['userlevel']<2) {
                 </article>";
             }
 
-
+                //check if user is authorised to delete
                 if($currentuser['userlevel']>2 || ($currentuser['userid']==$userid && $currentuser['userlevel']>1)) {
                     ?> <form method='post' action='../php/xdeletecollegecomment.php'>
                         <input type="hidden" readonly value="<?php echo $comment ?>" id="commentid" name="commentid" />

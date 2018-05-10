@@ -133,6 +133,9 @@ $username=checkUser($_SESSION['userid'],session_id(),2);
     <?php if($currentuser['userlevel']==3) {
         include "../includes/navLevel3.php";
     } ?>
+
+<!--    Fields for adding new blog post-->
+
 </div>
     <h2 class="text-center">Add Post</h2>
     <div class="b">
